@@ -1,8 +1,26 @@
-import {Header} from '../components/header';
-import {NextPage, GetStaticProps} from 'next';
 import {getSortedBlogMetadatas, Blog} from '../lib/blog-fetch';
+import {DateString} from '../components/date';
+import {Header} from '../components/header';
 import {Layout} from '../components/layout';
+import {NextPage, GetStaticProps} from 'next';
 import Link from 'next/link';
+import {FC} from 'react';
+
+const BlogCard: FC<{id: string; title: string; date: string}> = ({
+  id,
+  title,
+  date,
+}) => (
+  <div>
+    <Link href={`/blog/${id}`}>
+      <a>
+        {title}
+        {' - '}
+        <DateString dateString={date} />
+      </a>
+    </Link>
+  </div>
+);
 
 const BlogPage: NextPage<{blogs: Blog[]}> = ({blogs}) => (
   <>
@@ -10,14 +28,8 @@ const BlogPage: NextPage<{blogs: Blog[]}> = ({blogs}) => (
       <Header />
       <h1>ブログ</h1>
       <section>
-        {blogs.map(({id, date, title}) => (
-          <div key={id}>
-            <Link href={`/blog/${id}`}>
-              <a>
-                {title} - {date}
-              </a>
-            </Link>
-          </div>
+        {blogs.map((blog) => (
+          <BlogCard key={blog.id} {...blog} />
         ))}
       </section>
     </Layout>

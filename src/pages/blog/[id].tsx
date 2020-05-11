@@ -1,6 +1,7 @@
 import {NextPage, GetStaticPaths, GetStaticProps} from 'next';
 import {Layout} from '../../components/layout';
 import {Header} from '../../components/header';
+import {DateString} from '../../components/date';
 import {getAllBlogIds, getBlogFromId, Blog} from '../../lib/blog-fetch';
 import Markdown from 'markdown-to-jsx';
 
@@ -13,7 +14,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({post}) => (
     <Layout>
       <Header />
       <h1>{post.title}</h1>
-      {post.id} - {post.date}
+      <DateString dateString={post.date} />
       <hr />
       <Markdown>{post.content}</Markdown>
     </Layout>
