@@ -127,7 +127,7 @@
     - type: github
       url: https://github.com/onokatio
 - name: おりかげ
-  avatar: https://twitter.com/_orikage/profile_image?size=original
+  avatar:
   role: ガチプロ
   links:
     - type: twitter
@@ -141,7 +141,7 @@
     - type: github
       url: https://github.com/m17saitou
 - name: てぃけ
-  avatar: https://twitter.com/tky_sleep/profile_image?size=original
+  avatar:
   role: ガチプロ
   links:
     - type: twitter
@@ -211,25 +211,25 @@
     - type: github
       url: https://github.com/noobest19s
 - name: fof
-  avatar: https://twitter.com/403_fof/profile_image?size=original
+  avatar:
   role: pro
   links:
     - type: twitter
       url: https://twitter.com/403_fof
 - name: Lino_Ren
-  avatar: https://twitter.com/alpha_linoren/profile_image?size=original
+  avatar:
   role: pro
   links:
     - type: twitter
       url: https://twitter.com/alpha_linoren
 - name: 寄り目
-  avatar: https://twitter.com/Yorime_yrm/profile_image?size=original
+  avatar:
   role: pro
   links:
     - type: twitter
       url: https://twitter.com/Yorime_yrm
 - name: 柚月えふ
-  avatar: https://twitter.com/left_an1/profile_image?size=original
+  avatar:
   role: pro
   links:
     - type: twitter
@@ -242,3 +242,21 @@
       url: https://twitter.com/soshi_harami
     - type: github
       url: https://github.com/soshiharami
+- name: Okaka
+  avatar:
+  role: べんつよマン
+  links: []
+- name: なぎねる
+  avatar:
+  role: べんつよマン
+  links:
+    - type: twitter
+      url: https://twitter.com/tirun61031a_o_a
+- name: こるく
+  avatar: https://github.com/Colk-tech.png
+  role: べんつよマン
+  links:
+    - type: twitter
+      url: https://twitter.com/Colk_
+    - type: github
+      url: https://github.com/Colk-tech
