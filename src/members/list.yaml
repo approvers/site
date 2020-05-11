@@ -86,6 +86,14 @@
       url: https://twitter.com/UniokaWorld
     - type: github
       url: https://github.com/UniokaWorld
+- name: unios103
+  avatar: https://github.com/unios103.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/unios103
+    - type: github
+      url: https://github.com/unios103
 - name: SHUN / しゅん
   avatar: https://github.com/shun-shobon.png
   role: ガチプロ
@@ -196,9 +204,41 @@
       url: https://github.com/FlexiblePrintedCircuits
 - name: ぬーべすと
   avatar: https://github.com/noobest19s.png
-  role: ウンコーダー
+  role: pro
   links:
     - type: twitter
       url: https://twitter.com/facking_noobest
     - type: github
       url: https://github.com/noobest19s
+- name: fof
+  avatar: https://twitter.com/403_fof/profile_image?size=original
+  role: pro
+  links:
+    - type: twitter
+      url: https://twitter.com/403_fof
+- name: Lino_Ren
+  avatar: https://twitter.com/alpha_linoren/profile_image?size=original
+  role: pro
+  links:
+    - type: twitter
+      url: https://twitter.com/alpha_linoren
+- name: 寄り目
+  avatar: https://twitter.com/Yorime_yrm/profile_image?size=original
+  role: pro
+  links:
+    - type: twitter
+      url: https://twitter.com/Yorime_yrm
+- name: 柚月えふ
+  avatar: https://twitter.com/left_an1/profile_image?size=original
+  role: pro
+  links:
+    - type: twitter
+      url: https://twitter.com/left_an1
+- name: ソーシ
+  avatar: https://github.com/soshiharami.png
+  role: pro
+  links:
+    - type: twitter
+      url: https://twitter.com/soshi_harami
+    - type: github
+      url: https://github.com/soshiharami
