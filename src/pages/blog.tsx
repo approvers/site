@@ -5,21 +5,19 @@ import {Layout} from '../components/layout';
 import {NextPage, GetStaticProps} from 'next';
 import Link from 'next/link';
 import {FC} from 'react';
+import {Card} from '../components/card';
 
-const BlogCard: FC<{id: string; title: string; date: string}> = ({
-  id,
-  title,
-  date,
-}) => (
-  <div>
+const BlogCard: FC<Blog> = ({id, title, date}) => (
+  <>
     <Link href={`/blog/${id}`}>
       <a>
-        {title}
-        {' - '}
-        <DateString dateString={date} />
+        <Card>
+          <h3>{title}</h3>
+          <DateString dateString={date} />
+        </Card>
       </a>
     </Link>
-  </div>
+  </>
 );
 
 const BlogPage: NextPage<{blogs: Blog[]}> = ({blogs}) => (
@@ -33,7 +31,6 @@ const BlogPage: NextPage<{blogs: Blog[]}> = ({blogs}) => (
         ))}
       </section>
     </Layout>
-    <style jsx>{``}</style>
   </>
 );
 
