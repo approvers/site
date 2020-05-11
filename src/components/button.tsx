@@ -11,21 +11,21 @@ export const ShadowButton: FC<{
     </div>
     <style jsx>{`
       div {
-        min-width: 6em;
-        padding: 1em 0;
-        margin: 0.2em;
+        min-width: 6rem;
+        padding: 1rem 0;
+        margin: 0.2rem;
         border: solid black 1px;
         border-radius: 4px;
-        box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.4);
+        box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.4);
         display: flex;
         justify-content: center;
         align-items: center;
       }
       div :hover {
-        box-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.4);
+        box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.4);
       }
       div :active {
-        box-shadow: 0em 0em 0em rgba(0, 0, 0, 0.4);
+        box-shadow: 0rem 0rem 0rem rgba(0, 0, 0, 0.4);
       }
     `}</style>
   </>
