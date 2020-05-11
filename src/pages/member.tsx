@@ -1,7 +1,6 @@
 import { Layout } from "../components/layout";
 import { NextPage, GetStaticProps } from "next";
 import { getMembers, Member } from "../lib/member-fetch";
-import { Card } from "../components/card";
 import { FC } from "react";
 import { SNSLink } from "../components/sns-link";
 import { Paper } from "../components/paper";
