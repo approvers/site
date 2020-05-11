@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import {resolveCname} from 'dns';
 
 const postsDirectory = path.join(process.cwd(), 'src/blogs');
 

@@ -13,7 +13,8 @@
     "markdown-to-jsx": "^6.11.1",
     "next": "9.3.6",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "yaml": "^1.9.2"
   },
   "devDependencies": {
     "@types/markdown-to-jsx": "^6.11.0",
