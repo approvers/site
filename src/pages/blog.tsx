@@ -1,6 +1,6 @@
 import {Header} from '../components/header';
 import {NextPage, GetStaticProps} from 'next';
-import {getSortedBlogs, Blog} from '../lib/blog-fetch';
+import {getSortedBlogMetadatas, Blog} from '../lib/blog-fetch';
 import {Layout} from '../components/layout';
 import Link from 'next/link';
 
@@ -26,7 +26,7 @@ const BlogPage: NextPage<{blogs: Blog[]}> = ({blogs}) => (
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  const blogs = await getSortedBlogs();
+  const blogs = await getSortedBlogMetadatas();
   return {props: {blogs}};
 };
 

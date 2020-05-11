@@ -1,20 +1,19 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import {resolveCname} from 'dns';
 
 const postsDirectory = path.join(process.cwd(), 'src/blogs');
-
-export type Blog = {
-  date: string;
-  title: string;
-  id: string;
-  content: string;
-};
 
 export type Metadata = {
   date: string;
   title: string;
 };
+
+export type Blog = {
+  id: string;
+  content: string;
+} & Metadata;
 
 const validateMetadata = (value: any): value is Metadata => {
   return (
@@ -25,26 +24,24 @@ const validateMetadata = (value: any): value is Metadata => {
   );
 };
 
-export function getSortedBlogs() {
+const metadataFromFile = (fileName: string) => {
+  const id = fileName.replace(/\.md$/, '');
+  const fullPath = path.join(postsDirectory, fileName);
+  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const matterResult = matter(fileContents);
+  const data = matterResult.data;
+  if (!validateMetadata(data)) {
+    throw 'invalid metadata';
+  }
+  return {
+    id,
+    ...data,
+  };
+};
+
+export function getSortedBlogMetadatas(): Metadata[] {
   const fileNames = fs.readdirSync(postsDirectory);
-  const allPostsData = fileNames.map((fileName) => {
-    const id = fileName.replace(/\.md$/, '');
-
-    const fullPath = path.join(postsDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
-
-    const matterResult = matter(fileContents);
-    const data = matterResult.data;
-    if (!validateMetadata(data)) {
-      throw 'invalid metadata';
-    }
-    const metadata: {date: string} = data;
-
-    return {
-      id,
-      ...metadata,
-    };
-  });
+  const allPostsData = fileNames.map(metadataFromFile);
 
   return allPostsData.sort((a, b) => {
     if (a.date < b.date) {
@@ -55,8 +52,10 @@ export function getSortedBlogs() {
   });
 }
 
-export function getAllBlogIds() {
-  const fileNames = fs.readdirSync(postsDirectory);
+export async function getAllBlogIds() {
+  const fileNames = await new Promise<string[]>((resolve, reject) =>
+    fs.readdir(postsDirectory, (e, files) => (e ? reject(e) : resolve(files)))
+  );
 
   return fileNames.map((fileName) => ({
     params: {

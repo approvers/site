@@ -35,7 +35,7 @@ export const getStaticProps: GetStaticProps<
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getAllBlogIds();
+  const paths = await getAllBlogIds();
   return {paths, fallback: false};
 };
 
