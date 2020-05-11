@@ -1,53 +1,53 @@
 - name: loxygen
-  avatar: none
+  avatar: https://github.com/loxygenK.png
   role: 全知全能の神
   links:
     - type: twitter
-      url: none
+      url: https://twitter.com/loxygenK
     - type: github
-      url: none
+      url: https://github.com/loxygenK
 - name: ゆにおか
-  avatar: https://cdn.discordapp.com/avatars/328185048018714624/b0e081a0dfb781bf9374ce8eb4cf46f7.png
+  avatar: https://github.com/UniokaWorld.png
   role: ガチプロ
   links:
     - type: twitter
-      url: none
+      url: https://twitter.com/UniokaWorld
     - type: github
-      url: none
+      url: https://github.com/UniokaWorld
 - name: SHUN / しゅん
-  avatar: https://cdn.discordapp.com/avatars/361444721538891776/f113ae58b658b65f7186161c09d2cc4e.png
+  avatar: https://github.com/shun-shobon.png
   role: ガチプロ
   links:
     - type: twitter
-      url: none
+      url: https://twitter.com/programmer_shun
     - type: github
-      url: none
+      url: https://github.com/shun-shobon
 - name: かわえもん
-  avatar: https://cdn.discordapp.com/avatars/391857452360007680/48ad7afef16c4adcb70bc800eea486a7.png
+  avatar: https://github.com/kawaemon.png
   role: 超スーパーガチプロ
   links:
     - type: twitter
-      url: none
+      url: https://twitter.com/kawason0708
     - type: github
-      url: none
+      url: https://github.com/kawaemon
 - name: raiga0310
-  avatar: https://cdn.discordapp.com/avatars/622077711309078529/ad18ea3d7e52756106df4f4e2be75570.png
+  avatar: https://github.com/raiga0310.png
   role: ガチプロ
   links:
     - type: twitter
-      url: none
+      url: https://twitter.com/raiga_tech/
     - type: github
-      url: none
+      url: https://github.com/raiga0310
 - name: ぬーべすと
-  avatar: https://cdn.discordapp.com/avatars/603487410487296000/3e26e4b4d6a29040e01e48fb0d69c638.png
+  avatar: https://github.com/noobest19s.png
   role: ウンコーダー
   links:
     - type: twitter
-      url: none
+      url: https://twitter.com/facking_noobest
     - type: github
-      url: none
+      url: https://github.com/noobest19s
 - name: Mikuro さいな
-  avatar: none
+  avatar: https://github.com/MikuroXina.png
   role: 超スーパーガチプロ
   links:
     - type: twitter
