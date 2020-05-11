@@ -1,13 +1,13 @@
-import {getSortedBlogMetadatas, Blog} from '../lib/blog-fetch';
-import {DateString} from '../components/date';
-import {Header} from '../components/header';
-import {Layout} from '../components/layout';
-import {NextPage, GetStaticProps} from 'next';
-import Link from 'next/link';
-import {FC} from 'react';
-import {Card} from '../components/card';
+import { getSortedBlogMetadatas, Blog } from "../lib/blog-fetch";
+import { DateString } from "../components/date";
+import { Header } from "../components/header";
+import { Layout } from "../components/layout";
+import { NextPage, GetStaticProps } from "next";
+import Link from "next/link";
+import { FC } from "react";
+import { Card } from "../components/card";
 
-const BlogCard: FC<Blog> = ({id, title, date}) => (
+const BlogCard: FC<Blog> = ({ id, title, date }) => (
   <>
     <Link href={`/blog/${id}`}>
       <a>
@@ -20,7 +20,7 @@ const BlogCard: FC<Blog> = ({id, title, date}) => (
   </>
 );
 
-const BlogPage: NextPage<{blogs: Blog[]}> = ({blogs}) => (
+const BlogPage: NextPage<{ blogs: Blog[] }> = ({ blogs }) => (
   <>
     <Layout>
       <Header />
@@ -36,7 +36,7 @@ const BlogPage: NextPage<{blogs: Blog[]}> = ({blogs}) => (
 
 export const getStaticProps: GetStaticProps = async () => {
   const blogs = await getSortedBlogMetadatas();
-  return {props: {blogs}};
+  return { props: { blogs } };
 };
 
 export default BlogPage;

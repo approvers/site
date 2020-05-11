@@ -1,4 +1,4 @@
-import {ReactNode, FC, Ref, MouseEvent, forwardRef, RefObject} from 'react';
+import { ReactNode, FC, Ref, MouseEvent, forwardRef, RefObject } from "react";
 
 type ShadowButtonProps = {
   children: ReactNode;
@@ -7,7 +7,7 @@ type ShadowButtonProps = {
 };
 
 export const ShadowButton: FC<ShadowButtonProps> = forwardRef(
-  ({onClick, children}: ShadowButtonProps, ref?: Ref<HTMLDivElement>) => (
+  ({ onClick, children }: ShadowButtonProps, ref?: Ref<HTMLDivElement>) => (
     <>
       <div ref={ref} onClick={onClick}>
         {children}
@@ -33,5 +33,5 @@ export const ShadowButton: FC<ShadowButtonProps> = forwardRef(
         }
       `}</style>
     </>
-  )
+  ),
 );

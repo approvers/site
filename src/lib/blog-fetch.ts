@@ -1,8 +1,8 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 
-const postsDirectory = path.join(process.cwd(), 'src/blogs');
+const postsDirectory = path.join(process.cwd(), "src/blogs");
 
 export type Metadata = {
   date: string;
@@ -14,23 +14,24 @@ export type Blog = {
   content: string;
 } & Metadata;
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const validateMetadata = (value: any): value is Metadata => {
   return (
-    'date' in value &&
-    typeof value.date === 'string' &&
-    'title' in value &&
-    typeof value.title === 'string'
+    "date" in value &&
+    typeof value.date === "string" &&
+    "title" in value &&
+    typeof value.title === "string"
   );
 };
 
 const metadataFromFile = (fileName: string) => {
-  const id = fileName.replace(/\.md$/, '');
+  const id = fileName.replace(/\.md$/, "");
   const fullPath = path.join(postsDirectory, fileName);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const fileContents = fs.readFileSync(fullPath, "utf8");
   const matterResult = matter(fileContents);
   const data = matterResult.data;
   if (!validateMetadata(data)) {
-    throw 'invalid metadata';
+    throw "invalid metadata";
   }
   return {
     id,
@@ -53,24 +54,24 @@ export function getSortedBlogMetadatas(): Metadata[] {
 
 export async function getAllBlogIds() {
   const fileNames = await new Promise<string[]>((resolve, reject) =>
-    fs.readdir(postsDirectory, (e, files) => (e ? reject(e) : resolve(files)))
+    fs.readdir(postsDirectory, (e, files) => (e ? reject(e) : resolve(files))),
   );
 
   return fileNames.map((fileName) => ({
     params: {
-      id: fileName.replace(/\.md$/, ''),
+      id: fileName.replace(/\.md$/, ""),
     },
   }));
 }
 
 export async function getBlogFromId(id: string) {
   const fullPath = path.join(postsDirectory, `${id}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const fileContents = fs.readFileSync(fullPath, "utf8");
 
   const matterResult = matter(fileContents);
-  const {data, content} = matterResult;
+  const { data, content } = matterResult;
   if (!validateMetadata(data)) {
-    throw 'invalid metadata';
+    throw "invalid metadata";
   }
 
   // Combine the data with the id and contentHtml

@@ -1,6 +1,6 @@
-import {ReactNode, FC} from 'react';
+import { ReactNode, FC } from "react";
 
-export const Card: FC<{children: ReactNode}> = ({children}) => (
+export const Card: FC<{ children: ReactNode }> = ({ children }) => (
   <>
     <div>{children}</div>
     <style jsx>{`
