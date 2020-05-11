@@ -6,12 +6,17 @@ export type SNSLinkInfo =
   | {type: 'twitter'; url: string}
   | {type: 'github'; url: string};
 
-const validateSNSLink = (obj: any): obj is SNSLinkInfo =>
-  'type' in obj &&
-  ['twitter', 'github'].includes(obj.type) &&
-  'url' in obj &&
-  typeof obj.url === 'string' &&
-  obj.url.startsWith('https://');
+const validateSNSLink = (obj: any): obj is SNSLinkInfo => {
+  if (!('type' in obj && ['twitter', 'github'].includes(obj.type))) {
+    console.error('unknown type from: ', obj);
+    return false;
+  }
+  if (!('url' in obj && typeof obj.url === 'string')) {
+    console.error('`url` not in: ', obj);
+    return false;
+  }
+  return true;
+};
 
 export type Member = {
   avatar: string;
@@ -20,16 +25,32 @@ export type Member = {
   links: SNSLinkInfo[];
 };
 
-const validateMember = (obj: any): obj is Member =>
-  'avatar' in obj &&
-  typeof obj.avatar === 'string' &&
-  'name' in obj &&
-  typeof obj.name === 'string' &&
-  'role' in obj &&
-  typeof obj.role === 'string' &&
-  'links' in obj &&
-  typeof obj.links === 'object' &&
-  (Object.values(obj.links) as any[]).every(validateSNSLink);
+const validateMember = (obj: any): obj is Member => {
+  if (!('avatar' in obj && typeof obj.avatar === 'string')) {
+    console.error('`avatar` not in: ', obj);
+    return false;
+  }
+  if (!('name' in obj && typeof obj.name === 'string')) {
+    console.error('`name` not in: ', obj);
+    return false;
+  }
+  if (!('role' in obj && typeof obj.role === 'string')) {
+    console.error('`role` not in: ', obj);
+    return false;
+  }
+  if (
+    !(
+      'links' in obj &&
+      typeof obj.links === 'object' &&
+      (Object.values(obj.links) as any[]).every(validateSNSLink)
+    )
+  ) {
+    console.error('`links` not in: ', obj);
+    return false;
+  }
+
+  return true;
+};
 
 const validateMembers = (obj: any): obj is Member[] =>
   typeof obj === 'object' &&

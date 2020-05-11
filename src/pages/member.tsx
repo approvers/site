@@ -1,7 +1,6 @@
 import {Layout} from '../components/layout';
 import {NextPage, GetStaticProps} from 'next';
 import {getMembers, Member} from '../lib/member-fetch';
-import {Card} from '../components/card';
 import {FC} from 'react';
 import {SNSLink} from '../components/sns-link';
 import {Paper} from '../components/paper';
@@ -11,7 +10,7 @@ const MemberCard: FC<Member> = ({name, role, links}) => (
   <>
     <Paper>
       <h4>{name}</h4>
-      {role}
+      <p>{role}</p>
       <div className="links_container">
         {links.map((link, i) => (
           <SNSLink key={i} {...link} />
@@ -23,6 +22,9 @@ const MemberCard: FC<Member> = ({name, role, links}) => (
         display: flex;
         flex-spacing: space-between;
         margin: 0.4em 0 0 0;
+      }
+      p {
+        max-width: 8em;
       }
 
       a {
@@ -49,6 +51,19 @@ const MembersPage: NextPage<MembersPageProps> = ({members}) => (
         </div>
       </main>
     </Layout>
+    <style jsx>{`
+      main {
+        display: flex;
+        align-items: center;
+        flex-flow: column;
+      }
+      div {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 90vw;
+      }
+    `}</style>
   </>
 );
 
