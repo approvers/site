@@ -6,6 +6,38 @@
       url: https://twitter.com/loxygenK
     - type: github
       url: https://github.com/loxygenK
+- name: いっそう
+  avatar: https://github.com/isso0424.png
+  role: 創造主
+  links:
+    - type: twitter
+      url: https://twitter.com/kousou4129
+    - type: github
+      url: https://github.com/isso0424
+- name: 鏡華
+  avatar: https://github.com/mirror-kt.png
+  role: 超スーパーガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/mirror_kt
+    - type: github
+      url: https://github.com/mirror-kt
+- name: でみ
+  avatar: https://github.com/Sw-Saturn.png
+  role: 超スーパーガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/Sw_Saturn
+    - type: github
+      url: https://github.com/Sw-Saturn
+- name: にとふ
+  avatar: https://github.com/nitf.png
+  role: 超スーパーガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/2tfuyu
+    - type: github
+      url: https://github.com/nitf
 - name: ゆにおか
   avatar: https://github.com/UniokaWorld.png
   role: ガチプロ
