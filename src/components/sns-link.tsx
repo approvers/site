@@ -1,23 +1,23 @@
-import {FC} from 'react';
-import {SNSLinkInfo} from '../lib/member-fetch';
+import { FC } from "react";
+import { SNSLinkInfo } from "../lib/member-fetch";
 
-type Style = {text: string; backColor: string; color: string};
+type Style = { text: string; backColor: string; color: string };
 
-const styles: Record<SNSLinkInfo['type'], Style> = {
+const styles: Record<SNSLinkInfo["type"], Style> = {
   twitter: {
-    text: 'Twitter',
-    backColor: '#25a0f2',
-    color: 'white',
+    text: "Twitter",
+    backColor: "#25a0f2",
+    color: "white",
   },
   github: {
-    text: 'GitHub',
-    backColor: 'black',
-    color: 'white',
+    text: "GitHub",
+    backColor: "black",
+    color: "white",
   },
 };
 
-export const SNSLink: FC<SNSLinkInfo> = ({type, url}) => {
-  const {text, backColor, color} = styles[type];
+export const SNSLink: FC<SNSLinkInfo> = ({ type, url }) => {
+  const { text, backColor, color } = styles[type];
   return (
     <>
       <div>

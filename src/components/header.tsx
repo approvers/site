@@ -1,12 +1,12 @@
-import {FC} from 'react';
-import Link from 'next/link';
-import {ShadowButton} from './button';
+import { FC } from "react";
+import Link from "next/link";
+import { ShadowButton } from "./button";
 
 const links = {
-  ホーム: '/',
-  メンバー: '/member',
-  ブログ: '/blog',
-  参加方法: '/join',
+  ホーム: "/",
+  メンバー: "/member",
+  ブログ: "/blog",
+  参加方法: "/join",
 };
 export const Header: FC = () => (
   <>
