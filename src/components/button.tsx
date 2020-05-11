@@ -20,6 +20,7 @@ export const ShadowButton: FC<{
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
       }
       div :hover {
         box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.4);
