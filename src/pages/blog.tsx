@@ -1,7 +1,8 @@
 import {Header} from '../components/header';
-import {NextPage} from 'next';
+import {NextPage, GetStaticProps} from 'next';
 import {getSortedBlogs, Blog} from '../lib/blog-fetch';
 import {Layout} from '../components/layout';
+import Link from 'next/link';
 
 const BlogPage: NextPage<{blogs: Blog[]}> = ({blogs}) => (
   <>
@@ -11,7 +12,11 @@ const BlogPage: NextPage<{blogs: Blog[]}> = ({blogs}) => (
       <section>
         {blogs.map(({id, date, title}) => (
           <div key={id}>
-            {title} - {date}
+            <Link href={`/blog/${id}`}>
+              <a>
+                {title} - {date}
+              </a>
+            </Link>
           </div>
         ))}
       </section>
@@ -20,9 +25,9 @@ const BlogPage: NextPage<{blogs: Blog[]}> = ({blogs}) => (
   </>
 );
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const blogs = await getSortedBlogs();
   return {props: {blogs}};
-}
+};
 
 export default BlogPage;
