@@ -127,7 +127,7 @@
     - type: github
       url: https://github.com/onokatio
 - name: おりかげ
-  avatar:
+  avatar: ""
   role: ガチプロ
   links:
     - type: twitter
@@ -141,13 +141,13 @@
     - type: github
       url: https://github.com/m17saitou
 - name: てぃけ
-  avatar:
+  avatar: ""
   role: ガチプロ
   links:
     - type: twitter
       url: https://twitter.com/tky_sleep
 - name: ねこ（はせがわ）
-  avatar:
+  avatar: ""
   role: ガチプロ
   links: []
 - name: watαno
@@ -167,7 +167,7 @@
     - type: github
       url: https://github.com/nanigasi-san
 - name: Yu
-  avatar:
+  avatar: ""
   role: ガチプロ
   links: []
 - name: かんたろう
@@ -211,25 +211,25 @@
     - type: github
       url: https://github.com/noobest19s
 - name: fof
-  avatar:
+  avatar: ""
   role: pro
   links:
     - type: twitter
       url: https://twitter.com/403_fof
 - name: Lino_Ren
-  avatar:
+  avatar: ""
   role: pro
   links:
     - type: twitter
       url: https://twitter.com/alpha_linoren
 - name: 寄り目
-  avatar:
+  avatar: ""
   role: pro
   links:
     - type: twitter
       url: https://twitter.com/Yorime_yrm
 - name: 柚月えふ
-  avatar:
+  avatar: ""
   role: pro
   links:
     - type: twitter
@@ -243,11 +243,11 @@
     - type: github
       url: https://github.com/soshiharami
 - name: Okaka
-  avatar:
+  avatar: ""
   role: べんつよマン
   links: []
 - name: なぎねる
-  avatar:
+  avatar: ""
   role: べんつよマン
   links:
     - type: twitter
