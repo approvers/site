@@ -57,3 +57,16 @@ jobs:
         with:
           name: artifact
           path: out
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: artifact
+
+      # TODO: デプロイ先を決めること
+      - name: Deploy
+        run: echo "デプロイ先が決まってないので書けません" && exit 1
