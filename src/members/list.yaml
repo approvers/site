@@ -295,3 +295,12 @@
       url: https://twitter.com/Colk_
     - type: github
       url: https://github.com/Colk-tech
+
+- name: ko50
+  avatar: https://github.com/ko50.png
+  role: べんつよマン
+  links:
+    - type: twitter
+      url: https://twitter.com/ko_CottonLove
+    - type: github
+      url: https://github.com/ko50
