@@ -38,6 +38,46 @@
       url: https://twitter.com/2tfuyu
     - type: github
       url: https://github.com/nitf
+- name: Mikuro さいな
+  avatar: https://github.com/MikuroXina.png
+  role: 超スーパーガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/MikuroXina
+    - type: github
+      url: https://github.com/MikuroXina
+- name: かわえもん
+  avatar: https://github.com/kawaemon.png
+  role: 超スーパーガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/kawason0708
+    - type: github
+      url: https://github.com/kawaemon
+- name: raiga0310
+  avatar: https://github.com/raiga0310.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/raiga_tech
+    - type: github
+      url: https://github.com/raiga0310
+- name: Bony Chops
+  avatar: https://github.com/BonyChops.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/BonyChops
+    - type: github
+      url: https://github.com/BonyChops
+- name: ぽちゃまあ
+  avatar: https://github.com/potyama.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/PotyaExe
+    - type: github
+      url: https://github.com/potyama
 - name: ゆにおか
   avatar: https://github.com/UniokaWorld.png
   role: ガチプロ
@@ -54,22 +94,106 @@
       url: https://twitter.com/programmer_shun
     - type: github
       url: https://github.com/shun-shobon
-- name: かわえもん
-  avatar: https://github.com/kawaemon.png
-  role: 超スーパーガチプロ
-  links:
-    - type: twitter
-      url: https://twitter.com/kawason0708
-    - type: github
-      url: https://github.com/kawaemon
-- name: raiga0310
-  avatar: https://github.com/raiga0310.png
+- name: sou
+  avatar: https://github.com/stonesaw.png
   role: ガチプロ
   links:
     - type: twitter
-      url: https://twitter.com/raiga_tech/
+      url: https://twitter.com/is_stone_saw
     - type: github
-      url: https://github.com/raiga0310
+      url: https://github.com/stonesaw
+- name: たひ
+  avatar: https://github.com/Tahi-knct.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/Tahi_knct
+    - type: github
+      url: https://github.com/Tahi-knct
+- name: おのかちお
+  avatar: https://github.com/onokatio.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/onokatio_
+    - type: github
+      url: https://github.com/onokatio
+- name: おりかげ
+  avatar: https://twitter.com/_orikage/profile_image?size=original
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/_orikage
+- name: かさごん
+  avatar: https://github.com/m17saitou.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/Kasagone
+    - type: github
+      url: https://github.com/m17saitou
+- name: てぃけ
+  avatar: https://twitter.com/tky_sleep/profile_image?size=original
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/tky_sleep
+- name: ねこ（はせがわ）
+  avatar:
+  role: ガチプロ
+  links: []
+- name: watαno
+  avatar: https://github.com/watano1168.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/oxLC_theta
+    - type: github
+      url: https://github.com/watano1168
+- name: 某さん
+  avatar: https://github.com/nanigasi-san.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/nanigasi_3
+    - type: github
+      url: https://github.com/nanigasi-san
+- name: Yu
+  avatar:
+  role: ガチプロ
+  links: []
+- name: かんたろう
+  avatar: https://github.com/kantarow.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/kantarow_
+    - type: github
+      url: https://github.com/kantarow
+- name: Siketyan
+  avatar: https://github.com/Siketyan.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/ch1aic
+    - type: github
+      url: https://github.com/Siketyan
+- name: チャハーン
+  avatar: https://github.com/Chahaaaaan.git
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/Chaha1n
+    - type: github
+      url: https://github.com/Chahaaaaan
+- name: フレキシブル基板
+  avatar: https://github.com/FlexiblePrintedCircuits.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/FPC_COMMUNITY
+    - type: github
+      url: https://github.com/FlexiblePrintedCircuits
 - name: ぬーべすと
   avatar: https://github.com/noobest19s.png
   role: ウンコーダー
@@ -78,11 +202,3 @@
       url: https://twitter.com/facking_noobest
     - type: github
       url: https://github.com/noobest19s
-- name: Mikuro さいな
-  avatar: https://github.com/MikuroXina.png
-  role: 超スーパーガチプロ
-  links:
-    - type: twitter
-      url: https://twitter.com/MikuroXina
-    - type: github
-      url: https://github.com/MikuroXina
