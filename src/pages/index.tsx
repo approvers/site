@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import {Header} from '../components/header';
 
 export default function Home() {
   return (
@@ -7,6 +8,8 @@ export default function Home() {
         <title>限界開発鯖</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Header />
 
       <main>
         <h1 className="title">
