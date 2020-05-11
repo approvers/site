@@ -2,6 +2,7 @@ import {NextPage, GetStaticPaths, GetStaticProps} from 'next';
 import {Layout} from '../../components/layout';
 import {Header} from '../../components/header';
 import {getAllBlogIds, getBlogFromId, Blog} from '../../lib/blog-fetch';
+import Markdown from 'markdown-to-jsx';
 
 type BlogPostPageProps = {
   post: Blog;
@@ -14,7 +15,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({post}) => (
       <h1>{post.title}</h1>
       {post.id} - {post.date}
       <hr />
-      <div dangerouslySetInnerHTML={{__html: post.contentHtml}} />
+      <Markdown>{post.content}</Markdown>
     </Layout>
 
     <style jsx>{`

@@ -1,8 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import remark from 'remark';
-import html from 'remark-html';
 
 const postsDirectory = path.join(process.cwd(), 'src/blogs');
 
@@ -10,13 +8,14 @@ export type Blog = {
   date: string;
   title: string;
   id: string;
-  contentHtml: string;
+  content: string;
 };
 
 export type Metadata = {
   date: string;
   title: string;
 };
+
 const validateMetadata = (value: any): value is Metadata => {
   return (
     'date' in value &&
@@ -71,20 +70,15 @@ export async function getBlogFromId(id: string) {
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
   const matterResult = matter(fileContents);
-  const {data} = matterResult;
+  const {data, content} = matterResult;
   if (!validateMetadata(data)) {
     throw 'invalid metadata';
   }
 
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString();
-
   // Combine the data with the id and contentHtml
   return {
     id,
-    contentHtml,
+    content,
     ...data,
   };
 }
