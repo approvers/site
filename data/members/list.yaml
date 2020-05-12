@@ -229,6 +229,15 @@
     - type: github
       url: https://github.com/FlexiblePrintedCircuits
 
+- name: Lockdef
+  avatar: https://github.com/Lockdef.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/LockDef
+    - type: github
+      url: https://github.com/Lockdef
+
 - name: ぬーべすと
   avatar: https://github.com/noobest19s.png
   role: pro
