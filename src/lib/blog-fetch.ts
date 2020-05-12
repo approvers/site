@@ -1,4 +1,5 @@
-import fs from "fs";
+import { promises } from "fs";
+const { readFile, readdir } = promises;
 import path from "path";
 import matter from "gray-matter";
 
@@ -30,9 +31,7 @@ const validateMetadata = (value: any): value is Metadata => {
 
 const metadataFromFile = async (fileName: string): Promise<Metadata> => {
   const fullPath = path.join(postsDirectory, fileName);
-  const fileContents = await new Promise<string>((resolve, reject) =>
-    fs.readFile(fullPath, "utf8", (e, file) => (e ? reject(e) : resolve(file))),
-  );
+  const fileContents = await readFile(fullPath, "utf8");
   const matterResult = matter(fileContents);
   const data = matterResult.data;
   const id = fileName.replace(/\.md$/, "");
@@ -47,9 +46,7 @@ const metadataFromFile = async (fileName: string): Promise<Metadata> => {
 };
 
 export async function getSortedBlogMetadatas(): Promise<Metadata[]> {
-  const fileNames = await new Promise<string[]>((resolve, reject) =>
-    fs.readdir(postsDirectory, (e, files) => (e ? reject(e) : resolve(files))),
-  );
+  const fileNames = await readdir(postsDirectory);
   const allPostsData = await Promise.all(fileNames.map(metadataFromFile));
 
   return allPostsData.sort((a, b) => {
@@ -62,9 +59,7 @@ export async function getSortedBlogMetadatas(): Promise<Metadata[]> {
 }
 
 export async function getAllBlogIds(): Promise<{ params: { id: BlogPostId } }[]> {
-  const fileNames = await new Promise<string[]>((resolve, reject) =>
-    fs.readdir(postsDirectory, (e, files) => (e ? reject(e) : resolve(files))),
-  );
+  const fileNames = await readdir(postsDirectory);
 
   return fileNames.map((fileName) => ({
     params: {
@@ -75,7 +70,7 @@ export async function getAllBlogIds(): Promise<{ params: { id: BlogPostId } }[]>
 
 export async function getBlogFromId(id: string): Promise<Blog> {
   const fullPath = path.join(postsDirectory, `${id}.md`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const fileContents = await readFile(fullPath, "utf8");
 
   const matterResult = matter(fileContents);
   const { data, content } = matterResult;

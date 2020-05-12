@@ -1,4 +1,5 @@
-import { readFile } from "fs";
+import { promises } from "fs";
+const { readFile } = promises;
 import YAML from "yaml";
 import path from "path";
 
@@ -61,10 +62,8 @@ const validateMembers = (obj: any): obj is Member[] =>
 const membersFile = path.join(process.cwd(), "data/members/list.yaml");
 
 export async function getMembers(): Promise<Member[]> {
-  const file = await new Promise<Buffer>((resolve, reject) =>
-    readFile(membersFile, (e, data) => (e ? reject(e) : resolve(data))),
-  ).then((buffer) => buffer.toString());
-  const parsed = YAML.parse(file);
+  const file = await readFile(membersFile);
+  const parsed = YAML.parse(file.toString());
   if (!validateMembers(parsed)) {
     throw "invalid list format";
   }
