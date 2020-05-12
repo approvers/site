@@ -284,6 +284,15 @@
     - type: github
       url: https://github.com/soshiharami
 
+- name: ラミンさん
+  avatar: https://github.com/laminne.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/laminne33569
+    - type: github
+      url: https://github.com/laminne
+
 - name: Okaka
   avatar: ""
   role: べんつよマン
