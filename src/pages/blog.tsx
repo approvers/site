@@ -22,7 +22,7 @@ const BlogCard: FC<Blog> = ({ id, title, date }) => (
 
 const BlogPage: NextPage<{ blogs: Blog[] }> = ({ blogs }) => (
   <>
-    <Layout>
+    <Layout pageName="限界開発鯖 - ブログ">
       <Header />
       <h1>ブログ</h1>
       <section>

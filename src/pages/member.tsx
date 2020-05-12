@@ -40,7 +40,7 @@ type MembersPageProps = {
 
 const MembersPage: NextPage<MembersPageProps> = ({ members }) => (
   <>
-    <Layout>
+    <Layout pageName="限界開発鯖 - メンバー紹介">
       <Header />
       <main>
         <h1>メンバー紹介</h1>

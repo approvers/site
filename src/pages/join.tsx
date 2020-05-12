@@ -4,7 +4,7 @@ import { Layout } from "../components/layout";
 
 const JoinPage: NextPage = () => (
   <>
-    <Layout>
+    <Layout pageName="限界開発鯖 - 参加方法">
       <Header />
       <main>
         <h1>参加方法</h1>

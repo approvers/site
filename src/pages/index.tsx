@@ -1,15 +1,10 @@
-import Head from "next/head";
 import { Header } from "../components/header";
 import { Layout } from "../components/layout";
 import { NextPage } from "next";
 
 const Home: NextPage = () => (
   <>
-    <Head>
-      <title>限界開発鯖</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-    <Layout>
+    <Layout pageName="限界開発鯖">
       <Header />
 
       <main>
