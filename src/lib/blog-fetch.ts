@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
-const postsDirectory = path.join(process.cwd(), "src/blogs");
+const postsDirectory = path.join(process.cwd(), "data", "blogs");
 
 export type BlogPostId = string;
 
@@ -28,12 +28,15 @@ const validateMetadata = (value: any): value is Metadata => {
   );
 };
 
-const metadataFromFile = (fileName: string): Metadata => {
-  const id = fileName.replace(/\.md$/, "");
+const metadataFromFile = async (fileName: string): Promise<Metadata> => {
   const fullPath = path.join(postsDirectory, fileName);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const fileContents = await new Promise<string>((resolve, reject) =>
+    fs.readFile(fullPath, "utf8", (e, file) => (e ? reject(e) : resolve(file))),
+  );
   const matterResult = matter(fileContents);
   const data = matterResult.data;
+  const id = fileName.replace(/\.md$/, "");
+  data.id = id;
   if (!validateMetadata(data)) {
     throw "invalid metadata";
   }
@@ -43,9 +46,11 @@ const metadataFromFile = (fileName: string): Metadata => {
   };
 };
 
-export function getSortedBlogMetadatas(): Metadata[] {
-  const fileNames = fs.readdirSync(postsDirectory);
-  const allPostsData = fileNames.map(metadataFromFile);
+export async function getSortedBlogMetadatas(): Promise<Metadata[]> {
+  const fileNames = await new Promise<string[]>((resolve, reject) =>
+    fs.readdir(postsDirectory, (e, files) => (e ? reject(e) : resolve(files))),
+  );
+  const allPostsData = await Promise.all(fileNames.map(metadataFromFile));
 
   return allPostsData.sort((a, b) => {
     if (a.date < b.date) {
@@ -74,6 +79,7 @@ export async function getBlogFromId(id: string): Promise<Blog> {
 
   const matterResult = matter(fileContents);
   const { data, content } = matterResult;
+  data.id = id;
   if (!validateMetadata(data)) {
     throw "invalid metadata";
   }

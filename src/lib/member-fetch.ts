@@ -58,7 +58,7 @@ const validateMembers = (obj: any): obj is Member[] =>
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   typeof obj === "object" && (Object.values(obj) as any[]).every(validateMember);
 
-const membersFile = path.join(process.cwd(), "src/members/list.yaml");
+const membersFile = path.join(process.cwd(), "data/members/list.yaml");
 
 export async function getMembers(): Promise<Member[]> {
   const file = await new Promise<Buffer>((resolve, reject) =>
