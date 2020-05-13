@@ -1,0 +1,72 @@
+@import ../wrapper.module
+@import ../variable/_color
+@import ../variable/_details
+
+=phone
+  @media #{$isPhone}
+    justify-content: flex-start
+
+.text > *
+  +about-font($little-fontsize)
+.name
+  +about-font($sub-fontsize)
+  @media #{$isPhone}
+    +about-font($sub-fontsize - 0.1)
+.title
+  +about-font($title-fontsize)
+  padding: 1vh 0
+  @media #{$isPhone}
+    +about-font($title-fontsize - 0.5)
+
+.text > * + *
+  padding-top: 0.1rem
+
+.memberMainContents
+  @extend .layout
+  justify-content: space-between
+  @media #{$isPhone}
+    flex-direction: column
+    justify-content: flex-start
+
+.cardWrapper
+  @extend .wrapper
+  +flex-component
+  +components-size
+  +phone
+
+.memberCard
+  +fully-spread
+  +flex-style(nowrap,flex-start)
+  +make-padding($isPc)
+  @media #{$isPhone}
+    +make-padding($isPhone)
+    text-align: left
+
+.avatarWrapper,
+.avatar
+  +cancel-background-color
+  height: 100%
+
+.avatar
+  width: 37%
+  object-fit: contain
+  padding-right: 5%
+  @media #{$isPhone}
+    width: 30%
+
+.linksContainer
+  +phone
+  padding-top: $min-padding
+
+.linksContainer > * + *
+  padding-left: 1.1rem
+  @media #{$isPhone}
+    padding-left: 1.2rem
+
+.icon
+  color: $sub-color
+  font-size: 0.1 + $main-fontsize + rem
+  &:hover
+    color: darken($sub-color, $amount)
+  @media #{$isPhone}
+    font-size: $sub-fontsize - 0.1 + rem

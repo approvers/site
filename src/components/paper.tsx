@@ -1,15 +1,8 @@
 import { ReactNode, FC } from "react";
+import styles from "../sass/pages/member.module.sass";
 
 export const Paper: FC<{ children: ReactNode }> = ({ children }) => (
-  <>
-    <div>{children}</div>
-    <style jsx>{`
-      div {
-        background: white;
-        border-radius: 6px;
-        margin: 1em 0.2em;
-        padding: 0.5rem 3rem 1.5rem 3rem;
-      }
-    `}</style>
-  </>
+  <div className={styles.cardWrapper}>
+    <div className={styles.memberCard}>{children}</div>
+  </div>
 );

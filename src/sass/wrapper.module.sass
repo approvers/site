@@ -1,0 +1,19 @@
+@import /variable/_details
+
+.mainContents
+  +flex-style
+  min-width: 100%
+  min-height: 100vh
+  flex: 1
+
+.wrapper
+  width: 100%
+  +flex-style
+
+.home
+  @extend .wrapper
+  min-height: 100vh
+
+.layout
+  @extend .wrapper
+  padding: 0 $padding

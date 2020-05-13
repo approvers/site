@@ -1,40 +1,25 @@
 import { FC } from "react";
 import { SNSLinkInfo } from "../lib/member-fetch";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTwitter, faGithub, IconDefinition } from "@fortawesome/free-brands-svg-icons";
+import styles from "../sass/pages/member.module.sass";
 
-type Style = { text: string; backColor: string; color: string };
+type Icon = { icon: IconDefinition };
 
-const styles: Record<SNSLinkInfo["type"], Style> = {
+const icons: Record<SNSLinkInfo["type"], Icon> = {
   twitter: {
-    text: "Twitter",
-    backColor: "#25a0f2",
-    color: "white",
+    icon: faTwitter,
   },
   github: {
-    text: "GitHub",
-    backColor: "black",
-    color: "white",
+    icon: faGithub,
   },
 };
 
 export const SNSLink: FC<SNSLinkInfo> = ({ type, url }) => {
-  const { text, backColor, color } = styles[type];
+  const { icon } = icons[type];
   return (
-    <>
-      <div>
-        <a href={url}>{text}</a>
-      </div>
-      <style jsx>{`
-        div {
-          background-color: ${backColor};
-          margin: 0 0.4em 0 0;
-          padding: 0.2em;
-          border-radius: 10%;
-        }
-        a {
-          color: ${color};
-          text-decoration: none;
-        }
-      `}</style>
-    </>
+    <a href={url} className={styles.icon}>
+      <FontAwesomeIcon icon={icon} />
+    </a>
   );
 };

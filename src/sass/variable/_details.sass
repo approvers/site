@@ -1,0 +1,48 @@
+$title-fontsize: 3
+$sub-fontsize: 1.6
+$main-fontsize: 1.1
+$little-fontsize: 1
+$transition: 0.4s
+$padding: 10%
+$min-padding: 5%
+$isPhone: "screen and (max-width: 600px)"
+$isPc: "screen and (min-width: 600px)"
+$middle: "screen and (max-width: 1000px)"
+
+=flex-style($warp: wrap, $justify: center)
+  display: flex
+  align-items: center
+  flex-wrap: $warp
+  justify-content: $justify
+
+=flex-component
+  align-content: flex-start;
+  align-self: stretch
+
+=about-font($font-size: $main-fontsize)
+  font-size: $font-size + rem
+  line-height: $font-size + 0.4 + rem
+
+=make-padding($display-size,$pos: "")
+  @if $display-size == $isPc
+    padding#{$pos}: 5%
+  @if $display-size == $isPhone
+    padding#{$pos}: 3%
+
+=fully-spread
+  width: 100%
+  height: 100%
+
+=cancel-background-color
+  background-color: #fff0
+
+=components-size
+  @media #{$isPc}
+    max-width: 33%
+  @media #{$middle}
+    max-width: 50%
+  @media #{$isPhone}
+    max-width: 100%
+
+@function border($thickness,$color)
+  @return $thickness solid $color

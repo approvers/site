@@ -1,12 +1,13 @@
 import { NextPage } from "next";
 import { Header } from "../components/header";
 import { Layout } from "../components/layout";
+import styles from "../sass/wrapper.module.sass";
 
 const JoinPage: NextPage = () => (
   <>
     <Layout>
       <Header />
-      <main>
+      <main className={styles.mainContents}>
         <h1>参加方法</h1>
         <section>
           <p>弊サーバーは、完全紹介制となっています。</p>

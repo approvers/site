@@ -1,0 +1,18 @@
+@import ../variable/_details
+@import ../wrapper.module
+
+.homeMainContents
+  @extend .wrapper
+  min-height: 80vh
+  flex-direction: column
+  text-align: center
+
+.title
+  +about-font(4)
+  padding-bottom: 0.5rem
+  @media #{$isPhone}
+    +about-font($title-fontsize - 0.2)
+
+.subtitle
+  +about-font($sub-fontsize)
+  font-style: italic

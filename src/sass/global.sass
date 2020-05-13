@@ -1,8 +1,32 @@
+@import url(https://cdn.jsdelivr.net/npm/yakuhanjp@3.3.1/dist/css/yakuhanjp.min.css)
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans+JP)
+@import /variable/_color
+@import /variable/_details
+
 html
-  padding: 0
-  margin: 0
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  color: $text-color
+  font-family: YakuHanJP, Noto Sans JP, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen,
   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
 
 *
-  box-sizing: border-box;
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+  border: 0
+  transition: $transition
+
+div,header,footer,main
+  background-color: $basis-color
+
+a
+  text-decoration: none
+
+::root
+  font-size: 100%
+
+::selection
+  background-color: $bright-main-color
+
+/* Firefox */
+::-moz-selection
+  background-color: $bright-main-color
