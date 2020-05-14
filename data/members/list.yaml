@@ -293,6 +293,13 @@
     - type: github
       url: https://github.com/laminne
 
+- name: 白兎
+  avatar: ""
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/siroRabi_jk
+
 - name: Okaka
   avatar: ""
   role: べんつよマン
