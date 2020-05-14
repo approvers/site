@@ -1,0 +1,16 @@
+@import ../variable/_details
+@import ../variable/_color
+@import ../wrapper.module
+
+.joinPage
+  +flex-style
+  flex-direction: column
+  padding: 0 $min-padding
+  min-width: 80%
+
+.joinText
+  @extend .text
+  padding: 2%
+
+.color
+  +hover-line

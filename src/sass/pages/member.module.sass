@@ -6,17 +6,10 @@
   @media #{$isPhone}
     justify-content: flex-start
 
-.text > *
-  +about-font($little-fontsize)
 .name
   +about-font($sub-fontsize)
   @media #{$isPhone}
     +about-font($sub-fontsize - 0.1)
-.title
-  +about-font($title-fontsize)
-  padding: 1vh 0
-  @media #{$isPhone}
-    +about-font($title-fontsize - 0.5)
 
 .text > * + *
   padding-top: 0.1rem

@@ -37,6 +37,9 @@ $middle: "screen and (max-width: 1000px)"
 =cancel-background-color
   background-color: #fff0
 
+=hover-line
+  background: linear-gradient(transparent 70%, $bright-main-color 0%)
+
 =components-size
   @media #{$isPc}
     max-width: 33%
@@ -56,3 +59,12 @@ $middle: "screen and (max-width: 1000px)"
 
 @function border($thickness,$color)
   @return $thickness solid $color
+
+.title
+  +about-font($title-fontsize)
+  padding: 1vh 0
+  @media #{$isPhone}
+    +about-font($title-fontsize - 0.7)
+
+.text > *
+  +about-font($little-fontsize)
