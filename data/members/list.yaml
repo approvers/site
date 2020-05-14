@@ -300,6 +300,15 @@
     - type: twitter
       url: https://twitter.com/siroRabi_jk
 
+- name: Nanai10a
+  avatar: https://github.com/nanai10a.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/771tenNext
+    - type: github
+      url: https://github.com/nanai10a
+
 - name: Okaka
   avatar: ""
   role: べんつよマン
