@@ -11,7 +11,7 @@ type BlogPostPageProps = {
 
 const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => (
   <>
-    <Layout>
+    <Layout pageName={`限界開発鯖 - ブログ - ${post.title}`}>
       <Header />
       <h1>{post.title}</h1>
       <DateString dateString={post.date} />
