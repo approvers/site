@@ -5,31 +5,31 @@ import { Layout } from "../components/layout";
 import { NextPage, GetStaticProps } from "next";
 import Link from "next/link";
 import { FC } from "react";
-import { Card } from "../components/card";
+import styles from "../sass/pages/blog.module.sass";
 
 const BlogCard: FC<Blog> = ({ id, title, date }) => (
-  <>
+  <div className={styles.blogCard}>
     <Link href={`/blog/${id}`}>
-      <a>
-        <Card>
-          <h3>{title}</h3>
-          <DateString dateString={date} />
-        </Card>
+      <a className={styles.pageLink}>
+        <h3 className={styles.blogTitle}>{title}</h3>
+        <DateString dateString={date} />
       </a>
     </Link>
-  </>
+  </div>
 );
 
 const BlogPage: NextPage<{ blogs: Blog[] }> = ({ blogs }) => (
   <>
-    <Layout>
+    <Layout pageName="限界開発鯖 - ブログ">
       <Header />
-      <h1>ブログ</h1>
-      <section>
-        {blogs.map((blog) => (
-          <BlogCard key={blog.id} {...blog} />
-        ))}
-      </section>
+      <div className={styles.blog}>
+        <h1 className={styles.title}>ブログ</h1>
+        <section className={styles.memberMainContents}>
+          {blogs.map((blog) => (
+            <BlogCard key={blog.id} {...blog} />
+          ))}
+        </section>
+      </div>
     </Layout>
   </>
 );

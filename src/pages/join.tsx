@@ -5,7 +5,7 @@ import styles from "../sass/pages/join.module.sass";
 
 const JoinPage: NextPage = () => (
   <>
-    <Layout>
+    <Layout pageName="限界開発鯖 - 参加方法">
       <Header />
       <main className={styles.joinPage}>
         <h1 className={styles.title}>参加方法</h1>

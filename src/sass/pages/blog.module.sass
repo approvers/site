@@ -1,0 +1,38 @@
+@import ../variable/_color
+@import ../variable/_details
+@import /member.module
+
+.blog
+  width: 100%
+  padding: 0 $padding
+
+.blog > h1
+  text-align: center
+
+.pageLink > *
+  color: $main-color
+
+.pageLink > h3
+  display: block
+
+.blogTitle
+  +about-font($sub-fontsize)
+  &:hover
+    text-decoration: none
+    +hover-line
+
+.blogCard
+  @extend .memberCard
+  +components-size
+  border: border(1px,$bright-main-color)
+  margin-top: 1.5rem
+  @media #{$isPhone}
+    margin-top: 0.5rem
+
+.date
+  color: darken($bright-main-color, $amount)
+  +about-font($little-fontsize - 0.2)
+  text-align: left
+
+.textDate
+  padding-left: 0.1rem
