@@ -7,6 +7,7 @@ $padding: 10%
 $min-padding: 5%
 $isPhone: "screen and (max-width: 600px)"
 $isPc: "screen and (min-width: 600px)"
+$min: "screen and (max-width: 360px)"
 $middle: "screen and (max-width: 1000px)"
 
 =flex-style($warp: wrap, $justify: center)
@@ -43,6 +44,15 @@ $middle: "screen and (max-width: 1000px)"
     max-width: 50%
   @media #{$isPhone}
     max-width: 100%
+
+=transform($translateY: 0, $deg: 0)
+  transform: skew(#{$deg}deg, 0deg) translateX(-60%) translateY($translateY)
+
+=triangle($thickness: 15vh,$color: $bright-main-color)
+  border-top: border($thickness,$color)
+  border-left: border($thickness,$color)
+  border-bottom: border($thickness,transparent)
+  border-right: border($thickness,transparent)
 
 @function border($thickness,$color)
   @return $thickness solid $color

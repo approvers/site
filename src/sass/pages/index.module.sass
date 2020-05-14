@@ -1,18 +1,69 @@
 @import ../variable/_details
+@import ../variable/_color
 @import ../wrapper.module
+
+.homeWrapper
+  min-height: 100vh
 
 .homeMainContents
   @extend .wrapper
-  min-height: 80vh
+  padding: 0 $min-padding
   flex-direction: column
-  text-align: center
+  position: relative
 
 .title
   +about-font(4)
+  padding-top: $padding
   padding-bottom: 0.5rem
-  @media #{$isPhone}
-    +about-font($title-fontsize - 0.2)
+  position: relative
+  text-align: center
+  @media #{$middle}
+    +about-font($title-fontsize - 0.3)
+  @media #{$min}
+    +about-font($title-fontsize - 0.5)
 
 .subtitle
   +about-font($sub-fontsize)
   font-style: italic
+  padding-bottom: $min-padding
+  @media #{$middle}
+    +about-font($sub-fontsize - 0.3)
+    padding-bottom: $padding
+  @media #{$min}
+    +about-font($sub-fontsize - 0.5)
+
+.aboutUs
+  padding-bottom: 2rem
+  display: block
+  width: 100%
+
+.aboutUs > *
+  display: flex
+  align-items: center
+  +about-font($main-fontsize - 0.1)
+
+.aboutUs > h3
+  font-weight: normal
+  padding-bottom: 0.5rem
+
+.aboutUs > * > span
+  color: $main-color
+  padding-right: 0.5rem
+  +about-font($sub-fontsize)
+
+.title::after
+  content: ""
+  position: absolute
+  left: 50%
+  z-index: -1
+  +transform(-4rem, -30)
+  +triangle()
+  @media #{$isPhone}
+    +triangle($thickness: 10vh)
+
+.genkaiLink
+  padding-left: 0.3rem
+  cursor: pointer
+  color: $main-color
+  &:hover
+    text-decoration: underline
