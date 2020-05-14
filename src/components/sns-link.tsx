@@ -18,7 +18,7 @@ const icons: Record<SNSLinkInfo["type"], Icon> = {
 export const SNSLink: FC<SNSLinkInfo> = ({ type, url }) => {
   const { icon } = icons[type];
   return (
-    <a href={url} className={styles.icon}>
+    <a href={url} className={styles.icon} rel="noopener noreferrer" target="_blank">
       <FontAwesomeIcon icon={icon} />
     </a>
   );
