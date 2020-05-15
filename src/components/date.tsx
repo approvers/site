@@ -5,10 +5,8 @@ import styles from "../sass/pages/blog.module.sass";
 export const DateString: FC<{ dateString: string }> = ({ dateString }) => {
   const date = parseISO(dateString);
   return (
-    <p className={styles.textDate}>
-      <time className={styles.date} dateTime={dateString}>
-        {format(date, "LLLL d, yyyy")}
-      </time>
-    </p>
+    <time className={styles.date} dateTime={dateString}>
+      {format(date, "LLLL d, yyyy")}
+    </time>
   );
 };

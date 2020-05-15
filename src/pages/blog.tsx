@@ -2,20 +2,25 @@ import { getSortedBlogMetadatas, Blog } from "../lib/blog-fetch";
 import { DateString } from "../components/date";
 import { Header } from "../components/header";
 import { Layout } from "../components/layout";
+import { Paper } from "../components/paper";
 import { NextPage, GetStaticProps } from "next";
 import Link from "next/link";
 import { FC } from "react";
 import styles from "../sass/pages/blog.module.sass";
 
 const BlogCard: FC<Blog> = ({ id, title, date }) => (
-  <div className={styles.blogCard}>
-    <Link href={`/blog/${id}`}>
-      <a className={styles.pageLink}>
-        <h3 className={styles.blogTitle}>{title}</h3>
-        <DateString dateString={date} />
-      </a>
-    </Link>
-  </div>
+  <Paper>
+    <img src="/alternative.png" className={styles.avatar} />
+    <div className={styles.cardText}>
+      <h3 className={styles.blogTitle}>{title}</h3>
+      <DateString dateString={date} />
+      <Link href={`/blog/${id}`}>
+        <div className={styles.linkWrapper}>
+          <a className={styles.pageLink}>記事を読む &rarr;</a>
+        </div>
+      </Link>
+    </div>
+  </Paper>
 );
 
 const BlogPage: NextPage<{ blogs: Blog[] }> = ({ blogs }) => (

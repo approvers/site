@@ -1,0 +1,5 @@
+2020.05.15 08:52:59 INFO  started: Metals version 0.9.0 in workspace '/Users/unios103/Documents/over-limit-dev-site'
+2020.05.15 08:53:00 INFO  time: initialize in 0.47s
+2020.05.15 08:53:01 WARN  no build tool detected in workspace '/Users/unios103/Documents/over-limit-dev-site'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+5 15, 2020 11:29:45 午前 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification

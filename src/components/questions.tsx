@@ -16,7 +16,7 @@ export const Questions: FC = () => (
         <span>Q</span>限界開発鯖の雰囲気が知りたい！
       </h3>
       <p>
-        <span>A</span>こちらへどうぞ →{" "}
+        <span>A</span>こちらへどうぞ &rarr;{" "}
         <a
           href="https://twitter.com/search?q=%23限界開発鯖&src=typed_query"
           className={styles.genkaiLink}
