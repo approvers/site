@@ -1,10 +1,10 @@
-import { ReactNode, FC, Ref, MouseEvent, forwardRef, RefObject } from "react";
+import { ReactNode, FC, MouseEvent, forwardRef, Ref } from "react";
 import styles from "../sass/components/header.module.sass";
 
 type ButtonProps = {
   children: ReactNode;
   onClick?: (event: MouseEvent<HTMLDivElement>) => void;
-  ref?: RefObject<HTMLDivElement>;
+  ref?: Ref<HTMLDivElement>;
 };
 
 export const Button: FC<ButtonProps> = forwardRef(
