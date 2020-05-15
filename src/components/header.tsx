@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Link from "next/link";
-import { ShadowButton } from "./button";
+import { Button } from "./button";
 import styles from "../sass/components/header.module.sass";
 
 const links = {
@@ -15,9 +15,9 @@ export const Header: FC = () => (
       <div className={styles.buttonWrapper}>
         {Object.entries(links).map(([name, url]) => (
           <Link key={name} href={url}>
-            <ShadowButton>
+            <Button>
               <a>{name}</a>
-            </ShadowButton>
+            </Button>
           </Link>
         ))}
       </div>

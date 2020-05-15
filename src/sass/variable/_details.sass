@@ -9,7 +9,8 @@ $min-padding: 5%
 $isPhone: "screen and (max-width: 600px)"
 $isPc: "screen and (min-width: 600px)"
 $min: "screen and (max-width: 360px)"
-$middle: "screen and (max-width: 1000px)"
+$middle: "screen and (max-width: 1030px)"
+$large: "screen and (min-width: 1600px)"
 
 =flex-style($warp: wrap, $justify: center)
   display: flex
@@ -26,6 +27,8 @@ $middle: "screen and (max-width: 1000px)"
   line-height: $font-size + 0.4 + rem
 
 =make-padding($display-size,$pos: "")
+  @if $display-size == $large
+  padding#{$pos}: 10%
   @if $display-size == $isPc
     padding#{$pos}: 5%
   @if $display-size == $isPhone
@@ -69,3 +72,11 @@ $middle: "screen and (max-width: 1000px)"
 
 .text > *
   +about-font($little-fontsize)
+
+.name
+  +about-font($sub-fontsize)
+  @media #{$isPhone}
+    +about-font($sub-fontsize - 0.1)
+
+.text > * + *
+  padding-top: 0.1rem

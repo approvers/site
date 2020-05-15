@@ -15,9 +15,7 @@ const BlogCard: FC<Blog> = ({ id, title, date }) => (
       <h3 className={styles.blogTitle}>{title}</h3>
       <DateString dateString={date} />
       <Link href={`/blog/${id}`}>
-        <div className={styles.linkWrapper}>
-          <a className={styles.pageLink}>記事を読む &rarr;</a>
-        </div>
+        <a className={styles.pageLink}>記事を読む &rarr;</a>
       </Link>
     </div>
   </Paper>
@@ -29,7 +27,7 @@ const BlogPage: NextPage<{ blogs: Blog[] }> = ({ blogs }) => (
       <Header />
       <div className={styles.blog}>
         <h1 className={styles.title}>ブログ</h1>
-        <section className={styles.memberMainContents}>
+        <section className={styles.main}>
           {blogs.map((blog) => (
             <BlogCard key={blog.id} {...blog} />
           ))}

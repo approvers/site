@@ -2,50 +2,8 @@
 @import ../variable/_color
 @import ../variable/_details
 
-=phone
-  @media #{$isPhone}
-    justify-content: flex-start
-
-.name
-  +about-font($sub-fontsize)
-  @media #{$isPhone}
-    +about-font($sub-fontsize - 0.1)
-
-.text > * + *
-  padding-top: 0.1rem
-
 .memberMainContents
-  @extend .layout
-  justify-content: space-between
-  @media #{$isPhone}
-    flex-direction: column
-    justify-content: flex-start
-
-.cardWrapper
-  @extend .wrapper
-  +flex-component
-  +components-size
-  +phone
-
-.memberCard
-  +fully-spread
-  +flex-style(nowrap,flex-start)
-  +make-padding($isPc)
-  @media #{$isPhone}
-    +make-padding($isPhone)
-    text-align: left
-
-.avatarWrapper,
-.avatar
-  +cancel-background-color
-  height: 100%
-
-.avatar
-  width: 37%
-  object-fit: contain
-  padding-right: 5%
-  @media #{$isPhone}
-    width: 30%
+  @extend .enumerate-contents-wrapper
 
 .linksContainer
   +phone

@@ -4,6 +4,7 @@ import { Header } from "../../components/header";
 import { DateString } from "../../components/date";
 import { getAllBlogIds, getBlogFromId, Blog } from "../../lib/blog-fetch";
 import Markdown from "markdown-to-jsx";
+import styles from "../../sass/pages/blog.module.sass";
 
 type BlogPostPageProps = {
   post: Blog;
@@ -13,17 +14,14 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => (
   <>
     <Layout pageName={`限界開発鯖 - ブログ - ${post.title}`}>
       <Header />
-      <h1>{post.title}</h1>
-      <DateString dateString={post.date} />
-      <hr />
-      <Markdown>{post.content}</Markdown>
+      <div className={styles.blogContents}>
+        <h1 className={styles.title}>{post.title}</h1>
+        <DateString dateString={post.date} />
+        <div className={styles.markdown}>
+          <Markdown>{post.content}</Markdown>
+        </div>
+      </div>
     </Layout>
-
-    <style jsx>{`
-      hr {
-        width: 90vw;
-      }
-    `}</style>
   </>
 );
 

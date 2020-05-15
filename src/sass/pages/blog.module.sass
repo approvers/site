@@ -1,6 +1,9 @@
 @import ../variable/_color
 @import ../variable/_details
-@import /member.module
+@import ../wrapper.module
+
+.main
+  @extend .enumerate-contents-wrapper
 
 .blog
   width: 100%
@@ -11,10 +14,9 @@
 .cardText
   @extend .text
 
-.linkWrapper
-  display: inline-block
-  text-align: right
-  width: 100%
+.pageLink::before
+  content: "\A"
+  white-space: pre
 
 .pageLink
   color: $main-color
@@ -29,3 +31,17 @@
 
 .date
   +about-font($little-fontsize - 0.2)
+
+.blogContents
+  @extend .enumerate-contents-wrapper
+  flex-direction: column
+  width: 100%
+
+.markdown
+  width: 60%
+  padding-top: 1rem
+  text-align: left
+  @media #{$middle}
+    width: 70%
+  @media #{$isPhone}
+    width: 90%

@@ -1,5 +1,9 @@
 @import /variable/_details
 
+=phone
+  @media #{$isPhone}
+    justify-content: flex-start
+
 .mainContents
   +flex-style
   min-width: 100%
@@ -10,6 +14,10 @@
   width: 100%
   +flex-style
 
+.page
+  @extend .wrapper
+  padding-bottom: 2vh
+
 .home
   @extend .wrapper
   min-height: 100vh
@@ -17,3 +25,38 @@
 .layout
   @extend .wrapper
   padding: 0 $padding
+
+.enumerate-contents-wrapper
+  @extend .layout
+  justify-content: space-between
+  @media #{$isPhone}
+    flex-direction: column
+    justify-content: flex-start
+
+.avatarWrapper,
+.avatar
+  +cancel-background-color
+  height: 100%
+
+.avatar
+  width: 37%
+  object-fit: contain
+  padding-right: 5%
+  @media #{$isPhone}
+    width: 30%
+
+.cardWrapper
+  @extend .wrapper
+  +flex-component
+  +components-size
+  +phone
+
+.card
+  +fully-spread
+  +flex-style(nowrap,flex-start)
+  +make-padding($isPc)
+  @media #{$large}
+    +make-padding($large)
+  @media #{$isPhone}
+    +make-padding($isPhone)
+    text-align: left

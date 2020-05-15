@@ -13,9 +13,7 @@ const Home: NextPage = () => (
           <em>&dagger;限界開発鯖&dagger;</em> へようこそ！
         </h1>
         <h2 className={styles.subtitle}>Over Limit Development</h2>
-        <div>
-          <Questions />
-        </div>
+        <Questions />
       </main>
     </Layout>
   </>

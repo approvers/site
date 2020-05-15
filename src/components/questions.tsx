@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { ExternalLink } from "./externalLink";
 import styles from "../sass/pages/index.module.sass";
 
 export const Questions: FC = () => (
@@ -17,14 +18,12 @@ export const Questions: FC = () => (
       </h3>
       <p>
         <span>A</span>こちらへどうぞ &rarr;{" "}
-        <a
+        <ExternalLink
           href="https://twitter.com/search?q=%23限界開発鯖&src=typed_query"
           className={styles.genkaiLink}
-          rel="noopener noreferrer"
-          target="_blank"
         >
           #限界開発鯖
-        </a>
+        </ExternalLink>
       </p>
     </section>
   </div>
