@@ -4,4 +4,4 @@
 
 メンバー紹介やブログなどを掲載予定です。
 
-[Next.js](https://nextjs.org/)や[SASS](https://sass-lang.com/)を使用しています。
+[Next.js](https://nextjs.org/)や[Sass](https://sass-lang.com/)を使用しています。
