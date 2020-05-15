@@ -1,0 +1,26 @@
+@import ../wrapper.module
+@import ../variable/_details
+@import ../variable/_color
+
+.headerLayout
+  @extend .layout
+  padding: 1rem 0
+  margin-bottom: 1%
+  border-bottom: border(2px,$main-color)
+
+.buttonWrapper
+  display: flex
+  justify-content: space-around
+  min-width: 50%
+  @media #{$middle}
+    min-width: 90%
+
+.button
+  cursor: pointer
+  transition-timing-function: ease-in-out
+  +about-font($main-fontsize + 0.1)
+  &:hover
+    +hover-line
+
+.button > a
+  +cancel-background-color

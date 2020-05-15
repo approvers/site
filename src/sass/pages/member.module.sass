@@ -1,0 +1,25 @@
+@import ../wrapper.module
+@import ../variable/_color
+@import ../variable/_details
+
+.memberMainContents
+  @extend .enumerate-contents-wrapper
+
+.linksContainer
+  +phone
+  padding-top: $min-padding
+
+.linksContainer > * + *
+  padding-left: 1.1rem
+  @media #{$isPhone}
+    padding-left: 1.2rem
+
+.icon
+  color: $sub-color
+  &:hover
+    color: darken($sub-color, $amount)
+
+.icon > svg
+  font-size: 0.1 + $main-fontsize + rem
+  @media #{$isPhone}
+    font-size: $sub-fontsize - 0.1 + rem

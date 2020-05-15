@@ -1,0 +1,84 @@
+@import ./_color
+$title-fontsize: 3
+$sub-fontsize: 1.6
+$main-fontsize: 1.1
+$little-fontsize: 1
+$transition: 0.4s
+$padding: 10%
+$min-padding: 5%
+$isPhone: "screen and (max-width: 600px)"
+$isPc: "screen and (min-width: 600px)"
+$min: "screen and (max-width: 360px)"
+$middle: "screen and (max-width: 1030px)"
+$large: "screen and (min-width: 1600px)"
+
+=flex-style($warp: wrap, $justify: center)
+  display: flex
+  align-items: center
+  flex-wrap: $warp
+  justify-content: $justify
+
+=flex-component
+  align-content: flex-start
+  align-self: stretch
+
+=about-font($font-size: $main-fontsize)
+  font-size: $font-size + rem
+  line-height: $font-size + 0.4 + rem
+
+=make-padding($display-size,$pos: "")
+  @if $display-size == $large
+  padding#{$pos}: 10%
+  @if $display-size == $isPc
+    padding#{$pos}: 5%
+  @if $display-size == $isPhone
+    padding#{$pos}: 3%
+
+=fully-spread
+  width: 100%
+  height: 100%
+
+=cancel-background-color
+  background-color: #fff0
+
+=hover-line
+  background: linear-gradient(transparent 70%, $bright-main-color 0%)
+
+=components-size
+  @media #{$isPc}
+    max-width: 33%
+  @media #{$large}
+    max-width: 25%
+  @media #{$middle}
+    max-width: 50%
+  @media #{$isPhone}
+    max-width: 100%
+
+=transform($translateY: 0, $deg: 0)
+  transform: skew(#{$deg}deg, 0deg) translateX(-60%) translateY($translateY)
+
+=triangle($thickness: 15vh,$color: $bright-main-color)
+  border-top: border($thickness,$color)
+  border-left: border($thickness,$color)
+  border-bottom: border($thickness,transparent)
+  border-right: border($thickness,transparent)
+
+@function border($thickness,$color)
+  @return $thickness solid $color
+
+.title
+  +about-font($title-fontsize)
+  padding: 1vh 0
+  @media #{$isPhone}
+    +about-font($title-fontsize - 0.7)
+
+.text > *
+  +about-font($little-fontsize)
+
+.name
+  +about-font($sub-fontsize)
+  @media #{$isPhone}
+    +about-font($sub-fontsize - 0.1)
+
+.text > * + *
+  padding-top: 0.1rem
