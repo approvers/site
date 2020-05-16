@@ -76,3 +76,4 @@ jobs:
           publish_dir: ./artifact
           publish_branch: master
           force_orphan: true
+          cname: approvers.dev
