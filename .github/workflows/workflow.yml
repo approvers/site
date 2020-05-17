@@ -47,6 +47,8 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Build
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
         run: |
           yarn build
           yarn export
@@ -76,4 +78,4 @@ jobs:
           publish_dir: ./artifact
           publish_branch: master
           force_orphan: true
-          cname: approvers.dev
+          cname: ${{ secrets.BASE_URL }}
