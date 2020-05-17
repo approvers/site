@@ -2,7 +2,8 @@ import { ReactNode, FC } from "react";
 import Head from "next/head";
 import styles from "../sass/wrapper.module.sass";
 
-const siteImage = "";
+const baseUrl = process.env.BASE_URL || "";
+const siteImage = `https://${baseUrl}/android-chrome-512x512.png`;
 const siteName = "限界開発鯖";
 
 export const Layout: FC<{ pageName: string; description?: string; children: ReactNode }> = ({
@@ -27,7 +28,6 @@ export const Layout: FC<{ pageName: string; description?: string; children: Reac
       <meta name="twitter:title" content={pageName} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={siteImage} />
-      <meta name="twitter:card" content="summary_large_image" />
 
       <link rel="apple-touch-icon" sizes="180x180" href={"/apple-touch-icon.png"} />
       <link rel="icon" type="image/png" sizes="32x32" href={"/favicon-32x32.png"} />
