@@ -77,5 +77,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./artifact
           publish_branch: master
-          force_orphan: true
           cname: ${{ secrets.BASE_URL }}
