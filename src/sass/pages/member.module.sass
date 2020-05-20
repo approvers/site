@@ -1,18 +1,18 @@
 @import ../wrapper.module
-@import ../variable/_color
-@import ../variable/_details
+@import ../color.variable
+@import ../details.variable
 
 .memberMainContents
   @extend .enumerate-contents-wrapper
 
 .linksContainer
   +phone
-  padding-top: $min-padding
+  margin-top: $min-padding
 
 .linksContainer > * + *
-  padding-left: 1.1rem
+  margin-left: 1.1rem
   @media #{$isPhone}
-    padding-left: 1.2rem
+    margin-left: 1.2rem
 
 .icon
   color: $sub-color
@@ -20,6 +20,8 @@
     color: darken($sub-color, $amount)
 
 .icon > svg
-  font-size: 0.1 + $main-fontsize + rem
+  width: 0.1 + $main-fontsize + rem
+  height: 0.1 + $main-fontsize + rem
   @media #{$isPhone}
-    font-size: $sub-fontsize - 0.1 + rem
+    width: $sub-fontsize - 0.1 + rem
+    height: $sub-fontsize - 0.1 + rem
