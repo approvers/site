@@ -1,4 +1,4 @@
-@import ./_color
+@import ./color
 $title-fontsize: 3
 $sub-fontsize: 1.6
 $main-fontsize: 1.1
@@ -28,7 +28,7 @@ $large: "screen and (min-width: 1600px)"
 
 =make-padding($display-size,$pos: "")
   @if $display-size == $large
-  padding#{$pos}: 10%
+    padding#{$pos}: 10%
   @if $display-size == $isPc
     padding#{$pos}: 5%
   @if $display-size == $isPhone
