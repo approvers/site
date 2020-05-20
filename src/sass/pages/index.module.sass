@@ -34,19 +34,16 @@
   display: block
   width: 100%
 
-.aboutUs > *
-  display: flex
-  align-items: center
-  +about-font($main-fontsize - 0.1)
-
-.aboutUs > h3
-  font-weight: normal
-  padding-bottom: 0.5rem
-
-.aboutUs > * > span
-  color: $main-color
-  padding-right: 0.5rem
-  +about-font($sub-fontsize)
+.aboutUs
+  p
+    +about-font($main-fontsize - 0.1)
+    line-height: 2rem
+    font-weight: normal
+    span
+      +about-font($sub-fontsize)
+      color: $main-color
+      margin-right: 0.5rem
+      font-weight: bold
 
 .title::after
   content: ""
