@@ -7,6 +7,7 @@ const Page = ({ Component, pageProps }: AppProps): JSX.Element => {
     <>
       <Head>
         <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
       </Head>
       <Component {...pageProps} />
     </>
