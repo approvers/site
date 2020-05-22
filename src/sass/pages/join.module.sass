@@ -3,10 +3,11 @@
 @import "../wrapper.module"
 
 .joinPage
-  flex-direction: column
+  text-align: center
   padding: 0 $min-padding
   min-width: 80%
-  +flex-style
+  > * + *
+    text-align: center
 
 .joinText
   @extend .text
