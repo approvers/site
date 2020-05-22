@@ -3,15 +3,15 @@
 @import "../wrapper.module"
 
 .joinPage
-  text-align: center
-  padding: 0 $min-padding
-  min-width: 80%
-  > * + *
+  .title
     text-align: center
+  *
+    text-align: left
 
 .joinText
   @extend .text
-  padding: 2%
+  margin: 2% auto
+  padding: 0 $min-padding + 2%
 
 .color
   +hover-line
