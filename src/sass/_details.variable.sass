@@ -1,4 +1,5 @@
-@import ./color.variable
+@import "./color.variable"
+
 $title-fontsize: 3
 $sub-fontsize: 1.6
 $main-fontsize: 1.1
@@ -67,8 +68,8 @@ $large: "screen and (min-width: 1600px)"
   @return $thickness solid $color
 
 .title
-  +about-font($title-fontsize)
   padding: 1vh 0
+  +about-font($title-fontsize)
   @media #{$isPhone}
     +about-font($title-fontsize - 0.7)
 
