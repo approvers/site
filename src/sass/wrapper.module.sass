@@ -1,14 +1,14 @@
-@import /details.variable
+@import "/details.variable"
 
 =phone
   @media #{$isPhone}
     justify-content: flex-start
 
 .mainContents
-  +flex-style
   min-width: 100%
   min-height: 100vh
   flex: 1
+  +flex-style
 
 .wrapper
   width: 100%
@@ -35,8 +35,8 @@
 
 .avatarWrapper,
 .avatar
-  +cancel-background-color
   height: 100%
+  +cancel-background-color
 
 .avatar
   width: 37%
@@ -58,5 +58,5 @@
   @media #{$large}
     +make-padding($large)
   @media #{$isPhone}
-    +make-padding($isPhone)
     text-align: left
+    +make-padding($isPhone)

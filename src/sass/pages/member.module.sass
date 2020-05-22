@@ -1,13 +1,13 @@
-@import ../wrapper.module
-@import ../color.variable
-@import ../details.variable
+@import "../wrapper.module"
+@import "../color.variable"
+@import "../details.variable"
 
 .memberMainContents
   @extend .enumerate-contents-wrapper
 
 .linksContainer
-  +phone
   margin-top: $min-padding
+  +phone
 
 .linksContainer > * + *
   margin-left: 1.1rem
