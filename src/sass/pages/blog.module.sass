@@ -1,6 +1,6 @@
-@import ../color.variable
-@import ../details.variable
-@import ../wrapper.module
+@import "../color.variable"
+@import "../details.variable"
+@import "../wrapper.module"
 
 .main
   @extend .enumerate-contents-wrapper
@@ -20,8 +20,8 @@
 
 .pageLink
   color: $main-color
-  +about-font($little-fontsize)
   cursor: pointer
+  +about-font($little-fontsize)
   &:hover
     text-decoration: none
     +hover-line

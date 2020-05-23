@@ -1,16 +1,21 @@
-@import ../details.variable
-@import ../color.variable
-@import ../wrapper.module
+@import "../details.variable"
+@import "../color.variable"
+@import "../wrapper.module"
 
 .joinPage
-  +flex-style
-  flex-direction: column
-  padding: 0 $min-padding
   min-width: 80%
+  .title
+    text-align: center
+  *
+    text-align: left
 
 .joinText
   @extend .text
-  padding: 2%
+  max-width: 32.5rem
+  margin: 0 auto
+  padding: 2% 0
+  @media #{$isPhone}
+    padding: 2% 2% + $min-padding
 
 .color
   +hover-line
