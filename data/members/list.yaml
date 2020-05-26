@@ -61,6 +61,15 @@
     - type: github
       url: https://github.com/kawaemon
 
+- name: kakao.
+  avatar: https://github.com/kakao1839.png
+  role: 超スーパーガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/e381x
+    - type: github
+      url: https://github.com/kakao1839
+
 - name: raiga0310
   avatar: https://github.com/raiga0310.png
   role: ガチプロ
