@@ -6,7 +6,7 @@ import path from "path";
 export type SNSLinkInfo = { type: "twitter"; url: string } | { type: "github"; url: string };
 
 const validateSNSLink = (obj: unknown): obj is SNSLinkInfo => {
-  if (typeof obj !== "object") {
+  if (typeof obj !== "object" || obj == null) {
     console.error("not object: ", obj);
     return false;
   }
@@ -30,7 +30,7 @@ export type Member = {
 };
 
 const validateMember = (obj: unknown): obj is Member => {
-  if (typeof obj !== "object") {
+  if (typeof obj !== "object" || obj == null) {
     console.error("not object: ", obj);
     return false;
   }
@@ -62,7 +62,7 @@ const validateMember = (obj: unknown): obj is Member => {
 };
 
 const validateMembers = (obj: unknown): obj is Member[] =>
-  typeof obj === "object" && (Object.values(obj) as unknown[]).every(validateMember);
+  typeof obj === "object" && obj != null && (Object.values(obj) as unknown[]).every(validateMember);
 
 const membersFile = path.join(process.cwd(), "data/members/list.yaml");
 

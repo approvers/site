@@ -18,7 +18,7 @@ export type Blog = {
 } & Metadata;
 
 const validateMetadata = (value: unknown): value is Metadata => {
-  if (typeof value !== "object") {
+  if (typeof value !== "object" || value == null) {
     return false;
   }
 
@@ -42,10 +42,7 @@ const metadataFromFile = async (fileName: string): Promise<Metadata> => {
   if (!validateMetadata(data)) {
     throw "invalid metadata";
   }
-  return {
-    id,
-    ...data,
-  };
+  return { ...data };
 };
 
 export async function getSortedBlogMetadatas(): Promise<Metadata[]> {
@@ -82,9 +79,7 @@ export async function getBlogFromId(id: string): Promise<Blog> {
     throw "invalid metadata";
   }
 
-  // Combine the data with the id and contentHtml
   return {
-    id,
     content,
     ...data,
   };
