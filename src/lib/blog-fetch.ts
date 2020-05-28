@@ -17,15 +17,18 @@ export type Blog = {
   content: string;
 } & Metadata;
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const validateMetadata = (value: any): value is Metadata => {
+const validateMetadata = (value: unknown): value is Metadata => {
+  if (typeof value !== "object") {
+    return false;
+  }
+
   return (
     "id" in value &&
-    typeof value.id === "string" &&
+    typeof (value as Metadata).id === "string" &&
     "date" in value &&
-    typeof value.date === "string" &&
+    typeof (value as Metadata).date === "string" &&
     "title" in value &&
-    typeof value.title === "string"
+    typeof (value as Metadata).title === "string"
   );
 };
 
