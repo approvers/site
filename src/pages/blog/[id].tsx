@@ -25,14 +25,22 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => (
   </>
 );
 
-export const getStaticProps: GetStaticProps<BlogPostPageProps, { id: string }> = async ({
+type BlogPostPagePathProps = {
+  id: string;
+};
+
+export const getStaticProps: GetStaticProps<BlogPostPageProps, BlogPostPagePathProps> = async ({
   params,
 }) => {
+  if (params == null) {
+    throw new Error("invalid params");
+  }
+
   const post = await getBlogFromId(params.id);
   return { props: { post } };
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths<BlogPostPagePathProps> = async () => {
   const paths = await getAllBlogIds();
   return { paths, fallback: false };
 };

@@ -17,15 +17,18 @@ export type Blog = {
   content: string;
 } & Metadata;
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const validateMetadata = (value: any): value is Metadata => {
+const validateMetadata = (value: unknown): value is Metadata => {
+  if (typeof value !== "object" || value == null) {
+    return false;
+  }
+
   return (
     "id" in value &&
-    typeof value.id === "string" &&
+    typeof (value as Metadata).id === "string" &&
     "date" in value &&
-    typeof value.date === "string" &&
+    typeof (value as Metadata).date === "string" &&
     "title" in value &&
-    typeof value.title === "string"
+    typeof (value as Metadata).title === "string"
   );
 };
 
@@ -39,10 +42,7 @@ const metadataFromFile = async (fileName: string): Promise<Metadata> => {
   if (!validateMetadata(data)) {
     throw "invalid metadata";
   }
-  return {
-    id,
-    ...data,
-  };
+  return { ...data };
 };
 
 export async function getSortedBlogMetadatas(): Promise<Metadata[]> {
@@ -79,9 +79,7 @@ export async function getBlogFromId(id: string): Promise<Blog> {
     throw "invalid metadata";
   }
 
-  // Combine the data with the id and contentHtml
   return {
-    id,
     content,
     ...data,
   };

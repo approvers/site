@@ -5,13 +5,17 @@ import path from "path";
 
 export type SNSLinkInfo = { type: "twitter"; url: string } | { type: "github"; url: string };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const validateSNSLink = (obj: any): obj is SNSLinkInfo => {
-  if (!("type" in obj && ["twitter", "github"].includes(obj.type))) {
+const validateSNSLink = (obj: unknown): obj is SNSLinkInfo => {
+  if (typeof obj !== "object" || obj == null) {
+    console.error("not object: ", obj);
+    return false;
+  }
+
+  if (!("type" in obj && ["twitter", "github"].includes((obj as SNSLinkInfo).type))) {
     console.error("unknown type from: ", obj);
     return false;
   }
-  if (!("url" in obj && typeof obj.url === "string")) {
+  if (!("url" in obj && typeof (obj as SNSLinkInfo).url === "string")) {
     console.error("`url` not in: ", obj);
     return false;
   }
@@ -25,26 +29,29 @@ export type Member = {
   links: SNSLinkInfo[];
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const validateMember = (obj: any): obj is Member => {
-  if (!("avatar" in obj && typeof obj.avatar === "string")) {
+const validateMember = (obj: unknown): obj is Member => {
+  if (typeof obj !== "object" || obj == null) {
+    console.error("not object: ", obj);
+    return false;
+  }
+
+  if (!("avatar" in obj && typeof (obj as Member).avatar === "string")) {
     console.error("`avatar` not in: ", obj);
     return false;
   }
-  if (!("name" in obj && typeof obj.name === "string")) {
+  if (!("name" in obj && typeof (obj as Member).name === "string")) {
     console.error("`name` not in: ", obj);
     return false;
   }
-  if (!("role" in obj && typeof obj.role === "string")) {
+  if (!("role" in obj && typeof (obj as Member).role === "string")) {
     console.error("`role` not in: ", obj);
     return false;
   }
   if (
     !(
       "links" in obj &&
-      typeof obj.links === "object" &&
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (Object.values(obj.links) as any[]).every(validateSNSLink)
+      typeof (obj as Member).links === "object" &&
+      (Object.values((obj as Member).links) as unknown[]).every(validateSNSLink)
     )
   ) {
     console.error("`links` not in: ", obj);
@@ -54,10 +61,8 @@ const validateMember = (obj: any): obj is Member => {
   return true;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const validateMembers = (obj: any): obj is Member[] =>
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  typeof obj === "object" && (Object.values(obj) as any[]).every(validateMember);
+const validateMembers = (obj: unknown): obj is Member[] =>
+  typeof obj === "object" && obj != null && (Object.values(obj) as unknown[]).every(validateMember);
 
 const membersFile = path.join(process.cwd(), "data/members/list.yaml");
 
