@@ -14,11 +14,11 @@
   padding-bottom: 0.5rem
   position: relative
   text-align: center
-  +about-font(4)
+  +about-font(4rem)
   @media #{$middle}
-    +about-font($title-fontsize - 0.3)
+    +about-font($title-fontsize - 0.3rem)
   @media #{$min}
-    +about-font($title-fontsize - 0.5)
+    +about-font($title-fontsize - 0.5rem)
 
 .subtitle
   font-style: italic
@@ -26,9 +26,9 @@
   +about-font($sub-fontsize)
   @media #{$middle}
     padding-bottom: $padding
-    +about-font($sub-fontsize - 0.3)
+    +about-font($sub-fontsize - 0.3rem)
   @media #{$min}
-    +about-font($sub-fontsize - 0.5)
+    +about-font($sub-fontsize - 0.5rem)
 
 .aboutUs
   padding-bottom: 2rem
@@ -38,7 +38,7 @@
 .aboutUs
   p
     font-weight: normal
-    +about-font($main-fontsize - 0.1)
+    +about-font($main-fontsize - 0.1rem)
     span
       color: $dark-main-color
       margin-right: 0.5rem
@@ -50,7 +50,7 @@
   position: absolute
   left: 50%
   z-index: -1
-  +transform(-4rem, -30)
+  +transform(-4rem, -30deg)
   +triangle()
   @media #{$isPhone}
     +triangle($thickness: 10vh)

@@ -1,12 +1,12 @@
-@import ../wrapper.module
-@import ../details.variable
-@import ../color.variable
+@import "../wrapper.module"
+@import "../details.variable"
+@import "../color.variable"
 
 .headerLayout
   @extend .layout
   padding: 1rem 0
   margin-bottom: 1%
-  border-bottom: border(2px,$main-color)
+  border-bottom: border(2px, $main-color)
 
 .buttonWrapper
   display: flex
@@ -18,7 +18,7 @@
 .button
   cursor: pointer
   transition-timing-function: ease-in-out
-  +about-font($main-fontsize + 0.1)
+  +about-font($main-fontsize + 0.1rem)
   &:hover
     +hover-line
 
