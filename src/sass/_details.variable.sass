@@ -1,9 +1,9 @@
 @import "./color.variable"
 
-$title-fontsize: 3
-$sub-fontsize: 1.6
-$main-fontsize: 1.1
-$little-fontsize: 1
+$title-fontsize: 3rem
+$sub-fontsize: 1.6rem
+$main-fontsize: 1.1rem
+$little-fontsize: 1rem
 $transition: 0.4s
 $padding: 10%
 $min-padding: 5%
@@ -24,10 +24,10 @@ $large: "screen and (min-width: 1600px)"
   align-self: stretch
 
 =about-font($font-size: $main-fontsize)
-  font-size: $font-size + rem
-  line-height: $font-size + 0.4 + rem
+  font-size: $font-size
+  line-height: $font-size + 0.4rem
 
-=make-padding($display-size,$pos: "")
+=make-padding($display-size, $pos: "")
   @if $display-size == $large
     padding#{$pos}: 10%
   @if $display-size == $isPc
@@ -55,23 +55,23 @@ $large: "screen and (min-width: 1600px)"
   @media #{$isPhone}
     max-width: 100%
 
-=transform($translateY: 0, $deg: 0)
-  transform: skew(#{$deg}deg, 0deg) translateX(-60%) translateY($translateY)
+=transform($translateY: 0rem, $deg: 0deg)
+  transform: skew($deg, 0deg) translateX(-60%) translateY($translateY)
 
-=triangle($thickness: 15vh,$color: $bright-main-color)
-  border-top: border($thickness,$color)
-  border-left: border($thickness,$color)
-  border-bottom: border($thickness,transparent)
-  border-right: border($thickness,transparent)
+=triangle($thickness: 15vh, $color: $bright-main-color)
+  border-top: border($thickness, $color)
+  border-left: border($thickness, $color)
+  border-bottom: border($thickness, transparent)
+  border-right: border($thickness, transparent)
 
-@function border($thickness,$color)
+@function border($thickness, $color)
   @return $thickness solid $color
 
 .title
   padding: 1vh 0
   +about-font($title-fontsize)
   @media #{$isPhone}
-    +about-font($title-fontsize - 0.7)
+    +about-font($title-fontsize - 0.7rem)
 
 .text > *
   +about-font($little-fontsize)
@@ -79,7 +79,7 @@ $large: "screen and (min-width: 1600px)"
 .name
   +about-font($sub-fontsize)
   @media #{$isPhone}
-    +about-font($sub-fontsize - 0.1)
+    +about-font($sub-fontsize - 0.1rem)
 
 .text > * + *
   padding-top: 0.1rem
