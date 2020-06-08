@@ -318,6 +318,15 @@
     - type: github
       url: https://github.com/nanai10a
 
+- name: 西行響希
+  avatar: https://github.com/HimHim1113.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/Saigyo_HBK
+    - type: github
+      url: https://github.com/HimHim1113
+
 - name: えぬ
   avatar: ""
   role: べんつよマン
