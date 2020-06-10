@@ -333,6 +333,24 @@
   links:
     - type: twitter
       url: https://twitter.com/tos_up
+    - type: github
+      url: https://github.com/tos-up
+
+- name: Nii
+  avatar: ""
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/sigumaaaaa
+
+- name: しぐま
+  avatar: https://github.com/Sigumaa.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/sigumaaaaa
+    - type: github
+      url: https://github.com/Sigumaa
 
 - name: えぬ
   avatar: ""
