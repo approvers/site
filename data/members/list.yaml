@@ -333,6 +333,8 @@
   links:
     - type: twitter
       url: https://twitter.com/tos_up
+    - type: github
+      url: https://github.com/tos-up
 
 - name: えぬ
   avatar: ""
