@@ -406,3 +406,12 @@
       url: https://twitter.com/ko_CottonLove
     - type: github
       url: https://github.com/ko50
+
+- name: しぐま
+  avatar: https://github.com/Sigumaa.png
+  role: pro
+  links:
+    - type: twitter
+      url: https://twitter.com/sigumaaaaa
+    - type: github
+      url: https://github.com/Sigumaa
