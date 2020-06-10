@@ -352,6 +352,15 @@
     - type: github
       url: https://github.com/Sigumaa
 
+- name: 宮野 慧
+  avatar: https://github.com/miyacorata.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/miyacorata
+    - type: github
+      url: https://github.com/miyacorata
+
 - name: えぬ
   avatar: ""
   role: べんつよマン
