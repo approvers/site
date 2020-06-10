@@ -361,6 +361,15 @@
     - type: github
       url: https://github.com/miyacorata
 
+- name: ねんね
+  avatar: ""
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/nai_ber
+    - type: github
+      url: https://github.com/nenne
+
 - name: えぬ
   avatar: ""
   role: べんつよマン
