@@ -70,6 +70,15 @@
     - type: github
       url: https://github.com/kakao1839
 
+- name: Siketyan
+  avatar: https://github.com/Siketyan.png
+  role: 超スーパーガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/ch1aic
+    - type: github
+      url: https://github.com/Siketyan
+
 - name: raiga0310
   avatar: https://github.com/raiga0310.png
   role: ガチプロ
@@ -211,15 +220,6 @@
     - type: github
       url: https://github.com/kantarow
 
-- name: Siketyan
-  avatar: https://github.com/Siketyan.png
-  role: 超スーパーガチプロ
-  links:
-    - type: twitter
-      url: https://twitter.com/ch1aic
-    - type: github
-      url: https://github.com/Siketyan
-
 - name: チャハーン
   avatar: https://github.com/Chaha1n.png
   role: ガチプロ
@@ -341,7 +341,7 @@
   role: ガチプロ
   links:
     - type: twitter
-      url: https://twitter.com/sigumaaaaa
+      url: https://twitter.com/niiLoveA320ceo
 
 - name: しぐま
   avatar: https://github.com/Sigumaa.png
