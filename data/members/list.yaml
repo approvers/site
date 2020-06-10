@@ -336,6 +336,13 @@
     - type: github
       url: https://github.com/tos-up
 
+- name: Nii
+  avatar: ""
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/sigumaaaaa
+
 - name: えぬ
   avatar: ""
   role: べんつよマン
