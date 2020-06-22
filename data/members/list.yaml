@@ -370,6 +370,13 @@
     - type: github
       url: https://github.com/nenne
 
+- name: りゅうと
+  avatar: ""
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/rtx_gh
+
 - name: えぬ
   avatar: ""
   role: べんつよマン
