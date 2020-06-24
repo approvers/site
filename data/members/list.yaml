@@ -293,7 +293,7 @@
     - type: github
       url: https://github.com/soshiharami
 
-- name: ラミンさん
+- name: Laminne33569
   avatar: https://github.com/laminne.png
   role: ガチプロ
   links:
@@ -376,6 +376,13 @@
   links:
     - type: twitter
       url: https://twitter.com/rtx_gh
+
+- name: Yusuke
+  avatar: ""
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/idoit_do
 
 - name: えぬ
   avatar: ""
