@@ -400,6 +400,15 @@
     - type: github
       url: https://github.com/Xi80
 
+- name: skytomo
+  avatar: https://github.com/skytomo221.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/skytomo221
+    - type: github
+      url: https://github.com/skytomo221
+
 - name: えぬ
   avatar: ""
   role: べんつよマン
