@@ -391,6 +391,15 @@
     - type: github
       url: https://github.com/fron-chan
 
+- name: Ban Yorunashi
+  avatar: https://github.com/Xi80.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/BanYorunashi
+    - type: github
+      url: https://github.com/Xi80
+
 - name: えぬ
   avatar: ""
   role: べんつよマン
