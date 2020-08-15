@@ -7,12 +7,12 @@ type ButtonProps = {
   ref?: Ref<HTMLDivElement>;
 };
 
-export const Button: FC<ButtonProps> = forwardRef(
-  ({ onClick, children }: ButtonProps, ref?: Ref<HTMLDivElement>) => (
-    <>
-      <div ref={ref} onClick={onClick} className={styles.button}>
-        {children}
-      </div>
-    </>
-  ),
+const button = ({ onClick, children }: ButtonProps, ref?: Ref<HTMLDivElement>) => (
+  <>
+    <div ref={ref} onClick={onClick} className={styles.button}>
+      {children}
+    </div>
+  </>
 );
+
+export const Button: FC<ButtonProps> = forwardRef(button);
