@@ -409,6 +409,15 @@
     - type: github
       url: https://github.com/skytomo221
 
+- name: 沙宵
+  avatar: https://github.com/sayoi341.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/_Emiya_Saber
+    - type: github
+      url: https://github.com/sayoi341
+
 - name: えぬ
   avatar: ""
   role: べんつよマン
