@@ -1,12 +1,3 @@
-- name: loxygen
-  avatar: https://github.com/loxygenK.png
-  role: 全知全能の神
-  links:
-    - type: twitter
-      url: https://twitter.com/loxygenK
-    - type: github
-      url: https://github.com/loxygenK
-
 - name: いっそう
   avatar: https://github.com/isso0424.png
   role: 創造主
@@ -15,6 +6,15 @@
       url: https://twitter.com/kousou4129
     - type: github
       url: https://github.com/isso0424
+
+- name: loxygen
+  avatar: https://github.com/loxygenK.png
+  role: 全知全能の神
+  links:
+    - type: twitter
+      url: https://twitter.com/loxygenK
+    - type: github
+      url: https://github.com/loxygenK
 
 - name: 鏡華
   avatar: https://github.com/mirror-kt.png
@@ -78,6 +78,15 @@
       url: https://twitter.com/ch1aic
     - type: github
       url: https://github.com/Siketyan
+
+- name: ヤン
+  avatar: https://github.com/yangniao23.png
+  role: 超スーパーガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/YangDevJP
+    - type: github
+      url: https://github.com/yangniao23
 
 - name: raiga0310
   avatar: https://github.com/raiga0310.png
@@ -409,6 +418,15 @@
     - type: github
       url: https://github.com/skytomo221
 
+- name: 沙宵
+  avatar: https://github.com/sayoi341.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/_Emiya_Saber
+    - type: github
+      url: https://github.com/sayoi341
+
 - name: えぬ
   avatar: ""
   role: べんつよマン
@@ -430,7 +448,7 @@
 
 - name: こるく
   avatar: https://github.com/Colk-tech.png
-  role: ウンコーダー
+  role: 全知全能の神
   links:
     - type: twitter
       url: https://twitter.com/Colk_
