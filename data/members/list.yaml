@@ -427,6 +427,13 @@
     - type: github
       url: https://github.com/sayoi341
 
+- name: 雪
+  avatar: ""
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/yuki_yuigishi
+
 - name: えぬ
   avatar: ""
   role: べんつよマン
