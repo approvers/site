@@ -1,8 +1,21 @@
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+import * as gtag from "../lib/gtag";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import "../sass/global.sass";
 
 const Page = ({ Component, pageProps }: AppProps): JSX.Element => {
+  const router = useRouter();
+  useEffect(() => {
+    const handleRouteChange = (url: string): void => {
+      gtag.pageview(url);
+    };
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
   return (
     <>
       <Head>
