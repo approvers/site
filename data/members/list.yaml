@@ -434,6 +434,15 @@
     - type: twitter
       url: https://twitter.com/yuki_yuigishi
 
+- name: gunjou
+  avatar: https://github.com/cobaltbluesky.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/hagukipain
+    - type: github
+      url: https://github.com/cobaltbluesky
+
 - name: えぬ
   avatar: ""
   role: べんつよマン
