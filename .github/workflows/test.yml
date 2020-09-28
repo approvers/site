@@ -1,0 +1,29 @@
+name: test
+on:
+  push:
+    branches-ignore:
+      - master
+      - dev
+  pull_request: {}
+
+jobs:
+  test-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v1
+        with:
+          path: ~/.cache/yarn
+          key: ${{ runner.os }}-${{ github.ref }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ github.ref }}-
+            ${{ runner.os }}-
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: yarn install --frozen-lockfile
+
+      - name: run build
+        run: |
+          yarn build
+          yarn export
