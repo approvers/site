@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "lint": "eslint --ignore-path .gitignore '**/*.{js,jsx,ts,tsx}'",
-    "lint:fix": "yarn lint --fix"
+    "lint": "eslint --ignore-path .gitignore 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "eslint --ignore-path .gitignore 'src/**/*.{js,jsx,ts,tsx}' --fix"
   },
   "husky": {
     "hooks": {
