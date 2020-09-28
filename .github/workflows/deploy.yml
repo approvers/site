@@ -25,6 +25,9 @@ jobs:
         run: |
           yarn build
           yarn export
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
+          GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
 
       - name: upload artifact
         uses: actions/upload-artifact@v1
