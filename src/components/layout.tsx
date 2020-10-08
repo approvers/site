@@ -2,7 +2,7 @@ import { ReactNode, FC } from "react";
 import Head from "next/head";
 import styles from "../sass/wrapper.module.sass";
 
-const baseUrl = process.env.BASE_URL || "";
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "";
 const siteImage = `https://${baseUrl}/android-chrome-512x512.png`;
 const siteName = "限界開発鯖";
 
