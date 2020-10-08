@@ -443,6 +443,15 @@
     - type: github
       url: https://github.com/cobaltbluesky
 
+- name: キャベツ
+  avatar: https://github.com/kazukazuprogram.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/cabbagepython
+    - type: github
+      url: https://github.com/kazukazuprogram
+
 - name: えぬ
   avatar: ""
   role: べんつよマン
