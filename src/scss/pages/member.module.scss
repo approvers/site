@@ -16,7 +16,7 @@
 .linksContainer > * + * {
   margin-left: 1.1rem;
 
-  @media #{details.$isPhone} {
+  @media #{details.get-media-query("phone")} {
     margin-left: 1.2rem;
   }
 }
@@ -34,7 +34,17 @@
   object-fit: contain;
   padding-right: 5%;
 
-  @media #{details.$isPhone} {
+  @media #{details.get-media-query("phone")} {
     width: 30%;
+  }
+}
+
+.icon > svg {
+  width: 0.1rem + details.get-fontsize("main");
+  height: 0.1rem + details.get-fontsize("main");
+
+  @media #{details.get-media-query("phone")} {
+    width: details.get-fontsize("sub") - 0.1rem;
+    height: details.get-fontsize("sub") - 0.1rem;
   }
 }

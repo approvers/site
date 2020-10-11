@@ -4,12 +4,18 @@
 $transition: 0.4s;
 $padding: 10%;
 $min-padding: 5%;
-$screen: "screen and ";
-$isPhone: $screen + "(max-width: 600px)";
-$isPc: $screen + "(min-width: 600px)";
-$min: $screen + "(max-width: 360px)";
-$middle: $screen + "(max-width: 1030px)";
-$large: $screen + "(min-width: 1600px)";
+
+@function get-media-query($size) {
+  $media-size: (
+    phone: "(max-width: 600px)",
+    pc: "(min-width: 600px)",
+    min: "(max-width: 360px)",
+    middle: "(max-width: 1030px)",
+    large: "(min-width: 1600px)",
+  );
+
+  @return "screen and " + map.get($media-size, $size);
+}
 
 @mixin flex-style($warp: wrap, $justify: center) {
   display: flex;
@@ -31,15 +37,15 @@ $large: $screen + "(min-width: 1600px)";
 }
 
 @mixin make-padding($display-size, $pos: "") {
-  @if $display-size == $large {
+  @if $display-size == get-media-query("large") {
     padding#{$pos}: 10%;
   }
 
-  @if $display-size == $isPc {
+  @if $display-size == get-media-query("pc") {
     padding#{$pos}: 5%;
   }
 
-  @if $display-size == $isPhone {
+  @if $display-size == get-media-query("phone") {
     padding#{$pos}: 3%;
   }
 }
@@ -50,19 +56,19 @@ $large: $screen + "(min-width: 1600px)";
 }
 
 @mixin components-size {
-  @media #{$isPc} {
+  @media #{get-media-query("pc")} {
     max-width: 33%;
   }
 
-  @media #{$large} {
+  @media #{get-media-query("large")} {
     max-width: 25%;
   }
 
-  @media #{$middle} {
+  @media #{get-media-query("middle")} {
     max-width: 50%;
   }
 
-  @media #{$isPhone} {
+  @media #{get-media-query("phone")} {
     max-width: 100%;
   }
 }
@@ -78,7 +84,7 @@ $large: $screen + "(min-width: 1600px)";
 .name {
   @include with-font-size(big);
 
-  @media #{$isPhone} {
+  @media #{get-media-query("phone")} {
     @include with-font-size(big, -0.1rem);
   }
 }
@@ -88,7 +94,7 @@ $large: $screen + "(min-width: 1600px)";
   padding: 2%;
   margin: 0 auto;
 
-  @media #{$isPhone} {
+  @media #{get-media-query("phone")} {
     padding: 2% 2% + $min-padding;
   }
 
