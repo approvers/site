@@ -1,0 +1,68 @@
+@use "../color.variable";
+@use "../details.variable";
+@use "../wrapper.module";
+
+.main {
+  @extend .enumerate-contents-wrapper;
+}
+
+.blog {
+  width: 100%;
+}
+
+.blog > h1 {
+  text-align: center;
+}
+
+.cardText {
+  @extend .text;
+}
+
+.pageLink::before {
+  content: "\A";
+  white-space: pre;
+}
+
+.pageLink {
+  color: color.get-main-color("main");
+  cursor: pointer;
+  @include details.about-font(details.get-fontsize("little"));
+  &:hover {
+    text-decoration: none;
+    @include details.hover-line;
+  }
+} 
+
+.blogTitle {
+  @extend .name
+}
+
+.date {
+  @include details.about-font(details.get-fontsize("little") - 0.2rem);
+}
+
+.blogContents,
+.markdown {
+  min-height: 100%;
+}
+
+.blogContents {
+  @extend .enumerate-contents-wrapper;
+  flex-direction: column;
+  width: 100%;
+}
+
+.markdown {
+  width: 60%;
+  padding: 0 1.5rem;
+  padding-top: 1rem;
+  text-align: left;
+
+  @media #{details.$middle} {
+    width: 70%
+  }
+
+  @media #{details.$isPhone} {
+    width: 90%;
+  }
+}

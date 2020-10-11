@@ -4,7 +4,7 @@ import { Header } from "../../components/header";
 import { DateString } from "../../components/date";
 import { getAllBlogIds, getBlogFromId, Blog } from "../../lib/blog-fetch";
 import Markdown from "markdown-to-jsx";
-import styles from "../../sass/pages/blog.module.sass";
+import styles from "../../scss/pages/blog.module.scss";
 
 type BlogPostPageProps = {
   post: Blog;

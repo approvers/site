@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import * as gtag from "../lib/gtag";
 import { AppProps } from "next/app";
 import Head from "next/head";
-import "../sass/global.sass";
+import "../scss/global.scss";
 
 const Page = ({ Component, pageProps }: AppProps): JSX.Element => {
   const router = useRouter();

@@ -1,0 +1,82 @@
+@use "../details.variable";
+@use "../color.variable";
+@use "../wrapper.module";
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap&text=A.Q");
+
+.homeMainContents {
+  @extend .wrapper;
+  padding: 0 details.$min-padding;
+  flex-direction: column;
+  position: relative;
+}
+
+.title {
+  padding-top: details.$padding;
+  padding-bottom: 0.5rem;
+  position: relative;
+  text-align: center;
+  @include details.about-font(4rem);
+
+  @media #{details.$middle} {
+    @include details.about-font(details.get-fontsize("title") - 0.3rem);
+  }
+
+  @media #{details.$min} {
+    @include details.about-font(details.get-fontsize("title") - 0.5rem);
+  }
+}
+
+.subtitle {
+  font-style: italic;
+  padding-bottom: details.$min-padding;
+  @include details.about-font(details.get-fontsize("sub"));
+  @media #{details.$middle} {
+    padding-bottom: details.$padding;
+    @include details.about-font(details.get-fontsize("sub") - 0.3rem);
+  }
+
+  @media #{details.$min} {
+    @include details.about-font(details.get-fontsize("sub") - 0.5rem);
+  }
+}
+
+.aboutUs {
+  padding-bottom: 2rem;
+  display: block;
+  width: 100%;
+}
+
+.aboutUs {
+  p {
+    font-weight: normal;
+    @include details.about-font(details.get-fontsize("main") - 0.1rem);
+    span {
+      color: color.get-main-color("dark");
+      margin-right: 0.5rem;
+      @include details.about-font(details.get-fontsize("sub"));
+    }
+  }
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  z-index: -1;
+  @include details.transform(-4rem, -30deg);
+  @include details.triangle();
+
+  @media #{details.$isPhone} {
+    @include details.triangle($thickness: 10vh)
+  }
+}
+
+.genkaiLink {
+  padding: 0 0.1rem;
+  cursor: pointer;
+  color: color.get-text-color("main");
+  font-style: italic;
+  text-decoration: solid;
+  text-decoration-line: underline;
+} 
+
