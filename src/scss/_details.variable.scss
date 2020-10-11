@@ -1,0 +1,122 @@
+@use "./color.variable";
+@use "sass:map";
+
+$transition: 0.4s;
+$padding: 10%;
+$min-padding: 5%;
+$screen: "screen and ";
+$isPhone: $screen + "(max-width: 600px)";
+$isPc: $screen + "(min-width: 600px)";
+$min: $screen + "(max-width: 360px)";
+$middle: $screen + "(max-width: 1030px)";
+$large: $screen + "(min-width: 1600px)";
+
+@function get-fontsize($size) {
+  $fontsize: (
+    title: 3rem,
+    sub: 1.6rem,
+    main: 1.1rem,
+    little: 1rem,
+  );
+  @return map.get($fontsize, $size);
+}
+
+@mixin flex-style($warp: wrap, $justify: center) {
+  display: flex;
+  align-items: center;
+  flex-wrap: $warp;
+  justify-content: $justify;
+}
+
+@mixin flex-component {
+  align-content: flex-start;
+  align-self: stretch;
+}
+
+@mixin about-font($font-size: $main-fontsize) {
+  font-size: $font-size;
+  line-height: $font-size + 0.4rem;
+}
+
+@mixin make-padding($display-size, $pos: "") {
+  @if $display-size == $large {
+    padding#{$pos}: 10%;
+  }
+
+  @if $display-size == $isPc {
+    padding#{$pos}: 5%;
+  }
+
+  @if $display-size == $isPhone {
+    padding#{$pos}: 3%;
+  }
+}
+
+@mixin fully-spread {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin cancel-background-color {
+  background-color: #fff0;
+}
+
+@mixin hover-line {
+  background: linear-gradient(transparent 70%, color.get-main-color("light") 0%);
+}
+
+@mixin components-size {
+  @media #{$isPc} {
+    max-width: 33%;
+  }
+
+  @media #{$large} {
+    max-width: 25%;
+  }
+
+  @media #{$middle} {
+    max-width: 50%;
+  }
+
+  @media #{$isPhone} {
+    max-width: 100%;
+  }
+}
+
+@mixin transform($translateY: 0rem, $deg: 0deg) {
+  transform: skew($deg, 0deg) translateX(-60%) translateY($translateY);
+}
+
+@mixin triangle($thickness: 15vh, $color: color.get-main-color("light")) {
+  border-top: border($thickness, $color);
+  border-left: border($thickness, $color);
+  border-bottom: border($thickness, transparent);
+  border-right: border($thickness, transparent);
+}
+
+@function border($thickness, $color) {
+  @return $thickness solid $color;
+}
+
+.title {
+  padding: 1vh 0;
+  @include about-font(get-fontsize("title"));
+  @media #{$isPhone} {
+    @include about-font(get-fontsize("title") - 0.7rem);
+  }
+}
+
+.text > * {
+  @include about-font(get-fontsize("little"));
+}
+
+.name {
+  @include about-font(get-fontsize("sub"));
+  @media #{$isPhone} {
+    @include about-font(get-fontsize("sub") - 0.1rem);
+  }
+}
+
+.text > * + * {
+  padding-top: 0.1rem;
+}

@@ -1,6 +1,6 @@
 import { ReactNode, FC } from "react";
 import Head from "next/head";
-import styles from "../sass/wrapper.module.sass";
+import styles from "../scss/wrapper.module.scss";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "";
 const siteImage = `https://${baseUrl}/android-chrome-512x512.png`;

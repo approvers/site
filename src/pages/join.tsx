@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import { Header } from "../components/header";
 import { Layout } from "../components/layout";
-import styles from "../sass/pages/join.module.sass";
+import styles from "../scss/pages/join.module.scss";
 
 const JoinPage: NextPage = () => (
   <>

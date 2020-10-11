@@ -6,7 +6,7 @@ import { Paper } from "../components/paper";
 import { NextPage, GetStaticProps } from "next";
 import Link from "next/link";
 import { FC } from "react";
-import styles from "../sass/pages/blog.module.sass";
+import styles from "../scss/pages/blog.module.scss";
 
 const BlogCard: FC<Blog> = ({ id, title, date }) => (
   <Paper>

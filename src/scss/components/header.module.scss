@@ -1,0 +1,34 @@
+@use "../wrapper.module";
+@use "../details.variable";
+@use "../color.variable";
+
+.headerLayout {
+  @extend .layout;
+  padding: 1rem 0;
+  margin-bottom: 1%;
+  border-bottom: details.border(2px, color.get-main-color("main"));
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: space-around;
+  min-width: 50%;
+
+  @media #{details.$middle} {
+    min-width: 90%;
+  }
+}
+
+.button {
+  cursor: pointer;
+  transition-timing-function: ease-in-out;
+  @include details.about-font(details.get-fontsize("main") + 0.1rem);
+
+  &:hover {
+    @include details.hover-line;
+  }
+}
+
+.button > a {
+  @include details.cancel-background-color;
+}

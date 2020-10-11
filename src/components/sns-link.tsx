@@ -3,7 +3,7 @@ import { SNSLinkInfo } from "../lib/member-fetch";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter, faGithub, IconDefinition } from "@fortawesome/free-brands-svg-icons";
 import { ExternalLink } from "./externalLink";
-import styles from "../sass/pages/member.module.sass";
+import styles from "../scss/pages/member.module.scss";
 
 type Icon = { icon: IconDefinition };
 

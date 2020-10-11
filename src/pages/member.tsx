@@ -5,7 +5,7 @@ import { FC } from "react";
 import { SNSLink } from "../components/sns-link";
 import { Paper } from "../components/paper";
 import { Header } from "../components/header";
-import styles from "../sass/pages/member.module.sass";
+import styles from "../scss/pages/member.module.scss";
 
 const alternative = "/alternative.png";
 
