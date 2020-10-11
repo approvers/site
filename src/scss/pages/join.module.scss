@@ -6,11 +6,11 @@
   min-width: 80%;
 
   .title {
-    text-align: center
+    text-align: center;
   }
 
   * {
-    text-align: left
+    text-align: left;
   }
 }
 
@@ -25,5 +25,5 @@
 }
 
 .color {
-  @include details.hover-line
+  @include details.hover-line;
 }

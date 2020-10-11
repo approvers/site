@@ -6,7 +6,6 @@
   }
 }
 
-
 .mainContents {
   min-width: 100%;
   min-height: 100vh;
@@ -71,7 +70,7 @@
   @include details.make-padding(details.$isPc);
 
   @media #{details.$large} {
-    @include details.make-padding(details.$large)
+    @include details.make-padding(details.$large);
   }
 
   @media #{details.$isPhone} {

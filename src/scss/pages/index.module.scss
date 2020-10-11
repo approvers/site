@@ -67,7 +67,7 @@
   @include details.triangle();
 
   @media #{details.$isPhone} {
-    @include details.triangle($thickness: 10vh)
+    @include details.triangle($thickness: 10vh);
   }
 }
 
@@ -78,5 +78,4 @@
   font-style: italic;
   text-decoration: solid;
   text-decoration-line: underline;
-} 
-
+}

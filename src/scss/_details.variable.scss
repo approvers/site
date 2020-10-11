@@ -12,7 +12,12 @@ $middle: $screen + "(max-width: 1030px)";
 $large: $screen + "(min-width: 1600px)";
 
 @function get-fontsize($size) {
-  $fontsize: (title: 3rem, sub: 1.6rem, main: 1.1rem, little: 1rem);
+  $fontsize: (
+    title: 3rem,
+    sub: 1.6rem,
+    main: 1.1rem,
+    little: 1rem,
+  );
   @return map.get($fontsize, $size);
 }
 
@@ -35,7 +40,7 @@ $large: $screen + "(min-width: 1600px)";
 
 @mixin make-padding($display-size, $pos: "") {
   @if $display-size == $large {
-    padding#{$pos}: 10%; 
+    padding#{$pos}: 10%;
   }
 
   @if $display-size == $isPc {
@@ -110,7 +115,7 @@ $large: $screen + "(min-width: 1600px)";
   @media #{$isPhone} {
     @include about-font(get-fontsize("sub") - 0.1rem);
   }
-} 
+}
 
 .text > * + * {
   padding-top: 0.1rem;

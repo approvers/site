@@ -31,10 +31,10 @@
     text-decoration: none;
     @include details.hover-line;
   }
-} 
+}
 
 .blogTitle {
-  @extend .name
+  @extend .name;
 }
 
 .date {
@@ -59,7 +59,7 @@
   text-align: left;
 
   @media #{details.$middle} {
-    width: 70%
+    width: 70%;
   }
 
   @media #{details.$isPhone} {
