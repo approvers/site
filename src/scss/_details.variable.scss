@@ -18,13 +18,14 @@ $large: $screen + "(min-width: 1600px)";
     main: 1.1rem,
     little: 1rem,
   );
+
   @return map.get($fontsize, $size);
 }
 
 @mixin flex-style($warp: wrap, $justify: center) {
   display: flex;
-  align-items: center;
   flex-wrap: $warp;
+  align-items: center;
   justify-content: $justify;
 }
 
@@ -83,15 +84,15 @@ $large: $screen + "(min-width: 1600px)";
   }
 }
 
-@mixin transform($translateY: 0rem, $deg: 0deg) {
+@mixin transform($translateY: 0, $deg: 0deg) {
   transform: skew($deg, 0deg) translateX(-60%) translateY($translateY);
 }
 
 @mixin triangle($thickness: 15vh, $color: color.get-main-color("light")) {
   border-top: border($thickness, $color);
-  border-left: border($thickness, $color);
-  border-bottom: border($thickness, transparent);
   border-right: border($thickness, transparent);
+  border-bottom: border($thickness, transparent);
+  border-left: border($thickness, $color);
 }
 
 @function border($thickness, $color) {
@@ -100,7 +101,9 @@ $large: $screen + "(min-width: 1600px)";
 
 .title {
   padding: 1vh 0;
+
   @include about-font(get-fontsize("title"));
+
   @media #{$isPhone} {
     @include about-font(get-fontsize("title") - 0.7rem);
   }
@@ -112,6 +115,7 @@ $large: $screen + "(min-width: 1600px)";
 
 .name {
   @include about-font(get-fontsize("sub"));
+
   @media #{$isPhone} {
     @include about-font(get-fontsize("sub") - 0.1rem);
   }

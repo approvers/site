@@ -8,11 +8,13 @@
 
 .linksContainer {
   margin-top: details.$min-padding;
-  @include wrapper.phone;
+
+  @include wrapper.phone ();
 }
 
 .linksContainer > * + * {
   margin-left: 1.1rem;
+
   @media #{details.$isPhone} {
     margin-left: 1.2rem;
   }
@@ -20,6 +22,7 @@
 
 .icon {
   color: color.get-sub-color("main");
+
   &:hover {
     color: darken(color.get-sub-color("main"), color.$amount);
   }
@@ -28,6 +31,7 @@
 .icon > svg {
   width: 0.1rem + details.get-fontsize("main");
   height: 0.1rem + details.get-fontsize("main");
+
   @media #{details.$isPhone} {
     width: details.get-fontsize("sub") - 0.1rem;
     height: details.get-fontsize("sub") - 0.1rem;

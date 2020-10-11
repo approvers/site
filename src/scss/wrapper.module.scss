@@ -7,35 +7,42 @@
 }
 
 .mainContents {
+  flex: 1;
   min-width: 100%;
   min-height: 100vh;
-  flex: 1;
-  @include details.flex-style;
+
+  @include details.flex-style();
 }
 
 .wrapper {
   width: 100%;
-  @include details.flex-style;
+
+  @include details.flex-style();
 }
 
 .page {
   @extend .wrapper;
+
   padding-bottom: 2vh;
 }
 
 .home {
   @extend .wrapper;
+
   min-height: 100vh;
 }
 
 .layout {
   @extend .wrapper;
+
   padding: 0 details.$padding;
 }
 
 .enumerate-contents-wrapper {
   @extend .layout;
+
   justify-content: flex-start;
+
   @media #{details.$isPhone} {
     flex-direction: column;
     justify-content: end;
@@ -45,13 +52,15 @@
 .avatarWrapper,
 .avatar {
   height: 100%;
-  @include details.cancel-background-color;
+
+  @include details.cancel-background-color();
 }
 
 .avatar {
   width: 37%;
   object-fit: contain;
   padding-right: 5%;
+
   @media #{details.$isPhone} {
     width: 30%;
   }
@@ -59,13 +68,14 @@
 
 .cardWrapper {
   @extend .wrapper;
-  @include details.flex-component;
-  @include details.components-size;
-  @include phone;
+
+  @include details.flex-component();
+  @include details.components-size();
+  @include phone();
 }
 
 .card {
-  @include details.fully-spread;
+  @include details.fully-spread();
   @include details.flex-style(nowrap, flex-start);
   @include details.make-padding(details.$isPc);
 
@@ -75,6 +85,7 @@
 
   @media #{details.$isPhone} {
     text-align: left;
+
     @include details.make-padding(details.$isPhone);
   }
 }

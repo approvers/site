@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "@approvers/stylelint-config-scss",
+    "stylelint-config-recess-order"
+  ],
+  "rules": {
+    "scss/at-extend-no-missing-placeholder": null
+  }
+}

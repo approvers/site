@@ -19,17 +19,20 @@
 }
 
 .pageLink::before {
-  content: "\A";
   white-space: pre;
+  content: "\A";
 }
 
 .pageLink {
   color: color.get-main-color("main");
   cursor: pointer;
+
   @include details.about-font(details.get-fontsize("little"));
+
   &:hover {
     text-decoration: none;
-    @include details.hover-line;
+
+    @include details.hover-line ();
   }
 }
 
@@ -48,6 +51,7 @@
 
 .blogContents {
   @extend .enumerate-contents-wrapper;
+
   flex-direction: column;
   width: 100%;
 }

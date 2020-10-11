@@ -1,20 +1,23 @@
 @use "../details.variable";
 @use "../color.variable";
 @use "../wrapper.module";
+
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap&text=A.Q");
 
 .homeMainContents {
   @extend .wrapper;
-  padding: 0 details.$min-padding;
-  flex-direction: column;
+
   position: relative;
+  flex-direction: column;
+  padding: 0 details.$min-padding;
 }
 
 .title {
+  position: relative;
   padding-top: details.$padding;
   padding-bottom: 0.5rem;
-  position: relative;
   text-align: center;
+
   @include details.about-font(4rem);
 
   @media #{details.$middle} {
@@ -27,11 +30,14 @@
 }
 
 .subtitle {
-  font-style: italic;
   padding-bottom: details.$min-padding;
+  font-style: italic;
+
   @include details.about-font(details.get-fontsize("sub"));
+
   @media #{details.$middle} {
     padding-bottom: details.$padding;
+
     @include details.about-font(details.get-fontsize("sub") - 0.3rem);
   }
 
@@ -41,41 +47,43 @@
 }
 
 .aboutUs {
-  padding-bottom: 2rem;
   display: block;
   width: 100%;
-}
+  padding-bottom: 2rem;
 
-.aboutUs {
   p {
     font-weight: normal;
+
     @include details.about-font(details.get-fontsize("main") - 0.1rem);
+
     span {
-      color: color.get-main-color("dark");
       margin-right: 0.5rem;
+      color: color.get-main-color("dark");
+
       @include details.about-font(details.get-fontsize("sub"));
     }
   }
 }
 
 .title::after {
-  content: "";
   position: absolute;
   left: 50%;
   z-index: -1;
+  content: "";
+
   @include details.transform(-4rem, -30deg);
   @include details.triangle();
 
   @media #{details.$isPhone} {
-    @include details.triangle($thickness: 10vh);
+    @include details.triangle(10vh);
   }
 }
 
 .genkaiLink {
   padding: 0 0.1rem;
-  cursor: pointer;
-  color: color.get-text-color("main");
   font-style: italic;
+  color: color.get-text-color("main");
   text-decoration: solid;
+  cursor: pointer;
   text-decoration-line: underline;
 }
