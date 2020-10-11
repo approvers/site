@@ -19,7 +19,7 @@
   max-width: 32.5rem;
   margin: 0 auto;
   padding: 2% 0;
-  @media #{details.$isPhone} {
+  @media #{details.get-media-query("phone")} {
     padding: 2% 2% + details.$min-padding;
   }
 }

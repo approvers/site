@@ -1,7 +1,7 @@
 @use "details.variable";
 
 @mixin phone {
-  @media #{details.$isPhone} {
+  @media #{details.get-media-query("phone")} {
     justify-content: flex-start;
   }
 }
@@ -36,7 +36,7 @@
 .enumerate-contents-wrapper {
   @extend .layout;
   justify-content: flex-start;
-  @media #{details.$isPhone} {
+  @media #{details.get-media-query("phone")} {
     flex-direction: column;
     justify-content: end;
   }
@@ -52,7 +52,7 @@
   width: 37%;
   object-fit: contain;
   padding-right: 5%;
-  @media #{details.$isPhone} {
+  @media #{details.get-media-query("phone")} {
     width: 30%;
   }
 }
@@ -67,14 +67,14 @@
 .card {
   @include details.fully-spread;
   @include details.flex-style(nowrap, flex-start);
-  @include details.make-padding(details.$isPc);
+  @include details.make-padding(details.get-media-query("pc"));
 
-  @media #{details.$large} {
-    @include details.make-padding(details.$large);
+  @media #{details.get-media-query("large")} {
+    @include details.make-padding(details.get-media-query("large"));
   }
 
-  @media #{details.$isPhone} {
+  @media #{details.get-media-query("phone")} {
     text-align: left;
-    @include details.make-padding(details.$isPhone);
+    @include details.make-padding(details.get-media-query("phone"));
   }
 }

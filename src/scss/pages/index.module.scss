@@ -17,11 +17,11 @@
   text-align: center;
   @include details.about-font(4rem);
 
-  @media #{details.$middle} {
+  @media #{details.get-media-query("middle")} {
     @include details.about-font(details.get-fontsize("title") - 0.3rem);
   }
 
-  @media #{details.$min} {
+  @media #{details.get-media-query("min")} {
     @include details.about-font(details.get-fontsize("title") - 0.5rem);
   }
 }
@@ -30,12 +30,12 @@
   font-style: italic;
   padding-bottom: details.$min-padding;
   @include details.about-font(details.get-fontsize("sub"));
-  @media #{details.$middle} {
+  @media #{details.get-media-query("middle")} {
     padding-bottom: details.$padding;
     @include details.about-font(details.get-fontsize("sub") - 0.3rem);
   }
 
-  @media #{details.$min} {
+  @media #{details.get-media-query("min")} {
     @include details.about-font(details.get-fontsize("sub") - 0.5rem);
   }
 }
@@ -66,7 +66,7 @@
   @include details.transform(-4rem, -30deg);
   @include details.triangle();
 
-  @media #{details.$isPhone} {
+  @media #{details.get-media-query("phone")} {
     @include details.triangle($thickness: 10vh);
   }
 }
