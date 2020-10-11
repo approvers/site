@@ -1,10 +1,17 @@
-$basis-color: #fff
-$main-color: #6ac1B7
-$sub-color: #517d99
-$bright-main-color: #bfe9db
-$bright-sub-color: #dfefed
-$text-color: #202e3b
-$bright-text-color: #a3bacf
+@use "sass:map"
+
+$basis: #fff
 $warn: #f99f48
 $amount: 15
-$dark-main-color: #409689
+
+@function get-main-color($color)
+  $main: (dark: #409689, main: #6ac1B7, light: #bfe9db)
+  @return map.get($main, $color)
+
+@function get-sub-color($color)
+  $sub: (main: #517d99, light: #dfefed)
+  @return map.get($sub, $color)
+
+@function get-text-color($color)
+  $text: (main: #202e3b, sub: #a3bacf)
+  @return map.get($text, $color)

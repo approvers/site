@@ -1,27 +1,27 @@
-@import "../wrapper.module"
-@import "../color.variable"
-@import "../details.variable"
+@use "../wrapper.module"
+@use "../color.variable"
+@use "../details.variable"
 
 .memberMainContents
   @extend .enumerate-contents-wrapper
 
 .linksContainer
-  margin-top: $min-padding
-  +phone
+  margin-top: details.$min-padding
+  +wrapper.phone
 
 .linksContainer > * + *
   margin-left: 1.1rem
-  @media #{$isPhone}
+  @media #{details.$isPhone}
     margin-left: 1.2rem
 
 .icon
-  color: $sub-color
+  color: color.get-sub-color("main")
   &:hover
-    color: darken($sub-color, $amount)
+    color: darken(color.get-sub-color("main"), color.$amount)
 
 .icon > svg
-  width: 0.1rem + $main-fontsize
-  height: 0.1rem + $main-fontsize
-  @media #{$isPhone}
-    width: $sub-fontsize - 0.1rem
-    height: $sub-fontsize - 0.1rem
+  width: 0.1rem + details.get-fontsize("main")
+  height: 0.1rem + details.get-fontsize("main")
+  @media #{details.$isPhone}
+    width: details.get-fontsize("sub") - 0.1rem
+    height: details.get-fontsize("sub") - 0.1rem

@@ -1,26 +1,26 @@
-@import "../wrapper.module"
-@import "../details.variable"
-@import "../color.variable"
+@use "../wrapper.module"
+@use "../details.variable"
+@use "../color.variable"
 
 .headerLayout
   @extend .layout
   padding: 1rem 0
   margin-bottom: 1%
-  border-bottom: border(2px, $main-color)
+  border-bottom: details.border(2px, color.get-main-color("main"))
 
 .buttonWrapper
   display: flex
   justify-content: space-around
   min-width: 50%
-  @media #{$middle}
+  @media #{details.$middle}
     min-width: 90%
 
 .button
   cursor: pointer
   transition-timing-function: ease-in-out
-  +about-font($main-fontsize + 0.1rem)
+  +details.about-font(details.get-fontsize("main") + 0.1rem)
   &:hover
-    +hover-line
+    +details.hover-line
 
 .button > a
-  +cancel-background-color
+  +details.cancel-background-color
