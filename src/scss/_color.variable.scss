@@ -10,6 +10,7 @@ $amount: 15;
     main: #6ac1b7,
     light: #bfe9db,
   );
+
   @return map.get($main, $color);
 }
 
@@ -18,6 +19,7 @@ $amount: 15;
     main: #517d99,
     light: #dfefed,
   );
+
   @return map.get($sub, $color);
 }
 
@@ -26,5 +28,6 @@ $amount: 15;
     main: #202e3b,
     sub: #a3bacf,
   );
+
   @return map.get($text, $color);
 }
