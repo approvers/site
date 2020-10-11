@@ -13,6 +13,7 @@ $min-padding: 5%;
     middle: "(max-width: 1030px)",
     large: "(min-width: 1600px)",
   );
+
   @return "screen and " + map.get($media-size, $size);
 }
 
@@ -23,13 +24,14 @@ $min-padding: 5%;
     main: 1.1rem,
     little: 1rem,
   );
+
   @return map.get($fontsize, $size);
 }
 
 @mixin flex-style($warp: wrap, $justify: center) {
   display: flex;
-  align-items: center;
   flex-wrap: $warp;
+  align-items: center;
   justify-content: $justify;
 }
 
@@ -88,15 +90,15 @@ $min-padding: 5%;
   }
 }
 
-@mixin transform($translateY: 0rem, $deg: 0deg) {
+@mixin transform($translateY: 0, $deg: 0deg) {
   transform: skew($deg, 0deg) translateX(-60%) translateY($translateY);
 }
 
 @mixin triangle($thickness: 15vh, $color: color.get-main-color("light")) {
   border-top: border($thickness, $color);
-  border-left: border($thickness, $color);
-  border-bottom: border($thickness, transparent);
   border-right: border($thickness, transparent);
+  border-bottom: border($thickness, transparent);
+  border-left: border($thickness, $color);
 }
 
 @function border($thickness, $color) {
@@ -105,7 +107,9 @@ $min-padding: 5%;
 
 .title {
   padding: 1vh 0;
+
   @include about-font(get-fontsize("title"));
+
   @media #{get-media-query("phone")} {
     @include about-font(get-fontsize("title") - 0.7rem);
   }
@@ -117,6 +121,7 @@ $min-padding: 5%;
 
 .name {
   @include about-font(get-fontsize("sub"));
+
   @media #{get-media-query("phone")} {
     @include about-font(get-fontsize("sub") - 0.1rem);
   }
