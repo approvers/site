@@ -7,8 +7,10 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "lint": "eslint --ignore-path .gitignore 'src/**/*.{js,jsx,ts,tsx}'",
-    "lint:fix": "eslint --ignore-path .gitignore 'src/**/*.{js,jsx,ts,tsx}' --fix"
+    "eslint": "eslint --ignore-path .gitignore 'src/**/*.{js,jsx,ts,tsx}'",
+    "eslint:fix": "eslint --ignore-path .gitignore 'src/**/*.{js,jsx,ts,tsx}' --fix",
+    "stylelint": "stylelint --ignore-path .gitignore 'src/**/*.{css,scss}'",
+    "stylelint:fix": "stylelint --ignore-path .gitignore 'src/**/*.{css,scss}' --fix"
   },
   "husky": {
     "hooks": {
@@ -16,7 +18,8 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint --fix"
+    "*.{js,jsx,ts,tsx}": "eslint --fix",
+    "*.{css,scss}": "stylelint --fix"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
