@@ -7,7 +7,7 @@ on:
   pull_request: {}
 
 jobs:
-  code-lint:
+  eslint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -23,5 +23,24 @@ jobs:
           node-version: 12.x
       - run: yarn install --frozen-lockfile
 
-      - name: run lint
-        run: yarn lint
+      - name: Run eslint
+        run: yarn eslint
+
+  stylelint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v1
+        with:
+          path: ~/.cache/yarn
+          key: ${{ runner.os }}-${{ github.ref }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ github.ref }}-
+            ${{ runner.os }}-
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: yarn install --frozen-lockfile
+
+      - name: Run stylelint
+        run: yarn stylelint
