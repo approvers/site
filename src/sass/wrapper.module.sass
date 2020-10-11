@@ -1,18 +1,18 @@
-@import "/details.variable"
+@use "details.variable"
 
 =phone
-  @media #{$isPhone}
+  @media #{details.$isPhone}
     justify-content: flex-start
 
 .mainContents
   min-width: 100%
   min-height: 100vh
   flex: 1
-  +flex-style
+  +details.flex-style
 
 .wrapper
   width: 100%
-  +flex-style
+  +details.flex-style
 
 .page
   @extend .wrapper
@@ -24,39 +24,39 @@
 
 .layout
   @extend .wrapper
-  padding: 0 $padding
+  padding: 0 details.$padding
 
 .enumerate-contents-wrapper
   @extend .layout
   justify-content: flex-start
-  @media #{$isPhone}
+  @media #{details.$isPhone}
     flex-direction: column
     justify-content: end
 
 .avatarWrapper,
 .avatar
   height: 100%
-  +cancel-background-color
+  +details.cancel-background-color
 
 .avatar
   width: 37%
   object-fit: contain
   padding-right: 5%
-  @media #{$isPhone}
+  @media #{details.$isPhone}
     width: 30%
 
 .cardWrapper
   @extend .wrapper
-  +flex-component
-  +components-size
+  +details.flex-component
+  +details.components-size
   +phone
 
 .card
-  +fully-spread
-  +flex-style(nowrap, flex-start)
-  +make-padding($isPc)
-  @media #{$large}
-    +make-padding($large)
-  @media #{$isPhone}
+  +details.fully-spread
+  +details.flex-style(nowrap, flex-start)
+  +details.make-padding(details.$isPc)
+  @media #{details.$large}
+    +details.make-padding(details.$large)
+  @media #{details.$isPhone}
     text-align: left
-    +make-padding($isPhone)
+    +details.make-padding(details.$isPhone)

@@ -1,6 +1,6 @@
-@import "../color.variable"
-@import "../details.variable"
-@import "../wrapper.module"
+@use "../color.variable"
+@use "../details.variable"
+@use "../wrapper.module"
 
 .main
   @extend .enumerate-contents-wrapper
@@ -19,18 +19,18 @@
   white-space: pre
 
 .pageLink
-  color: $main-color
+  color: color.get-main-color("main")
   cursor: pointer
-  +about-font($little-fontsize)
+  +details.about-font(details.get-fontsize("little"))
   &:hover
     text-decoration: none
-    +hover-line
+    +details.hover-line
 
 .blogTitle
   @extend .name
 
 .date
-  +about-font($little-fontsize - 0.2rem)
+  +details.about-font(details.get-fontsize("little") - 0.2rem)
 
 .blogContents,
 .markdown
@@ -46,7 +46,7 @@
   padding: 0 1.5rem
   padding-top: 1rem
   text-align: left
-  @media #{$middle}
+  @media #{details.$middle}
     width: 70%
-  @media #{$isPhone}
+  @media #{details.$isPhone}
     width: 90%
