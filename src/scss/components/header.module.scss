@@ -21,16 +21,10 @@
 }
 
 .button {
-  cursor: pointer;
-  transition-timing-function: ease-in-out;
-
   @include details.about-font(details.get-fontsize("main") + 0.1rem);
-
-  &:hover {
-    @include details.hover-line ();
-  }
+  @include details.hover-link ();
 }
 
 .button > a {
-  @include details.cancel-background-color ();
+  @include details.cancel-background-color();
 }

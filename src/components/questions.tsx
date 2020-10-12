@@ -4,12 +4,12 @@ import styles from "../scss/pages/index.module.scss";
 
 const QA: FC<{ question: ReactNode; answer: ReactNode }> = ({ question, answer }) => (
   <section className={styles.aboutUs}>
-    <p>
-      <span>Q.</span>
+    <p className={styles.ans}>
+      <span className={styles.ansAlphabet}>Q.</span>
       {question}
     </p>
-    <p>
-      <span>A.</span>
+    <p className={styles.ans}>
+      <span className={styles.ansAlphabet}>A.</span>
       {answer}
     </p>
   </section>
@@ -33,6 +33,15 @@ export const Questions: FC = () => (
           >
             #限界開発鯖
           </ExternalLink>
+        </>
+      }
+    />
+    <QA
+      question={<>どうやって参加するの？</>}
+      answer={
+        <>
+          弊サーバーは、<span className={styles.color}>完全紹介制</span>です。
+          知り合いのメンバーから招待リンクを受け取ってください。
         </>
       }
     />

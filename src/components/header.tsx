@@ -17,8 +17,8 @@ const links: { name: string; url: string }[] = [
     url: "/blog",
   },
   {
-    name: "参加方法",
-    url: "/join",
+    name: "リンク",
+    url: "/link",
   },
 ];
 export const Header: FC = () => (
