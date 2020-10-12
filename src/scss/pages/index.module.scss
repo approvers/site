@@ -32,7 +32,7 @@
     @include details.with-font-size(big, -0.3rem);
   }
 
-  @media #{details.$min} {
+  @media #{details.get-media-query(min)} {
     @include details.with-font-size(big, -0.5rem);
   }
 }

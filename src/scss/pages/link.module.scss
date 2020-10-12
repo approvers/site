@@ -1,7 +1,7 @@
 @use "../color.variable";
 @use "../details.variable";
 
-.joinText {
+.linkText {
   @extend .text;
 
   max-width: 32.5rem;

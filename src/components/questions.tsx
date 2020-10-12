@@ -33,5 +33,14 @@ export const Questions: FC = () => (
         </>
       }
     />
+    <QA
+      question={<>どうやって参加するの？</>}
+      answer={
+        <>
+          弊サーバーは、<span className={styles.color}>完全紹介制</span>です。
+          知り合いのメンバーから招待リンクを受け取ってください。
+        </>
+      }
+    />
   </div>
 );
