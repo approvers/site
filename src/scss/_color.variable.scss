@@ -1,14 +1,22 @@
 @use "sass:map";
 
-$basis: #fff;
-$warn: #f99f48;
+$red: #cb3535;
 $amount: 15;
+
+@function get-base-color($color) {
+  $basis: (
+    dark: #1a1a1b,
+    light: #fcfcfc,
+  );
+
+  @return map.get($basis, $color);
+}
 
 @function get-main-color($color) {
   $main: (
-    dark: #409689,
-    main: #6ac1b7,
-    light: #bfe9db,
+    dark: #2c5ea5,
+    main: #228dff,
+    light: #7bb2f9,
   );
 
   @return map.get($main, $color);
@@ -16,8 +24,9 @@ $amount: 15;
 
 @function get-sub-color($color) {
   $sub: (
-    main: #3a517c,
-    light: #b9d0fb,
+    dark: #4b6167,
+    main: #68939c,
+    light: #a0b6bc,
   );
 
   @return map.get($sub, $color);
@@ -25,7 +34,7 @@ $amount: 15;
 
 @function get-text-color($color) {
   $text: (
-    main: #101e2b,
+    main: #fcfcfc,
     sub: #a3bacf,
   );
 

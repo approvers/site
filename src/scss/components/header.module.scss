@@ -7,7 +7,7 @@
 
   padding: 1rem 0;
   margin-bottom: 1%;
-  border-bottom: details.border(2px, color.get-main-color("main"));
+  border-bottom: details.border(2px, color.get-sub-color("main"));
 }
 
 .buttonWrapper {
@@ -22,7 +22,7 @@
 
 .button {
   @include details.about-font(details.get-fontsize("main") + 0.1rem);
-  @include details.hover-link ();
+  @include details.hover-link();
 }
 
 .button > a {

@@ -70,7 +70,7 @@ $transition: all 300ms 0s ease;
 }
 
 @mixin hover-line {
-  background: linear-gradient(transparent 70%, color.get-main-color("light") 0%);
+  background: linear-gradient(transparent 70%, color.get-main-color("main") 0%);
 }
 
 @mixin components-size {
@@ -95,12 +95,17 @@ $transition: all 300ms 0s ease;
   transform: skew($deg, 0deg) translateX(-60%) translateY($translateY);
 }
 
-@mixin triangle($thickness: 15vh, $color: color.get-main-color("light")) {
-  border-top: border($thickness, $color);
-  border-right: border($thickness, transparent);
-  border-bottom: border($thickness, transparent);
-  border-left: border($thickness, $color);
-}
+// @mixin triangle($thickness: 15vh, $color: color.get-main-color("light")) {
+
+//   border-top: border($thickness, $color);
+
+//   border-right: border($thickness, transparent);
+
+//   border-bottom: border($thickness, transparent);
+
+//   border-left: border($thickness, $color);
+
+// }
 
 @mixin square($size) {
   width: 100%;
@@ -110,7 +115,7 @@ $transition: all 300ms 0s ease;
 @mixin hover-link {
   position: relative;
   cursor: pointer;
-  background-color: color.$basis;
+  background-color: color.get-base-color("dark");
   transition: all 300ms 0s ease;
 
   &::before {
@@ -132,10 +137,6 @@ $transition: all 300ms 0s ease;
 @function border($thickness, $color) {
   @return $thickness solid $color;
 }
-
-// @mixin shadow {
-
-// }
 
 .title {
   padding: 1vh 0;

@@ -21,6 +21,7 @@ html {
     "Helvetica Neue",
     sans-serif;
   color: color.get-text-color("main");
+  background-color: color.get-base-color("dark");
 }
 
 * {

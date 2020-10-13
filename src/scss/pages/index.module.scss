@@ -57,8 +57,10 @@
     @include details.about-font(details.get-fontsize("main") - 0.1rem);
 
     .ansAlphabet {
+      $shadow-color: color.get-main-color("main");
+
       margin-right: 0.5rem;
-      color: color.get-main-color("dark");
+      text-shadow: 0 0 10px #fff, 0 0 20px #{$shadow-color}, 0 0 30px #{$shadow-color};
 
       @include details.about-font(details.get-fontsize("sub"));
     }
@@ -72,15 +74,15 @@
   content: "";
 
   @include details.transform(-4rem, -30deg);
-  @include details.triangle();
+  // @include details.triangle();
 
-  @media #{details.get-media-query("phone")} {
-    @include details.triangle(10vh);
-  }
+  // @media #{details.get-media-query("phone")} {
+  //   @include details.triangle(10vh);
+  // }
 }
 
 .genkaiLink {
-  @include details.hover-link ();
+  @include details.hover-link();
 
   padding: 0 0.1rem;
   font-style: italic;
