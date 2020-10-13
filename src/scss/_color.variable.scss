@@ -6,9 +6,9 @@ $amount: 15;
 
 @function get-main-color($color) {
   $main: (
-    dark: #409689,
-    main: #6ac1b7,
-    light: #bfe9db,
+    dark: #345f31,
+    main: #00ff63,
+    light: #68ffa2,
   );
 
   @return map.get($main, $color);
@@ -16,8 +16,9 @@ $amount: 15;
 
 @function get-sub-color($color) {
   $sub: (
-    main: #517d99,
-    light: #dfefed,
+    dark: #3a517c,
+    main: #89b0f8,
+    light: #b9d0fb,
   );
 
   @return map.get($sub, $color);
@@ -25,7 +26,7 @@ $amount: 15;
 
 @function get-text-color($color) {
   $text: (
-    main: #202e3b,
+    main: #101e2b,
     sub: #a3bacf,
   );
 
