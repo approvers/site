@@ -36,7 +36,7 @@
     "yaml": "^1.9.2"
   },
   "devDependencies": {
-    "@approvers/stylelint-config-scss": "^0.1.0",
+    "@approvers/stylelint-config-scss": "^1.0.0",
     "@types/markdown-to-jsx": "^6.11.0",
     "@types/node": "^14.11.8",
     "@types/react": "^16.9.51",

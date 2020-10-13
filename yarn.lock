@@ -53,10 +53,10 @@
   dependencies:
     cross-fetch "3.0.5"
 
-"@approvers/stylelint-config-scss@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@approvers/stylelint-config-scss/-/stylelint-config-scss-0.1.0.tgz#8209664f3c8f01cefe5020108ebf08efd3962acd"
-  integrity sha512-3hcyXMXm/yR7TjM8+k65ZUmI+qONgwjP+BEMMlaJGyvDZcXl/j3+QiKppD6J7JXPX31kdQKJxnXAUIMhuyrJLg==
+"@approvers/stylelint-config-scss@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@approvers/stylelint-config-scss/-/stylelint-config-scss-1.0.0.tgz#f95b73216dea2abd8d4b13cf1313d7c15e880dc2"
+  integrity sha512-IVgypzQHTKfqAfaxgKJ91g2kgiNRZY7NGBRs/g2CGTQFawcR4htxvhCNdeL4nq+VESwkzIwerLyEM2qA/r3pRg==
   dependencies:
     stylelint-config-standard "^20.0.0"
 
