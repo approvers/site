@@ -56,6 +56,10 @@ $transition: all 300ms 0s ease;
   height: 100%;
 }
 
+@mixin hover-line {
+  @include color.main(normal, bold-underline);
+}
+
 @mixin components-size {
   @media #{get-media-query("pc")} {
     max-width: 33%;
@@ -82,11 +86,42 @@ $transition: all 300ms 0s ease;
   @return $thickness solid;
 }
 
+// @mixin triangle($thickness: 15vh, $color: color.get-main-color("light")) {
+
+//   border-top: border($thickness, $color);
+
+//   border-right: border($thickness, transparent);
+
+//   border-bottom: border($thickness, transparent);
+
+//   border-left: border($thickness, $color);
+
+// }
+
 .name {
   @include with-font-size(big);
 
   @media #{get-media-query("phone")} {
     @include with-font-size(big, -0.1rem);
+  }
+}
+
+@mixin hover-link {
+  position: relative;
+  cursor: pointer;
+  transition: all 300ms 0s ease;
+
+  @include color.neutral(dark, back);
+
+  &::before {
+    // @include square(100%);
+    @include hover-line();
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    content: "";
   }
 }
 
@@ -96,7 +131,7 @@ $transition: all 300ms 0s ease;
   margin: 0 auto;
 
   &:hover {
-    @include color.clear(background);
+    @include color.clear(back);
   }
 }
 
@@ -107,7 +142,7 @@ $transition: all 300ms 0s ease;
 .title {
   padding: 1vh 0;
 
-  @include about-font(get-fontsize("title"));
+  @include with-font-size(title);
 
   @media #{get-media-query("phone")} {
     padding: 2% 2% + $min-padding;
