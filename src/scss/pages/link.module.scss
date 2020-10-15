@@ -27,5 +27,5 @@
 }
 
 .color {
-  @include details.hover-line();
+  @include details.hover-neon(6, true);
 }

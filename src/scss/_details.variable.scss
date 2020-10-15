@@ -4,7 +4,7 @@
 $transition: 0.4s;
 $padding: 10%;
 $min-padding: 5%;
-$transition: all 300ms 0s ease;
+$transition: all 0.3s 0s ease;
 
 @function get-media-query($size) {
   $media-size: (
@@ -69,8 +69,63 @@ $transition: all 300ms 0s ease;
   background-color: #fff0;
 }
 
-@mixin hover-line {
-  background: linear-gradient(transparent 70%, color.get-main-color("main") 0%);
+@keyframes intermittente {
+  75% {
+    opacity: 0.7;
+  }
+}
+
+@mixin flashing {
+  animation: intermittente 0.01s infinite alternate;
+}
+
+@mixin neon-text($shadow-size: 6) {
+  $main: color.get-main-color("main");
+  $light: #fff;
+
+  text-shadow:
+    0 0 #{$shadow-size}px $light,
+    0 0 $shadow-size + 14px $main,
+    0 0 $shadow-size + 24px $main;
+  opacity: 1;
+}
+
+@mixin hover-neon($shadow-size: 6, $isLink: false) {
+  transition: #{$transition};
+
+  @if $isLink {
+    &:hover {
+      @include flashing ();
+      @include neon-text($shadow-size);
+    }
+  }
+}
+
+@mixin marker {
+  $main: color.get-main-color("main");
+  $light: #fff;
+  $shadow: 0 0 6px $light;
+
+  position: relative;
+
+  &::after {
+    position: absolute;
+    bottom: 4%;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 0.03em;
+    content: "";
+    background-color: $light;
+    box-shadow:
+      0 0 6px $light,
+      0 0 10px $main,
+      0 0 20px $main,
+      0 0 30px $main,
+      0 0 40px $main,
+      0 0 50px $main,
+      0 0 60px $main;
+  }
 }
 
 @mixin components-size {
@@ -95,43 +150,16 @@ $transition: all 300ms 0s ease;
   transform: skew($deg, 0deg) translateX(-60%) translateY($translateY);
 }
 
-// @mixin triangle($thickness: 15vh, $color: color.get-main-color("light")) {
-
-//   border-top: border($thickness, $color);
-
-//   border-right: border($thickness, transparent);
-
-//   border-bottom: border($thickness, transparent);
-
-//   border-left: border($thickness, $color);
-
-// }
-
 @mixin square($size) {
   width: 100%;
   height: 100%;
 }
 
-@mixin hover-link {
-  position: relative;
+@mixin hover-link($shadow-size: 6) {
   cursor: pointer;
   background-color: color.get-base-color("dark");
-  transition: all 300ms 0s ease;
 
-  &::before {
-    @include square(100%);
-    @include hover-line();
-
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    content: "";
-  }
-
-  &:hover {
-    @include cancel-background-color();
-  }
+  @include hover-neon($shadow-size, true);
 }
 
 @function border($thickness, $color) {

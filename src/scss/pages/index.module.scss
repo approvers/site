@@ -13,12 +13,12 @@
 }
 
 .title {
-  position: relative;
+  @include details.about-font(4rem);
+  @include details.marker ();
+
   padding-top: details.$padding;
   padding-bottom: 0.5rem;
   text-align: center;
-
-  @include details.about-font(4rem);
 
   @media #{details.get-media-query("middle")} {
     @include details.about-font(details.get-fontsize("title") - 0.3rem);
@@ -57,32 +57,16 @@
     @include details.about-font(details.get-fontsize("main") - 0.1rem);
 
     .ansAlphabet {
-      $shadow-color: color.get-main-color("main");
+      @include details.neon-text(6);
+      @include details.about-font(details.get-fontsize("sub"));
 
       margin-right: 0.5rem;
-      text-shadow: 0 0 10px #fff, 0 0 20px #{$shadow-color}, 0 0 30px #{$shadow-color};
-
-      @include details.about-font(details.get-fontsize("sub"));
     }
   }
 }
 
-.title::after {
-  position: absolute;
-  left: 50%;
-  z-index: -1;
-  content: "";
-
-  @include details.transform(-4rem, -30deg);
-  // @include details.triangle();
-
-  // @media #{details.get-media-query("phone")} {
-  //   @include details.triangle(10vh);
-  // }
-}
-
 .genkaiLink {
-  @include details.hover-link();
+  @include details.hover-link(3);
 
   padding: 0 0.1rem;
   font-style: italic;
@@ -90,5 +74,5 @@
 }
 
 .color {
-  @include details.hover-line();
+  display: inline-block;
 }

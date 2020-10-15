@@ -24,15 +24,15 @@
 }
 
 .pageLink {
-  color: color.get-main-color("main");
-  cursor: pointer;
-
   @include details.about-font(details.get-fontsize("little"));
+
+  font-style: italic;
+  cursor: pointer;
 
   &:hover {
     text-decoration: none;
 
-    @include details.hover-line();
+    @include details.hover-neon(6, true);
   }
 }
 
