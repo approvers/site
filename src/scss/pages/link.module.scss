@@ -14,5 +14,5 @@
 }
 
 .color {
-  @include color.main(light, bold-underline);
+  @include details.hover-neon(6, true);
 }
