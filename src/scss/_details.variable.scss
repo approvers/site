@@ -1,4 +1,5 @@
 @use "./color.variable";
+@use "./animation";
 @use "sass:map";
 
 $transition: 0.4s;
@@ -71,46 +72,6 @@ $light: #fff;
   background-color: #fff0;
 }
 
-@keyframes intermittente {
-  75% {
-    opacity: 0.7;
-  }
-}
-
-@keyframes aurora {
-  from {
-    box-shadow:
-      0 0 8px $light,
-      0 0 14px $light,
-      0 0 25px $main,
-      0 0 35px $main,
-      0 0 45px $main,
-      0 0 55px $main,
-      0 0 65px $main,
-      0 0 75px $main,
-      0 0 85px $main;
-  }
-
-  to {
-    box-shadow:
-      0 0 2px $light,
-      0 0 6px $main,
-      0 0 14px $main,
-      0 0 20px $main,
-      0 0 28px $main,
-      0 0 35px $main,
-      0 0 42px $main;
-  }
-}
-
-@mixin flashing {
-  animation: intermittente 0.01s infinite alternate;
-}
-
-@mixin aurora-anim {
-  animation: aurora 1.5s ease-in-out infinite alternate;
-}
-
 @mixin neon-text($shadow-size: 6) {
   text-shadow:
     0 0 #{$shadow-size}px $light,
@@ -127,7 +88,7 @@ $light: #fff;
   transition: #{$transition};
 
   &:hover {
-    @include flashing();
+    @include animation.flashing();
     @include neon-text($shadow-size);
   }
 }
@@ -138,7 +99,7 @@ $light: #fff;
   position: relative;
 
   &::after {
-    @include aurora-anim ();
+    @include animation.aurora-anim();
 
     position: absolute;
     bottom: 0;
@@ -191,7 +152,7 @@ $light: #fff;
 
 .title {
   @include about-font(get-fontsize("title"));
-  @include marker ();
+  @include marker();
 
   display: inline-block;
   margin: 1vh auto;
