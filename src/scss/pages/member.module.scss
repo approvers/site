@@ -21,16 +21,17 @@
 }
 
 .icon {
-  color: color.get-sub-color("main");
+  color: color.get-base-color("light");
 
   &:hover {
-    color: darken(color.get-sub-color("main"), color.$amount);
+    @include details.hover-neon(6);
+    @include details.neon-icon ();
   }
 }
 
 .icon > svg {
-  width: 0.1rem + details.get-fontsize("main");
-  height: 0.1rem + details.get-fontsize("main");
+  width: details.get-fontsize("sub") !important;
+  height: details.get-fontsize("sub");
 
   @media #{details.get-media-query("phone")} {
     width: details.get-fontsize("sub") - 0.1rem;

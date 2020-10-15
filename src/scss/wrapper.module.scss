@@ -59,7 +59,7 @@
 .avatar {
   width: 37%;
   object-fit: contain;
-  padding-right: 5%;
+  margin-right: 5%;
 
   @media #{details.get-media-query("phone")} {
     width: 30%;

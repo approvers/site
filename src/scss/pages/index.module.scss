@@ -14,10 +14,10 @@
 
 .title {
   @include details.about-font(4rem);
-  @include details.marker ();
+  @include details.marker();
 
   padding-top: details.$padding;
-  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
   text-align: center;
 
   @media #{details.get-media-query("middle")} {

@@ -5,6 +5,8 @@ $transition: 0.4s;
 $padding: 10%;
 $min-padding: 5%;
 $transition: all 0.3s 0s ease;
+$main: color.get-main-color("main");
+$light: #fff;
 
 @function get-media-query($size) {
   $media-size: (
@@ -80,9 +82,6 @@ $transition: all 0.3s 0s ease;
 }
 
 @mixin neon-text($shadow-size: 6) {
-  $main: color.get-main-color("main");
-  $light: #fff;
-
   text-shadow:
     0 0 #{$shadow-size}px $light,
     0 0 $shadow-size + 14px $main,
@@ -90,31 +89,31 @@ $transition: all 0.3s 0s ease;
   opacity: 1;
 }
 
-@mixin hover-neon($shadow-size: 6, $isLink: false) {
+@mixin neon-icon {
+  filter: drop-shadow(0 0 5px $light) drop-shadow(0 0 12px $main);
+}
+
+@mixin hover-neon($shadow-size: 6) {
   transition: #{$transition};
 
-  @if $isLink {
-    &:hover {
-      @include flashing ();
-      @include neon-text($shadow-size);
-    }
+  &:hover {
+    @include flashing();
+    @include neon-text($shadow-size);
   }
 }
 
 @mixin marker {
-  $main: color.get-main-color("main");
-  $light: #fff;
   $shadow: 0 0 6px $light;
 
   position: relative;
 
   &::after {
     position: absolute;
-    bottom: 4%;
+    bottom: 0;
     left: 0;
     z-index: -1;
     width: 100%;
-    height: 0.03em;
+    height: 0.1rem;
     content: "";
     background-color: $light;
     box-shadow:
@@ -159,7 +158,7 @@ $transition: all 0.3s 0s ease;
   cursor: pointer;
   background-color: color.get-base-color("dark");
 
-  @include hover-neon($shadow-size, true);
+  @include hover-neon($shadow-size);
 }
 
 @function border($thickness, $color) {
@@ -167,9 +166,11 @@ $transition: all 0.3s 0s ease;
 }
 
 .title {
-  padding: 1vh 0;
-
   @include about-font(get-fontsize("title"));
+  @include marker();
+
+  display: inline-block;
+  margin: 1vh auto;
 
   @media #{get-media-query("phone")} {
     @include about-font(get-fontsize("title") - 0.7rem);
