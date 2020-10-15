@@ -77,8 +77,38 @@ $light: #fff;
   }
 }
 
+@keyframes aurora {
+  from {
+    box-shadow:
+      0 0 8px $light,
+      0 0 14px $light,
+      0 0 25px $main,
+      0 0 35px $main,
+      0 0 45px $main,
+      0 0 55px $main,
+      0 0 65px $main,
+      0 0 75px $main,
+      0 0 85px $main;
+  }
+
+  to {
+    box-shadow:
+      0 0 2px $light,
+      0 0 6px $main,
+      0 0 14px $main,
+      0 0 20px $main,
+      0 0 28px $main,
+      0 0 35px $main,
+      0 0 42px $main;
+  }
+}
+
 @mixin flashing {
   animation: intermittente 0.01s infinite alternate;
+}
+
+@mixin aurora-anim {
+  animation: aurora 1.5s ease-in-out infinite alternate;
 }
 
 @mixin neon-text($shadow-size: 6) {
@@ -108,6 +138,8 @@ $light: #fff;
   position: relative;
 
   &::after {
+    @include aurora-anim ();
+
     position: absolute;
     bottom: 0;
     left: 0;
@@ -116,14 +148,6 @@ $light: #fff;
     height: 0.1rem;
     content: "";
     background-color: $light;
-    box-shadow:
-      0 0 6px $light,
-      0 0 10px $main,
-      0 0 20px $main,
-      0 0 30px $main,
-      0 0 40px $main,
-      0 0 50px $main,
-      0 0 60px $main;
   }
 }
 
@@ -167,7 +191,7 @@ $light: #fff;
 
 .title {
   @include about-font(get-fontsize("title"));
-  @include marker();
+  @include marker ();
 
   display: inline-block;
   margin: 1vh auto;
