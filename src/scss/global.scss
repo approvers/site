@@ -20,7 +20,7 @@ html {
     "Droid Sans",
     "Helvetica Neue",
     sans-serif;
-  color: color.get-text-color("main");
+  color: color.text();
 }
 
 * {
@@ -43,10 +43,10 @@ ul {
 }
 
 ::selection {
-  background-color: color.get-main-color("light");
+  background-color: color.main(light);
 }
 
 // Firefox
 ::-moz-selection {
-  background-color: color.get-main-color("light");
+  background-color: color.main(light);
 }

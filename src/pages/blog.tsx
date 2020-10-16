@@ -1,6 +1,5 @@
-import { getSortedBlogMetadatas, Blog } from "../lib/blog-fetch";
+import { getSortedBlogMetadatas, Metadata } from "../lib/blog-fetch";
 import { DateString } from "../components/date";
-import { Header } from "../components/header";
 import { Layout } from "../components/layout";
 import { Paper } from "../components/paper";
 import { NextPage, GetStaticProps } from "next";
@@ -8,7 +7,7 @@ import Link from "next/link";
 import { FC } from "react";
 import styles from "../scss/pages/blog.module.scss";
 
-const BlogCard: FC<Blog> = ({ id, title, date }) => (
+const BlogCard: FC<Metadata> = ({ id, title, date }) => (
   <Paper>
     <img src="/alternative.png" className={styles.avatar} />
     <div className={styles.cardText}>
@@ -21,20 +20,15 @@ const BlogCard: FC<Blog> = ({ id, title, date }) => (
   </Paper>
 );
 
-const BlogPage: NextPage<{ blogs: Blog[] }> = ({ blogs }) => (
-  <>
-    <Layout pageName="限界開発鯖 - ブログ">
-      <Header />
-      <div className={styles.blog}>
-        <h1 className={styles.title}>ブログ</h1>
-        <section className={styles.main}>
-          {blogs.map((blog) => (
-            <BlogCard key={blog.id} {...blog} />
-          ))}
-        </section>
-      </div>
-    </Layout>
-  </>
+const BlogPage: NextPage<{ blogs: Metadata[] }> = ({ blogs }) => (
+  <Layout pageName="限界開発鯖 - ブログ">
+    <h1 className={styles.title}>ブログ</h1>
+    <section className={styles.main}>
+      {blogs.map((blog) => (
+        <BlogCard key={blog.id} {...blog} />
+      ))}
+    </section>
+  </Layout>
 );
 
 export const getStaticProps: GetStaticProps = async () => {
