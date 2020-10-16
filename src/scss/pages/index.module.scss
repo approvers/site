@@ -51,12 +51,12 @@
   width: 100%;
   padding-bottom: 2rem;
 
-  p {
+  & > p {
     font-weight: normal;
 
     @include details.about-font(details.get-fontsize("main") - 0.1rem);
 
-    span {
+    & > span {
       margin-right: 0.5rem;
       color: color.get-main-color("dark");
 
