@@ -1,0 +1,40 @@
+@use "../details.variable";
+@use "../color.variable";
+@use "../wrapper.module";
+
+.policyPage {
+  min-width: 80%;
+
+  .title {
+    text-align: center;
+  }
+
+  * {
+    text-align: left;
+  }
+}
+
+.policyText {
+  @extend .text;
+
+  max-width: 32.5rem;
+  padding: 2% 0;
+  margin: 0 auto;
+
+  @media #{details.$isPhone} {
+    padding: 2% 2% + details.$min-padding;
+  }
+
+  p {
+    margin: 0.6em;
+    line-height: 1.7;
+  }
+}
+
+.color {
+  @include details.hover-line ();
+}
+
+.textindent1em {
+  text-indent: 1em;
+}
