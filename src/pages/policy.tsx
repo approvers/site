@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import { Layout } from "../components/layout";
-import { ExternalLink } from "../components/externalLink";
+import { ExternalLink } from "../components/external-link";
 import styles from "../scss/pages/policy.module.scss";
 
 const PolicyPage: NextPage = () => (

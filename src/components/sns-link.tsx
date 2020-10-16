@@ -2,7 +2,7 @@ import { FC } from "react";
 import { SNSLinkInfo } from "../lib/member-fetch";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter, faGithub, IconDefinition } from "@fortawesome/free-brands-svg-icons";
-import { ExternalLink } from "./externalLink";
+import { ExternalLink } from "./external-link";
 import styles from "../scss/components/sns-link.module.scss";
 
 type Icon = { icon: IconDefinition };
