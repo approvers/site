@@ -24,7 +24,7 @@
   cursor: pointer;
   transition-timing-function: ease-in-out;
 
-  @include details.about-font(details.get-fontsize("main") + 0.1rem);
+  @include details.about-font(details.font-size() + 0.1rem);
 
   &:hover {
     @include details.hover-line();

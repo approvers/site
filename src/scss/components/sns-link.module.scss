@@ -10,11 +10,11 @@
 }
 
 .icon > svg {
-  width: 0.1rem + details.get-fontsize("main");
-  height: 0.1rem + details.get-fontsize("main");
+  width: 0.1rem + details.font-size();
+  height: 0.1rem + details.font-size();
 
   @media #{details.$isPhone} {
-    width: details.get-fontsize("sub") - 0.1rem;
-    height: details.get-fontsize("sub") - 0.1rem;
+    width: details.font-size(big) - 0.1rem;
+    height: details.font-size(big) - 0.1rem;
   }
 }

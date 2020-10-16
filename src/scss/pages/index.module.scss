@@ -11,11 +11,11 @@
   @include details.about-font(4rem);
 
   @media #{details.$middle} {
-    @include details.about-font(details.get-fontsize("title") - 0.3rem);
+    @include details.about-font(details.font-size("title") - 0.3rem);
   }
 
   @media #{details.$min} {
-    @include details.about-font(details.get-fontsize("title") - 0.5rem);
+    @include details.about-font(details.font-size("title") - 0.5rem);
   }
 }
 
@@ -23,16 +23,16 @@
   padding-bottom: details.$min-padding;
   font-style: italic;
 
-  @include details.about-font(details.get-fontsize("sub"));
+  @include details.about-font(details.font-size("sub"));
 
   @media #{details.$middle} {
     padding-bottom: details.$padding;
 
-    @include details.about-font(details.get-fontsize("sub") - 0.3rem);
+    @include details.about-font(details.font-size("sub") - 0.3rem);
   }
 
   @media #{details.$min} {
-    @include details.about-font(details.get-fontsize("sub") - 0.5rem);
+    @include details.about-font(details.font-size("sub") - 0.5rem);
   }
 }
 

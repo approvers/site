@@ -11,11 +11,11 @@ $min: $screen + "(max-width: 360px)";
 $middle: $screen + "(max-width: 1030px)";
 $large: $screen + "(min-width: 1600px)";
 
-@function get-fontsize($size) {
+@function font-size($size: normal) {
   $fontsize: (
     title: 3rem,
-    sub: 1.6rem,
-    main: 1.1rem,
+    big: 1.6rem,
+    normal: 1.1rem,
     little: 1rem,
   );
 
@@ -102,22 +102,22 @@ $large: $screen + "(min-width: 1600px)";
 .title {
   padding: 1vh 0;
 
-  @include about-font(get-fontsize("title"));
+  @include about-font(font-size(title));
 
   @media #{$isPhone} {
-    @include about-font(get-fontsize("title") - 0.7rem);
+    @include about-font(font-size(title) - 0.7rem);
   }
 }
 
 .text > * {
-  @include about-font(get-fontsize("little"));
+  @include about-font(font-size(little));
 }
 
 .name {
-  @include about-font(get-fontsize("sub"));
+  @include about-font(font-size(big));
 
   @media #{$isPhone} {
-    @include about-font(get-fontsize("sub") - 0.1rem);
+    @include about-font(font-size(big) - 0.1rem);
   }
 }
 
