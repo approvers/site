@@ -21,7 +21,7 @@ const links: { name: string; url: string }[] = [
     url: "/join",
   },
   {
-    name: "当サイトについて",
+    name: "プライバシーポリシー",
     url: "/policy",
   },
 ];
