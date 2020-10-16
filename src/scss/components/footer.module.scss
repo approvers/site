@@ -2,20 +2,21 @@
 @use "../details.variable";
 
 .footerCard {
+  @include details.with-font-size(little);
+
   position: relative;
   bottom: 0;
   width: 100vw;
   padding: 1em;
   margin-top: auto;
-  font-size: details.get-fontsize(little);
   text-align: center;
-  border-color: color.get-main-color(main);
+  border-color: color.main(normal);
   border-style: solid;
   border-width: 2px 0 0 0;
 }
 
 .footerLink {
-  color: color.get-main-color(dark);
+  color: color.main(dark);
 
   &:hover {
     text-decoration: underline;

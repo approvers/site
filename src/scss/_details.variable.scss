@@ -11,17 +11,6 @@ $min: $screen + "(max-width: 360px)";
 $middle: $screen + "(max-width: 1030px)";
 $large: $screen + "(min-width: 1600px)";
 
-@function get-fontsize($size) {
-  $fontsize: (
-    title: 3rem,
-    sub: 1.6rem,
-    main: 1.1rem,
-    little: 1rem,
-  );
-
-  @return map.get($fontsize, $size);
-}
-
 @mixin flex-style($warp: wrap, $justify: center) {
   display: flex;
   flex-wrap: $warp;
@@ -29,14 +18,16 @@ $large: $screen + "(min-width: 1600px)";
   justify-content: $justify;
 }
 
-@mixin flex-component {
-  align-content: flex-start;
-  align-self: stretch;
-}
+@mixin with-font-size($size: normal, $offset: 0) {
+  $fontsize: (
+    title: 3rem,
+    big: 1.6rem,
+    normal: 1.1rem,
+    little: 1rem,
+  );
 
-@mixin about-font($font-size: $main-fontsize) {
-  font-size: $font-size;
-  line-height: $font-size + 0.4rem;
+  font-size: map.get($fontsize, $size) + $offset;
+  line-height: map.get($fontsize, $size) + $offset + 0.4rem;
 }
 
 @mixin make-padding($display-size, $pos: "") {
@@ -63,7 +54,7 @@ $large: $screen + "(min-width: 1600px)";
 }
 
 @mixin hover-line {
-  background: linear-gradient(transparent 70%, color.get-main-color("light") 0%);
+  background: linear-gradient(transparent 70%, color.main(light) 0%);
 }
 
 @mixin components-size {
@@ -88,7 +79,7 @@ $large: $screen + "(min-width: 1600px)";
   transform: skew($deg, 0deg) translateX(-60%) translateY($translateY);
 }
 
-@mixin triangle($thickness: 15vh, $color: color.get-main-color("light")) {
+@mixin triangle($thickness: 15vh, $color: color.main(light)) {
   border-top: border($thickness, $color);
   border-right: border($thickness, transparent);
   border-bottom: border($thickness, transparent);
@@ -102,22 +93,22 @@ $large: $screen + "(min-width: 1600px)";
 .title {
   padding: 1vh 0;
 
-  @include about-font(get-fontsize("title"));
+  @include with-font-size(title);
 
   @media #{$isPhone} {
-    @include about-font(get-fontsize("title") - 0.7rem);
+    @include with-font-size(title, -0.7rem);
   }
 }
 
 .text > * {
-  @include about-font(get-fontsize("little"));
+  @include with-font-size(little);
 }
 
 .name {
-  @include about-font(get-fontsize("sub"));
+  @include with-font-size(big);
 
   @media #{$isPhone} {
-    @include about-font(get-fontsize("sub") - 0.1rem);
+    @include with-font-size(big, -0.1rem);
   }
 }
 

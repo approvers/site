@@ -1,18 +1,4 @@
 @use "../details.variable";
-@use "../color.variable";
-@use "../wrapper.module";
-
-.joinPage {
-  min-width: 80%;
-
-  .title {
-    text-align: center;
-  }
-
-  * {
-    text-align: left;
-  }
-}
 
 .joinText {
   @extend .text;
@@ -27,5 +13,5 @@
 }
 
 .color {
-  @include details.hover-line ();
+  @include details.hover-line();
 }
