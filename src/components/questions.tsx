@@ -1,6 +1,6 @@
 import { FC, ReactNode } from "react";
 import { ExternalLink } from "./externalLink";
-import styles from "../scss/pages/index.module.scss";
+import styles from "../scss/components/questions.module.scss";
 
 const QA: FC<{ question: ReactNode; answer: ReactNode }> = ({ question, answer }) => (
   <section className={styles.aboutUs}>

@@ -1,16 +1,6 @@
 @use "../details.variable";
-@use "../color.variable";
-@use "../wrapper.module";
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap&text=A.Q");
-
-.homeMainContents {
-  @extend .wrapper;
-
-  position: relative;
-  flex-direction: column;
-  padding: 0 details.$min-padding;
-}
 
 .title {
   position: relative;
@@ -46,25 +36,6 @@
   }
 }
 
-.aboutUs {
-  display: block;
-  width: 100%;
-  padding-bottom: 2rem;
-
-  p {
-    font-weight: normal;
-
-    @include details.about-font(details.get-fontsize("main") - 0.1rem);
-
-    span {
-      margin-right: 0.5rem;
-      color: color.get-main-color("dark");
-
-      @include details.about-font(details.get-fontsize("sub"));
-    }
-  }
-}
-
 .title::after {
   position: absolute;
   left: 50%;
@@ -77,13 +48,4 @@
   @media #{details.$isPhone} {
     @include details.triangle(10vh);
   }
-}
-
-.genkaiLink {
-  padding: 0 0.1rem;
-  font-style: italic;
-  color: color.get-text-color("main");
-  text-decoration: solid;
-  cursor: pointer;
-  text-decoration-line: underline;
 }
