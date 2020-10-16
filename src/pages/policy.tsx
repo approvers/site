@@ -18,17 +18,11 @@ const PolicyPage: NextPage = () => (
 
       <p>
         規約の詳細に関しましては、
-        <ExternalLink
-          href="https://marketingplatform.google.com/about/analytics/terms/jp/"
-          className={styles.link}
-        >
+        <ExternalLink href="https://marketingplatform.google.com/about/analytics/terms/jp/">
           Google アナリティクス利用規約
         </ExternalLink>
         や
-        <ExternalLink
-          href="https://policies.google.com/technologies/ads?hl=ja"
-          className={styles.link}
-        >
+        <ExternalLink href="https://policies.google.com/technologies/ads?hl=ja">
           Google ポリシーと規約
         </ExternalLink>
         のページをご覧ください。

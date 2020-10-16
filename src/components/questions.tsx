@@ -27,10 +27,7 @@ export const Questions: FC = () => (
       answer={
         <>
           こちらへどうぞ &rarr;{" "}
-          <ExternalLink
-            href="https://twitter.com/search?q=%23限界開発鯖&src=typed_query"
-            className={styles.genkaiLink}
-          >
+          <ExternalLink href="https://twitter.com/search?q=%23限界開発鯖&src=typed_query">
             #限界開発鯖
           </ExternalLink>
         </>

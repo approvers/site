@@ -1,5 +1,4 @@
 @use "../details.variable";
-@use "../color.variable";
 
 .policyText {
   @extend .text;
@@ -21,13 +20,4 @@
 
 .color {
   @include details.hover-line();
-}
-
-.link {
-  padding: 0 0.1rem;
-  font-style: italic;
-  color: color.get-text-color("main");
-  text-decoration: solid;
-  cursor: pointer;
-  text-decoration-line: underline;
 }
