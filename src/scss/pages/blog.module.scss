@@ -7,7 +7,7 @@
 }
 
 .cardText {
-  @include details.flex-style(wrap, bottom);
+  @include details.flex-style(wrap, flex-start);
 }
 
 .pageLink {
