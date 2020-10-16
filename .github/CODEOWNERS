@@ -1,5 +1,5 @@
 # サイトデザイン・スタイル
-*.sass @unios103
+*.scss @unios103
 
 # 内部スクリプト
 *.tsx @MikuroXina
