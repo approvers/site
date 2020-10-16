@@ -20,6 +20,10 @@ const links: { name: string; url: string }[] = [
     name: "参加方法",
     url: "/join",
   },
+  {
+    name: "当サイトについて",
+    url: "/policy",
+  },
 ];
 export const Header: FC = () => (
   <>
