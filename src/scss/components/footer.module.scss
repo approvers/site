@@ -1,0 +1,23 @@
+@use "../color.variable";
+@use "../details.variable";
+
+.footerCard {
+  position: relative;
+  bottom: 0;
+  width: 100vw;
+  padding: 1em;
+  margin-top: auto;
+  font-size: details.get-fontsize(little);
+  text-align: center;
+  border-color: color.get-main-color(main);
+  border-style: solid;
+  border-width: 2px 0 0 0;
+}
+
+.footerLink {
+  color: color.get-main-color(dark);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

@@ -1,6 +1,7 @@
 import { ReactNode, FC } from "react";
 import Head from "next/head";
 import styles from "../scss/wrapper.module.scss";
+import { Footer } from "./footer";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "";
 const siteImage = `https://${baseUrl}/android-chrome-512x512.png`;
@@ -38,5 +39,6 @@ export const Layout: FC<{ pageName: string; description?: string; children: Reac
       <meta name="theme-color" content="#000000" />
     </Head>
     <div className={styles.wrapper}>{children}</div>
+    <Footer />
   </div>
 );
