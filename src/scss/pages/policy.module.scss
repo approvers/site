@@ -15,15 +15,12 @@
   p {
     margin: 0.6em;
     line-height: 1.7;
+    text-indent: 1em;
   }
 }
 
 .color {
   @include details.hover-line();
-}
-
-.textindent1em {
-  text-indent: 1em;
 }
 
 .link {
