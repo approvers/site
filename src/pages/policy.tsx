@@ -11,7 +11,9 @@ const PolicyPage: NextPage = () => (
       <main className={styles.policyPage}>
         <h1 className={styles.title}>プライバシーポリシー</h1>
         <section className={styles.policyText}>
-          <p className={styles.textindent1em}>当サイトはGoogleアナリティクスを使用しております。</p>
+          <p className={styles.textindent1em}>
+            当サイトは Google アナリティクスを使用しております。
+          </p>
 
           <p className={styles.textindent1em}>
             取得するデータは当サイトの改善に役立てる事のみに使用するとし、
@@ -33,7 +35,7 @@ const PolicyPage: NextPage = () => (
               href="https://policies.google.com/technologies/ads?hl=ja"
               className={styles.link}
             >
-              Googleポリシーと規約
+              Google ポリシーと規約
             </ExternalLink>
             のページをご覧ください。
           </p>
