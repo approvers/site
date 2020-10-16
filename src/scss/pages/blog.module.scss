@@ -7,12 +7,7 @@
 }
 
 .cardText {
-  @extend .text;
-}
-
-.pageLink::before {
-  white-space: pre;
-  content: "\A";
+  @include details.flex-style(wrap, bottom);
 }
 
 .pageLink {
