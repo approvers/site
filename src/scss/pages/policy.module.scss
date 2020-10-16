@@ -1,18 +1,5 @@
 @use "../details.variable";
 @use "../color.variable";
-@use "../wrapper.module";
-
-.policyPage {
-  min-width: 80%;
-
-  .title {
-    text-align: center;
-  }
-
-  * {
-    text-align: left;
-  }
-}
 
 .policyText {
   @extend .text;
@@ -32,7 +19,7 @@
 }
 
 .color {
-  @include details.hover-line ();
+  @include details.hover-line();
 }
 
 .textindent1em {

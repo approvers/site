@@ -1,6 +1,5 @@
 import { NextPage, GetStaticPaths, GetStaticProps } from "next";
 import { Layout } from "../../components/layout";
-import { Header } from "../../components/header";
 import { DateString } from "../../components/date";
 import { getAllBlogIds, getBlogFromId, Blog } from "../../lib/blog-fetch";
 import Markdown from "markdown-to-jsx";
@@ -11,18 +10,13 @@ type BlogPostPageProps = {
 };
 
 const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => (
-  <>
-    <Layout pageName={`限界開発鯖 - ブログ - ${post.title}`}>
-      <Header />
-      <div className={styles.blogContents}>
-        <h1 className={styles.title}>{post.title}</h1>
-        <DateString dateString={post.date} />
-        <div className={styles.markdown}>
-          <Markdown>{post.content}</Markdown>
-        </div>
-      </div>
-    </Layout>
-  </>
+  <Layout pageName={`限界開発鯖 - ブログ - ${post.title}`}>
+    <h1 className={styles.title}>{post.title}</h1>
+    <DateString dateString={post.date} />
+    <div className={styles.markdown}>
+      <Markdown>{post.content}</Markdown>
+    </div>
+  </Layout>
 );
 
 type BlogPostPagePathProps = {

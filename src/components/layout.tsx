@@ -39,6 +39,6 @@ export const Layout: FC<{ pageName: string; description?: string; children: Reac
       <meta name="theme-color" content="#000000" />
     </Head>
     <Header />
-    <div className={styles.wrapper}>{children}</div>
+    <main className={styles.wrapper}>{children}</main>
   </div>
 );

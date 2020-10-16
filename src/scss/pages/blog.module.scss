@@ -6,14 +6,6 @@
   @extend .enumerate-contents-wrapper;
 }
 
-.blog {
-  width: 100%;
-}
-
-.blog > h1 {
-  text-align: center;
-}
-
 .cardText {
   @extend .text;
 }
@@ -32,7 +24,7 @@
   &:hover {
     text-decoration: none;
 
-    @include details.hover-line ();
+    @include details.hover-line();
   }
 }
 

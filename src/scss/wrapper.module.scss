@@ -15,6 +15,7 @@
 }
 
 .wrapper {
+  flex-flow: column;
   width: 100%;
 
   @include details.flex-style();

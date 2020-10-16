@@ -21,18 +21,14 @@ const BlogCard: FC<Blog> = ({ id, title, date }) => (
 );
 
 const BlogPage: NextPage<{ blogs: Blog[] }> = ({ blogs }) => (
-  <>
-    <Layout pageName="限界開発鯖 - ブログ">
-      <div className={styles.blog}>
-        <h1 className={styles.title}>ブログ</h1>
-        <section className={styles.main}>
-          {blogs.map((blog) => (
-            <BlogCard key={blog.id} {...blog} />
-          ))}
-        </section>
-      </div>
-    </Layout>
-  </>
+  <Layout pageName="限界開発鯖 - ブログ">
+    <h1 className={styles.title}>ブログ</h1>
+    <section className={styles.main}>
+      {blogs.map((blog) => (
+        <BlogCard key={blog.id} {...blog} />
+      ))}
+    </section>
+  </Layout>
 );
 
 export const getStaticProps: GetStaticProps = async () => {
