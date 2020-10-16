@@ -7,6 +7,6 @@ export const Footer: FC = () => (
     <Link href="/policy">
       <a className={styles.footerLink}>プライバシーポリシー</a>
     </Link>{" "}
-    - Copyright (c) 2020 Approvers, all rights reserved.
+    - (c) 2020 Approvers
   </footer>
 );
