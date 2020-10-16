@@ -8,14 +8,14 @@
   padding-bottom: 0.5rem;
   text-align: center;
 
-  @include details.about-font(4rem);
+  @include details.with-font-size(title, 1rem);
 
   @media #{details.$middle} {
-    @include details.about-font(details.font-size("title") - 0.3rem);
+    @include details.with-font-size(title, -0.3rem);
   }
 
   @media #{details.$min} {
-    @include details.about-font(details.font-size("title") - 0.5rem);
+    @include details.with-font-size(title, -0.5rem);
   }
 }
 
@@ -23,16 +23,16 @@
   padding-bottom: details.$min-padding;
   font-style: italic;
 
-  @include details.about-font(details.font-size("sub"));
+  @include details.with-font-size(big);
 
   @media #{details.$middle} {
     padding-bottom: details.$padding;
 
-    @include details.about-font(details.font-size("sub") - 0.3rem);
+    @include details.with-font-size(big, -0.3rem);
   }
 
   @media #{details.$min} {
-    @include details.about-font(details.font-size("sub") - 0.5rem);
+    @include details.with-font-size(big, -0.5rem);
   }
 }
 

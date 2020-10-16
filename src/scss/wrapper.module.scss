@@ -71,7 +71,6 @@
 .cardWrapper {
   @extend .wrapper;
 
-  @include details.flex-component();
   @include details.components-size();
   @include phone();
 }

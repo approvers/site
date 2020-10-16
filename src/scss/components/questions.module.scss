@@ -9,13 +9,13 @@
   p {
     font-weight: normal;
 
-    @include details.about-font(details.font-size() - 0.1rem);
+    @include details.with-font-size(little);
 
     span {
       margin-right: 0.5rem;
       color: color.main(dark);
 
-      @include details.about-font(details.font-size(big));
+      @include details.with-font-size(big);
     }
   }
 }

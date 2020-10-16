@@ -11,17 +11,6 @@ $min: $screen + "(max-width: 360px)";
 $middle: $screen + "(max-width: 1030px)";
 $large: $screen + "(min-width: 1600px)";
 
-@function font-size($size: normal) {
-  $fontsize: (
-    title: 3rem,
-    big: 1.6rem,
-    normal: 1.1rem,
-    little: 1rem,
-  );
-
-  @return map.get($fontsize, $size);
-}
-
 @mixin flex-style($warp: wrap, $justify: center) {
   display: flex;
   flex-wrap: $warp;
@@ -29,14 +18,16 @@ $large: $screen + "(min-width: 1600px)";
   justify-content: $justify;
 }
 
-@mixin flex-component {
-  align-content: flex-start;
-  align-self: stretch;
-}
+@mixin with-font-size($size: normal, $offset: 0) {
+  $fontsize: (
+    title: 3rem,
+    big: 1.6rem,
+    normal: 1.1rem,
+    little: 1rem,
+  );
 
-@mixin about-font($font-size: $main-fontsize) {
-  font-size: $font-size;
-  line-height: $font-size + 0.4rem;
+  font-size: map.get($fontsize, $size) + $offset;
+  line-height: map.get($fontsize, $size) + $offset + 0.4rem;
 }
 
 @mixin make-padding($display-size, $pos: "") {
@@ -102,22 +93,22 @@ $large: $screen + "(min-width: 1600px)";
 .title {
   padding: 1vh 0;
 
-  @include about-font(font-size(title));
+  @include with-font-size(title);
 
   @media #{$isPhone} {
-    @include about-font(font-size(title) - 0.7rem);
+    @include with-font-size(title, -0.7rem);
   }
 }
 
 .text > * {
-  @include about-font(font-size(little));
+  @include with-font-size(little);
 }
 
 .name {
-  @include about-font(font-size(big));
+  @include with-font-size(big);
 
   @media #{$isPhone} {
-    @include about-font(font-size(big) - 0.1rem);
+    @include with-font-size(big, -0.1rem);
   }
 }
 
