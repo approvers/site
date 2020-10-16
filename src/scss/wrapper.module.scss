@@ -17,6 +17,7 @@
 .wrapper {
   flex-flow: column;
   width: 100%;
+  margin-bottom: auto;
 
   @include details.flex-style();
 }
@@ -24,7 +25,7 @@
 .page {
   @extend .wrapper;
 
-  padding-bottom: 2vh;
+  min-height: 100vh;
 }
 
 .home {
