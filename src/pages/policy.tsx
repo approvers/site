@@ -3,7 +3,7 @@ import { Header } from "../components/header";
 import { Layout } from "../components/layout";
 import styles from "../scss/pages/policy.module.scss";
 
-const JoinPage: NextPage = () => (
+const policyPage: NextPage = () => (
   <>
     <Layout pageName="限界開発鯖 - 当サイトについて">
       <Header />
@@ -53,4 +53,4 @@ const JoinPage: NextPage = () => (
   </>
 );
 
-export default JoinPage;
+export default policyPage;
