@@ -1,0 +1,17 @@
+@use "../../details.variable";
+
+.markdown {
+  width: 60%;
+  min-height: 100%;
+  padding: 0 1.5rem;
+  padding-top: 1rem;
+  text-align: left;
+
+  @media #{details.$middle} {
+    width: 70%;
+  }
+
+  @media #{details.$isPhone} {
+    width: 90%;
+  }
+}

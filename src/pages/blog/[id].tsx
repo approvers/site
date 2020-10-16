@@ -3,7 +3,7 @@ import { Layout } from "../../components/layout";
 import { DateString } from "../../components/date";
 import { getAllBlogIds, getBlogFromId, Blog } from "../../lib/blog-fetch";
 import Markdown from "markdown-to-jsx";
-import styles from "../../scss/pages/blog.module.scss";
+import styles from "../../scss/pages/blog/markdown.module.scss";
 
 type BlogPostPageProps = {
   post: Blog;

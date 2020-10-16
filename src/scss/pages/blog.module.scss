@@ -31,29 +31,10 @@
   @include details.about-font(details.get-fontsize("little") - 0.2rem);
 }
 
-.blogContents,
-.markdown {
-  min-height: 100%;
-}
-
 .blogContents {
   @extend .enumerate-contents-wrapper;
 
   flex-direction: column;
   width: 100%;
-}
-
-.markdown {
-  width: 60%;
-  padding: 0 1.5rem;
-  padding-top: 1rem;
-  text-align: left;
-
-  @media #{details.$middle} {
-    width: 70%;
-  }
-
-  @media #{details.$isPhone} {
-    width: 90%;
-  }
+  min-height: 100%;
 }
