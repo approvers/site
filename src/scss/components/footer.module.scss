@@ -16,4 +16,8 @@
 
 .footerLink {
   color: color.get-main-color(dark);
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
