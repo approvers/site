@@ -4,12 +4,12 @@ import styles from "../scss/components/questions.module.scss";
 
 const QA: FC<{ question: ReactNode; answer: ReactNode }> = ({ question, answer }) => (
   <section className={styles.aboutUs}>
-    <p>
-      <span>Q.</span>
+    <p className={styles.sentence}>
+      <span className={styles.bigLetter}>Q.</span>
       {question}
     </p>
-    <p>
-      <span>A.</span>
+    <p className={styles.sentence}>
+      <span className={styles.bigLetter}>A.</span>
       {answer}
     </p>
   </section>
