@@ -1,4 +1,4 @@
-import { getSortedBlogMetadatas, Blog } from "../lib/blog-fetch";
+import { getSortedBlogMetadatas, Metadata } from "../lib/blog-fetch";
 import { DateString } from "../components/date";
 import { Layout } from "../components/layout";
 import { Paper } from "../components/paper";
@@ -7,7 +7,7 @@ import Link from "next/link";
 import { FC } from "react";
 import styles from "../scss/pages/blog.module.scss";
 
-const BlogCard: FC<Blog> = ({ id, title, date }) => (
+const BlogCard: FC<Metadata> = ({ id, title, date }) => (
   <Paper>
     <img src="/alternative.png" className={styles.avatar} />
     <div className={styles.cardText}>
@@ -20,7 +20,7 @@ const BlogCard: FC<Blog> = ({ id, title, date }) => (
   </Paper>
 );
 
-const BlogPage: NextPage<{ blogs: Blog[] }> = ({ blogs }) => (
+const BlogPage: NextPage<{ blogs: Metadata[] }> = ({ blogs }) => (
   <Layout pageName="限界開発鯖 - ブログ">
     <h1 className={styles.title}>ブログ</h1>
     <section className={styles.main}>
