@@ -1,6 +1,5 @@
 import { getSortedBlogMetadatas, Blog } from "../lib/blog-fetch";
 import { DateString } from "../components/date";
-import { Header } from "../components/header";
 import { Layout } from "../components/layout";
 import { Paper } from "../components/paper";
 import { NextPage, GetStaticProps } from "next";
@@ -24,7 +23,6 @@ const BlogCard: FC<Blog> = ({ id, title, date }) => (
 const BlogPage: NextPage<{ blogs: Blog[] }> = ({ blogs }) => (
   <>
     <Layout pageName="限界開発鯖 - ブログ">
-      <Header />
       <div className={styles.blog}>
         <h1 className={styles.title}>ブログ</h1>
         <section className={styles.main}>

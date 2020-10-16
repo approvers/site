@@ -4,7 +4,6 @@ import { getMembers, Member } from "../lib/member-fetch";
 import { FC } from "react";
 import { SNSLink } from "../components/sns-link";
 import { Paper } from "../components/paper";
-import { Header } from "../components/header";
 import styles from "../scss/pages/member.module.scss";
 
 const alternative = "/alternative.png";
@@ -33,7 +32,6 @@ type MembersPageProps = {
 const MembersPage: NextPage<MembersPageProps> = ({ members }) => (
   <>
     <Layout pageName="限界開発鯖 - メンバー紹介">
-      <Header />
       <main className={styles.wrapper}>
         <h1 className={styles.title}>メンバー紹介</h1>
         <div className={styles.memberMainContents}>

@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import { Header } from "../components/header";
 import { Layout } from "../components/layout";
 import { ExternalLink } from "../components/externalLink";
 import styles from "../scss/pages/policy.module.scss";
@@ -7,7 +6,6 @@ import styles from "../scss/pages/policy.module.scss";
 const PolicyPage: NextPage = () => (
   <>
     <Layout pageName="限界開発鯖 - プライバシーポリシー">
-      <Header />
       <main className={styles.policyPage}>
         <h1 className={styles.title}>プライバシーポリシー</h1>
         <section className={styles.policyText}>

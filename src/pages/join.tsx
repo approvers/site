@@ -1,12 +1,10 @@
 import { NextPage } from "next";
-import { Header } from "../components/header";
 import { Layout } from "../components/layout";
 import styles from "../scss/pages/join.module.scss";
 
 const JoinPage: NextPage = () => (
   <>
     <Layout pageName="限界開発鯖 - 参加方法">
-      <Header />
       <main className={styles.joinPage}>
         <h1 className={styles.title}>参加方法</h1>
         <section className={styles.joinText}>
