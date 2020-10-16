@@ -42,6 +42,7 @@
 .enumerate-contents-wrapper {
   @extend .layout;
 
+  flex-flow: row wrap;
   justify-content: flex-start;
 
   @media #{details.$isPhone} {
