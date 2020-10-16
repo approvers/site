@@ -1,11 +1,12 @@
 @use "../color.variable";
+@use "../details.variable";
 
 .footerCard {
   position: relative;
   bottom: 0;
   width: 100vw;
   padding: 1em;
-  font-size: 0.75rem;
+  font-size: details.get-fontsize(little);
   text-align: center;
   border-color: color.get-main-color(dark);
   border-style: solid;
