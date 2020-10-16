@@ -63,7 +63,7 @@ $large: $screen + "(min-width: 1600px)";
 }
 
 @mixin hover-line {
-  background: linear-gradient(transparent 70%, color.get-main-color("light") 0%);
+  background: linear-gradient(transparent 70%, color.main(light) 0%);
 }
 
 @mixin components-size {
@@ -88,7 +88,7 @@ $large: $screen + "(min-width: 1600px)";
   transform: skew($deg, 0deg) translateX(-60%) translateY($translateY);
 }
 
-@mixin triangle($thickness: 15vh, $color: color.get-main-color("light")) {
+@mixin triangle($thickness: 15vh, $color: color.main(light)) {
   border-top: border($thickness, $color);
   border-right: border($thickness, transparent);
   border-bottom: border($thickness, transparent);

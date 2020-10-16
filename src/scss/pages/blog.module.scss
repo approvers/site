@@ -11,7 +11,7 @@
 }
 
 .pageLink {
-  color: color.get-main-color("main");
+  color: color.main();
   cursor: pointer;
 
   @include details.about-font(details.get-fontsize("little"));

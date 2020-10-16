@@ -7,7 +7,7 @@
 
   padding: 1rem 0;
   margin-bottom: 1%;
-  border-bottom: details.border(2px, color.get-main-color("main"));
+  border-bottom: details.border(2px, color.main());
 }
 
 .buttonWrapper {
@@ -27,10 +27,10 @@
   @include details.about-font(details.get-fontsize("main") + 0.1rem);
 
   &:hover {
-    @include details.hover-line ();
+    @include details.hover-line();
   }
 }
 
 .button > a {
-  @include details.cancel-background-color ();
+  @include details.cancel-background-color();
 }
