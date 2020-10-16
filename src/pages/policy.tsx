@@ -1,51 +1,41 @@
 import { NextPage } from "next";
 import { Header } from "../components/header";
 import { Layout } from "../components/layout";
+import { ExternalLink } from "../components/externalLink";
 import styles from "../scss/pages/policy.module.scss";
 
-const policyPage: NextPage = () => (
+const PolicyPage: NextPage = () => (
   <>
-    <Layout pageName="限界開発鯖 - 当サイトについて">
+    <Layout pageName="限界開発鯖 - プライバシーポリシー">
       <Header />
       <main className={styles.policyPage}>
         <h1 className={styles.title}>プライバシーポリシー</h1>
         <section className={styles.policyText}>
-          <p className={styles.textindent1em}>
-            当サイトでは、主に今後のサイトの改善に役立てるため、 Google
-            LLCが提供しているアクセス分析ツール「Google Analytics」を
-            使用したアクセス解析を行っております。
-          </p>
+          <p className={styles.textindent1em}>当サイトはGoogleアナリティクスを使用しております。</p>
 
           <p className={styles.textindent1em}>
-            Google Analyticsでは、当サイトが発行したCookie等を用いて、
-            アクセス状況や閲覧環境といったWebサイトの利用データを収集しております。
-          </p>
-
-          <p className={styles.textindent1em}>
-            Cookieの利用につきましては、Google Analyticsのプライバシーポリシーと
-            規約に基づいております。
-          </p>
-
-          <p className={styles.textindent1em}>
+            取得するデータは当サイトの改善に役立てる事のみに使用するとし、
             <span className={styles.color}>
-              取得したデータの使用は当サイトの改善に役立てるために限り、その他の
-              目的での使用は一切致しません。
+              個人の特定やその他個人の不利益に関わることは致しません。
             </span>
-            また、このデータは匿名で取得されているため、 個人の特定等は一切致しません。
           </p>
 
           <p className={styles.textindent1em}>
             規約の詳細に関しましては、
-            <a href="https://marketingplatform.google.com/about/analytics/terms/jp/">
+            <ExternalLink
+              href="https://marketingplatform.google.com/about/analytics/terms/jp/"
+              className={styles.link}
+            >
               Google アナリティクス利用規約
-            </a>
-            や<a href="https://policies.google.com/technologies/ads?hl=ja">Googleポリシーと規約</a>
+            </ExternalLink>
+            や
+            <ExternalLink
+              href="https://policies.google.com/technologies/ads?hl=ja"
+              className={styles.link}
+            >
+              Googleポリシーと規約
+            </ExternalLink>
             のページをご覧ください。
-          </p>
-
-          <p className={styles.textindent1em}>
-            また、上記までで挙げた機能はCookieを無効にすることでデータの収集を拒否
-            することができますので、お使いのブラウザの設定をご確認ください。
           </p>
         </section>
       </main>
@@ -53,4 +43,4 @@ const policyPage: NextPage = () => (
   </>
 );
 
-export default policyPage;
+export default PolicyPage;
