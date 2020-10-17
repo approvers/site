@@ -6,33 +6,23 @@
   @extend .enumerate-contents-wrapper;
 }
 
-.blog {
-  width: 100%;
-}
-
-.blog > h1 {
-  text-align: center;
-}
-
 .cardText {
-  @extend .text;
-}
+  @include details.flex-style(wrap, flex-start);
 
-.pageLink::before {
-  white-space: pre;
-  content: "\A";
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .pageLink {
-  color: color.get-main-color("main");
+  color: color.main();
   cursor: pointer;
 
-  @include details.about-font(details.get-fontsize("little"));
+  @include details.with-font-size(little);
 
   &:hover {
     text-decoration: none;
 
-    @include details.hover-line ();
+    @include details.hover-line();
   }
 }
 
@@ -41,12 +31,7 @@
 }
 
 .date {
-  @include details.about-font(details.get-fontsize("little") - 0.2rem);
-}
-
-.blogContents,
-.markdown {
-  min-height: 100%;
+  @include details.with-font-size(little, -0.2rem);
 }
 
 .blogContents {
@@ -54,19 +39,5 @@
 
   flex-direction: column;
   width: 100%;
-}
-
-.markdown {
-  width: 60%;
-  padding: 0 1.5rem;
-  padding-top: 1rem;
-  text-align: left;
-
-  @media #{details.$middle} {
-    width: 70%;
-  }
-
-  @media #{details.$isPhone} {
-    width: 90%;
-  }
+  min-height: 100%;
 }

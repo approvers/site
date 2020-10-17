@@ -4,28 +4,28 @@ $basis: #fff;
 $warn: #f99f48;
 $amount: 15;
 
-@function get-main-color($color) {
+@function main($color: normal) {
   $main: (
     dark: #409689,
-    main: #6ac1b7,
+    normal: #6ac1b7,
     light: #bfe9db,
   );
 
   @return map.get($main, $color);
 }
 
-@function get-sub-color($color) {
+@function sub($color: normal) {
   $sub: (
-    main: #517d99,
+    normal: #517d99,
     light: #dfefed,
   );
 
   @return map.get($sub, $color);
 }
 
-@function get-text-color($color) {
+@function text($color: normal) {
   $text: (
-    main: #202e3b,
+    normal: #202e3b,
     sub: #a3bacf,
   );
 

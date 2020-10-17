@@ -1,0 +1,20 @@
+@use "../color.variable";
+@use "../details.variable";
+
+.icon {
+  color: color.sub();
+
+  &:hover {
+    color: darken(color.sub(), color.$amount);
+  }
+}
+
+.icon > svg {
+  width: 1.2rem;
+  height: 1.2rem;
+
+  @media #{details.$isPhone} {
+    width: 1rem;
+    height: 1rem;
+  }
+}

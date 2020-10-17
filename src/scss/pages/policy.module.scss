@@ -1,18 +1,4 @@
 @use "../details.variable";
-@use "../color.variable";
-@use "../wrapper.module";
-
-.policyPage {
-  min-width: 80%;
-
-  .title {
-    text-align: center;
-  }
-
-  * {
-    text-align: left;
-  }
-}
 
 .policyText {
   @extend .text;
@@ -28,22 +14,10 @@
   p {
     margin: 0.6em;
     line-height: 1.7;
+    text-indent: 1em;
   }
 }
 
 .color {
-  @include details.hover-line ();
-}
-
-.textindent1em {
-  text-indent: 1em;
-}
-
-.link {
-  padding: 0 0.1rem;
-  font-style: italic;
-  color: color.get-text-color("main");
-  text-decoration: solid;
-  cursor: pointer;
-  text-decoration-line: underline;
+  @include details.hover-line();
 }
