@@ -5,17 +5,17 @@
   display: block;
   width: 100%;
   padding-bottom: 2rem;
+}
 
-  p {
-    font-weight: normal;
+.sentence {
+  font-weight: normal;
 
-    @include details.with-font-size(little);
+  @include details.with-font-size(little);
+}
 
-    span {
-      margin-right: 0.5rem;
-      color: color.main(dark);
+.bigLetter {
+  margin-right: 0.5rem;
+  color: color.main(dark);
 
-      @include details.with-font-size(big);
-    }
-  }
+  @include details.with-font-size(big);
 }
