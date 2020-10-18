@@ -1,3 +1,4 @@
+@use "../color.variable";
 @use "../details.variable";
 
 .policyText {
@@ -19,5 +20,5 @@
 }
 
 .color {
-  @include details.hover-line();
+  @include color.main(light, bold-underline);
 }
