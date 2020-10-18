@@ -21,19 +21,3 @@
     min-width: 90%;
   }
 }
-
-.button {
-  cursor: pointer;
-  transition-timing-function: ease-in-out;
-
-  @include details.with-font-size(normal, 0.1rem);
-
-  &:hover {
-    @include color.main(light, bold-underline);
-  }
-}
-
-.button > a {
-  @include color.clear();
-  @include color.text();
-}

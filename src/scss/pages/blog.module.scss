@@ -16,14 +16,6 @@
 .pageLink {
   @include color.main();
   @include details.with-font-size(little);
-
-  cursor: pointer;
-
-  &:hover {
-    @include color.main(light, bold-underline);
-
-    text-decoration: none;
-  }
 }
 
 .blogTitle {
