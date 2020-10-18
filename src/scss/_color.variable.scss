@@ -12,6 +12,10 @@ $warn: #f99f48;
     border-color: $color;
   } @else if $target == border-top {
     border-top-color: $color;
+  } @else if $target == border-right {
+    border-right-color: $color;
+  } @else if $target == border-bottom {
+    border-bottom-color: $color;
   } @else if $target == border-left {
     border-left-color: $color;
   } @else if $target == bold-underline {
