@@ -100,10 +100,6 @@ $large: $screen + "(min-width: 1600px)";
   }
 }
 
-.text > * {
-  @include with-font-size(little);
-}
-
 .name {
   @include with-font-size(big);
 
@@ -112,6 +108,12 @@ $large: $screen + "(min-width: 1600px)";
   }
 }
 
-.text > * + * {
-  padding-top: 0.1rem;
+.text {
+  & > * {
+    @include with-font-size(little);
+  }
+
+  & > * + * {
+    padding-top: 0.1rem;
+  }
 }
