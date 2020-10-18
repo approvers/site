@@ -2,7 +2,6 @@
 
 $basis: #fff;
 $warn: #f99f48;
-$amount: 15;
 
 @mixin applyColor($color, $target: front) {
   @if $target == front {
@@ -35,6 +34,7 @@ $amount: 15;
 }
 
 @mixin sub($color: normal, $target: front) {
+  $amount: 15;
   $sub: (
     dark: darken(#517d99, $amount),
     normal: #517d99,
