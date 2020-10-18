@@ -49,10 +49,6 @@ $large: $screen + "(min-width: 1600px)";
   height: 100%;
 }
 
-@mixin cancel-background-color {
-  background-color: #fff0;
-}
-
 @mixin components-size {
   @media #{$isPc} {
     max-width: 33%;
