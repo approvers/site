@@ -7,6 +7,10 @@
   padding-bottom: 2rem;
 }
 
+.text {
+  @extend .text;
+}
+
 .sentence {
   @include details.with-font-size(little);
 

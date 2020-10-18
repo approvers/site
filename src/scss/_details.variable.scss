@@ -98,6 +98,14 @@ $large: $screen + "(min-width: 1600px)";
 }
 
 .text {
+  max-width: 32.5rem;
+  padding: 2%;
+  margin: 0 auto;
+
+  @media #{$isPhone} {
+    padding: 2% 2% + $min-padding;
+  }
+
   & > * {
     @include with-font-size(little);
   }

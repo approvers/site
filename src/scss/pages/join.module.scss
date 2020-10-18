@@ -3,14 +3,6 @@
 
 .joinText {
   @extend .text;
-
-  max-width: 32.5rem;
-  padding: 2% 0;
-  margin: 0 auto;
-
-  @media #{details.$isPhone} {
-    padding: 2% 2% + details.$min-padding;
-  }
 }
 
 .color {
