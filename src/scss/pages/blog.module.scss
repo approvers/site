@@ -30,10 +30,6 @@
   @extend .name;
 }
 
-.date {
-  @include details.with-font-size(little, -0.2rem);
-}
-
 .blogContents {
   @extend .enumerate-contents-wrapper;
 
