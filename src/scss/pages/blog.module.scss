@@ -14,15 +14,15 @@
 }
 
 .pageLink {
-  color: color.main();
-  cursor: pointer;
-
+  @include color.main();
   @include details.with-font-size(little);
 
-  &:hover {
-    text-decoration: none;
+  cursor: pointer;
 
-    @include details.hover-line();
+  &:hover {
+    @include color.main(light, bold-underline);
+
+    text-decoration: none;
   }
 }
 

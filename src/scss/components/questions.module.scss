@@ -8,14 +8,15 @@
 }
 
 .sentence {
-  font-weight: normal;
-
   @include details.with-font-size(little);
+
+  font-weight: normal;
 }
 
 .bigLetter {
-  margin-right: 0.5rem;
-  color: color.main(dark);
-
   @include details.with-font-size(big);
+
+  margin-right: 0.5rem;
+
+  @include color.main(dark);
 }

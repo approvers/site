@@ -4,30 +4,51 @@ $basis: #fff;
 $warn: #f99f48;
 $amount: 15;
 
-@function main($color: normal) {
+@mixin applyColor($color, $target: front) {
+  @if $target == front {
+    color: $color;
+  } @else if $target == back {
+    background-color: $color;
+  } @else if $target == border {
+    border-color: $color;
+  } @else if $target == border-top {
+    border-top-color: $color;
+  } @else if $target == border-left {
+    border-left-color: $color;
+  } @else if $target == bold-underline {
+    background: linear-gradient(transparent 70%, $color 0%);
+  }
+}
+
+@mixin clear($target: front) {
+  @include applyColor(transparent, $target);
+}
+
+@mixin main($color: normal, $target: front) {
   $main: (
     dark: #409689,
     normal: #6ac1b7,
     light: #bfe9db,
   );
 
-  @return map.get($main, $color);
+  @include applyColor(map.get($main, $color), $target);
 }
 
-@function sub($color: normal) {
+@mixin sub($color: normal, $target: front) {
   $sub: (
+    dark: darken(#517d99, $amount),
     normal: #517d99,
     light: #dfefed,
   );
 
-  @return map.get($sub, $color);
+  @include applyColor(map.get($sub, $color), $target);
 }
 
-@function text($color: normal) {
+@mixin text($color: normal, $target: front) {
   $text: (
     normal: #202e3b,
     sub: #a3bacf,
   );
 
-  @return map.get($text, $color);
+  @include applyColor(map.get($text, $color), $target);
 }

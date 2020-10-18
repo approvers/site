@@ -7,7 +7,9 @@
 
   padding: 1rem 0;
   margin-bottom: 1%;
-  border-bottom: details.border(2px, color.main());
+  border-bottom: details.border(2px);
+
+  @include color.main(normal, border);
 }
 
 .buttonWrapper {
@@ -27,10 +29,11 @@
   @include details.with-font-size(normal, 0.1rem);
 
   &:hover {
-    @include details.hover-line();
+    @include color.main(light, bold-underline);
   }
 }
 
 .button > a {
-  @include details.cancel-background-color();
+  @include color.clear();
+  @include color.text();
 }

@@ -53,10 +53,6 @@ $large: $screen + "(min-width: 1600px)";
   background-color: #fff0;
 }
 
-@mixin hover-line {
-  background: linear-gradient(transparent 70%, color.main(light) 0%);
-}
-
 @mixin components-size {
   @media #{$isPc} {
     max-width: 33%;
@@ -79,15 +75,19 @@ $large: $screen + "(min-width: 1600px)";
   transform: skew($deg, 0deg) translateX(-60%) translateY($translateY);
 }
 
-@mixin triangle($thickness: 15vh, $color: color.main(light)) {
-  border-top: border($thickness, $color);
-  border-right: border($thickness, transparent);
-  border-bottom: border($thickness, transparent);
-  border-left: border($thickness, $color);
+@mixin triangle($thickness: 15vh) {
+  border-top: border($thickness);
+  border-right: border($thickness);
+  border-bottom: border($thickness);
+  border-left: border($thickness);
+
+  @include color.clear(border);
+  @include color.main(light, border-top);
+  @include color.main(light, border-left);
 }
 
-@function border($thickness, $color) {
-  @return $thickness solid $color;
+@function border($thickness) {
+  @return $thickness solid;
 }
 
 .title {

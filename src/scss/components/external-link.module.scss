@@ -1,9 +1,10 @@
 @use "../color.variable";
 
 .link {
+  @include color.text();
+
   padding: 0 0.1rem;
   font-style: italic;
-  color: color.text();
   text-decoration: solid;
   cursor: pointer;
   text-decoration-line: underline;
