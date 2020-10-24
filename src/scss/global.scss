@@ -45,8 +45,3 @@ ul {
 ::selection {
   background-color: color.main(light);
 }
-
-// Firefox
-::-moz-selection {
-  background-color: color.main(light);
-}
