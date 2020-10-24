@@ -88,6 +88,24 @@
     - type: github
       url: https://github.com/yangniao23
 
+- name: いわんこ
+  avatar: https://github.com/Iwancof.png
+  role: 超スーパーガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/iwancof_ptr
+    - type: github
+      url: https://github.com/Iwancof
+
+- name: alt
+  avatar: https://github.com/JJ1LFC.png
+  role: 超スーパーガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/jj1lfc
+    - type: github
+      url: https://github.com/JJ1LFC
+
 - name: raiga0310
   avatar: https://github.com/raiga0310.png
   role: ガチプロ
@@ -444,6 +462,15 @@
       url: https://twitter.com/cabbagepython
     - type: github
       url: https://github.com/kazukazuprogram
+
+- name: s4na/Nabetani
+  avatar: https://github.com/s4na.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/s4na_penguin
+    - type: github
+      url: https://github.com/s4na
 
 - name: えぬ
   avatar: ""
