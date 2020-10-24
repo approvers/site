@@ -97,6 +97,15 @@
     - type: github
       url: https://github.com/Iwancof
 
+- name: alt
+  avatar: https://github.com/JJ1LFC.png
+  role: 超スーパーガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/jj1lfc/
+    - type: github
+      url: https://github.com/JJ1LFC
+
 - name: raiga0310
   avatar: https://github.com/raiga0310.png
   role: ガチプロ
