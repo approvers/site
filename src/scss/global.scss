@@ -46,8 +46,3 @@ ul {
 ::selection {
   @include color.main(light);
 }
-
-// Firefox
-::-moz-selection {
-  @include color.main(light);
-}
