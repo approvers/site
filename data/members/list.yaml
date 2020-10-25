@@ -472,6 +472,15 @@
     - type: github
       url: https://github.com/s4na
 
+- name: すとりんばー
+  avatar: https://github.com/strvworks.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/strvert
+    - type: github
+      url: https://github.com/strvworks
+
 - name: えぬ
   avatar: ""
   role: べんつよマン
