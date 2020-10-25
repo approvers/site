@@ -481,6 +481,15 @@
     - type: github
       url: https://github.com/strvworks
 
+- name: 麦煤
+  avatar: https://github.com/mmgiss.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/MugiSus
+    - type: github
+      url: https://github.com/mmgiss
+
 - name: えぬ
   avatar: ""
   role: べんつよマン
