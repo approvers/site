@@ -106,6 +106,15 @@
     - type: github
       url: https://github.com/JJ1LFC
 
+- name: ゆにおか
+  avatar: https://github.com/UniokaWorld.png
+  role: 頭のおかしい大天災
+  links:
+    - type: twitter
+      url: https://twitter.com/UniokaWorld
+    - type: github
+      url: https://github.com/UniokaWorld
+
 - name: raiga0310
   avatar: https://github.com/raiga0310.png
   role: ガチプロ
@@ -132,15 +141,6 @@
       url: https://twitter.com/PotyaExe
     - type: github
       url: https://github.com/potyama
-
-- name: ゆにおか
-  avatar: https://github.com/UniokaWorld.png
-  role: ガチプロ
-  links:
-    - type: twitter
-      url: https://twitter.com/UniokaWorld
-    - type: github
-      url: https://github.com/UniokaWorld
 
 - name: unios103
   avatar: https://github.com/unios103.png
