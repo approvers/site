@@ -14,24 +14,12 @@
 }
 
 .pageLink {
-  color: color.main();
-  cursor: pointer;
-
+  @include color.main();
   @include details.with-font-size(little);
-
-  &:hover {
-    text-decoration: none;
-
-    @include details.hover-line();
-  }
 }
 
 .blogTitle {
   @extend .name;
-}
-
-.date {
-  @include details.with-font-size(little, -0.2rem);
 }
 
 .blogContents {

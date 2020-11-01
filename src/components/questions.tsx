@@ -16,7 +16,7 @@ const QA: FC<{ question: ReactNode; answer: ReactNode }> = ({ question, answer }
 );
 
 export const Questions: FC = () => (
-  <div>
+  <div className={styles.text}>
     <QA
       question={"限界開発鯖ってなに?"}
       answer={"限界開発鯖は高専生を中心に限界になった人々が限界状態で開発を行う Discord 鯖です。"}

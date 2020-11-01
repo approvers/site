@@ -7,7 +7,9 @@
 
   padding: 1rem 0;
   margin-bottom: 1%;
-  border-bottom: details.border(2px, color.main());
+  border-bottom: details.border(2px);
+
+  @include color.main(normal, border);
 }
 
 .buttonWrapper {
@@ -18,19 +20,4 @@
   @media #{details.$middle} {
     min-width: 90%;
   }
-}
-
-.button {
-  cursor: pointer;
-  transition-timing-function: ease-in-out;
-
-  @include details.with-font-size(normal, 0.1rem);
-
-  &:hover {
-    @include details.hover-line();
-  }
-}
-
-.button > a {
-  @include details.cancel-background-color();
 }

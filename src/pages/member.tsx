@@ -11,7 +11,7 @@ const alternative = "/alternative.png";
 const MemberCard: FC<Member> = ({ name, role, links, avatar }) => (
   <Paper>
     <img src={avatar == "" ? alternative : avatar} alt={name} className={styles.avatar} />
-    <div className={styles.text}>
+    <div>
       <h4 className={styles.name}>{name}</h4>
       <p>{role}</p>
       <div className={styles.linksContainer}>
