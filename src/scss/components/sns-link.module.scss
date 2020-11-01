@@ -2,10 +2,10 @@
 @use "../details.variable";
 
 .icon {
-  color: color.sub();
+  @include color.sub();
 
   &:hover {
-    color: darken(color.sub(), color.$amount);
+    @include color.sub(dark);
   }
 }
 

@@ -1,5 +1,5 @@
 import { ReactNode, FC, MouseEvent, forwardRef, Ref } from "react";
-import styles from "../scss/components/header.module.scss";
+import styles from "../scss/components/button.module.scss";
 
 type ButtonProps = {
   children: ReactNode;

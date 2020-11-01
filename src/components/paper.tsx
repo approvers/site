@@ -1,5 +1,5 @@
 import { ReactNode, FC } from "react";
-import styles from "../scss/wrapper.module.scss";
+import styles from "../scss/components/paper.module.scss";
 
 export const Paper: FC<{ children: ReactNode }> = ({ children }) => (
   <div className={styles.cardWrapper}>
