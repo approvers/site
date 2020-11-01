@@ -6,6 +6,7 @@ import { NextPage, GetStaticProps } from "next";
 import Link from "next/link";
 import { FC } from "react";
 import styles from "../scss/pages/blog.module.scss";
+import { Button } from "../components/button";
 
 const BlogCard: FC<Metadata> = ({ id, title, date }) => (
   <Paper>
@@ -14,7 +15,9 @@ const BlogCard: FC<Metadata> = ({ id, title, date }) => (
       <h3 className={styles.blogTitle}>{title}</h3>
       <DateString dateString={date} />
       <Link href={`/blog/${id}`}>
-        <a className={styles.pageLink}>記事を読む &rarr;</a>
+        <Button>
+          <a className={styles.pageLink}>記事を読む &rarr;</a>
+        </Button>
       </Link>
     </div>
   </Paper>

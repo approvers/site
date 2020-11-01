@@ -1,4 +1,5 @@
 @use "../details.variable";
+@use "../components/triangle.module";
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap&text=A.Q");
 
@@ -43,9 +44,9 @@
   content: "";
 
   @include details.transform(-4rem, -30deg);
-  @include details.triangle();
+  @include triangle.triangle();
 
   @media #{details.$isPhone} {
-    @include details.triangle(10vh);
+    @include triangle.triangle(10vh);
   }
 }

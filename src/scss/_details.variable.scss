@@ -49,14 +49,6 @@ $large: $screen + "(min-width: 1600px)";
   height: 100%;
 }
 
-@mixin cancel-background-color {
-  background-color: #fff0;
-}
-
-@mixin hover-line {
-  background: linear-gradient(transparent 70%, color.main(light) 0%);
-}
-
 @mixin components-size {
   @media #{$isPc} {
     max-width: 33%;
@@ -79,15 +71,8 @@ $large: $screen + "(min-width: 1600px)";
   transform: skew($deg, 0deg) translateX(-60%) translateY($translateY);
 }
 
-@mixin triangle($thickness: 15vh, $color: color.main(light)) {
-  border-top: border($thickness, $color);
-  border-right: border($thickness, transparent);
-  border-bottom: border($thickness, transparent);
-  border-left: border($thickness, $color);
-}
-
-@function border($thickness, $color) {
-  @return $thickness solid $color;
+@function border($thickness) {
+  @return $thickness solid;
 }
 
 .title {
@@ -100,10 +85,6 @@ $large: $screen + "(min-width: 1600px)";
   }
 }
 
-.text > * {
-  @include with-font-size(little);
-}
-
 .name {
   @include with-font-size(big);
 
@@ -112,6 +93,20 @@ $large: $screen + "(min-width: 1600px)";
   }
 }
 
-.text > * + * {
-  padding-top: 0.1rem;
+.text {
+  max-width: 32.5rem;
+  padding: 2%;
+  margin: 0 auto;
+
+  @media #{$isPhone} {
+    padding: 2% 2% + $min-padding;
+  }
+
+  & > * {
+    @include with-font-size(little);
+  }
+
+  & > * + * {
+    padding-top: 0.1rem;
+  }
 }
