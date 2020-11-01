@@ -18,3 +18,20 @@
     margin-left: 1.2rem;
   }
 }
+
+.avatarWrapper,
+.avatar {
+  height: 100%;
+
+  @include details.cancel-background-color();
+}
+
+.avatar {
+  width: 37%;
+  object-fit: contain;
+  padding-right: 5%;
+
+  @media #{details.$isPhone} {
+    width: 30%;
+  }
+}
