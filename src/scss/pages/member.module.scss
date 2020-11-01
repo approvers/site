@@ -1,5 +1,6 @@
 @use "../wrapper.module";
 @use "../details.variable";
+@use "../color.variable";
 
 .memberMainContents {
   @extend .enumerate-contents-wrapper;
@@ -21,7 +22,7 @@
 .avatar {
   height: 100%;
 
-  @include details.cancel-background-color();
+  @include color.clear(back);
 }
 
 .avatar {

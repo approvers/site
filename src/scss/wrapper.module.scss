@@ -46,26 +46,3 @@
     justify-content: end;
   }
 }
-
-.cardWrapper {
-  @extend .wrapper;
-
-  @include details.components-size();
-  @include phone();
-}
-
-.card {
-  @include details.fully-spread();
-  @include details.flex-style(nowrap, flex-start);
-  @include details.make-padding(details.$isPc);
-
-  @media #{details.$large} {
-    @include details.make-padding(details.$large);
-  }
-
-  @media #{details.$isPhone} {
-    text-align: left;
-
-    @include details.make-padding(details.$isPhone);
-  }
-}
