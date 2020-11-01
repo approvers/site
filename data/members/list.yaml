@@ -306,6 +306,15 @@
     - type: twitter
       url: https://twitter.com/Yorime_yrm
 
+- name: なつ
+  avatar: https://github.com/Natu9.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/_Natu9
+    - type: github
+      url: https://github.com/Natu9
+
 - name: 柚月えふ
   avatar: ""
   role: ガチプロ
