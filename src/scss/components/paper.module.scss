@@ -1,0 +1,28 @@
+@use "../details.variable";
+@use "../wrapper.module";
+
+.cardWrapper {
+  @extend .wrapper;
+
+  @include details.components-size();
+
+  @media #{details.$isPhone} {
+    justify-content: flex-start;
+  }
+}
+
+.card {
+  @include details.fully-spread();
+  @include details.flex-style(nowrap, flex-start);
+  @include details.make-padding(details.$isPc);
+
+  @media #{details.$large} {
+    @include details.make-padding(details.$large);
+  }
+
+  @media #{details.$isPhone} {
+    text-align: left;
+
+    @include details.make-padding(details.$isPhone);
+  }
+}

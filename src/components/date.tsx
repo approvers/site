@@ -1,6 +1,6 @@
 import { parseISO, format } from "date-fns";
 import { FC } from "react";
-import styles from "../scss/pages/blog.module.scss";
+import styles from "../scss/components/date.module.scss";
 
 export const DateString: FC<{ dateString: string }> = ({ dateString }) => {
   const date = parseISO(dateString);

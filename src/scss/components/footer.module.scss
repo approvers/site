@@ -3,6 +3,7 @@
 
 .footerCard {
   @include details.with-font-size(little);
+  @include color.main(normal, border);
 
   position: relative;
   bottom: 0;
@@ -10,13 +11,12 @@
   padding: 1em;
   margin-top: auto;
   text-align: center;
-  border-color: color.main(normal);
   border-style: solid;
   border-width: 2px 0 0 0;
 }
 
 .footerLink {
-  color: color.main(dark);
+  @include color.main(dark);
 
   &:hover {
     text-decoration: underline;
