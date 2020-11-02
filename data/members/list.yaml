@@ -508,6 +508,15 @@
     - type: github
       url: https://github.com/Mugisus
 
+- name: pc7342
+  avatar: https://github.com/pc7342.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/pc7342
+    - type: github
+      url: https://github.com/pc7342
+
 - name: えぬ
   avatar: ""
   role: べんつよマン
