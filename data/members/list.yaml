@@ -517,6 +517,15 @@
     - type: github
       url: https://github.com/pc7342
 
+- name: JUN
+  avatar: https://github.com/JUNNETWORKS.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/JUN_NETWORKS_JP
+    - type: github
+      url: https://github.com/JUNNETWORKS
+
 - name: えぬ
   avatar: ""
   role: べんつよマン
