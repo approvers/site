@@ -12,7 +12,7 @@
   role: 全知全能の神
   links:
     - type: twitter
-      url: https://twitter.com/loxygenK
+      url: https://twitter.com/loxygen_k
     - type: github
       url: https://github.com/loxygenK
 
@@ -306,6 +306,15 @@
     - type: twitter
       url: https://twitter.com/Yorime_yrm
 
+- name: なつ
+  avatar: https://github.com/Natu9.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/_Natu9
+    - type: github
+      url: https://github.com/Natu9
+
 - name: 柚月えふ
   avatar: ""
   role: ガチプロ
@@ -377,7 +386,7 @@
   role: ガチプロ
   links:
     - type: twitter
-      url: https://twitter.com/sigumaaaaa
+      url: https://twitter.com/sigumadayo
     - type: github
       url: https://github.com/Sigumaa
 
