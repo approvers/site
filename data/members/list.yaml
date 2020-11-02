@@ -16,6 +16,15 @@
     - type: github
       url: https://github.com/loxygenK
 
+- name: こるく
+  avatar: https://github.com/Colk-tech.png
+  role: 全知全能の神
+  links:
+    - type: twitter
+      url: https://twitter.com/Colk_
+    - type: github
+      url: https://github.com/Colk-tech
+
 - name: 鏡華
   avatar: https://github.com/mirror-kt.png
   role: 超スーパーガチプロ
@@ -105,6 +114,15 @@
       url: https://twitter.com/jj1lfc
     - type: github
       url: https://github.com/JJ1LFC
+
+- name: JUN
+  avatar: https://github.com/JUNNETWORKS.png
+  role: 超スーパーガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/JUN_NETWORKS_JP
+    - type: github
+      url: https://github.com/JUNNETWORKS
 
 - name: くもことなおこ
   avatar: https://github.com/naoko1010hh.png
@@ -508,6 +526,15 @@
     - type: github
       url: https://github.com/Mugisus
 
+- name: pc7342
+  avatar: https://github.com/pc7342.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/pc7342
+    - type: github
+      url: https://github.com/pc7342
+
 - name: えぬ
   avatar: ""
   role: べんつよマン
@@ -526,15 +553,6 @@
   links:
     - type: twitter
       url: https://twitter.com/tirun61031a_o_a
-
-- name: こるく
-  avatar: https://github.com/Colk-tech.png
-  role: 全知全能の神
-  links:
-    - type: twitter
-      url: https://twitter.com/Colk_
-    - type: github
-      url: https://github.com/Colk-tech
 
 - name: ko
   avatar: https://github.com/ko50.png
