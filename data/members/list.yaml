@@ -106,6 +106,15 @@
     - type: github
       url: https://github.com/JJ1LFC
 
+- name: JUN
+  avatar: https://github.com/JUNNETWORKS.png
+  role: 超スーパーガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/JUN_NETWORKS_JP
+    - type: github
+      url: https://github.com/JUNNETWORKS
+
 - name: くもことなおこ
   avatar: https://github.com/naoko1010hh.png
   role: 頭のおかしい大天災
@@ -516,15 +525,6 @@
       url: https://twitter.com/pc7342
     - type: github
       url: https://github.com/pc7342
-
-- name: JUN
-  avatar: https://github.com/JUNNETWORKS.png
-  role: ガチプロ
-  links:
-    - type: twitter
-      url: https://twitter.com/JUN_NETWORKS_JP
-    - type: github
-      url: https://github.com/JUNNETWORKS
 
 - name: えぬ
   avatar: ""
