@@ -32,20 +32,3 @@
     justify-content: flex-end;
   }
 }
-
-.avatarWrapper,
-.avatar {
-  height: 100%;
-
-  @include color.clear(back);
-}
-
-.avatar {
-  width: 37%;
-  object-fit: contain;
-  padding-right: 5%;
-
-  @media #{details.$isPhone} {
-    width: 30%;
-  }
-}

@@ -5,12 +5,13 @@ import { FC } from "react";
 import { SNSLink } from "../components/sns-link";
 import { Paper } from "../components/paper";
 import styles from "../scss/pages/member.module.scss";
+import { Avatar } from "../components/avatar";
 
 const alternative = "/alternative.png";
 
 const MemberCard: FC<Member> = ({ name, role, links, avatar }) => (
   <Paper>
-    <img src={avatar == "" ? alternative : avatar} alt={name} className={styles.avatar} />
+    <Avatar src={avatar == "" ? alternative : avatar} name={name} />
     <div>
       <h4 className={styles.name}>{name}</h4>
       <p>{role}</p>

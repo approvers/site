@@ -7,10 +7,11 @@ import Link from "next/link";
 import { FC } from "react";
 import styles from "../scss/pages/blog.module.scss";
 import { Button } from "../components/button";
+import { Avatar } from "../components/avatar";
 
 const BlogCard: FC<Metadata> = ({ id, title, date }) => (
   <Paper>
-    <img src="/alternative.png" className={styles.avatar} />
+    <Avatar name={title} />
     <div className={styles.cardText}>
       <h3 className={styles.blogTitle}>{title}</h3>
       <DateString dateString={date} />
