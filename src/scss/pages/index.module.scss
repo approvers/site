@@ -3,7 +3,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap&text=A.Q");
 
-.title {
+.splash {
   position: relative;
   padding-top: details.$padding;
   padding-bottom: 0.5rem;
@@ -37,7 +37,7 @@
   }
 }
 
-.title::after {
+.splash::after {
   position: absolute;
   left: 50%;
   z-index: -1;
