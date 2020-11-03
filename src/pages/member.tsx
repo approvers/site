@@ -6,6 +6,7 @@ import { SNSLink } from "../components/sns-link";
 import { Paper } from "../components/paper";
 import styles from "../scss/pages/member.module.scss";
 import { Avatar } from "../components/avatar";
+import { Title } from "../components/title";
 
 const alternative = "/alternative.png";
 
@@ -30,7 +31,7 @@ type MembersPageProps = {
 
 const MembersPage: NextPage<MembersPageProps> = ({ members }) => (
   <Layout pageName="限界開発鯖 - メンバー紹介">
-    <h1 className={styles.title}>メンバー紹介</h1>
+    <Title>メンバー紹介</Title>
     <div className={styles.memberMainContents}>
       {members.map((member) => (
         <MemberCard key={member.name} {...member} />

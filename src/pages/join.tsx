@@ -1,10 +1,11 @@
 import { NextPage } from "next";
 import { Layout } from "../components/layout";
+import { Title } from "../components/title";
 import styles from "../scss/pages/join.module.scss";
 
 const JoinPage: NextPage = () => (
   <Layout pageName="限界開発鯖 - 参加方法">
-    <h1 className={styles.title}>参加方法</h1>
+    <Title>参加方法</Title>
     <section className={styles.joinText}>
       <p>
         弊サーバーは、<span className={styles.color}>完全紹介制</span>となっています。

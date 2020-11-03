@@ -2,10 +2,11 @@ import { NextPage } from "next";
 import { Layout } from "../components/layout";
 import { ExternalLink } from "../components/external-link";
 import styles from "../scss/pages/policy.module.scss";
+import { Title } from "../components/title";
 
 const PolicyPage: NextPage = () => (
   <Layout pageName="限界開発鯖 - プライバシーポリシー">
-    <h1 className={styles.title}>プライバシーポリシー</h1>
+    <Title>プライバシーポリシー</Title>
     <section className={styles.policyText}>
       <p>当サイトは Google アナリティクスを使用しております。</p>
 

@@ -8,6 +8,7 @@ import { FC } from "react";
 import styles from "../scss/pages/blog.module.scss";
 import { Button } from "../components/button";
 import { Avatar } from "../components/avatar";
+import { Title } from "../components/title";
 
 const BlogCard: FC<Metadata> = ({ id, title, date }) => (
   <Paper>
@@ -26,7 +27,7 @@ const BlogCard: FC<Metadata> = ({ id, title, date }) => (
 
 const BlogPage: NextPage<{ blogs: Metadata[] }> = ({ blogs }) => (
   <Layout pageName="限界開発鯖 - ブログ">
-    <h1 className={styles.title}>ブログ</h1>
+    <Title>ブログ</Title>
     <section className={styles.main}>
       {blogs.map((blog) => (
         <BlogCard key={blog.id} {...blog} />
