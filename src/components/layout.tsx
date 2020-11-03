@@ -1,4 +1,4 @@
-import { ReactNode, FC } from "react";
+import type { ReactNode, FC } from "react";
 import Head from "next/head";
 import styles from "../scss/wrapper.module.scss";
 import { Header } from "./header";
