@@ -75,16 +75,6 @@ $large: $screen + "(min-width: 1600px)";
   @return $thickness solid;
 }
 
-.title {
-  padding: 1vh 0;
-
-  @include with-font-size(title);
-
-  @media #{$isPhone} {
-    @include with-font-size(title, -0.7rem);
-  }
-}
-
 .name {
   @include with-font-size(big);
 
