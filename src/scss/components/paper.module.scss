@@ -2,8 +2,7 @@
 @use "../wrapper.module";
 
 .paperWrapper {
-  @extend .wrapper;
-
+  @include wrapper.wrapper();
   @include details.components-size();
 
   @media #{details.$isPhone} {

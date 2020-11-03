@@ -1,7 +1,7 @@
 @use "color.variable";
 @use "details.variable";
 
-.wrapper {
+@mixin wrapper {
   flex-flow: column;
   width: 100%;
   margin-bottom: auto;
@@ -9,27 +9,27 @@
   @include details.flex-style();
 }
 
-.page {
-  @extend .wrapper;
+@mixin page {
+  @include wrapper();
 
   min-height: 100vh;
 }
 
-.layout {
-  @extend .wrapper;
+@mixin layout {
+  @include wrapper();
 
   padding: 0 details.$padding;
 }
 
-.enumerate-contents-wrapper {
-  @extend .layout;
+@mixin enumerate-contents-wrapper {
+  @include layout();
 
   flex-flow: row wrap;
   justify-content: flex-start;
 
   @media #{details.$isPhone} {
     flex-direction: column;
-    justify-content: end;
+    justify-content: flex-end;
   }
 }
 
