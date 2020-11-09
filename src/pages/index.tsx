@@ -1,4 +1,4 @@
-import { NextPage } from "next";
+import type { NextPage } from "next";
 import { Questions } from "../components/questions";
 import styles from "../scss/pages/index.module.scss";
 import { Layout } from "../components/layout";
