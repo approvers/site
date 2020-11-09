@@ -1,5 +1,5 @@
-import { FC } from "react";
-import { SNSLinkInfo } from "../lib/member-fetch";
+import type { FC } from "react";
+import type { SNSLinkInfo } from "../lib/member-fetch";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter, faGithub, IconDefinition } from "@fortawesome/free-brands-svg-icons";
 import { ExternalIconLink } from "./external-link";

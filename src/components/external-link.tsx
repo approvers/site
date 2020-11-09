@@ -1,4 +1,4 @@
-import { ReactNode, FC } from "react";
+import type { ReactNode, FC } from "react";
 import styles from "../scss/components/external-link.module.scss";
 
 type ExternalLinkProps = {

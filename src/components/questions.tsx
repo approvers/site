@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import type { FC, ReactNode } from "react";
 import { ExternalLink } from "./external-link";
 import styles from "../scss/components/questions.module.scss";
 
