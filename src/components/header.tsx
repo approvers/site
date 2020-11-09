@@ -1,4 +1,4 @@
-import { FC } from "react";
+import type { FC } from "react";
 import Link from "next/link";
 import { Button } from "./button";
 import styles from "../scss/components/header.module.scss";

@@ -1,4 +1,4 @@
-import { NextPage, GetStaticPaths, GetStaticProps } from "next";
+import type { NextPage, GetStaticPaths, GetStaticProps } from "next";
 import { Layout } from "../../components/layout";
 import { DateString } from "../../components/date";
 import { getAllBlogIds, getBlogFromId, Blog } from "../../lib/blog-fetch";

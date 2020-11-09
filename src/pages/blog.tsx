@@ -2,9 +2,9 @@ import { getSortedBlogMetadatas, Metadata } from "../lib/blog-fetch";
 import { DateString } from "../components/date";
 import { Layout } from "../components/layout";
 import { Paper } from "../components/paper";
-import { NextPage, GetStaticProps } from "next";
+import type { NextPage, GetStaticProps } from "next";
 import Link from "next/link";
-import { FC } from "react";
+import type { FC } from "react";
 import styles from "../scss/pages/blog.module.scss";
 import { Button } from "../components/button";
 
