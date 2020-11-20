@@ -124,6 +124,15 @@
     - type: github
       url: https://github.com/JUNNETWORKS
 
+- name: tatchan
+  avatar: https://github.com/TATCHAN0825.png
+  role: 超スーパーガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/rb_tatchan
+    - type: github
+      url: https://github.com/TATCHAN0825
+
 - name: くもことなおこ
   avatar: https://github.com/naoko1010hh.png
   role: 頭のおかしい大天災
