@@ -542,6 +542,15 @@
     - type: twitter
       url: https://twitter.com/proelbtn
 
+- name: トゥくﾄｩん
+  avatar: https://github.com/tukutun.png
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/tukutun37
+    - type: github
+      url: https://github.com/tukutun
+
 - name: えぬ
   avatar: ""
   role: べんつよマン
