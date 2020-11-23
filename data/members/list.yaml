@@ -133,6 +133,33 @@
     - type: github
       url: https://github.com/TATCHAN0825
 
+- name: unios103
+  avatar: https://github.com/unios103.png
+  role: 超スーパーガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/unios103
+    - type: github
+      url: https://github.com/unios103
+
+- name: SHUN / しゅん
+  avatar: https://github.com/shun-shobon.png
+  role: 超スーパーガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/programmer_shun
+    - type: github
+      url: https://github.com/shun-shobon
+
+- name: フレキシブル基板
+  avatar: https://github.com/FlexiblePrintedCircuits.png
+  role: 超スーパーガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/FPC_COMMUNITY
+    - type: github
+      url: https://github.com/FlexiblePrintedCircuits
+
 - name: くもことなおこ
   avatar: https://github.com/naoko1010hh.png
   role: 頭のおかしい大天災
@@ -177,24 +204,6 @@
       url: https://twitter.com/PotyaExe
     - type: github
       url: https://github.com/potyama
-
-- name: unios103
-  avatar: https://github.com/unios103.png
-  role: 超スーパーガチプロ
-  links:
-    - type: twitter
-      url: https://twitter.com/unios103
-    - type: github
-      url: https://github.com/unios103
-
-- name: SHUN / しゅん
-  avatar: https://github.com/shun-shobon.png
-  role: 超スーパーガチプロ
-  links:
-    - type: twitter
-      url: https://twitter.com/programmer_shun
-    - type: github
-      url: https://github.com/shun-shobon
 
 - name: sou
   avatar: https://github.com/stonesaw.png
@@ -291,15 +300,6 @@
       url: https://twitter.com/Chaha1n
     - type: github
       url: https://github.com/Chaha1n
-
-- name: フレキシブル基板
-  avatar: https://github.com/FlexiblePrintedCircuits.png
-  role: 超スーパーガチプロ
-  links:
-    - type: twitter
-      url: https://twitter.com/FPC_COMMUNITY
-    - type: github
-      url: https://github.com/FlexiblePrintedCircuits
 
 - name: Lockdef
   avatar: https://github.com/Lockdef.png
