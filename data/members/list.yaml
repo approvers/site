@@ -7,24 +7,6 @@
     - type: github
       url: https://github.com/isso0424
 
-- name: loxygen
-  avatar: https://github.com/loxygenK.png
-  role: 全知全能の神
-  links:
-    - type: twitter
-      url: https://twitter.com/loxygen_k
-    - type: github
-      url: https://github.com/loxygenK
-
-- name: こるく
-  avatar: https://github.com/Colk-tech.png
-  role: 全知全能の神
-  links:
-    - type: twitter
-      url: https://twitter.com/Colk_
-    - type: github
-      url: https://github.com/Colk-tech
-
 - name: 鏡華
   avatar: https://github.com/mirror-kt.png
   role: 超スーパーガチプロ
