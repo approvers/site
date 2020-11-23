@@ -535,6 +535,13 @@
     - type: github
       url: https://github.com/pc7342
 
+- name: えると
+  avatar: ""
+  role: ガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/proelbtn
+
 - name: えぬ
   avatar: ""
   role: べんつよマン
