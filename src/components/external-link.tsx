@@ -11,3 +11,9 @@ export const ExternalLink: FC<ExternalLinkProps> = (props) => (
     {props.children}
   </a>
 );
+
+export const ExternalIconLink: FC<ExternalLinkProps> = (props) => (
+  <a href={props.href} className={styles.iconLink} rel="noopener noreferrer" target="_blank">
+    {props.children}
+  </a>
+);
