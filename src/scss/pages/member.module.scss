@@ -7,6 +7,9 @@
 }
 
 .linksContainer {
+  @include details.flex-style(nowrap, flex-start);
+
+  max-height: 1rem;
   margin-top: details.$min-padding;
 }
 
