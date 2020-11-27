@@ -1,5 +1,6 @@
 @use "../wrapper.module";
 @use "../details.variable";
+@use "../color.variable";
 
 .memberMainContents {
   @include wrapper.enumerate-contents-wrapper();
@@ -17,5 +18,23 @@
 
   @media #{details.$isPhone} {
     margin-left: 1.2rem;
+  }
+}
+
+.avatarWrapper,
+.avatar {
+  height: 100%;
+
+  @include color.clear(back);
+}
+
+.avatar {
+  align-self: flex-start;
+  width: 37%;
+  object-fit: contain;
+  padding-right: 5%;
+
+  @media #{details.$isPhone} {
+    width: 30%;
   }
 }
