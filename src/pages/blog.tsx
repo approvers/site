@@ -10,7 +10,7 @@ import { Button } from "../components/button";
 
 const BlogCard: FC<Metadata> = ({ id, title, date }) => (
   <Paper>
-    <img src="/alternative.png" className={styles.avatar} />
+    <img src="/alternative.png" className={styles.blogSplash} />
     <div className={styles.cardText}>
       <h3 className={styles.blogTitle}>{title}</h3>
       <DateString dateString={date} />
