@@ -29,3 +29,14 @@
   width: 100%;
   min-height: 100%;
 }
+
+.blogSplash {
+  align-self: flex-start;
+  width: 37%;
+  object-fit: contain;
+  padding-right: 5%;
+
+  @media #{details.$isPhone} {
+    width: 30%;
+  }
+}
