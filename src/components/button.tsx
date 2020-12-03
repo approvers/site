@@ -1,4 +1,4 @@
-import { ReactNode, FC, MouseEvent, forwardRef, Ref } from "react";
+import { FC, MouseEvent, ReactNode, Ref, forwardRef } from "react";
 import styles from "../scss/components/button.module.scss";
 
 type ButtonProps = {

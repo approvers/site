@@ -1,7 +1,7 @@
-import type { NextPage, GetStaticPaths, GetStaticProps } from "next";
-import { Layout } from "../../components/layout";
+import { Blog, getAllBlogIds, getBlogFromId } from "../../lib/blog-fetch";
+import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { DateString } from "../../components/date";
-import { getAllBlogIds, getBlogFromId, Blog } from "../../lib/blog-fetch";
+import { Layout } from "../../components/layout";
 import Markdown from "markdown-to-jsx";
 import styles from "../../scss/pages/blog/markdown.module.scss";
 

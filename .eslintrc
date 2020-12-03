@@ -3,7 +3,10 @@
     "browser": true,
     "es2021": true
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
@@ -27,6 +30,7 @@
   "rules": {
     "@typescript-eslint/no-explicit-any": "error",
     "react/react-in-jsx-scope": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "sort-imports": "error"
   }
 }

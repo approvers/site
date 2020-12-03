@@ -1,9 +1,9 @@
-import { useEffect } from "react";
-import { useRouter } from "next/router";
+import "../scss/global.scss";
 import * as gtag from "../lib/gtag";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import "../scss/global.scss";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 const Page = ({ Component, pageProps }: AppProps): JSX.Element => {
   const router = useRouter();

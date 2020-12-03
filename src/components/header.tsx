@@ -1,6 +1,6 @@
+import { Button } from "./button";
 import type { FC } from "react";
 import Link from "next/link";
-import { Button } from "./button";
 import styles from "../scss/components/header.module.scss";
 
 const links: { name: string; url: string }[] = [

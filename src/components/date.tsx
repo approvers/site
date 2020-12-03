@@ -1,4 +1,4 @@
-import { parseISO, format } from "date-fns";
+import { format, parseISO } from "date-fns";
 import type { FC } from "react";
 import styles from "../scss/components/date.module.scss";
 

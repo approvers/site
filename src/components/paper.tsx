@@ -1,4 +1,4 @@
-import type { ReactNode, FC } from "react";
+import type { FC, ReactNode } from "react";
 import styles from "../scss/components/paper.module.scss";
 
 export const Paper: FC<{ children: ReactNode }> = ({ children }) => (
