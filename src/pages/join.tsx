@@ -1,5 +1,5 @@
-import type { NextPage } from "next";
 import { Layout } from "../components/layout";
+import type { NextPage } from "next";
 import { Title } from "../components/title";
 import styles from "../scss/pages/join.module.scss";
 
