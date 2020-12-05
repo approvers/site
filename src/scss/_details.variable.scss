@@ -34,6 +34,21 @@ $min-padding: 5%;
   transform: skew($deg, 0deg) translateX(-60%) translateY($translateY);
 }
 
+@mixin enumerate-contents-wrapper {
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 0 $padding;
+  margin-bottom: auto;
+
+  @include flex-style();
+
+  @media #{media.query(phone)} {
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}
+
 @function border($thickness) {
   @return $thickness solid;
 }

@@ -1,10 +1,9 @@
-@use "../wrapper.module";
 @use "../details.variable";
 @use "../color.variable";
 @use "../media.variable";
 
 .memberMainContents {
-  @include wrapper.enumerate-contents-wrapper();
+  @include details.enumerate-contents-wrapper();
 }
 
 .linksContainer {

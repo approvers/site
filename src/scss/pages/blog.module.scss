@@ -1,9 +1,8 @@
 @use "../color.variable";
 @use "../details.variable";
-@use "../wrapper.module";
 
 .main {
-  @include wrapper.enumerate-contents-wrapper();
+  @include details.enumerate-contents-wrapper();
 }
 
 .cardText {
@@ -23,7 +22,7 @@
 }
 
 .blogContents {
-  @include wrapper.enumerate-contents-wrapper();
+  @include details.enumerate-contents-wrapper();
 
   flex-direction: column;
   width: 100%;

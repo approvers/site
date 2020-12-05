@@ -4,32 +4,16 @@
 
 @mixin wrapper {
   flex-flow: column;
-  width: 100%;
   margin-bottom: auto;
 
   @include details.flex-style();
 }
 
 @mixin page {
-  @include wrapper();
-
+  flex-flow: column;
+  width: 100%;
   min-height: 100vh;
-}
+  margin-bottom: auto;
 
-@mixin layout {
-  @include wrapper();
-
-  padding: 0 details.$padding;
-}
-
-@mixin enumerate-contents-wrapper {
-  @include layout();
-
-  flex-flow: row wrap;
-  justify-content: flex-start;
-
-  @media #{media.query(phone)} {
-    flex-direction: column;
-    justify-content: flex-end;
-  }
+  @include details.flex-style();
 }

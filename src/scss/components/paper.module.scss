@@ -1,9 +1,12 @@
 @use "../details.variable";
-@use "../wrapper.module";
 @use "../media.variable";
 
 .paperWrapper {
-  @include wrapper.wrapper();
+  flex-flow: column;
+  width: 100%;
+  margin-bottom: auto;
+
+  @include details.flex-style();
   @include media.max-width();
 
   @media #{media.query(phone)} {

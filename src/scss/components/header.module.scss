@@ -1,11 +1,12 @@
-@use "../wrapper.module";
 @use "../details.variable";
 @use "../color.variable";
 @use "../media.variable";
 
 .headerLayout {
-  @include wrapper.layout();
+  @include details.flex-style();
 
+  flex-flow: column;
+  width: 100%;
   padding: 1rem 0;
   margin-bottom: 1%;
   border-bottom: details.border(2px);
