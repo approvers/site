@@ -2,30 +2,34 @@
 
 @function query($size) {
   $media-size: (
-    large: "(min-width: 1600px)",
-    middle: "(max-width: 1030px)",
-    pc: "(min-width: 600px)",
-    phone: "(max-width: 600px)",
-    min: "(max-width: 360px)",
+    large: "(2080px <= width)",
+    middle: "(width <= 2080px)",
+    pc: "(width <= 1440px)",
+    phone: "(width <= 1000px)",
+    min: "(width <= 600px)",
   );
 
   @return "screen and " + map.get($media-size, $size);
 }
 
 @mixin max-width() {
-  @media #{query(pc)} {
-    max-width: 33%;
-  }
-
   @media #{query(large)} {
     max-width: 25%;
   }
 
   @media #{query(middle)} {
-    max-width: 50%;
+    max-width: 25%;
+  }
+
+  @media #{query(pc)} {
+    max-width: 33%;
   }
 
   @media #{query(phone)} {
+    max-width: 50%;
+  }
+
+  @media #{query(min)} {
     max-width: 100%;
   }
 }
@@ -40,15 +44,23 @@
   );
   $property: map.get($properties, $target);
 
-  @media #{query(pc)} {
+  @media #{query(large)} {
     #{$property}: 10%;
   }
 
-  @media #{query(large)} {
-    #{$property}: 5%;
+  @media #{query(middle)} {
+    #{$property}: 9%;
+  }
+
+  @media #{query(pc)} {
+    #{$property}: 8%;
   }
 
   @media #{query(phone)} {
-    #{$property}: 3%;
+    #{$property}: 6%;
+  }
+
+  @media #{query(min)} {
+    #{$property}: 4%;
   }
 }
