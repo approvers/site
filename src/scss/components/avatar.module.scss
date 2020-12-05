@@ -1,0 +1,15 @@
+@use "../color.variable";
+@use "../details.variable";
+
+.avatar {
+  @include color.clear(back);
+
+  width: 37%;
+  height: 100%;
+  object-fit: contain;
+  padding-right: 5%;
+
+  @media #{details.$isPhone} {
+    width: 30%;
+  }
+}

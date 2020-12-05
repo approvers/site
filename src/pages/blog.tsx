@@ -1,16 +1,18 @@
-import { getSortedBlogMetadatas, Metadata } from "../lib/blog-fetch";
-import { DateString } from "../components/date";
-import { Layout } from "../components/layout";
-import { Paper } from "../components/paper";
-import type { NextPage, GetStaticProps } from "next";
-import Link from "next/link";
-import type { FC } from "react";
-import styles from "../scss/pages/blog.module.scss";
+import type { GetStaticProps, NextPage } from "next";
+import { Metadata, getSortedBlogMetadatas } from "../lib/blog-fetch";
+import { Avatar } from "../components/avatar";
 import { Button } from "../components/button";
+import { DateString } from "../components/date";
+import type { FC } from "react";
+import { Layout } from "../components/layout";
+import Link from "next/link";
+import { Paper } from "../components/paper";
+import { Title } from "../components/title";
+import styles from "../scss/pages/blog.module.scss";
 
 const BlogCard: FC<Metadata> = ({ id, title, date }) => (
   <Paper>
-    <img src="/alternative.png" className={styles.blogSplash} />
+    <Avatar name={title} />
     <div className={styles.cardText}>
       <h3 className={styles.blogTitle}>{title}</h3>
       <DateString dateString={date} />
@@ -25,7 +27,7 @@ const BlogCard: FC<Metadata> = ({ id, title, date }) => (
 
 const BlogPage: NextPage<{ blogs: Metadata[] }> = ({ blogs }) => (
   <Layout pageName="限界開発鯖 - ブログ">
-    <h1 className={styles.title}>ブログ</h1>
+    <Title>ブログ</Title>
     <section className={styles.main}>
       {blogs.map((blog) => (
         <BlogCard key={blog.id} {...blog} />

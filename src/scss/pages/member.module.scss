@@ -3,7 +3,7 @@
 @use "../color.variable";
 
 .memberMainContents {
-  @extend .enumerate-contents-wrapper;
+  @include wrapper.enumerate-contents-wrapper();
 }
 
 .linksContainer {

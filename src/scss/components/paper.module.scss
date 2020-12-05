@@ -1,9 +1,8 @@
 @use "../details.variable";
 @use "../wrapper.module";
 
-.cardWrapper {
-  @extend .wrapper;
-
+.paperWrapper {
+  @include wrapper.wrapper();
   @include details.components-size();
 
   @media #{details.$isPhone} {
@@ -11,7 +10,7 @@
   }
 }
 
-.card {
+.paper {
   @include details.fully-spread();
   @include details.flex-style(nowrap, flex-start);
   @include details.make-padding(details.$isPc);

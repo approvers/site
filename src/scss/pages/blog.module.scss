@@ -3,7 +3,7 @@
 @use "../wrapper.module";
 
 .main {
-  @extend .enumerate-contents-wrapper;
+  @include wrapper.enumerate-contents-wrapper();
 }
 
 .cardText {
@@ -23,7 +23,7 @@
 }
 
 .blogContents {
-  @extend .enumerate-contents-wrapper;
+  @include wrapper.enumerate-contents-wrapper();
 
   flex-direction: column;
   width: 100%;

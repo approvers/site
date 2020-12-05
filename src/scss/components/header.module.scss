@@ -3,7 +3,7 @@
 @use "../color.variable";
 
 .headerLayout {
-  @extend .layout;
+  @include wrapper.layout();
 
   padding: 1rem 0;
   margin-bottom: 1%;

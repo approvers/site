@@ -1,7 +1,7 @@
+import matter from "gray-matter";
+import path from "path";
 import { promises } from "fs";
 const { readFile, readdir } = promises;
-import path from "path";
-import matter from "gray-matter";
 
 const postsDirectory = path.join(process.cwd(), "data", "blogs");
 

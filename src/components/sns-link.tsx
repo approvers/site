@@ -1,8 +1,8 @@
-import type { FC } from "react";
-import type { SNSLinkInfo } from "../lib/member-fetch";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTwitter, faGithub, IconDefinition } from "@fortawesome/free-brands-svg-icons";
+import { IconDefinition, faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { ExternalIconLink } from "./external-link";
+import type { FC } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { SNSLinkInfo } from "../lib/member-fetch";
 import styles from "../scss/components/sns-link.module.scss";
 
 type Icon = { icon: IconDefinition };

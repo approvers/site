@@ -1,7 +1,7 @@
-import { promises } from "fs";
-const { readFile } = promises;
 import YAML from "yaml";
 import path from "path";
+import { promises } from "fs";
+const { readFile } = promises;
 
 export type SNSLinkInfo = { type: "twitter"; url: string } | { type: "github"; url: string };
 

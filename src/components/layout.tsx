@@ -1,8 +1,8 @@
-import type { ReactNode, FC } from "react";
-import Head from "next/head";
-import styles from "../scss/wrapper.module.scss";
-import { Header } from "./header";
+import type { FC, ReactNode } from "react";
 import { Footer } from "./footer";
+import Head from "next/head";
+import { Header } from "./header";
+import styles from "../scss/wrapper.module.scss";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "";
 const siteImage = `https://${baseUrl}/android-chrome-512x512.png`;
