@@ -1,11 +1,12 @@
 @use "../details.variable";
 @use "../wrapper.module";
+@use "../media.variable";
 
 .paperWrapper {
   @include wrapper.wrapper();
-  @include details.components-size();
+  @include media.max-width();
 
-  @media #{details.$isPhone} {
+  @media #{media.query(phone)} {
     justify-content: flex-start;
   }
 }
@@ -13,15 +14,9 @@
 .paper {
   @include details.fully-spread();
   @include details.flex-style(nowrap, flex-start);
-  @include details.make-padding(details.$isPc);
+  @include media.padding();
 
-  @media #{details.$large} {
-    @include details.make-padding(details.$large);
-  }
-
-  @media #{details.$isPhone} {
+  @media #{media.query(phone)} {
     text-align: left;
-
-    @include details.make-padding(details.$isPhone);
   }
 }

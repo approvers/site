@@ -1,5 +1,6 @@
 @use "../color.variable";
 @use "../details.variable";
+@use "../media.variable";
 
 .icon {
   @include color.sub();
@@ -13,7 +14,7 @@
   width: 1.2rem;
   height: 1.2rem;
 
-  @media #{details.$isPhone} {
+  @media #{media.query(phone)} {
     width: 1rem;
     height: 1rem;
   }

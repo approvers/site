@@ -1,5 +1,6 @@
 @use "color.variable";
 @use "details.variable";
+@use "media.variable";
 
 @mixin wrapper {
   flex-flow: column;
@@ -27,7 +28,7 @@
   flex-flow: row wrap;
   justify-content: flex-start;
 
-  @media #{details.$isPhone} {
+  @media #{media.query(phone)} {
     flex-direction: column;
     justify-content: flex-end;
   }

@@ -1,6 +1,7 @@
 @use "../wrapper.module";
 @use "../details.variable";
 @use "../color.variable";
+@use "../media.variable";
 
 .headerLayout {
   @include wrapper.layout();
@@ -17,7 +18,7 @@
   justify-content: space-around;
   min-width: 50%;
 
-  @media #{details.$middle} {
+  @media #{media.query(middle)} {
     min-width: 90%;
   }
 }

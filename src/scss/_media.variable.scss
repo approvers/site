@@ -41,14 +41,14 @@
   $property: map.get($properties, $target);
 
   @media #{query(pc)} {
-    #{$propety}: 10%;
+    #{$property}: 10%;
   }
 
   @media #{query(large)} {
-    #{$propety}: 5%;
+    #{$property}: 5%;
   }
 
   @media #{query(phone)} {
-    #{$propety}: 3%;
+    #{$property}: 3%;
   }
 }

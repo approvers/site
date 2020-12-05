@@ -1,6 +1,7 @@
 @use "../wrapper.module";
 @use "../details.variable";
 @use "../color.variable";
+@use "../media.variable";
 
 .memberMainContents {
   @include wrapper.enumerate-contents-wrapper();
@@ -16,7 +17,7 @@
 .linksContainer > * + * {
   margin-left: 1.1rem;
 
-  @media #{details.$isPhone} {
+  @media #{media.query(phone)} {
     margin-left: 1.2rem;
   }
 }
@@ -34,7 +35,7 @@
   object-fit: contain;
   padding-right: 5%;
 
-  @media #{details.$isPhone} {
+  @media #{media.query(phone)} {
     width: 30%;
   }
 }

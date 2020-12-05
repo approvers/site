@@ -1,5 +1,6 @@
 @use "../color.variable";
 @use "../details.variable";
+@use "../media.variable";
 
 .avatar {
   @include color.clear(back);
@@ -9,7 +10,7 @@
   object-fit: contain;
   padding-right: 5%;
 
-  @media #{details.$isPhone} {
+  @media #{media.query(phone)} {
     width: 30%;
   }
 }

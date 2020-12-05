@@ -1,15 +1,10 @@
 @use "./color.variable";
+@use "./media.variable";
 @use "sass:map";
 
 $transition: 0.4s;
 $padding: 10%;
 $min-padding: 5%;
-$screen: "screen and ";
-$isPhone: $screen + "(max-width: 600px)";
-$isPc: $screen + "(min-width: 600px)";
-$min: $screen + "(max-width: 360px)";
-$middle: $screen + "(max-width: 1030px)";
-$large: $screen + "(min-width: 1600px)";
 
 @mixin flex-style($warp: wrap, $justify: center) {
   display: flex;
@@ -30,41 +25,9 @@ $large: $screen + "(min-width: 1600px)";
   line-height: map.get($fontsize, $size) + $offset + 0.4rem;
 }
 
-@mixin make-padding($display-size, $pos: "") {
-  @if $display-size == $large {
-    padding#{$pos}: 10%;
-  }
-
-  @if $display-size == $isPc {
-    padding#{$pos}: 5%;
-  }
-
-  @if $display-size == $isPhone {
-    padding#{$pos}: 3%;
-  }
-}
-
 @mixin fully-spread {
   width: 100%;
   height: 100%;
-}
-
-@mixin components-size {
-  @media #{$isPc} {
-    max-width: 33%;
-  }
-
-  @media #{$large} {
-    max-width: 25%;
-  }
-
-  @media #{$middle} {
-    max-width: 50%;
-  }
-
-  @media #{$isPhone} {
-    max-width: 100%;
-  }
 }
 
 @mixin transform($translateY: 0, $deg: 0deg) {
@@ -78,7 +41,7 @@ $large: $screen + "(min-width: 1600px)";
 .name {
   @include with-font-size(big);
 
-  @media #{$isPhone} {
+  @media #{media.query(phone)} {
     @include with-font-size(big, -0.1rem);
   }
 }
@@ -88,7 +51,7 @@ $large: $screen + "(min-width: 1600px)";
   padding: 2%;
   margin: 0 auto;
 
-  @media #{$isPhone} {
+  @media #{media.query(phone)} {
     padding: 2% 2% + $min-padding;
   }
 
