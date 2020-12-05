@@ -42,11 +42,6 @@ $min-padding: 5%;
   margin-bottom: auto;
 
   @include flex-style();
-
-  @media #{media.query(phone)} {
-    flex-direction: column;
-    justify-content: flex-end;
-  }
 }
 
 @function border($thickness) {
