@@ -2,11 +2,11 @@
 
 @function query($size) {
   $media-size: (
-    phone: "(max-width: 600px)",
-    pc: "(min-width: 600px)",
-    min: "(max-width: 360px)",
-    middle: "(max-width: 1030px)",
     large: "(min-width: 1600px)",
+    middle: "(max-width: 1030px)",
+    pc: "(min-width: 600px)",
+    phone: "(max-width: 600px)",
+    min: "(max-width: 360px)",
   );
 
   @return "screen and " + map.get($media-size, $size);
