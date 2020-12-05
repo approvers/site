@@ -1,0 +1,54 @@
+@use "sass:map";
+
+@function query($size) {
+  $media-size: (
+    phone: "(max-width: 600px)",
+    pc: "(min-width: 600px)",
+    min: "(max-width: 360px)",
+    middle: "(max-width: 1030px)",
+    large: "(min-width: 1600px)",
+  );
+
+  @return "screen and " + map.get($media-size, $size);
+}
+
+@mixin max-width() {
+  @media #{query(pc)} {
+    max-width: 33%;
+  }
+
+  @media #{query(large)} {
+    max-width: 25%;
+  }
+
+  @media #{query(middle)} {
+    max-width: 50%;
+  }
+
+  @media #{query(phone)} {
+    max-width: 100%;
+  }
+}
+
+@mixin padding($target: around) {
+  $properties: (
+    around: "padding",
+    top: "padding-top",
+    right: "padding-right",
+    bottom: "padding-bottom",
+    left: "padding-left",
+  );
+  $property: map.get($properties, $target);
+
+  @media #{query(pc)} {
+    #{$propety}: 10%;
+  }
+
+  @media #{query(large)} {
+    #{$propety}: 5%;
+  }
+
+  @media #{query(phone)} {
+    #{$propety}: 3%;
+  }
+}
