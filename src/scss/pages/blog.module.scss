@@ -22,6 +22,8 @@
 
 .blogTitle {
   @extend .name;
+
+  word-break: keep-all;
 }
 
 .blogContents {
