@@ -4,6 +4,8 @@
 
 .main {
   @include details.enumerate-contents-wrapper();
+
+  justify-content: flex-start;
 }
 
 .cardText {
