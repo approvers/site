@@ -1,4 +1,5 @@
 @use "../../details.variable";
+@use "../../media.variable";
 
 .markdown {
   width: 60%;
@@ -7,11 +8,11 @@
   padding-top: 1rem;
   text-align: left;
 
-  @media #{details.$middle} {
+  @media #{media.query(middle)} {
     width: 70%;
   }
 
-  @media #{details.$isPhone} {
+  @media #{media.query(phone)} {
     width: 90%;
   }
 }
