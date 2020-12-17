@@ -142,6 +142,15 @@
     - type: github
       url: https://github.com/FlexiblePrintedCircuits
 
+- name: すばる
+  avatar: https://github.com/su8ru.png
+  role: 超スーパーガチプロ
+  links:
+    - type: twitter
+      url: https://twitter.com/su8ru_
+    - type: github
+      url: https://github.com/su8ru
+
 - name: くもことなおこ
   avatar: https://github.com/naoko1010hh.png
   role: 頭のおかしい大天災
