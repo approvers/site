@@ -1,6 +1,6 @@
-import { NextPage } from "next";
 import { Header } from "../components/header";
 import { Layout } from "../components/layout";
+import { NextPage } from "next";
 import styles from "../scss/pages/link.module.scss";
 
 const LinkPage: NextPage = () => (
