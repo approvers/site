@@ -43,7 +43,7 @@
   width: 1.2rem;
   height: 1.2rem;
 
-  @media #{details.get-media-query("phone")} {
+  @media #{media.query(phone)} {
     width: 0.9rem;
     height: 0.9rem;
   }
