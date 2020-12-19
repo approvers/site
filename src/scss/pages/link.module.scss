@@ -11,8 +11,15 @@
   @media #{details.get-media-query("phone")} {
     padding: 2% 2% + details.$min-padding;
   }
-}
 
-.color {
-  @include color.main(light, bold-underline);
+  li {
+    @include details.with-font-size(big);
+
+    text-align: center;
+    list-style-type: none;
+
+    a {
+      @include color.main(light, bold-underline);
+    }
+  }
 }
