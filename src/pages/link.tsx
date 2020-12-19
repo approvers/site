@@ -4,24 +4,24 @@ import { NextPage } from "next";
 import { Title } from "../components/title";
 import styles from "../scss/pages/link.module.scss";
 
-type Links = Record<string, string>;
+type Links = readonly { name: string; url: string }[];
 
-const links: Links = {
-  GitHub: "https://github.com/approvers",
-  "公式 Twitter": "https://twitter.com/UFIApprovers",
-  "公式 YouTube": "https://www.youtube.com/channel/UCUtr3DOhkcuunsHrAJyWylA",
-  connpass: "https://approvers.connpass.com/",
-  Qiita: "https://qiita.com/organizations/approvers",
-  BinTray: "https://bintray.com/approvers",
-  npm: "https://www.npmjs.com/org/approvers",
-  HackMD: "https://hackmd.io/@approvers",
-};
+const links: Links = [
+  { name: "GitHub", url: "https://github.com/approvers" },
+  { name: "公式 Twitter", url: "https://twitter.com/UFIApprovers" },
+  { name: "公式 YouTube", url: "https://www.youtube.com/channel/UCUtr3DOhkcuunsHrAJyWylA" },
+  { name: "Qiita", url: "https://qiita.com/organizations/approvers" },
+  { name: "HackMD", url: "https://hackmd.io/@approvers" },
+  { name: "npm", url: "https://www.npmjs.com/org/approvers" },
+  { name: "connpass", url: "https://approvers.connpass.com/" },
+  { name: "BinTray", url: "https://bintray.com/approvers" },
+];
 
 const LinkPage: NextPage = () => (
   <Layout pageName="限界開発鯖 - リンク">
     <Title>限界リンク集</Title>
     <ul className={styles.linkText}>
-      {Object.entries(links).map(([name, url], index) => (
+      {links.map(({ name, url }, index) => (
         <li key={index}>
           <ExternalLink href={url}>{name}</ExternalLink>
         </li>
