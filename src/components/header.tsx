@@ -3,7 +3,7 @@ import type { FC } from "react";
 import Link from "next/link";
 import styles from "../scss/components/header.module.scss";
 
-const links: { name: string; url: string }[] = [
+const links: readonly { name: string; url: string }[] = [
   {
     name: "ホーム",
     url: "/",
