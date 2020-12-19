@@ -22,7 +22,7 @@ function validateSNSLink(obj: unknown): obj is SNSLinkInfo {
   return true;
 }
 
-function validateSNSLinks(links: unknown): links is SNSLinkInfo[] {
+function validateSNSLinks(links: unknown): links is readonly SNSLinkInfo[] {
   return links === "object" && (Object.values(links) as unknown[]).every(validateSNSLink);
 }
 
@@ -30,7 +30,7 @@ export type Member = {
   avatar: string;
   name: string;
   role: string;
-  links: SNSLinkInfo[];
+  links: readonly SNSLinkInfo[];
 };
 
 function validateMember(obj: unknown): obj is Member {
@@ -59,7 +59,7 @@ function validateMember(obj: unknown): obj is Member {
   return true;
 }
 
-function validateMembers(obj: unknown): obj is Member[] {
+function validateMembers(obj: unknown): obj is readonly Member[] {
   return (
     typeof obj === "object" &&
     obj != null &&
@@ -69,7 +69,7 @@ function validateMembers(obj: unknown): obj is Member[] {
 
 const membersFile = path.join(process.cwd(), "data/members/list.yaml");
 
-export async function getMembers(): Promise<Member[]> {
+export async function getMembers(): Promise<readonly Member[]> {
   const file = await readFile(membersFile);
   const parsed = YAML.parse(file.toString());
   if (!validateMembers(parsed)) {

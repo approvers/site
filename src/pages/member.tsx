@@ -26,7 +26,7 @@ const MemberCard: FC<Member> = ({ name, role, links, avatar }) => (
 );
 
 type MembersPageProps = {
-  members: Member[];
+  members: readonly Member[];
 };
 
 const MembersPage: NextPage<MembersPageProps> = ({ members }) => (
