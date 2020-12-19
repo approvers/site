@@ -1,4 +1,5 @@
 @use "../details.variable";
+@use "../media.variable";
 
 .title {
   padding: 1vh 0;
@@ -6,7 +7,7 @@
 
   @include details.with-font-size(title);
 
-  @media #{details.get-media-query(phone)} {
+  @media #{media.query(phone)} {
     @include details.with-font-size(title, -0.7rem);
   }
 }
@@ -18,13 +19,13 @@
 
   @include details.with-font-size(big);
 
-  @media #{details.get-media-query(middle)} {
+  @media #{media.query(middle)} {
     padding-bottom: details.$padding;
 
     @include details.with-font-size(big, -0.3rem);
   }
 
-  @media #{details.get-media-query(min)} {
+  @media #{media.query(min)} {
     @include details.with-font-size(big, -0.5rem);
   }
 }

@@ -1,9 +1,9 @@
-@use "../wrapper.module";
 @use "../details.variable";
 @use "../color.variable";
+@use "../media.variable";
 
 .memberMainContents {
-  @include wrapper.enumerate-contents-wrapper();
+  @include details.enumerate-contents-wrapper();
 }
 
 .linksContainer {
@@ -16,7 +16,7 @@
 .linksContainer > * + * {
   margin-left: 1.1rem;
 
-  @media #{details.get-media-query("phone")} {
+  @media #{media.query(phone)} {
     margin-left: 1.2rem;
   }
 }
@@ -34,7 +34,7 @@
   object-fit: contain;
   padding-right: 5%;
 
-  @media #{details.get-media-query("phone")} {
+  @media #{media.query(phone)} {
     width: 30%;
   }
 }
@@ -43,7 +43,7 @@
   width: 1.2rem;
   height: 1.2rem;
 
-  @media #{details.get-media-query("phone")} {
+  @media #{media.query(phone)} {
     width: 0.9rem;
     height: 0.9rem;
   }

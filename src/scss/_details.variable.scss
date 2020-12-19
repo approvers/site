@@ -1,22 +1,9 @@
-@use "./color.variable";
+@use "./media.variable";
 @use "sass:map";
 
-$transition: 0.4s;
+$transition: all 300ms 0s ease;
 $padding: 10%;
 $min-padding: 5%;
-$transition: all 300ms 0s ease;
-
-@function get-media-query($size) {
-  $media-size: (
-    phone: "(max-width: 600px)",
-    pc: "(min-width: 600px)",
-    min: "(max-width: 360px)",
-    middle: "(max-width: 1030px)",
-    large: "(min-width: 1600px)",
-  );
-
-  @return "screen and " + map.get($media-size, $size);
-}
 
 @mixin flex-style($warp: wrap, $justify: center) {
   display: flex;
@@ -37,45 +24,23 @@ $transition: all 300ms 0s ease;
   line-height: map.get($fontsize, $size) + $offset + 0.4rem;
 }
 
-@mixin make-padding($display-size: phone, $pos: "") {
-  @if $display-size == large {
-    padding#{$pos}: 10%;
-  }
-
-  @if $display-size == pc {
-    padding#{$pos}: 5%;
-  }
-
-  @if $display-size == phone {
-    padding#{$pos}: 3%;
-  }
-}
-
 @mixin fully-spread {
   width: 100%;
   height: 100%;
 }
 
-@mixin components-size {
-  @media #{get-media-query("pc")} {
-    max-width: 33%;
-  }
-
-  @media #{get-media-query("large")} {
-    max-width: 25%;
-  }
-
-  @media #{get-media-query("middle")} {
-    max-width: 50%;
-  }
-
-  @media #{get-media-query("phone")} {
-    max-width: 100%;
-  }
-}
-
 @mixin transform($translateY: 0, $deg: 0deg) {
   transform: skew($deg, 0deg) translateX(-60%) translateY($translateY);
+}
+
+@mixin enumerate-contents-wrapper {
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 0 $padding;
+  margin-bottom: auto;
+
+  @include flex-style();
 }
 
 @function border($thickness) {
@@ -85,7 +50,7 @@ $transition: all 300ms 0s ease;
 .name {
   @include with-font-size(big);
 
-  @media #{get-media-query("phone")} {
+  @media #{media.query(phone)} {
     @include with-font-size(big, -0.1rem);
   }
 }
@@ -95,7 +60,7 @@ $transition: all 300ms 0s ease;
   padding: 2%;
   margin: 0 auto;
 
-  @media #{get-media-query("phone")} {
+  @media #{media.query(phone)} {
     padding: 2% 2% + $min-padding;
   }
 

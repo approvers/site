@@ -1,21 +1,22 @@
 @use "../details.variable";
+@use "../media.variable";
 @use "../components/triangle.module";
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap&text=A.Q");
 
 .splash {
   position: relative;
-  padding-top: details.$padding;
+  padding-top: 8rem;
   padding-bottom: 0.5rem;
   text-align: center;
 
   @include details.with-font-size(title, 1rem);
 
-  @media #{details.get-media-query("middle")} {
+  @media #{media.query(middle)} {
     @include details.with-font-size(title, -0.3rem);
   }
 
-  @media #{details.get-media-query("min")} {
+  @media #{media.query(min)} {
     @include details.with-font-size(title, -0.5rem);
   }
 }
@@ -26,13 +27,13 @@
 
   @include details.with-font-size(big);
 
-  @media #{details.get-media-query(middle)} {
+  @media #{media.query(middle)} {
     padding-bottom: details.$padding;
 
     @include details.with-font-size(big, -0.3rem);
   }
 
-  @media #{details.get-media-query(min)} {
+  @media #{media.query(min)} {
     @include details.with-font-size(big, -0.5rem);
   }
 }
@@ -46,7 +47,7 @@
   @include details.transform(-4rem, -30deg);
   @include triangle.triangle();
 
-  @media #{details.get-media-query(phone)} {
+  @media #{media.query(phone)} {
     @include triangle.triangle(10vh);
   }
 }

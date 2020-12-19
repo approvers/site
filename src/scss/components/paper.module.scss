@@ -1,11 +1,15 @@
 @use "../details.variable";
-@use "../wrapper.module";
+@use "../media.variable";
 
 .paperWrapper {
-  @include wrapper.wrapper();
-  @include details.components-size();
+  flex-flow: column;
+  width: 100%;
+  margin-bottom: auto;
 
-  @media #{details.get-media-query(phone)} {
+  @include details.flex-style();
+  @include media.max-width();
+
+  @media #{media.query(phone)} {
     justify-content: flex-start;
   }
 }
@@ -13,15 +17,9 @@
 .paper {
   @include details.fully-spread();
   @include details.flex-style(nowrap, flex-start);
-  @include details.make-padding(pc);
+  @include media.padding();
 
-  @media #{details.get-media-query(large)} {
-    @include details.make-padding(large);
-  }
-
-  @media #{details.get-media-query(phone)} {
+  @media #{media.query(phone)} {
     text-align: left;
-
-    @include details.make-padding(phone);
   }
 }

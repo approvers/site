@@ -1,9 +1,11 @@
 @use "../color.variable";
 @use "../details.variable";
-@use "../wrapper.module";
+@use "../media.variable";
 
 .main {
-  @include wrapper.enumerate-contents-wrapper();
+  @include details.enumerate-contents-wrapper();
+
+  justify-content: flex-start;
 }
 
 .cardText {
@@ -20,10 +22,12 @@
 
 .blogTitle {
   @extend .name;
+
+  word-break: keep-all;
 }
 
 .blogContents {
-  @include wrapper.enumerate-contents-wrapper();
+  @include details.enumerate-contents-wrapper();
 
   flex-direction: column;
   width: 100%;
@@ -36,7 +40,7 @@
   object-fit: contain;
   padding-right: 5%;
 
-  @media #{details.get-media-query(phone)} {
+  @media #{media.query(phone)} {
     width: 30%;
   }
 }

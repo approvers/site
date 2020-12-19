@@ -1,5 +1,6 @@
 @use "../color.variable";
 @use "../details.variable";
+@use "../media.variable";
 
 .linkText {
   @extend .text;
@@ -8,7 +9,7 @@
   padding: 2% 0;
   margin: 0 auto;
 
-  @media #{details.get-media-query("phone")} {
+  @media #{media.query(phone)} {
     padding: 2% 2% + details.$min-padding;
   }
 
