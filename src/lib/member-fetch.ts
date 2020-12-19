@@ -23,7 +23,11 @@ function validateSNSLink(obj: unknown): obj is SNSLinkInfo {
 }
 
 function validateSNSLinks(links: unknown): links is readonly SNSLinkInfo[] {
-  return links === "object" && (Object.values(links) as unknown[]).every(validateSNSLink);
+  return (
+    typeof links === "object" &&
+    links !== null &&
+    (Object.values(links) as unknown[]).every(validateSNSLink)
+  );
 }
 
 export type Member = {
