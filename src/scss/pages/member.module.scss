@@ -40,11 +40,11 @@
 }
 
 .icon > svg {
-  width: 0.1rem + details.get-fontsize("main");
-  height: 0.1rem + details.get-fontsize("main");
+  width: 1.2rem;
+  height: 1.2rem;
 
   @media #{details.get-media-query("phone")} {
-    width: details.get-fontsize("sub") - 0.1rem;
-    height: details.get-fontsize("sub") - 0.1rem;
+    width: 0.9rem;
+    height: 0.9rem;
   }
 }
