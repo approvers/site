@@ -37,16 +37,16 @@ $transition: all 300ms 0s ease;
   line-height: map.get($fontsize, $size) + $offset + 0.4rem;
 }
 
-@mixin make-padding($display-size, $pos: "") {
-  @if $display-size == get-media-query("large") {
+@mixin make-padding($display-size: phone, $pos: "") {
+  @if $display-size == large {
     padding#{$pos}: 10%;
   }
 
-  @if $display-size == get-media-query("pc") {
+  @if $display-size == pc {
     padding#{$pos}: 5%;
   }
 
-  @if $display-size == get-media-query("phone") {
+  @if $display-size == phone {
     padding#{$pos}: 3%;
   }
 }
