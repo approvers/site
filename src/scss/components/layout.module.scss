@@ -2,14 +2,14 @@
 @use "../details.variable";
 @use "../media.variable";
 
-@mixin wrapper {
+.wrapper {
   flex-flow: column;
   margin-bottom: auto;
 
   @include details.flex-style();
 }
 
-@mixin page {
+.page {
   flex-flow: column;
   width: 100%;
   min-height: 100vh;
