@@ -22,6 +22,10 @@ const validateSNSLink = (obj: unknown): obj is SNSLinkInfo => {
   return true;
 };
 
+function validateSNSLinks(links: unknown): links is SNSLinkInfo[] {
+  return links === "object" && (Object.values(links) as unknown[]).every(validateSNSLink);
+}
+
 export type Member = {
   avatar: string;
   name: string;
@@ -35,25 +39,19 @@ const validateMember = (obj: unknown): obj is Member => {
     return false;
   }
 
-  if (!("avatar" in obj && typeof (obj as Member).avatar === "string")) {
+  if (typeof (obj as Member).avatar !== "string") {
     console.error("`avatar` not in: ", obj);
     return false;
   }
-  if (!("name" in obj && typeof (obj as Member).name === "string")) {
+  if (typeof (obj as Member).name !== "string") {
     console.error("`name` not in: ", obj);
     return false;
   }
-  if (!("role" in obj && typeof (obj as Member).role === "string")) {
+  if (typeof (obj as Member).role !== "string") {
     console.error("`role` not in: ", obj);
     return false;
   }
-  if (
-    !(
-      "links" in obj &&
-      typeof (obj as Member).links === "object" &&
-      (Object.values((obj as Member).links) as unknown[]).every(validateSNSLink)
-    )
-  ) {
+  if (!validateSNSLinks((obj as Member).links)) {
     console.error("`links` not in: ", obj);
     return false;
   }
