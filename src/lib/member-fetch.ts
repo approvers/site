@@ -5,7 +5,7 @@ const { readFile } = promises;
 
 export type SNSLinkInfo = { type: "twitter"; url: string } | { type: "github"; url: string };
 
-const validateSNSLink = (obj: unknown): obj is SNSLinkInfo => {
+function validateSNSLink(obj: unknown): obj is SNSLinkInfo {
   if (typeof obj !== "object" || obj == null) {
     console.error("not object: ", obj);
     return false;
@@ -20,7 +20,7 @@ const validateSNSLink = (obj: unknown): obj is SNSLinkInfo => {
     return false;
   }
   return true;
-};
+}
 
 function validateSNSLinks(links: unknown): links is SNSLinkInfo[] {
   return links === "object" && (Object.values(links) as unknown[]).every(validateSNSLink);
@@ -33,7 +33,7 @@ export type Member = {
   links: SNSLinkInfo[];
 };
 
-const validateMember = (obj: unknown): obj is Member => {
+function validateMember(obj: unknown): obj is Member {
   if (typeof obj !== "object" || obj == null) {
     console.error("not object: ", obj);
     return false;
@@ -57,10 +57,15 @@ const validateMember = (obj: unknown): obj is Member => {
   }
 
   return true;
-};
+}
 
-const validateMembers = (obj: unknown): obj is Member[] =>
-  typeof obj === "object" && obj != null && (Object.values(obj) as unknown[]).every(validateMember);
+function validateMembers(obj: unknown): obj is Member[] {
+  return (
+    typeof obj === "object" &&
+    obj != null &&
+    (Object.values(obj) as unknown[]).every(validateMember)
+  );
+}
 
 const membersFile = path.join(process.cwd(), "data/members/list.yaml");
 
