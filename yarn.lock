@@ -2071,6 +2071,18 @@ emoji-regex@^8.0.0:
   resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-8.0.0.tgz#e818fd69ce5ccfcb404594f842963bf53164cc37"
   integrity sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==
 
+emojify-tag@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/emojify-tag/-/emojify-tag-1.0.0.tgz#64759f626e38689108eced36892c5856b841b6ce"
+  integrity sha1-ZHWfYm44aJEI7O02iSxYVrhBts4=
+  dependencies:
+    emojione "^2.2.6"
+
+emojione@^2.2.6:
+  version "2.2.7"
+  resolved "https://registry.yarnpkg.com/emojione/-/emojione-2.2.7.tgz#46457cf6b9b2f8da13ae8a2e4e547de06ee15e96"
+  integrity sha1-RkV89rmy+NoTroouTlR94G7hXpY=
+
 emojis-list@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/emojis-list/-/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"
