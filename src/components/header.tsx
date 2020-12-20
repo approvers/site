@@ -3,7 +3,7 @@ import type { FC } from "react";
 import Link from "next/link";
 import styles from "../scss/components/header.module.scss";
 
-const links: readonly { name: string; url: string }[] = [
+const links = [
   {
     name: "ホーム",
     url: "/",
@@ -20,7 +20,7 @@ const links: readonly { name: string; url: string }[] = [
     name: "リンク",
     url: "/link",
   },
-];
+] as const;
 
 const Links: FC = () => (
   <>
