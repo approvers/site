@@ -40,7 +40,9 @@ jobs:
         run: echo "::set-output name=dir::$(yarn cache dir)"
       - uses: actions/cache@v2
         with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
+          path: |
+            ${{ steps.yarn-cache.outputs.dir }}
+            ./.next/cache
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: ${{ runner.os }}-
       - run: yarn install --frozen-lockfile
