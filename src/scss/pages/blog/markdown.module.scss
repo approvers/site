@@ -1,10 +1,10 @@
+@use "../../color.variable";
 @use "../../media.variable";
 
 .markdown {
   width: 60%;
   min-height: 100%;
-  padding: 0 1.5rem;
-  padding-top: 1rem;
+  padding: 4rem 1.5rem;
   text-align: left;
 
   @media #{media.query(middle)} {
@@ -13,5 +13,34 @@
 
   @media #{media.query(phone)} {
     width: 90%;
+  }
+
+  h1 {
+    padding-top: 2rem;
+  }
+
+  h2 {
+    padding-top: 1.5rem;
+  }
+
+  p {
+    padding-top: 0.5rem;
+  }
+
+  ul,
+  ol {
+    padding: 0.25rem 2rem;
+  }
+
+  details {
+    padding-left: 1rem;
+  }
+
+  pre,
+  code {
+    @include color.text(sub, back);
+
+    padding: 0 0.25rem;
+    border-radius: 0.25rem;
   }
 }
