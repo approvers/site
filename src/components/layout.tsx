@@ -47,6 +47,25 @@ const IconMetas: FC = () => (
   </>
 );
 
+const headerLinks = [
+  {
+    name: "ホーム",
+    url: "/",
+  },
+  {
+    name: "メンバー",
+    url: "/member",
+  },
+  {
+    name: "ブログ",
+    url: "/blog",
+  },
+  {
+    name: "リンク",
+    url: "/link",
+  },
+] as const;
+
 export const Layout: FC<{ pageName: string; description?: string; children: ReactNode }> = ({
   pageName,
   children,
@@ -63,7 +82,7 @@ export const Layout: FC<{ pageName: string; description?: string; children: Reac
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="theme-color" content="#000000" />
     </Head>
-    <Header />
+    <Header links={headerLinks} />
     <main className={styles.wrapper}>{children}</main>
     <Footer />
   </div>

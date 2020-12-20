@@ -3,26 +3,14 @@ import type { FC } from "react";
 import Link from "next/link";
 import styles from "../scss/components/header.module.scss";
 
-const links = [
-  {
-    name: "ホーム",
-    url: "/",
-  },
-  {
-    name: "メンバー",
-    url: "/member",
-  },
-  {
-    name: "ブログ",
-    url: "/blog",
-  },
-  {
-    name: "リンク",
-    url: "/link",
-  },
-] as const;
+export interface LinksProps {
+  links: readonly Readonly<{
+    name: string;
+    url: string;
+  }>[];
+}
 
-const Links: FC = () => (
+const Links: FC<LinksProps> = ({ links }) => (
   <>
     {links.map(({ name, url }) => (
       <Link key={name} href={url}>
@@ -34,10 +22,10 @@ const Links: FC = () => (
   </>
 );
 
-export const Header: FC = () => (
+export const Header: FC<LinksProps> = (props) => (
   <header className={styles.headerLayout}>
     <div className={styles.buttonWrapper}>
-      <Links />
+      <Links {...props} />
     </div>
   </header>
 );
