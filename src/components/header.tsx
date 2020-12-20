@@ -3,34 +3,29 @@ import type { FC } from "react";
 import Link from "next/link";
 import styles from "../scss/components/header.module.scss";
 
-const links: { name: string; url: string }[] = [
-  {
-    name: "ホーム",
-    url: "/",
-  },
-  {
-    name: "メンバー",
-    url: "/member",
-  },
-  {
-    name: "ブログ",
-    url: "/blog",
-  },
-  {
-    name: "リンク",
-    url: "/link",
-  },
-];
-export const Header: FC = () => (
+export interface LinksProps {
+  links: readonly Readonly<{
+    name: string;
+    url: string;
+  }>[];
+}
+
+const Links: FC<LinksProps> = ({ links }) => (
+  <>
+    {links.map(({ name, url }) => (
+      <Link key={name} href={url}>
+        <Button>
+          <a>{name}</a>
+        </Button>
+      </Link>
+    ))}
+  </>
+);
+
+export const Header: FC<LinksProps> = (props) => (
   <header className={styles.headerLayout}>
     <div className={styles.buttonWrapper}>
-      {links.map(({ name, url }) => (
-        <Link key={name} href={url}>
-          <Button>
-            <a>{name}</a>
-          </Button>
-        </Link>
-      ))}
+      <Links {...props} />
     </div>
   </header>
 );

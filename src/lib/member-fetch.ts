@@ -5,7 +5,7 @@ const { readFile } = promises;
 
 export type SNSLinkInfo = { type: "twitter"; url: string } | { type: "github"; url: string };
 
-const validateSNSLink = (obj: unknown): obj is SNSLinkInfo => {
+function validateSNSLink(obj: unknown): obj is SNSLinkInfo {
   if (typeof obj !== "object" || obj == null) {
     console.error("not object: ", obj);
     return false;
@@ -20,53 +20,60 @@ const validateSNSLink = (obj: unknown): obj is SNSLinkInfo => {
     return false;
   }
   return true;
-};
+}
+
+function validateSNSLinks(links: unknown): links is readonly SNSLinkInfo[] {
+  return (
+    typeof links === "object" &&
+    links !== null &&
+    (Object.values(links) as unknown[]).every(validateSNSLink)
+  );
+}
 
 export type Member = {
   avatar: string;
   name: string;
   role: string;
-  links: SNSLinkInfo[];
+  links: readonly SNSLinkInfo[];
 };
 
-const validateMember = (obj: unknown): obj is Member => {
+function validateMember(obj: unknown): obj is Member {
   if (typeof obj !== "object" || obj == null) {
     console.error("not object: ", obj);
     return false;
   }
 
-  if (!("avatar" in obj && typeof (obj as Member).avatar === "string")) {
+  if (typeof (obj as Member).avatar !== "string") {
     console.error("`avatar` not in: ", obj);
     return false;
   }
-  if (!("name" in obj && typeof (obj as Member).name === "string")) {
+  if (typeof (obj as Member).name !== "string") {
     console.error("`name` not in: ", obj);
     return false;
   }
-  if (!("role" in obj && typeof (obj as Member).role === "string")) {
+  if (typeof (obj as Member).role !== "string") {
     console.error("`role` not in: ", obj);
     return false;
   }
-  if (
-    !(
-      "links" in obj &&
-      typeof (obj as Member).links === "object" &&
-      (Object.values((obj as Member).links) as unknown[]).every(validateSNSLink)
-    )
-  ) {
+  if (!validateSNSLinks((obj as Member).links)) {
     console.error("`links` not in: ", obj);
     return false;
   }
 
   return true;
-};
+}
 
-const validateMembers = (obj: unknown): obj is Member[] =>
-  typeof obj === "object" && obj != null && (Object.values(obj) as unknown[]).every(validateMember);
+function validateMembers(obj: unknown): obj is readonly Member[] {
+  return (
+    typeof obj === "object" &&
+    obj != null &&
+    (Object.values(obj) as unknown[]).every(validateMember)
+  );
+}
 
 const membersFile = path.join(process.cwd(), "data/members/list.yaml");
 
-export async function getMembers(): Promise<Member[]> {
+export async function getMembers(): Promise<readonly Member[]> {
   const file = await readFile(membersFile);
   const parsed = YAML.parse(file.toString());
   if (!validateMembers(parsed)) {
