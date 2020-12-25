@@ -71,8 +71,8 @@ function validateMembers(obj: unknown): obj is readonly Member[] {
 const membersUrl = "https://github.com/approvers/site-data/raw/master/data/members/list.yaml";
 
 export async function getMembers(): Promise<readonly Member[]> {
-  const file = await fetch(membersUrl);
-  const parsed = YAML.parse(file.toString());
+  const res = await fetch(membersUrl);
+  const parsed = YAML.parse(await res.text());
   if (!validateMembers(parsed)) {
     throw "invalid list format";
   }
