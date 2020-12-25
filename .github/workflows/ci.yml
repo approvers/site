@@ -73,6 +73,6 @@ jobs:
         with:
           github-token: ${{ secrets.PUSH_TOKEN }}
           script: |
-            await octokit.request("POST /repos/${{ github.repository }}/actions/workflows/deploy/dispatches", {
+            await github.request("POST /repos/${{ github.repository }}/actions/workflows/deploy/dispatches", {
               ref: "dev"
             });
