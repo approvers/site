@@ -66,7 +66,7 @@ jobs:
     needs:
       - lint
       - build-test
-    #if: github.ref == 'refs/tags/dev'
+    if: github.ref == 'refs/heads/dev'
     steps:
       - name: Post request
         uses: actions/github-script@v3
