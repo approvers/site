@@ -66,13 +66,13 @@ jobs:
     needs:
       - lint
       - build-test
-    if: github.ref == 'refs/tags/dev'
+    if: github.ref == 'refs/heads/dev'
     steps:
       - name: Post request
         uses: actions/github-script@v3
         with:
           github-token: ${{ secrets.PUSH_TOKEN }}
           script: |
-            await octokit.request("POST /repos/${{ github.repository }}/actions/workflows/deploy/dispatches", {
+            await github.request("POST /repos/${{ github.repository }}/actions/workflows/2751281/dispatches", {
               ref: "dev"
             });
