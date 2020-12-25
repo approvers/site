@@ -57,12 +57,12 @@ jobs:
     needs:
       - build
     steps:
-      - name: download artifact
+      - name: Download artifact
         uses: actions/download-artifact@v2
         with:
           name: artifact
 
-      - name: deploy to github pages
+      - name: Deploy to github pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.PUSH_TOKEN }}
