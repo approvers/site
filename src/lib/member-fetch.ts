@@ -1,7 +1,4 @@
 import YAML from "yaml";
-import path from "path";
-import { promises } from "fs";
-const { readFile } = promises;
 
 export type SNSLinkInfo = { type: "twitter"; url: string } | { type: "github"; url: string };
 
@@ -71,10 +68,10 @@ function validateMembers(obj: unknown): obj is readonly Member[] {
   );
 }
 
-const membersFile = path.join(process.cwd(), "data/members/list.yaml");
+const membersUrl = "https://github.com/approvers/site-data/raw/master/data/members/list.yaml";
 
 export async function getMembers(): Promise<readonly Member[]> {
-  const file = await readFile(membersFile);
+  const file = await fetch(membersUrl);
   const parsed = YAML.parse(file.toString());
   if (!validateMembers(parsed)) {
     throw "invalid list format";
