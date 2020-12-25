@@ -36,8 +36,7 @@
     padding-left: 1rem;
   }
 
-  pre,
-  code {
+  pre {
     @include color.text(sub, back);
 
     padding: 0.25rem;
