@@ -27,6 +27,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.9",
     "date-fns": "^2.13.0",
+    "emojify-tag": "^1.0.0",
     "gray-matter": "^4.0.2",
     "markdown-to-jsx": "^7.0.1",
     "next": "^10.0.0",

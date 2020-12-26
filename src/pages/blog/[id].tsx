@@ -3,6 +3,7 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { DateString } from "../../components/date";
 import { Layout } from "../../components/layout";
 import Markdown from "markdown-to-jsx";
+import emojify from "emojify-tag";
 import styles from "../../scss/pages/blog/markdown.module.scss";
 
 type BlogPostPageProps = {
@@ -14,7 +15,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => (
     <h1 className={styles.title}>{post.title}</h1>
     <DateString dateString={post.date} />
     <div className={styles.markdown}>
-      <Markdown>{post.content}</Markdown>
+      <Markdown>{emojify`${post.content}`}</Markdown>
     </div>
   </Layout>
 );
