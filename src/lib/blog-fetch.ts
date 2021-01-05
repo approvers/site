@@ -70,7 +70,7 @@ export async function getAllBlogInfos(): Promise<{ params: BlogInfo }[]> {
     fileNames.map(async (fileName) => ({
       params: {
         id: fileName.replace(/\.md$/, ""),
-        lastUpdate: (await stat(fileName)).mtime.toString(),
+        lastUpdate: (await stat(path.join(postsDirectory, fileName))).mtime.toString(),
       },
     })),
   );
