@@ -2,7 +2,7 @@ name: ci
 on:
   push:
     branches-ignore:
-      - master
+      - release
 
 jobs:
   lint:
@@ -66,7 +66,7 @@ jobs:
     needs:
       - lint
       - build-test
-    if: github.ref == 'refs/heads/dev'
+    if: github.ref == 'refs/heads/main'
     steps:
       - name: Post request
         uses: actions/github-script@v3
@@ -74,5 +74,5 @@ jobs:
           github-token: ${{ secrets.PUSH_TOKEN }}
           script: |
             await github.request("POST /repos/${{ github.repository }}/actions/workflows/2751281/dispatches", {
-              ref: "dev"
+              ref: "main"
             });

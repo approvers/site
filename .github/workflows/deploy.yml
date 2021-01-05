@@ -67,5 +67,5 @@ jobs:
         with:
           github_token: ${{ secrets.PUSH_TOKEN }}
           publish_dir: ./
-          publish_branch: master
+          publish_branch: release 
           cname: ${{ secrets.BASE_URL }}
