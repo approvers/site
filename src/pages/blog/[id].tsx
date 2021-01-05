@@ -1,4 +1,4 @@
-import { Blog, getAllBlogIds, getBlogFromId } from "../../lib/blog-fetch";
+import { Blog, getAllBlogInfos, getBlogFromId } from "../../lib/blog-fetch";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { DateString } from "../../components/date";
 import { Layout } from "../../components/layout";
@@ -22,6 +22,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => (
 
 type BlogPostPagePathProps = {
   id: string;
+  lastUpdate: string;
 };
 
 export const getStaticProps: GetStaticProps<BlogPostPageProps, BlogPostPagePathProps> = async ({
@@ -36,7 +37,7 @@ export const getStaticProps: GetStaticProps<BlogPostPageProps, BlogPostPagePathP
 };
 
 export const getStaticPaths: GetStaticPaths<BlogPostPagePathProps> = async () => {
-  const paths = await getAllBlogIds();
+  const paths = await getAllBlogInfos();
   return { paths, fallback: false };
 };
 
