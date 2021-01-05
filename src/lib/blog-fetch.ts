@@ -1,3 +1,4 @@
+import { decode } from "js-base64";
 import matter from "gray-matter";
 
 const endpoint = "https://api.github.com";
@@ -30,8 +31,8 @@ function validateMetadata(value: unknown): value is Metadata {
   );
 }
 
-async function decodeBase64(content: string): Promise<string> {
-  return (await fetch(`data:text/plain;charset=UTF-8;base64,${content}`)).text();
+function decodeBase64(content: string): string {
+  return decode(content);
 }
 
 const metadataFromFile = async (fileName: string): Promise<Metadata> => {
@@ -42,12 +43,13 @@ const metadataFromFile = async (fileName: string): Promise<Metadata> => {
     sha: string;
   };
   const id = fileName.replace(/\.md$/, "");
-  const content = await decodeBase64(json.content);
+  const content = decodeBase64(json.content);
   const { data } = matter(content);
+  data.id = id;
   if (!validateMetadata(data)) {
     throw "invalid metadata";
   }
-  return { ...data, id };
+  return { ...data };
 };
 
 async function getFileNames(): Promise<{ name: string }[]> {
@@ -75,7 +77,7 @@ export async function getAllBlogIds(): Promise<{ params: { id: BlogPostId } }[]>
 
 export async function getBlogFromId(id: string): Promise<Blog> {
   const res = (await (await fetch(endpoint + blogPath + id + ".md")).json()) as { content: string };
-  const fileContents = await decodeBase64(res.content);
+  const fileContents = decodeBase64(res.content);
   const matterResult = matter(fileContents);
   const { data, content } = matterResult;
   data.id = id;
