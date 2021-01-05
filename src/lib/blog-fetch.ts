@@ -1,23 +1,21 @@
 import matter from "gray-matter";
-import path from "path";
-import { promises } from "fs";
-const { readFile, readdir } = promises;
 
-const postsDirectory = path.join(process.cwd(), "data", "blogs");
+const endpoint = "https://api.github.com";
+const blogPath = "/repos/approvers/site-data/contents/data/blogs/";
 
 export type BlogPostId = string;
 
-export type Metadata = {
+export interface Metadata {
   id: BlogPostId;
   date: string;
   title: string;
-};
+}
 
-export type Blog = {
+export interface Blog extends Metadata {
   content: string;
-} & Metadata;
+}
 
-const validateMetadata = (value: unknown): value is Metadata => {
+function validateMetadata(value: unknown): value is Metadata {
   if (typeof value !== "object" || value == null) {
     return false;
   }
@@ -30,48 +28,54 @@ const validateMetadata = (value: unknown): value is Metadata => {
     "title" in value &&
     typeof (value as Metadata).title === "string"
   );
-};
+}
+
+async function decodeBase64(content: string): Promise<string> {
+  return (await fetch(`data:text/plain;charset=UTF-8;base64,${content}`)).text();
+}
 
 const metadataFromFile = async (fileName: string): Promise<Metadata> => {
-  const fullPath = path.join(postsDirectory, fileName);
-  const fileContents = await readFile(fullPath, "utf8");
-  const matterResult = matter(fileContents);
-  const data = matterResult.data;
+  const res = await fetch(endpoint + blogPath + fileName);
+  const json = (await res.json()) as {
+    name: string;
+    content: string;
+    sha: string;
+  };
   const id = fileName.replace(/\.md$/, "");
-  data.id = id;
+  const content = await decodeBase64(json.content);
+  const { data } = matter(content);
   if (!validateMetadata(data)) {
     throw "invalid metadata";
   }
-  return { ...data };
+  return { ...data, id };
 };
 
-export async function getSortedBlogMetadatas(): Promise<Metadata[]> {
-  const fileNames = await readdir(postsDirectory);
-  const allPostsData = await Promise.all(fileNames.map(metadataFromFile));
+async function getFileNames(): Promise<{ name: string }[]> {
+  return (await (await fetch(endpoint + blogPath)).json()) as {
+    name: string;
+  }[];
+}
 
-  return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1;
-    } else {
-      return -1;
-    }
-  });
+export async function getSortedBlogMetadatas(): Promise<Metadata[]> {
+  const fileNames = await getFileNames();
+  const allPostsData = await Promise.all(fileNames.map(({ name }) => metadataFromFile(name)));
+
+  return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
 export async function getAllBlogIds(): Promise<{ params: { id: BlogPostId } }[]> {
-  const fileNames = await readdir(postsDirectory);
+  const fileNames = await getFileNames();
 
-  return fileNames.map((fileName) => ({
+  return fileNames.map(({ name }) => ({
     params: {
-      id: fileName.replace(/\.md$/, ""),
+      id: name.replace(/\.md$/, ""),
     },
   }));
 }
 
 export async function getBlogFromId(id: string): Promise<Blog> {
-  const fullPath = path.join(postsDirectory, `${id}.md`);
-  const fileContents = await readFile(fullPath, "utf8");
-
+  const res = (await (await fetch(`${endpoint}.md`)).json()) as { content: string };
+  const fileContents = await decodeBase64(res.content);
   const matterResult = matter(fileContents);
   const { data, content } = matterResult;
   data.id = id;
