@@ -74,7 +74,7 @@ export async function getAllBlogIds(): Promise<{ params: { id: BlogPostId } }[]>
 }
 
 export async function getBlogFromId(id: string): Promise<Blog> {
-  const res = (await (await fetch(`${endpoint}.md`)).json()) as { content: string };
+  const res = (await (await fetch(endpoint + blogPath + id + ".md")).json()) as { content: string };
   const fileContents = await decodeBase64(res.content);
   const matterResult = matter(fileContents);
   const { data, content } = matterResult;
