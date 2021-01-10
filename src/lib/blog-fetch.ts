@@ -11,6 +11,7 @@ export type Metadata = {
   id: BlogPostId;
   date: string;
   title: string;
+  author: string;
 };
 
 export type Blog = {
@@ -28,7 +29,8 @@ const validateMetadata = (value: unknown): value is Metadata => {
     "date" in value &&
     typeof (value as Metadata).date === "string" &&
     "title" in value &&
-    typeof (value as Metadata).title === "string"
+    typeof (value as Metadata).title === "string" &&
+    typeof (value as Metadata).author === "string"
   );
 };
 
