@@ -13,7 +13,11 @@ type BlogPostPageProps = {
 const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => (
   <Layout pageName={`限界開発鯖 - ブログ - ${post.title}`}>
     <h1 className={styles.title}>{post.title}</h1>
-    <DateString dateString={post.date} />
+    <div>
+      {post.author}
+      {" - "}
+      <DateString dateString={post.date} />
+    </div>
     <div className={styles.markdown}>
       <Markdown>{emojify`${post.content}`}</Markdown>
     </div>
