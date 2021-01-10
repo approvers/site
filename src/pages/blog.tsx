@@ -6,7 +6,6 @@ import { DateString } from "../components/date";
 import type { FC } from "react";
 import { Layout } from "../components/layout";
 import Link from "next/link";
-import { Paper } from "../components/paper";
 import { Title } from "../components/title";
 import styles from "../scss/pages/blog.module.scss";
 
