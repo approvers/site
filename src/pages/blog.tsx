@@ -11,7 +11,7 @@ import { Title } from "../components/title";
 import styles from "../scss/pages/blog.module.scss";
 
 const BlogCard: FC<Metadata> = ({ id, title, date }) => (
-  <Paper>
+  <div className={styles.blogCard}>
     <Avatar name={title} />
     <div className={styles.cardText}>
       <h3 className={styles.blogTitle}>{title}</h3>
@@ -22,7 +22,7 @@ const BlogCard: FC<Metadata> = ({ id, title, date }) => (
         </Button>
       </Link>
     </div>
-  </Paper>
+  </div>
 );
 
 const BlogPage: NextPage<{ blogs: Metadata[] }> = ({ blogs }) => (
