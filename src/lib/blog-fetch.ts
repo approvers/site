@@ -1,7 +1,7 @@
 import matter from "gray-matter";
 import path from "path";
 import { promises } from "fs";
-const { readFile, readdir } = promises;
+const { readFile, readdir, stat } = promises;
 
 const postsDirectory = path.join(process.cwd(), "data", "blogs");
 
@@ -60,14 +60,22 @@ export async function getSortedBlogMetadatas(): Promise<Metadata[]> {
   });
 }
 
-export async function getAllBlogIds(): Promise<{ params: { id: BlogPostId } }[]> {
+export interface BlogInfo {
+  id: string;
+  lastUpdate: string;
+}
+
+export async function getAllBlogInfos(): Promise<{ params: BlogInfo }[]> {
   const fileNames = await readdir(postsDirectory);
 
-  return fileNames.map((fileName) => ({
-    params: {
-      id: fileName.replace(/\.md$/, ""),
-    },
-  }));
+  return Promise.all(
+    fileNames.map(async (fileName) => ({
+      params: {
+        id: fileName.replace(/\.md$/, ""),
+        lastUpdate: (await stat(path.join(postsDirectory, fileName))).mtime.toString(),
+      },
+    })),
+  );
 }
 
 export async function getBlogFromId(id: string): Promise<Blog> {
