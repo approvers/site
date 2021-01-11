@@ -2,9 +2,21 @@
 @use "../details.variable";
 @use "../media.variable";
 
+.blogCard {
+  display: flex;
+  align-items: center;
+  max-width: 80%;
+  margin: 1em;
+
+  img {
+    width: 20%;
+  }
+}
+
 .main {
   @include details.enumerate-contents-wrapper();
 
+  flex-direction: column;
   justify-content: flex-start;
 }
 
@@ -22,8 +34,6 @@
 
 .blogTitle {
   @extend .name;
-
-  word-break: keep-all;
 }
 
 .blogContents {

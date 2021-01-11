@@ -1,11 +1,8 @@
 @use "../../color.variable";
 @use "../../media.variable";
 
-.markdown {
+@mixin centered-body {
   width: 60%;
-  min-height: 100%;
-  padding: 4rem 1.5rem;
-  text-align: left;
 
   @media #{media.query(middle)} {
     width: 70%;
@@ -14,6 +11,21 @@
   @media #{media.query(phone)} {
     width: 90%;
   }
+}
+
+.title {
+  @include centered-body();
+
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.markdown {
+  @include centered-body();
+
+  min-height: 100%;
+  padding: 4rem 1.5rem;
+  text-align: left;
 
   h1 {
     padding-top: 2rem;

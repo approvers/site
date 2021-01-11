@@ -6,12 +6,11 @@ import { DateString } from "../components/date";
 import type { FC } from "react";
 import { Layout } from "../components/layout";
 import Link from "next/link";
-import { Paper } from "../components/paper";
 import { Title } from "../components/title";
 import styles from "../scss/pages/blog.module.scss";
 
 const BlogCard: FC<Metadata> = ({ id, title, date, author }) => (
-  <Paper>
+  <div className={styles.blogCard}>
     <Avatar name={title} />
     <div className={styles.cardText}>
       <h3 className={styles.blogTitle}>{title}</h3>
@@ -23,7 +22,7 @@ const BlogCard: FC<Metadata> = ({ id, title, date, author }) => (
         </Button>
       </Link>
     </div>
-  </Paper>
+  </div>
 );
 
 const BlogPage: NextPage<{ blogs: Metadata[] }> = ({ blogs }) => (
