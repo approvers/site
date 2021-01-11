@@ -10,11 +10,12 @@ import { Paper } from "../components/paper";
 import { Title } from "../components/title";
 import styles from "../scss/pages/blog.module.scss";
 
-const BlogCard: FC<Metadata> = ({ id, title, date }) => (
+const BlogCard: FC<Metadata> = ({ id, title, date, author }) => (
   <Paper>
     <Avatar name={title} />
     <div className={styles.cardText}>
       <h3 className={styles.blogTitle}>{title}</h3>
+      {author}
       <DateString dateString={date} />
       <Link href={`/blog/${id}`}>
         <Button>
