@@ -7,7 +7,6 @@
   margin-bottom: auto;
 
   @include details.flex-style();
-  @include media.max-width();
 
   @media #{media.query(phone)} {
     justify-content: flex-start;
@@ -22,4 +21,13 @@
   @media #{media.query(phone)} {
     text-align: left;
   }
+}
+
+.grid {
+  @include media.padding(left);
+  @include media.padding(right);
+  @include media.padding(bottom);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
 }
