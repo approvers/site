@@ -19,19 +19,17 @@ export type Blog = {
 } & Metadata;
 
 const validateMetadata = (value: unknown): value is Metadata => {
-  if (typeof value !== "object" || value == null) {
-    return false;
-  }
-
-  return (
-    "id" in value &&
+  const result =
+    typeof value === "object" &&
+    value !== null &&
     typeof (value as Metadata).id === "string" &&
-    "date" in value &&
     typeof (value as Metadata).date === "string" &&
-    "title" in value &&
     typeof (value as Metadata).title === "string" &&
-    typeof (value as Metadata).author === "string"
-  );
+    typeof (value as Metadata).author === "string";
+  if (!result) {
+    console.error(`invalid metadata: ${value}`);
+  }
+  return result;
 };
 
 const metadataFromFile = async (fileName: string): Promise<Metadata> => {
@@ -42,7 +40,7 @@ const metadataFromFile = async (fileName: string): Promise<Metadata> => {
   const id = fileName.replace(/\.md$/, "");
   data.id = id;
   if (!validateMetadata(data)) {
-    throw "invalid metadata";
+    throw new Error("invalid metadata");
   }
   return { ...data };
 };
@@ -53,13 +51,7 @@ export async function getSortedBlogMetadatas(): Promise<Metadata[]> {
   console.log(`Files in posts directory are: ${fileNames}`);
   const allPostsData = await Promise.all(fileNames.map(metadataFromFile));
 
-  return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1;
-    } else {
-      return -1;
-    }
-  });
+  return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
 export interface BlogInfo {
@@ -90,7 +82,7 @@ export async function getBlogFromId(id: string): Promise<Blog> {
   const { data, content } = matterResult;
   data.id = id;
   if (!validateMetadata(data)) {
-    throw "invalid metadata";
+    throw new Error("invalid metadata");
   }
 
   return {
