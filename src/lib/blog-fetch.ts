@@ -48,7 +48,9 @@ const metadataFromFile = async (fileName: string): Promise<Metadata> => {
 };
 
 export async function getSortedBlogMetadatas(): Promise<Metadata[]> {
+  console.log(`Reading all sorted blog metadatas from ${postsDirectory}`);
   const fileNames = await readdir(postsDirectory);
+  console.log(`Files in posts directory are: ${fileNames}`);
   const allPostsData = await Promise.all(fileNames.map(metadataFromFile));
 
   return allPostsData.sort((a, b) => {
@@ -66,6 +68,7 @@ export interface BlogInfo {
 }
 
 export async function getAllBlogInfos(): Promise<{ params: BlogInfo }[]> {
+  console.log(`Reading all blog infos from ${postsDirectory}`);
   const fileNames = await readdir(postsDirectory);
 
   return Promise.all(
@@ -80,6 +83,7 @@ export async function getAllBlogInfos(): Promise<{ params: BlogInfo }[]> {
 
 export async function getBlogFromId(id: string): Promise<Blog> {
   const fullPath = path.join(postsDirectory, `${id}.md`);
+  console.log(`Reading a blog from ${fullPath}`);
   const fileContents = await readFile(fullPath, "utf8");
 
   const matterResult = matter(fileContents);
