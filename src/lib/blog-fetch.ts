@@ -8,10 +8,16 @@ const postsDirectory = path.join(process.cwd(), "data", "blogs");
 export type BlogPostId = string;
 
 export type Metadata = {
+  type: "validMetadata";
   id: BlogPostId;
   date: string;
   title: string;
   author: string;
+};
+
+export type FetchError = {
+  type: "fetchError";
+  context: string;
 };
 
 export type Blog = {
@@ -32,15 +38,16 @@ const validateMetadata = (value: unknown): value is Metadata => {
   return result;
 };
 
-const metadataFromFile = async (fileName: string): Promise<Metadata> => {
+const metadataFromFile = async (fileName: string): Promise<Metadata | FetchError> => {
   const fullPath = path.join(postsDirectory, fileName);
   const fileContents = await readFile(fullPath, "utf8");
   const matterResult = matter(fileContents);
   const data = matterResult.data;
   const id = fileName.replace(/\.md$/, "");
+  data.type = "validMetadata";
   data.id = id;
   if (!validateMetadata(data)) {
-    throw new Error("invalid metadata");
+    return { type: "fetchError", context: "invalid metadata" };
   }
   return { ...data };
 };
@@ -51,7 +58,9 @@ export async function getSortedBlogMetadatas(): Promise<Metadata[]> {
   console.log(`Files in posts directory are: ${fileNames}`);
   const allPostsData = await Promise.all(fileNames.map(metadataFromFile));
 
-  return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
+  return allPostsData
+    .filter((e): e is Metadata => e.type === "validMetadata")
+    .sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
 export interface BlogInfo {
@@ -73,7 +82,7 @@ export async function getAllBlogInfos(): Promise<{ params: BlogInfo }[]> {
   );
 }
 
-export async function getBlogFromId(id: string): Promise<Blog> {
+export async function getBlogFromId(id: string): Promise<Blog | FetchError> {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   console.log(`Reading a blog from ${fullPath}`);
   const fileContents = await readFile(fullPath, "utf8");
@@ -82,7 +91,7 @@ export async function getBlogFromId(id: string): Promise<Blog> {
   const { data, content } = matterResult;
   data.id = id;
   if (!validateMetadata(data)) {
-    throw new Error("invalid metadata");
+    return { type: "fetchError", context: "invalid metadata" };
   }
 
   return {
