@@ -1,4 +1,4 @@
-import { Blog, getAllBlogInfos, getBlogFromId } from "../../lib/blog-fetch";
+import { Blog, FetchError, getAllBlogInfos, getBlogFromId } from "../../lib/blog-fetch";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { DateString } from "../../components/date";
 import { Layout } from "../../components/layout";
@@ -16,10 +16,17 @@ const md = MarkdownIt({
   .use(MarkdownItFootnote);
 
 type BlogPostPageProps = {
-  post: Blog;
+  post: Blog | FetchError;
 };
 
 const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
+  if (post.type === "fetchError") {
+    return (
+      <Layout pageName="限界開発鯖 - ブログ">
+        <div className={styles.error}>生成に失敗しました: {post.context}</div>
+      </Layout>
+    );
+  }
   const bodyHtml = md.render(emojify`${post.content}`);
   return (
     <Layout pageName={`限界開発鯖 - ブログ - ${post.title}`}>
