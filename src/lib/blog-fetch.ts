@@ -18,6 +18,13 @@ export type Blog = {
   content: string;
 } & Metadata;
 
+function sanitizeMetadata(id: BlogPostId, value: { [key: string]: unknown }) {
+  value.id = id;
+  if ((value as { date: unknown }).date instanceof Date) {
+    (value as Metadata).date = (value as { date: Date }).date.toISOString().substring(0, 10);
+  }
+}
+
 const validateMetadata = (value: unknown): value is Metadata => {
   if (typeof value !== "object" || value === null) {
     console.error("`value` is not an object");
@@ -29,6 +36,10 @@ const validateMetadata = (value: unknown): value is Metadata => {
   }
   if (typeof (value as Metadata).date !== "string") {
     console.error("`date` is not in `value`");
+    return false;
+  }
+  if ((value as Metadata).date.length < 10 || Number.isNaN(Date.parse((value as Metadata).date))) {
+    console.error(`\`date\` is an invalid form: ${(value as Metadata).date}`);
     return false;
   }
   if (typeof (value as Metadata).title !== "string") {
@@ -48,7 +59,7 @@ const metadataFromFile = async (fileName: string): Promise<Metadata> => {
   const matterResult = matter(fileContents);
   const data = matterResult.data;
   const id = fileName.replace(/\.md$/, "");
-  data.id = id;
+  sanitizeMetadata(id, data);
   if (!validateMetadata(data)) {
     throw new Error("invalid metadata");
   }
@@ -90,7 +101,7 @@ export async function getBlogFromId(id: string): Promise<Blog> {
 
   const matterResult = matter(fileContents);
   const { data, content } = matterResult;
-  data.id = id;
+  sanitizeMetadata(id, data);
   if (!validateMetadata(data)) {
     throw new Error("invalid metadata");
   }
