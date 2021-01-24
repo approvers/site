@@ -65,6 +65,12 @@
 
     padding: 0.25rem;
     margin: 0.25rem 0;
+    overflow-x: scroll;
     border-radius: 0.25rem;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }
