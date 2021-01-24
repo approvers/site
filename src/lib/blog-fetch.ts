@@ -19,17 +19,27 @@ export type Blog = {
 } & Metadata;
 
 const validateMetadata = (value: unknown): value is Metadata => {
-  const result =
-    typeof value === "object" &&
-    value !== null &&
-    typeof (value as Metadata).id === "string" &&
-    typeof (value as Metadata).date === "string" &&
-    typeof (value as Metadata).title === "string" &&
-    typeof (value as Metadata).author === "string";
-  if (!result) {
-    console.error(`invalid metadata: ${value}`);
+  if (typeof value !== "object" || value === null) {
+    console.error("`value` is not an object");
+    return false;
   }
-  return result;
+  if (typeof (value as Metadata).id !== "string") {
+    console.error("`id` is not in `value`");
+    return false;
+  }
+  if (typeof (value as Metadata).date !== "string") {
+    console.error("`date` is not in `value`");
+    return false;
+  }
+  if (typeof (value as Metadata).title !== "string") {
+    console.error("`title` is not in `value`");
+    return false;
+  }
+  if (typeof (value as Metadata).author !== "string") {
+    console.error("`author` is not in `value`");
+    return false;
+  }
+  return true;
 };
 
 const metadataFromFile = async (fileName: string): Promise<Metadata> => {
