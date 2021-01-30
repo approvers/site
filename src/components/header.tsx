@@ -13,11 +13,11 @@ export interface LinksProps {
 const Links: FC<LinksProps> = ({ links }) => (
   <nav className={styles.buttonWrapper}>
     {links.map(({ name, url }) => (
-      <Link key={name} href={url}>
-        <Button>
+      <Button key={name}>
+        <Link href={url}>
           <a>{name}</a>
-        </Button>
-      </Link>
+        </Link>
+      </Button>
     ))}
   </nav>
 );
