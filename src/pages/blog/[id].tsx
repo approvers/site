@@ -23,12 +23,14 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
   const bodyHtml = md.render(emojify`${post.content}`);
   return (
     <Layout pageName={`限界開発鯖 - ブログ - ${post.title}`}>
-      <h1 className={styles.title}>{post.title}</h1>
-      <div>
-        {post.author}
-        {" - "}
-        <DateString dateString={post.date} />
-      </div>
+      <header>
+        <h1 className={styles.title}>{post.title}</h1>
+        <div>
+          {post.author}
+          {" - "}
+          <DateString dateString={post.date} />
+        </div>
+      </header>
       <article className={styles.markdown}>
         <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />
       </article>
