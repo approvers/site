@@ -29,9 +29,9 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
         {" - "}
         <DateString dateString={post.date} />
       </div>
-      <div className={styles.markdown}>
+      <article className={styles.markdown}>
         <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />
-      </div>
+      </article>
     </Layout>
   );
 };
