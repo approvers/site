@@ -23,8 +23,8 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
   const bodyHtml = md.render(emojify`${post.content}`);
   return (
     <Layout pageName={`限界開発鯖 - ブログ - ${post.title}`}>
-      <header>
-        <h1 className={styles.title}>{post.title}</h1>
+      <header className={styles.title}>
+        <h1>{post.title}</h1>
         <div>
           {post.author}
           {" - "}
