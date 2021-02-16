@@ -10,4 +10,8 @@
   &:hover {
     @include color.main(light, bold-underline);
   }
+
+  * {
+    color: inherit;
+  }
 }

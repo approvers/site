@@ -11,21 +11,19 @@ export interface LinksProps {
 }
 
 const Links: FC<LinksProps> = ({ links }) => (
-  <>
+  <nav className={styles.buttonWrapper}>
     {links.map(({ name, url }) => (
-      <Link key={name} href={url}>
-        <Button>
+      <Button key={name}>
+        <Link href={url}>
           <a>{name}</a>
-        </Button>
-      </Link>
+        </Link>
+      </Button>
     ))}
-  </>
+  </nav>
 );
 
 export const Header: FC<LinksProps> = (props) => (
   <header className={styles.headerLayout}>
-    <div className={styles.buttonWrapper}>
-      <Links {...props} />
-    </div>
+    <Links {...props} />
   </header>
 );
