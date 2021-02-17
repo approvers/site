@@ -1,4 +1,8 @@
 import YAML from "yaml";
+import path from "path";
+import { promises } from "fs";
+
+const { readFile } = promises;
 
 export interface Link {
   name: string;
@@ -22,11 +26,11 @@ function validateLinks(links: unknown): links is Link[] {
   return links.every(validateLink);
 }
 
-const linksUrl = "https://github.com/approvers/site-data/raw/master/data/links.yaml";
+const linksFile = path.join(process.cwd(), "data", "links.yaml");
 
 export async function getLinks(): Promise<Link[]> {
-  const res = await fetch(linksUrl);
-  const parsed = YAML.parse(await res.text());
+  const content = await readFile(linksFile, "utf8");
+  const parsed = YAML.parse(content);
   if (!validateLinks(parsed)) {
     throw new Error("invalid links format");
   }
