@@ -15,6 +15,7 @@ const links: Links = [
   { name: "npm", url: "https://www.npmjs.com/org/approvers" },
   { name: "connpass", url: "https://approvers.connpass.com/" },
   { name: "BinTray", url: "https://bintray.com/approvers" },
+  { name: "KeyBase", url: "https://keybase.io/team/approvers" },
 ];
 
 const LinkPage: NextPage = () => (
