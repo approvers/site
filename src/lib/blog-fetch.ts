@@ -16,6 +16,8 @@ export type Metadata = {
 
 export type Blog = {
   content: string;
+  prevId: BlogPostId;
+  nextId: BlogPostId;
 } & Metadata;
 
 function sanitizeMetadata(id: BlogPostId, value: { [key: string]: unknown }) {
@@ -77,9 +79,6 @@ export async function getSortedBlogMetadatas(): Promise<Metadata[]> {
 
 export type BlogInfo = {
   id: string;
-  prevId?: BlogPostId;
-  nextId?: BlogPostId;
-  lastUpdate: string;
 };
 
 export type BlogInfos = { params: BlogInfo }[];
@@ -91,12 +90,9 @@ const widthAdjacencies = (array: string[]): Adjacency[] =>
 
 const markdownPattern = /\.md$/;
 
-const blogInfoFromFileName = async ([prev, curr, next]: Adjacency): Promise<BlogInfo> => {
+const blogInfoFromFileName = async (fileName: string): Promise<BlogInfo> => {
   return {
-    id: curr.replace(markdownPattern, ""),
-    prevId: prev?.replace(markdownPattern, ""),
-    nextId: next?.replace(markdownPattern, ""),
-    lastUpdate: (await stat(path.join(postsDirectory, curr))).mtime.toString(),
+    id: fileName.replace(markdownPattern, ""),
   };
 };
 
@@ -105,8 +101,8 @@ export async function getAllBlogInfos(): Promise<BlogInfos> {
   const fileNames = await readdir(postsDirectory);
 
   return Promise.all(
-    widthAdjacencies(fileNames).map(async (adjacency: Adjacency) => ({
-      params: await blogInfoFromFileName(adjacency),
+    fileNames.map(async (fileName: string) => ({
+      params: await blogInfoFromFileName(fileName),
     })),
   );
 }
@@ -123,8 +119,13 @@ export async function getBlogFromId(id: string): Promise<Blog> {
     throw new Error("invalid metadata");
   }
 
+  const blogInfos = await getAllBlogInfos();
+  const idx = blogInfos.findIndex((e) => e.params.id === id);
+
   return {
     content,
     ...data,
+    prevId: blogInfos[idx - 1]?.params.id ?? "",
+    nextId: blogInfos[idx + 1]?.params.id ?? "",
   };
 }
