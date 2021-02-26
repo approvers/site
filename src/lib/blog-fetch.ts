@@ -83,11 +83,6 @@ export type BlogInfo = {
 
 export type BlogInfos = { params: BlogInfo }[];
 
-type Adjacency = [string | null, string, string | null];
-
-const widthAdjacencies = (array: string[]): Adjacency[] =>
-  array.map((e, i, arr) => [arr[i - 1] ?? null, e, arr[i + 1] ?? null]);
-
 const markdownPattern = /\.md$/;
 
 const blogInfoFromFileName = async (fileName: string): Promise<BlogInfo> => {
