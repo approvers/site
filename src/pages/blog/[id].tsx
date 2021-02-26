@@ -1,4 +1,4 @@
-import { Blog, getAllBlogInfos, getBlogFromId } from "../../lib/blog-fetch";
+import { Blog, BlogInfo, getAllBlogInfos, getBlogFromId } from "../../lib/blog-fetch";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { DateString } from "../../components/date";
 import { Layout } from "../../components/layout";
@@ -38,14 +38,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
   );
 };
 
-type BlogPostPagePathProps = {
-  id: string;
-  lastUpdate: string;
-};
-
-export const getStaticProps: GetStaticProps<BlogPostPageProps, BlogPostPagePathProps> = async ({
-  params,
-}) => {
+export const getStaticProps: GetStaticProps<BlogPostPageProps, BlogInfo> = async ({ params }) => {
   if (params == null) {
     throw new Error("invalid params");
   }
@@ -54,7 +47,7 @@ export const getStaticProps: GetStaticProps<BlogPostPageProps, BlogPostPagePathP
   return { props: { post } };
 };
 
-export const getStaticPaths: GetStaticPaths<BlogPostPagePathProps> = async () => {
+export const getStaticPaths: GetStaticPaths<BlogInfo> = async () => {
   const paths = await getAllBlogInfos();
   return { paths, fallback: false };
 };

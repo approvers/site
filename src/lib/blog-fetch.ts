@@ -75,21 +75,38 @@ export async function getSortedBlogMetadatas(): Promise<Metadata[]> {
   return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
-export interface BlogInfo {
+export type BlogInfo = {
   id: string;
+  prevId?: BlogPostId;
+  nextId?: BlogPostId;
   lastUpdate: string;
-}
+};
 
-export async function getAllBlogInfos(): Promise<{ params: BlogInfo }[]> {
+export type BlogInfos = { params: BlogInfo }[];
+
+type Adjacency = [string | null, string, string | null];
+
+const widthAdjacencies = (array: string[]): Adjacency[] =>
+  array.map((e, i, arr) => [arr[i - 1] ?? null, e, arr[i + 1] ?? null]);
+
+const markdownPattern = /\.md$/;
+
+const blogInfoFromFileName = async ([prev, curr, next]: Adjacency): Promise<BlogInfo> => {
+  return {
+    id: curr.replace(markdownPattern, ""),
+    prevId: prev?.replace(markdownPattern, ""),
+    nextId: next?.replace(markdownPattern, ""),
+    lastUpdate: (await stat(path.join(postsDirectory, curr))).mtime.toString(),
+  };
+};
+
+export async function getAllBlogInfos(): Promise<BlogInfos> {
   console.log(`Reading all blog infos from ${postsDirectory}`);
   const fileNames = await readdir(postsDirectory);
 
   return Promise.all(
-    fileNames.map(async (fileName) => ({
-      params: {
-        id: fileName.replace(/\.md$/, ""),
-        lastUpdate: (await stat(path.join(postsDirectory, fileName))).mtime.toString(),
-      },
+    widthAdjacencies(fileNames).map(async (adjacency: Adjacency) => ({
+      params: await blogInfoFromFileName(adjacency),
     })),
   );
 }
