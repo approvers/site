@@ -11,12 +11,12 @@ export const PrevNextLink: FC<PrevNextLinkProps> = ({ prevLinkHref, nextLinkHref
   <nav className={styles.nav}>
     {prevLinkHref !== null && (
       <Link href={prevLinkHref}>
-        <a>〈 前</a>
+        <a className={styles.left}>〈 前</a>
       </Link>
     )}
     {nextLinkHref !== null && (
       <Link href={nextLinkHref}>
-        <a>次 〉</a>
+        <a className={styles.right}>次 〉</a>
       </Link>
     )}
   </nav>

@@ -2,16 +2,23 @@
 @use "../color.variable";
 
 .nav {
-  @include details.flex-style(wrap, space-between);
-
+  position: relative;
   width: 100%;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 
-  a {
+  .left {
     @include details.with-font-size(little);
     @include color.main(dark);
 
-    margin-right: 0.5rem;
+    position: absolute;
+    left: 0;
+  }
+
+  .right {
+    @include details.with-font-size(little);
+    @include color.main(dark);
+
+    position: absolute;
+    right: 0;
   }
 }
