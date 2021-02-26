@@ -1,0 +1,17 @@
+@use "../details.variable";
+@use "../color.variable";
+
+.nav {
+  @include details.flex-style(wrap, space-between);
+
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  a {
+    @include details.with-font-size(little);
+    @include color.main(dark);
+
+    margin-right: 0.5rem;
+  }
+}
