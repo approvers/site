@@ -1,0 +1,46 @@
+import { FC, useState } from "react";
+import { Button } from "./button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import styles from "../scss/components/navigation.module.scss";
+
+export interface LinksProps {
+  links: readonly Readonly<{
+    name: string;
+    url: string;
+  }>[];
+}
+
+const Links: FC<LinksProps> = ({ links }) => (
+  <nav className={styles.buttonWrapper}>
+    {links.map(({ name, url }) => (
+      <Button key={name}>
+        <Link href={url}>
+          <a>{name}</a>
+        </Link>
+      </Button>
+    ))}
+  </nav>
+);
+
+const NavButton: FC<{ onClick: () => void }> = ({ onClick }) => (
+  <button className={styles.navButton} onClick={onClick}>
+    <FontAwesomeIcon icon={faBars} />
+  </button>
+);
+
+export const Navigation: FC<LinksProps> = (props) => {
+  const [showingLinks, setShowingLinks] = useState(false);
+
+  return (
+    <>
+      <NavButton onClick={() => setShowingLinks((v) => !v)} />
+      {showingLinks && (
+        <div className={styles.navWrapper}>
+          <Links {...props} />
+        </div>
+      )}
+    </>
+  );
+};
