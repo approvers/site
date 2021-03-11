@@ -36,11 +36,9 @@ export const Navigation: FC<LinksProps> = (props) => {
   return (
     <>
       <NavButton onClick={() => setShowingLinks((v) => !v)} />
-      {showingLinks && (
-        <div className={styles.navWrapper}>
-          <Links {...props} />
-        </div>
-      )}
+      <div className={styles.navWrapper} data-showing={showingLinks}>
+        <Links {...props} />
+      </div>
     </>
   );
 };
