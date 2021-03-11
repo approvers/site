@@ -1,7 +1,7 @@
 import matter from "gray-matter";
 import path from "path";
 import { promises } from "fs";
-const { readFile, readdir, stat } = promises;
+const { readFile, readdir } = promises;
 
 const postsDirectory = path.join(process.cwd(), "data", "blogs");
 
@@ -16,6 +16,8 @@ export type Metadata = {
 
 export type Blog = {
   content: string;
+  prevId: BlogPostId;
+  nextId: BlogPostId;
 } & Metadata;
 
 function sanitizeMetadata(id: BlogPostId, value: { [key: string]: unknown }) {
@@ -75,21 +77,27 @@ export async function getSortedBlogMetadatas(): Promise<Metadata[]> {
   return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
-export interface BlogInfo {
+export type BlogInfo = {
   id: string;
-  lastUpdate: string;
-}
+};
 
-export async function getAllBlogInfos(): Promise<{ params: BlogInfo }[]> {
+export type BlogInfos = { params: BlogInfo }[];
+
+const markdownPattern = /\.md$/;
+
+const blogInfoFromFileName = async (fileName: string): Promise<BlogInfo> => {
+  return {
+    id: fileName.replace(markdownPattern, ""),
+  };
+};
+
+export async function getAllBlogInfos(): Promise<BlogInfos> {
   console.log(`Reading all blog infos from ${postsDirectory}`);
   const fileNames = await readdir(postsDirectory);
 
   return Promise.all(
-    fileNames.map(async (fileName) => ({
-      params: {
-        id: fileName.replace(/\.md$/, ""),
-        lastUpdate: (await stat(path.join(postsDirectory, fileName))).mtime.toString(),
-      },
+    fileNames.map(async (fileName: string) => ({
+      params: await blogInfoFromFileName(fileName),
     })),
   );
 }
@@ -106,8 +114,13 @@ export async function getBlogFromId(id: string): Promise<Blog> {
     throw new Error("invalid metadata");
   }
 
+  const blogInfos = await getAllBlogInfos();
+  const idx = blogInfos.findIndex((e) => e.params.id === id);
+
   return {
     content,
     ...data,
+    prevId: blogInfos[idx - 1]?.params.id ?? "",
+    nextId: blogInfos[idx + 1]?.params.id ?? "",
   };
 }
