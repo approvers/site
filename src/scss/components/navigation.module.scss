@@ -31,7 +31,7 @@
 
 .navWrapper {
   @include color.main(normal, border-right);
-  @include color.sub(light, back);
+  @include color.back(dark);
 
   position: absolute;
   top: 0;
