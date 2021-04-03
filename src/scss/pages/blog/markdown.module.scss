@@ -73,4 +73,17 @@
     max-width: 100%;
     height: auto;
   }
+
+  table {
+    margin: 0.25rem 0;
+  }
+
+  th {
+    @include color.sub(dark);
+  }
+
+  th,
+  td {
+    padding: 0.25rem;
+  }
 }
