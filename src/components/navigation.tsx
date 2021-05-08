@@ -39,11 +39,18 @@ export const Navigation: FC<LinksProps> = (props) => {
   );
 
   return (
-    <div onTouchStart={onCancel} onClick={onCancel} className={styles.canceler} ref={canceler}>
+    <>
       <NavButton onClick={() => setShowingLinks((v) => !v)} />
       <div className={styles.navWrapper} data-showing={showingLinks}>
         <Links {...props} />
+        <div
+          onTouchStart={onCancel}
+          onClick={onCancel}
+          className={styles.canceler}
+          ref={canceler}
+          data-showing={showingLinks}
+        ></div>
       </div>
-    </div>
+    </>
   );
 };
