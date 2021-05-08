@@ -46,7 +46,7 @@
   @include color.main(normal, border-right);
   @include color.back(dark);
 
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
