@@ -60,19 +60,3 @@ jobs:
         with:
           name: artifact
           path: out
-
-  dispatch-deploy:
-    runs-on: ubuntu-latest
-    needs:
-      - lint
-      - build-test
-    if: github.ref == 'refs/heads/main'
-    steps:
-      - name: Post request
-        uses: actions/github-script@v3
-        with:
-          github-token: ${{ secrets.PUSH_TOKEN }}
-          script: |
-            await github.request("POST /repos/${{ github.repository }}/actions/workflows/2751281/dispatches", {
-              ref: "main"
-            });
