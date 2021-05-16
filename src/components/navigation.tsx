@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useCallback, useRef, useState } from "react";
 import { Button } from "./button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
@@ -32,12 +32,24 @@ const NavButton: FC<{ onClick: () => void }> = ({ onClick }) => (
 
 export const Navigation: FC<LinksProps> = (props) => {
   const [showingLinks, setShowingLinks] = useState(false);
+  const canceler = useRef<HTMLDivElement | null>(null);
+  const onCancel = useCallback(
+    (e: { target: EventTarget }) => e.target == canceler.current && setShowingLinks(() => false),
+    [canceler],
+  );
 
   return (
     <>
       <NavButton onClick={() => setShowingLinks((v) => !v)} />
       <div className={styles.navWrapper} data-showing={showingLinks}>
         <Links {...props} />
+        <div
+          onTouchStart={onCancel}
+          onClick={onCancel}
+          className={styles.canceler}
+          ref={canceler}
+          data-showing={showingLinks}
+        />
       </div>
     </>
   );

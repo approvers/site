@@ -60,3 +60,22 @@
     opacity: 0;
   }
 }
+
+.canceler {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100vw;
+  height: 100vh;
+
+  @media not #{media.query(phone)} {
+    pointer-events: none;
+  }
+}
+
+.canceler[data-showing="false"] {
+  @media #{media.query(phone)} {
+    pointer-events: none;
+  }
+}
