@@ -49,7 +49,7 @@ export const Navigation: FC<LinksProps> = (props) => {
           className={styles.canceler}
           ref={canceler}
           data-showing={showingLinks}
-        ></div>
+        />
       </div>
     </>
   );
