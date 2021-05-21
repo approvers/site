@@ -1,4 +1,4 @@
-import { FC, useCallback, useRef, useState } from "react";
+import { FC, Fragment, useCallback, useRef, useState } from "react";
 import { Button } from "./button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
@@ -13,13 +13,18 @@ export interface LinksProps {
 }
 
 const Links: FC<LinksProps> = ({ links }) => (
-  <nav className={styles.buttonWrapper}>
+  <nav>
     {links.map(({ name, url }) => (
-      <Button key={name}>
-        <Link href={url}>
-          <a>{name}</a>
-        </Link>
-      </Button>
+      <Fragment key={name}>
+        <div className={styles.separator} />
+        <div className={styles.buttonWrapper}>
+          <Button>
+            <Link href={url}>
+              <a>{name}</a>
+            </Link>
+          </Button>
+        </div>
+      </Fragment>
     ))}
   </nav>
 );

@@ -10,8 +10,7 @@
 
   & > div {
     width: 100%;
-    padding: 0 2rem 0 1rem;
-    margin: 1rem 0;
+    padding: 1rem 2rem 1rem 1rem;
 
     &::before {
       @include color.text();
@@ -20,6 +19,15 @@
       content: "| ";
     }
   }
+}
+
+.separator:not(:first-child) {
+  display: inline-block;
+  width: 100%;
+  content: "";
+  border-top: 1px solid;
+
+  @include color.sub(dark, border-top);
 }
 
 .navButton {
@@ -43,15 +51,15 @@
 }
 
 .navWrapper {
-  @include color.main(normal, border-right);
-  @include color.back(dark);
+  @include color.sub(dark);
+  @include color.back();
 
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 4rem;
+  left: 0.5rem;
   z-index: 10;
-  height: 100vh;
-  border: thin solid;
+  border-radius: 1.5rem;
+  box-shadow: 4px 4px 6px;
   transition: opacity 0.13s;
 }
 
