@@ -12,11 +12,6 @@
     "stylelint": "stylelint --ignore-path .gitignore 'src/**/*.{css,scss}'",
     "stylelint:fix": "stylelint --ignore-path .gitignore 'src/**/*.{css,scss}' --fix"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --fix",
     "*.{css,scss}": "stylelint --fix"
