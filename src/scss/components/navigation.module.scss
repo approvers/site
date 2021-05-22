@@ -57,6 +57,7 @@
 
 .navWrapper[data-showing="false"] {
   @media #{media.query(phone)} {
+    display: none;
     opacity: 0;
   }
 }
@@ -74,7 +75,7 @@
   }
 }
 
-.canceler[data-showing="false"] {
+.canceler[data-showing="true"] {
   @media #{media.query(phone)} {
     pointer-events: none;
   }
