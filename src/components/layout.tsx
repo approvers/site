@@ -83,9 +83,11 @@ export const Layout: FC<{ pageName: string; description?: string; children: Reac
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="theme-color" content="#000000" />
     </Head>
-    <Header />
     <Navigation links={headerLinks} />
-    <main className={styles.wrapper}>{children}</main>
+    <main className={styles.wrapper}>
+      <Header />
+      {children}
+    </main>
     <Footer />
   </div>
 );
