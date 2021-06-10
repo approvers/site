@@ -14,12 +14,19 @@
   @include color.main(normal, border);
 }
 
-.buttonWrapper {
-  display: flex;
-  justify-content: space-around;
-  min-width: 50%;
+.hero {
+  @include details.flex-style();
+  @include color.text();
 
-  @media #{media.query(middle)} {
-    min-width: 90%;
+  font-size: 2rem;
+
+  img {
+    height: 2rem;
+    margin-right: 0.5rem;
+    border-radius: 37%;
+  }
+
+  &:hover {
+    @include color.main(light, bold-underline);
   }
 }

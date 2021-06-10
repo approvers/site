@@ -8,6 +8,7 @@
   margin-bottom: auto;
 
   @include details.flex-style();
+  @include media.padding(left);
 }
 
 .page {
