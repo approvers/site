@@ -2,6 +2,7 @@ import type { FC, ReactNode } from "react";
 import { Footer } from "./footer";
 import Head from "next/head";
 import { Header } from "./header";
+import { Navigation } from "./navigation";
 import styles from "../scss/components/layout.module.scss";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "";
@@ -82,8 +83,11 @@ export const Layout: FC<{ pageName: string; description?: string; children: Reac
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="theme-color" content="#000000" />
     </Head>
-    <Header links={headerLinks} />
-    <main className={styles.wrapper}>{children}</main>
+    <Navigation links={headerLinks} />
+    <main className={styles.wrapper}>
+      <Header />
+      {children}
+    </main>
     <Footer />
   </div>
 );

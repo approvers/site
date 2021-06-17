@@ -29,7 +29,7 @@ $warn: #f99f48;
 
 @mixin main($color: normal, $target: front) {
   $main: (
-    dark: #409689,
+    dark: #30736c,
     normal: #6ac1b7,
     light: #bfe9db,
   );
@@ -55,4 +55,14 @@ $warn: #f99f48;
   );
 
   @include applyColor(map.get($text, $color), $target);
+}
+
+@mixin back($color: normal) {
+  $back: (
+    dark: #dfdfdf,
+    normal: #e7e7e7,
+    light: #f7f7f7,
+  );
+
+  background-color: map.get($back, $color);
 }

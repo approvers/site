@@ -7,6 +7,6 @@ export const Footer: FC = () => (
     <Link href="/policy">
       <a className={styles.footerLink}>プライバシーポリシー</a>
     </Link>{" "}
-    - (c) 2020 Approvers
+    - (c) 2021 Approvers
   </footer>
 );
