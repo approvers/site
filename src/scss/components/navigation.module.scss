@@ -74,7 +74,7 @@
   }
 }
 
-.canceler[data-showing="true"] {
+.canceler[data-showing="false"] {
   @media #{media.query(phone)} {
     pointer-events: none;
   }
