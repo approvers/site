@@ -47,14 +47,6 @@ $min-padding: 5%;
   @return $thickness solid;
 }
 
-.name {
-  @include with-font-size(big);
-
-  @media #{media.query(phone)} {
-    @include with-font-size(big, -0.1rem);
-  }
-}
-
 .text {
   max-width: 32.5rem;
   padding: 2%;
