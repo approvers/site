@@ -12,6 +12,8 @@
   @media #{media.query(phone)} {
     @include details.with-font-size(big, -0.1rem);
   }
+
+  overflow-wrap: anywhere;
 }
 
 .linksContainer {
