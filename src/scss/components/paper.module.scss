@@ -18,6 +18,8 @@
   @include details.flex-style(nowrap, flex-start);
   @include media.padding();
 
+  align-items: flex-start;
+
   @media #{media.query(phone)} {
     text-align: left;
   }
