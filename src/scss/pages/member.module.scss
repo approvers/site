@@ -6,6 +6,16 @@
   @include details.enumerate-contents-wrapper();
 }
 
+.name {
+  @include details.with-font-size(big);
+
+  @media #{media.query(phone)} {
+    @include details.with-font-size(big, -0.1rem);
+  }
+
+  overflow-wrap: anywhere;
+}
+
 .linksContainer {
   @include details.flex-style(nowrap, flex-start);
 

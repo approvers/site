@@ -18,6 +18,8 @@
   @include details.flex-style(nowrap, flex-start);
   @include media.padding();
 
+  align-items: flex-start;
+
   @media #{media.query(phone)} {
     text-align: left;
   }
@@ -30,4 +32,5 @@
 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  width: 100%;
 }
