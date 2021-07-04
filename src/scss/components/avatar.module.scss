@@ -4,12 +4,13 @@
 .avatar {
   @include color.clear(back);
 
-  width: 37%;
-  height: 100%;
+  width: 5rem;
+  height: 5rem;
   object-fit: contain;
   padding-right: 5%;
 
   @media #{media.query(phone)} {
-    width: 30%;
+    width: 4rem;
+    height: 4rem;
   }
 }
