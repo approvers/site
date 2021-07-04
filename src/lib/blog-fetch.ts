@@ -68,8 +68,8 @@ const metadataFromFile = async (fileName: string): Promise<Metadata> => {
   return { ...data };
 };
 
-export async function getSortedBlogMetadatas(): Promise<Metadata[]> {
-  console.log(`Reading all sorted blog metadatas from ${postsDirectory}`);
+export async function getSortedBlogMetadata(): Promise<Metadata[]> {
+  console.log(`Reading all sorted blog metadata from ${postsDirectory}`);
   const fileNames = await readdir(postsDirectory);
   console.log(`Files in posts directory are: ${fileNames}`);
   const allPostsData = await Promise.all(fileNames.map(metadataFromFile));
