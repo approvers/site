@@ -34,7 +34,13 @@
 }
 
 .blogTitle {
-  @extend .name;
+  @include details.with-font-size(big);
+
+  @media #{media.query(phone)} {
+    @include details.with-font-size(big, -0.1rem);
+  }
+
+  // TODO (MikuroXina): Redesign the blog papers
 }
 
 .blogContents {
