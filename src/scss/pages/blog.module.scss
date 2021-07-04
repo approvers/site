@@ -5,20 +5,23 @@
 .blogCard {
   display: flex;
   align-items: center;
-  max-width: 80%;
-  margin: 1em;
+  width: min(100%, 80vw);
+  padding: 0.5rem;
+  margin: 1rem auto;
+  border-right: 1px solid;
+  border-bottom: 2px solid;
+
+  @include color.main(normal, border);
 
   img {
     flex-shrink: 0;
-    width: 20%;
   }
 }
 
 .main {
-  @include details.enumerate-contents-wrapper();
-
-  flex-direction: column;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: minmax(15em, 1fr);
+  width: 80%;
 }
 
 .cardText {
@@ -34,13 +37,11 @@
 }
 
 .blogTitle {
-  @include details.with-font-size(big);
+  @include details.with-font-size(normal);
 
   @media #{media.query(phone)} {
-    @include details.with-font-size(big, -0.1rem);
+    @include details.with-font-size(normal, -0.1rem);
   }
-
-  // TODO (MikuroXina): Redesign the blog papers
 }
 
 .blogContents {
