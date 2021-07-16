@@ -1,5 +1,5 @@
 import type { GetStaticProps, NextPage } from "next";
-import { Metadata, getSortedBlogMetadatas } from "../lib/blog-fetch";
+import { Metadata, getSortedBlogMetadata } from "../lib/blog-fetch";
 import { Avatar } from "../components/avatar";
 import { Button } from "../components/button";
 import { DateString } from "../components/date";
@@ -37,7 +37,7 @@ const BlogPage: NextPage<{ blogs: Metadata[] }> = ({ blogs }) => (
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  const blogs = await getSortedBlogMetadatas();
+  const blogs = await getSortedBlogMetadata();
   return { props: { blogs } };
 };
 
