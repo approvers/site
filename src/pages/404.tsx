@@ -1,8 +1,8 @@
-import Link from "next/link";
 import { Layout } from "../components/layout";
-import { Title } from "../components/title";
-import { Subtitle } from "../components/title";
+import Link from "next/link";
 import { NextPage } from "next";
+import { Subtitle } from "../components/title";
+import { Title } from "../components/title";
 import styles from "../scss/pages/404.module.scss";
 
 const PageError: NextPage = () => (
