@@ -6,7 +6,7 @@ import { Title } from "../components/title";
 import styles from "../scss/pages/404.module.scss";
 
 const PageError: NextPage = () => (
-  <Layout pageName="404 - Not found">
+  <Layout pageName="404 Not found">
     <Title>404 Not found</Title>
     <Subtitle>ページが見つかりません。</Subtitle>
     <Link href="/">
