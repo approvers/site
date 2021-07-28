@@ -1,8 +1,7 @@
+import { Subtitle, Title } from "../components/title";
 import { Layout } from "../components/layout";
 import Link from "next/link";
 import { NextPage } from "next";
-import { Subtitle } from "../components/title";
-import { Title } from "../components/title";
 import styles from "../scss/pages/404.module.scss";
 
 const PageError: NextPage = () => (
