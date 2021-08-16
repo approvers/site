@@ -17,17 +17,23 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14
-      - id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - uses: actions/cache@v2
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
         with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-
-      - run: yarn install --frozen-lockfile
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.0.2
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile, --strict-peer-dependencies]
 
       - name: Run ${{ matrix.lint }}
-        run: yarn ${{ matrix.lint }}
+        run: pnpm ${{ matrix.lint }}
 
   build-test:
     runs-on: ubuntu-latest
@@ -36,21 +42,25 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14
-      - id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - uses: actions/cache@v2
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
         with:
-          path: |
-            ${{ steps.yarn-cache.outputs.dir }}
-            ./.next/cache
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-
-      - run: yarn install --frozen-lockfile
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.0.2
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile, --strict-peer-dependencies]
 
       - name: Run build
         run: |
-          yarn build
-          yarn export
+          pnpm build
+          pnpm export
         env:
           NEXT_PUBLIC_BASE_URL: ${{ secrets.BASE_URL }}
           NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
