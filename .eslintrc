@@ -30,6 +30,7 @@
     "@typescript-eslint/no-explicit-any": "error",
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
-    "sort-imports": "error"
+    "sort-imports": "error",
+    "@next/next/no-img-element": "off"
   }
 }
