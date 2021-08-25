@@ -16,7 +16,7 @@ const BlogCard: FC<Metadata> = ({ id, title, date, author }) => (
       <h3 className={styles.blogTitle}>{title}</h3>
       {author}
       <DateString dateString={date} />
-      <Link href={`/blog/${id}`}>
+      <Link href={`/blog/${id}`} passHref>
         <Button>
           <a className={styles.pageLink}>記事を読む &rarr;</a>
         </Button>
