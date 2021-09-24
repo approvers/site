@@ -1,4 +1,4 @@
-import { FC, useCallback, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { Button } from "./button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
@@ -12,7 +12,7 @@ export interface LinksProps {
   }>[];
 }
 
-const Links: FC<LinksProps> = ({ links }) => (
+const Links = ({ links }: LinksProps): JSX.Element => (
   <nav className={styles.buttonWrapper}>
     {links.map(({ name, url }) => (
       <Button key={name}>
@@ -24,13 +24,13 @@ const Links: FC<LinksProps> = ({ links }) => (
   </nav>
 );
 
-const NavButton: FC<{ onClick: () => void }> = ({ onClick }) => (
+const NavButton = ({ onClick }: { onClick: () => void }): JSX.Element => (
   <button className={styles.navButton} onClick={onClick}>
     <FontAwesomeIcon icon={faBars} />
   </button>
 );
 
-export const Navigation: FC<LinksProps> = (props) => {
+export const Navigation = (props: LinksProps): JSX.Element => {
   const [showingLinks, setShowingLinks] = useState(false);
   const canceler = useRef<HTMLDivElement | null>(null);
   const onCancel = useCallback(

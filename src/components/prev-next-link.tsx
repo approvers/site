@@ -1,4 +1,3 @@
-import type { FC } from "react";
 import Link from "next/link";
 import styles from "../scss/components/prev-next-link.module.scss";
 
@@ -7,7 +6,7 @@ export type PrevNextLinkProps = {
   nextLinkHref: string | null;
 };
 
-export const PrevNextLink: FC<PrevNextLinkProps> = ({ prevLinkHref, nextLinkHref }) => (
+export const PrevNextLink = ({ prevLinkHref, nextLinkHref }: PrevNextLinkProps): JSX.Element => (
   <nav className={styles.nav}>
     {prevLinkHref !== null && (
       <Link href={prevLinkHref}>

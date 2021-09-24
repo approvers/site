@@ -1,8 +1,7 @@
-import type { FC } from "react";
 import Link from "next/link";
 import styles from "../scss/components/header.module.scss";
 
-export const Header: FC = () => (
+export const Header = (): JSX.Element => (
   <header className={styles.headerLayout}>
     <Link href="/">
       <a className={styles.hero}>

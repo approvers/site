@@ -1,8 +1,8 @@
-import type { FC, ReactNode } from "react";
 import { ExternalLink } from "./external-link";
+import type { ReactNode } from "react";
 import styles from "../scss/components/questions.module.scss";
 
-const QA: FC<{ question: ReactNode; answer: ReactNode }> = ({ question, answer }) => (
+const QA = ({ question, answer }: { question: ReactNode; answer: ReactNode }): JSX.Element => (
   <section className={styles.aboutUs}>
     <p className={styles.sentence}>
       <span className={styles.bigLetter}>Q.</span>
@@ -42,7 +42,7 @@ const questionAnswers = [
   },
 ] as const;
 
-export const Questions: FC = () => (
+export const Questions = (): JSX.Element => (
   <div className={styles.text}>
     {questionAnswers.map((props, i) => (
       <QA key={i} {...props} />
