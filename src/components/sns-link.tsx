@@ -1,6 +1,5 @@
 import { IconDefinition, faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { ExternalIconLink } from "./external-link";
-import type { FC } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { SNSLinkInfo } from "../lib/member-fetch";
 import styles from "../scss/components/sns-link.module.scss";
@@ -16,7 +15,7 @@ const icons: Record<SNSLinkInfo["type"], Icon> = {
   },
 };
 
-export const SNSLink: FC<SNSLinkInfo> = ({ type, url }) => {
+export const SNSLink = ({ type, url }: SNSLinkInfo): JSX.Element => {
   const { icon } = icons[type];
   return (
     <ExternalIconLink href={url}>

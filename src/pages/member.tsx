@@ -1,7 +1,6 @@
 import type { GetStaticProps, NextPage } from "next";
 import { Member, getMembers } from "../lib/member-fetch";
 import { Avatar } from "../components/avatar";
-import type { FC } from "react";
 import { Grid } from "../components/paper";
 import { Layout } from "../components/layout";
 import { SNSLink } from "../components/sns-link";
@@ -10,7 +9,7 @@ import styles from "../scss/pages/member.module.scss";
 
 const alternative = "/alternative.png";
 
-const MemberCard: FC<Member> = ({ name, role, links, avatar }) => (
+const MemberCard = ({ name, role, links, avatar }: Member): JSX.Element => (
   <>
     <Avatar src={avatar == "" ? alternative : avatar} name={name} />
     <div>

@@ -3,13 +3,12 @@ import { Metadata, getSortedBlogMetadata } from "../lib/blog-fetch";
 import { Avatar } from "../components/avatar";
 import { Button } from "../components/button";
 import { DateString } from "../components/date";
-import type { FC } from "react";
 import { Layout } from "../components/layout";
 import Link from "next/link";
 import { Title } from "../components/title";
 import styles from "../scss/pages/blog.module.scss";
 
-const BlogCard: FC<Metadata> = ({ id, title, date, author }) => (
+const BlogCard = ({ id, title, date, author }: Metadata): JSX.Element => (
   <div className={styles.blogCard}>
     <Avatar name={title} />
     <div className={styles.cardText}>

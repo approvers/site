@@ -1,15 +1,20 @@
-import type { FC, ReactNode } from "react";
 import { Footer } from "./footer";
 import Head from "next/head";
 import { Header } from "./header";
 import { Navigation } from "./navigation";
+import type { ReactNode } from "react";
 import styles from "../scss/components/layout.module.scss";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "";
 const siteImage = `https://${baseUrl}/android-chrome-512x512.png`;
 const siteName = "限界開発鯖";
 
-const SeoMetas: FC<{ pageName: string; description: string }> = ({ pageName, description }) => (
+interface PageInfo {
+  pageName: string;
+  description: string;
+}
+
+const SeoMetas = ({ pageName, description }: PageInfo): JSX.Element => (
   <>
     <meta name="description" content={description} />
     <meta name="name" content={pageName} />
@@ -17,7 +22,7 @@ const SeoMetas: FC<{ pageName: string; description: string }> = ({ pageName, des
   </>
 );
 
-const OgpMetas: FC<{ pageName: string; description: string }> = ({ pageName, description }) => (
+const OgpMetas = ({ pageName, description }: PageInfo): JSX.Element => (
   <>
     <meta property="og:title" content={pageName} />
     <meta property="og:description" content={description} />
@@ -27,10 +32,7 @@ const OgpMetas: FC<{ pageName: string; description: string }> = ({ pageName, des
   </>
 );
 
-const TwitterCardMetas: FC<{ pageName: string; description: string }> = ({
-  pageName,
-  description,
-}) => (
+const TwitterCardMetas = ({ pageName, description }: PageInfo): JSX.Element => (
   <>
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={pageName} />
@@ -39,7 +41,7 @@ const TwitterCardMetas: FC<{ pageName: string; description: string }> = ({
   </>
 );
 
-const IconMetas: FC = () => (
+const IconMetas = (): JSX.Element => (
   <>
     <link rel="apple-touch-icon" sizes="180x180" href={"/apple-touch-icon.png"} />
     <link rel="icon" type="image/png" sizes="32x32" href={"/favicon-32x32.png"} />
@@ -67,11 +69,15 @@ const headerLinks = [
   },
 ] as const;
 
-export const Layout: FC<{ pageName: string; description?: string; children: ReactNode }> = ({
+export const Layout = ({
   pageName,
   children,
   description = "Over Limit Development",
-}) => (
+}: {
+  pageName: string;
+  description?: string;
+  children: ReactNode;
+}): JSX.Element => (
   <div className={styles.page}>
     <Head>
       <title>{pageName}</title>
