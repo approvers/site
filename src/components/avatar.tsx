@@ -5,5 +5,5 @@ const ALTERNATIVE = "/alternative.png";
 
 export const Avatar = ({ name, src }: { name: string; src?: string }): JSX.Element => {
   const { src: guarded } = useImage({ srcList: [src ?? "", ALTERNATIVE], useSuspense: false });
-  return <img src={guarded} alt={name} className={styles.avatar} />;
+  return <img src={guarded ?? src} alt={name} className={styles.avatar} />;
 };
