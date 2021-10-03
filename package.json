@@ -11,7 +11,7 @@
     "eslint:fix": "eslint --ignore-path .gitignore 'src/**/*.{js,jsx,ts,tsx}' --fix",
     "stylelint": "stylelint --ignore-path .gitignore 'src/**/*.{css,scss}'",
     "stylelint:fix": "stylelint --ignore-path .gitignore 'src/**/*.{css,scss}' --fix",
-    "test": "jest --watch"
+    "test": "jest"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --fix",
