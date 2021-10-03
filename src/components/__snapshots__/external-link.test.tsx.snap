@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<a
+  className="link"
+  href="https://duckduckgo.com"
+  rel="noopener noreferrer"
+  target="_blank"
+>
+  Go to DuckDuckGo
+</a>
+`;
+
+exports[`renders icon correctly 1`] = `
+<a
+  className="iconLink"
+  href="https://duckduckgo.com"
+  rel="noopener noreferrer"
+  target="_blank"
+>
+  Go to DuckDuckGo
+</a>
+`;

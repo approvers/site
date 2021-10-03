@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders both prev and next correctly 1`] = `
+<nav
+  className="nav"
+>
+  <a
+    className="left"
+    href="https://example.com/prev"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    〈 前
+  </a>
+  <a
+    className="right"
+    href="https://example.com/next"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    次 〉
+  </a>
+</nav>
+`;
+
+exports[`renders only next correctly 1`] = `
+<nav
+  className="nav"
+>
+  <a
+    className="right"
+    href="https://example.com/next"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    次 〉
+  </a>
+</nav>
+`;
+
+exports[`renders only prev correctly 1`] = `
+<nav
+  className="nav"
+>
+  <a
+    className="left"
+    href="https://example.com/prev"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    〈 前
+  </a>
+</nav>
+`;

@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="page"
+>
+  <button
+    className="navButton"
+    onClick={[Function]}
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-bars fa-w-14 "
+      data-icon="bars"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 448 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+  </button>
+  <div
+    className="navWrapper"
+    data-showing={false}
+  >
+    <nav
+      className="buttonWrapper"
+    >
+      <div
+        className="button"
+      >
+        <a
+          href="/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          ホーム
+        </a>
+      </div>
+      <div
+        className="button"
+      >
+        <a
+          href="/member"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          メンバー
+        </a>
+      </div>
+      <div
+        className="button"
+      >
+        <a
+          href="/blog"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          ブログ
+        </a>
+      </div>
+      <div
+        className="button"
+      >
+        <a
+          href="/link"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          リンク
+        </a>
+      </div>
+    </nav>
+    <div
+      className="canceler"
+      data-showing={false}
+      onClick={[Function]}
+      onTouchStart={[Function]}
+    />
+  </div>
+  <main
+    className="wrapper"
+  >
+    <header
+      className="headerLayout"
+    >
+      <a
+        className="hero"
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <img
+          src="/android-chrome-512x512.png"
+        />
+        Approvers
+      </a>
+    </header>
+    Hello, world!
+  </main>
+  <footer
+    className="footerCard"
+  >
+    <a
+      className="footerLink"
+      href="/policy"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      プライバシーポリシー
+    </a>
+     
+    - (c) 2021 Approvers
+  </footer>
+</div>
+`;

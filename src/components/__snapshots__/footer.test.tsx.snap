@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<footer
+  className="footerCard"
+>
+  <a
+    className="footerLink"
+    href="/policy"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    プライバシーポリシー
+  </a>
+   
+  - (c) 2021 Approvers
+</footer>
+`;
