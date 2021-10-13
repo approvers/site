@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<time
+  className="date"
+  dateTime="2021-01-01"
+>
+  January 1, 2021
+</time>
+`;

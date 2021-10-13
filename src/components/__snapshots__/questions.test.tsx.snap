@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="text"
+>
+  <section
+    className="aboutUs"
+  >
+    <p
+      className="sentence"
+    >
+      <span
+        className="bigLetter"
+      >
+        Q.
+      </span>
+      限界開発鯖ってなに?
+    </p>
+    <p
+      className="sentence"
+    >
+      <span
+        className="bigLetter"
+      >
+        A.
+      </span>
+      限界開発鯖は高専生を中心に限界になった人々が限界状態で開発を行う Discord 鯖です。
+    </p>
+  </section>
+  <section
+    className="aboutUs"
+  >
+    <p
+      className="sentence"
+    >
+      <span
+        className="bigLetter"
+      >
+        Q.
+      </span>
+      限界開発鯖の雰囲気が知りたい！
+    </p>
+    <p
+      className="sentence"
+    >
+      <span
+        className="bigLetter"
+      >
+        A.
+      </span>
+      こちらへどうぞ →
+       
+      <a
+        className="link"
+        href="https://twitter.com/search?q=%23限界開発鯖&src=typed_query"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        #限界開発鯖
+      </a>
+    </p>
+  </section>
+  <section
+    className="aboutUs"
+  >
+    <p
+      className="sentence"
+    >
+      <span
+        className="bigLetter"
+      >
+        Q.
+      </span>
+      どうやって参加するの？
+    </p>
+    <p
+      className="sentence"
+    >
+      <span
+        className="bigLetter"
+      >
+        A.
+      </span>
+      弊サーバーは、
+      <span
+        className="color"
+      >
+        完全紹介制
+      </span>
+      です。 知り合いのメンバーから招待リンクを受け取ってください。
+    </p>
+  </section>
+</div>
+`;
