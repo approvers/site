@@ -2,7 +2,7 @@
 
 @function query($size) {
   $media-size: (
-    large: "(2080px <= width)",
+    large: "(width > 2080px)",
     middle: "(width <= 2080px)",
     pc: "(width <= 1440px)",
     phone: "(width <= 1000px)",
