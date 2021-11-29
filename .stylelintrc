@@ -2,5 +2,6 @@
   "extends": [
     "@approvers/stylelint-config-scss",
     "stylelint-config-recess-order"
-  ]
+  ],
+  "customSyntax": "postcss-scss"
 }
