@@ -5,6 +5,14 @@
   ],
   "customSyntax": "postcss-scss",
   "rules": {
-    "selector-class-pattern": "^[a-z][a-zA-Z]+$"
+    "selector-class-pattern": "^[a-z][a-zA-Z]+$",
+    "no-invalid-position-at-import-rule": [
+      true,
+      {
+        "ignoreAtRules": [
+          "use"
+        ]
+      }
+    ]
   }
 }
