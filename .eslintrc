@@ -1,35 +1,6 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true
-  },
-  "plugins": [
-    "react",
-    "@typescript-eslint"
-  ],
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "plugin:prettier/recommended",
-    "plugin:@next/next/recommended"
-  ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  },
+  "extends": "next/core-web-vitals",
   "rules": {
-    "@typescript-eslint/no-explicit-any": "error",
-    "react/react-in-jsx-scope": "off",
-    "react/prop-types": "off",
     "sort-imports": "error",
     "@next/next/no-img-element": "off"
   }
