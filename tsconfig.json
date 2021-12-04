@@ -18,7 +18,8 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "noImplicitReturns": true,
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "incremental": true
   },
   "exclude": [
     "node_modules"
