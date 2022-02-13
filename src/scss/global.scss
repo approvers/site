@@ -1,9 +1,6 @@
 @use "color.variable";
 @use "sass:map";
 
-@import url("https://cdn.jsdelivr.net/npm/yakuhanjp@3.3.1/dist/css/yakuhanjp.min.css");
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-
 html {
   @include color.text();
   @include color.back();
