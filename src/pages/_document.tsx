@@ -7,6 +7,16 @@ class MyDocument extends Document {
     return (
       <Html lang="ja">
         <Head>
+          <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.3.1/dist/css/yakuhanjp.min.css"
+            media="print"
+          />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+            media="print"
+          />
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`}

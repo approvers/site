@@ -5,7 +5,7 @@ export const Header = (): JSX.Element => (
   <header className={styles.headerLayout}>
     <Link href="/">
       <a className={styles.hero}>
-        <img src="/android-chrome-512x512.png" alt="Approversロゴ"></img>
+        <img src="/android-chrome-192x192.png" width={192} height={192} alt="Approversロゴ"></img>
         Approvers
       </a>
     </Link>
