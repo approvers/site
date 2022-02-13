@@ -1,7 +1,7 @@
 import "../scss/global.scss";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import { notifyShowingPage } from "../lib/gtag";
+import { notifyShowingPage } from "../lib/google-analytics";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
