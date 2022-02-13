@@ -25,7 +25,7 @@ const Links = ({ links }: LinksProps): JSX.Element => (
 );
 
 const NavButton = ({ onClick }: { onClick: () => void }): JSX.Element => (
-  <button className={styles.navButton} onClick={onClick}>
+  <button className={styles.navButton} onClick={onClick} aria-label="メニューの開閉">
     <FontAwesomeIcon icon={faBars} />
   </button>
 );
