@@ -9,8 +9,10 @@ import {
   DrawerOverlay,
   Link,
   VStack,
+  useColorMode,
   useDisclosure,
 } from "@chakra-ui/react";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NextLink from "next/link";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -40,6 +42,10 @@ const Links = ({ links }: LinksProps): JSX.Element => (
 export const Navigation = (props: LinksProps): JSX.Element => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef(null);
+  const { colorMode, toggleColorMode } = useColorMode();
+
+  const currentTheme = <FontAwesomeIcon icon={colorMode === "light" ? faSun : faMoon} />;
+  const oppositeTheme = <FontAwesomeIcon icon={colorMode === "light" ? faMoon : faSun} />;
 
   return (
     <>
@@ -62,6 +68,9 @@ export const Navigation = (props: LinksProps): JSX.Element => {
           <DrawerBody>
             <Links {...props} />
           </DrawerBody>
+          <Button onClick={toggleColorMode} leftIcon={currentTheme} rightIcon={oppositeTheme}>
+            →
+          </Button>
         </DrawerContent>
       </Drawer>
     </>
