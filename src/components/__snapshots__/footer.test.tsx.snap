@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<footer
-  className="footerCard"
+<div
+  className="css-1mthtuo"
 >
   <a
-    className="footerLink"
+    className="chakra-link css-1xggnf3"
     href="/policy"
     onClick={[Function]}
     onMouseEnter={[Function]}
@@ -14,5 +14,5 @@ exports[`renders correctly 1`] = `
   </a>
    
   - (c) 2021 Approvers
-</footer>
+</div>
 `;

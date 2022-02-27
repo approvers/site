@@ -1,17 +1,25 @@
 import { GetStaticProps, NextPage } from "next";
-import { Link, getLinks } from "../lib/link-fetch";
-import { ExternalLink } from "../components/external-link";
+import { Link as LinkData, getLinks } from "../lib/link-fetch";
 import { Layout } from "../components/layout";
+import { Link } from "@chakra-ui/react";
 import { Title } from "../components/title";
 import styles from "../scss/pages/link.module.scss";
 
-const LinkPage: NextPage<{ links: readonly Link[] }> = ({ links }) => (
+const LinkPage: NextPage<{ links: readonly LinkData[] }> = ({ links }) => (
   <Layout pageName="限界開発鯖 - リンク">
     <Title>限界リンク集</Title>
     <ul className={styles.linkText}>
       {links.map(({ name, url }, index) => (
         <li key={index}>
-          <ExternalLink href={url}>{name}</ExternalLink>
+          <Link
+            href={url}
+            isExternal
+            textDecoration="underline"
+            fontStyle="italic"
+            fontWeight="bold"
+          >
+            {name}
+          </Link>
         </li>
       ))}
     </ul>

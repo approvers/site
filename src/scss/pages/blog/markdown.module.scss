@@ -1,28 +1,7 @@
 @use "../../color.variable";
 @use "../../media.variable";
 
-@mixin centered-body {
-  width: 60%;
-
-  @media #{media.query(middle)} {
-    width: 70%;
-  }
-
-  @media #{media.query(phone)} {
-    width: 90%;
-  }
-}
-
-.title {
-  @include centered-body();
-
-  padding: 0 1.5rem;
-  text-align: center;
-}
-
 .markdown {
-  @include centered-body();
-
   min-height: 100%;
   padding: 0 1.5rem 2rem;
   text-align: left;

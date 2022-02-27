@@ -1,18 +1,21 @@
-import { ExternalLink } from "./external-link";
+import { Container, Link, Text, VStack } from "@chakra-ui/react";
 import type { ReactNode } from "react";
-import styles from "../scss/components/questions.module.scss";
 
 const QA = ({ question, answer }: { question: ReactNode; answer: ReactNode }): JSX.Element => (
-  <section className={styles.aboutUs}>
-    <p className={styles.sentence}>
-      <span className={styles.bigLetter}>Q.</span>
+  <Container>
+    <Text>
+      <Text as="span" mr={2} color="green 700" fontSize="2xl">
+        Q.
+      </Text>
       {question}
-    </p>
-    <p className={styles.sentence}>
-      <span className={styles.bigLetter}>A.</span>
+    </Text>
+    <Text>
+      <Text as="span" mr={2} color="green 700" fontSize="2xl">
+        A.
+      </Text>
       {answer}
-    </p>
-  </section>
+    </Text>
+  </Container>
 );
 
 const questionAnswers = [
@@ -25,9 +28,14 @@ const questionAnswers = [
     answer: (
       <>
         こちらへどうぞ &rarr;{" "}
-        <ExternalLink href="https://twitter.com/search?q=%23限界開発鯖&src=typed_query">
+        <Link
+          href="https://twitter.com/search?q=%23限界開発鯖&src=typed_query"
+          isExternal
+          fontStyle="italic"
+          textDecoration="underline"
+        >
           #限界開発鯖
-        </ExternalLink>
+        </Link>
       </>
     ),
   },
@@ -35,7 +43,7 @@ const questionAnswers = [
     question: "どうやって参加するの？",
     answer: (
       <>
-        弊サーバーは、<span className={styles.color}>完全紹介制</span>です。
+        弊サーバーは、<Text as="b">完全紹介制</Text>です。
         知り合いのメンバーから招待リンクを受け取ってください。
       </>
     ),
@@ -43,9 +51,9 @@ const questionAnswers = [
 ] as const;
 
 export const Questions = (): JSX.Element => (
-  <div className={styles.text}>
+  <VStack pb={16}>
     {questionAnswers.map((props, i) => (
       <QA key={i} {...props} />
     ))}
-  </div>
+  </VStack>
 );

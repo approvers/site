@@ -1,37 +1,53 @@
+import {
+  Avatar,
+  Button,
+  Flex,
+  HStack,
+  Heading,
+  Link,
+  SimpleGrid,
+  Spacer,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import type { GetStaticProps, NextPage } from "next";
 import { Metadata, getSortedBlogMetadata } from "../lib/blog-fetch";
-import { Avatar } from "../components/avatar";
-import { Button } from "../components/button";
 import { DateString } from "../components/date";
 import { Layout } from "../components/layout";
-import Link from "next/link";
+import NextLink from "next/link";
 import { Title } from "../components/title";
-import styles from "../scss/pages/blog.module.scss";
 
 const BlogCard = ({ id, title, date, author }: Metadata): JSX.Element => (
-  <div className={styles.blogCard}>
+  <HStack borderBottom="2px" borderRight="1px" borderColor="green.600">
     <Avatar name={title} />
-    <div className={styles.cardText}>
-      <h3 className={styles.blogTitle}>{title}</h3>
-      {author}
-      <DateString dateString={date} />
-      <Link href={`/blog/${id}`} passHref>
-        <Button>
-          <a className={styles.pageLink}>記事を読む &rarr;</a>
-        </Button>
-      </Link>
-    </div>
-  </div>
+    <VStack width="100%" margin={2} padding={2} spacing="0.5" alignItems="self-start">
+      <Heading as="h3" fontSize="lg">
+        {title}
+      </Heading>
+      <Flex width="100%" alignItems="self-end">
+        <VStack alignItems="self-start">
+          <Text>{author}</Text>
+          <DateString dateString={date} />
+        </VStack>
+        <Spacer />
+        <NextLink href={`/blog/${id}`} passHref>
+          <Link>
+            <Button size="sm">記事を読む &rarr;</Button>
+          </Link>
+        </NextLink>
+      </Flex>
+    </VStack>
+  </HStack>
 );
 
 const BlogPage: NextPage<{ blogs: Metadata[] }> = ({ blogs }) => (
   <Layout pageName="限界開発鯖 - ブログ">
     <Title>ブログ</Title>
-    <section className={styles.main}>
+    <SimpleGrid columns={1} gap={4}>
       {blogs.map((blog) => (
         <BlogCard key={blog.id} {...blog} />
       ))}
-    </section>
+    </SimpleGrid>
   </Layout>
 );
 

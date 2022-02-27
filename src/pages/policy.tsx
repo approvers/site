@@ -1,5 +1,5 @@
-import { ExternalLink } from "../components/external-link";
 import { Layout } from "../components/layout";
+import { Link } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import { Title } from "../components/title";
 import styles from "../scss/pages/policy.module.scss";
@@ -19,13 +19,13 @@ const PolicyPage: NextPage = () => (
 
       <p>
         規約の詳細に関しましては、
-        <ExternalLink href="https://marketingplatform.google.com/about/analytics/terms/jp/">
+        <Link href="https://marketingplatform.google.com/about/analytics/terms/jp/" isExternal>
           Google アナリティクス利用規約
-        </ExternalLink>
+        </Link>
         や
-        <ExternalLink href="https://policies.google.com/technologies/ads?hl=ja">
+        <Link href="https://policies.google.com/technologies/ads?hl=ja" isExternal>
           Google ポリシーと規約
-        </ExternalLink>
+        </Link>
         のページをご覧ください。
       </p>
     </section>

@@ -2,57 +2,57 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="text"
+  className="chakra-stack css-t7gyxs"
 >
-  <section
-    className="aboutUs"
+  <div
+    className="chakra-container css-0"
   >
     <p
-      className="sentence"
+      className="chakra-text css-0"
     >
       <span
-        className="bigLetter"
+        className="chakra-text css-1p0mlmm"
       >
         Q.
       </span>
       限界開発鯖ってなに?
     </p>
     <p
-      className="sentence"
+      className="chakra-text css-0"
     >
       <span
-        className="bigLetter"
+        className="chakra-text css-1p0mlmm"
       >
         A.
       </span>
       限界開発鯖は高専生を中心に限界になった人々が限界状態で開発を行う Discord 鯖です。
     </p>
-  </section>
-  <section
-    className="aboutUs"
+  </div>
+  <div
+    className="chakra-container css-0"
   >
     <p
-      className="sentence"
+      className="chakra-text css-0"
     >
       <span
-        className="bigLetter"
+        className="chakra-text css-1p0mlmm"
       >
         Q.
       </span>
       限界開発鯖の雰囲気が知りたい！
     </p>
     <p
-      className="sentence"
+      className="chakra-text css-0"
     >
       <span
-        className="bigLetter"
+        className="chakra-text css-1p0mlmm"
       >
         A.
       </span>
       こちらへどうぞ →
        
       <a
-        className="link"
+        className="chakra-link css-sjclu7"
         href="https://twitter.com/search?q=%23限界開発鯖&src=typed_query"
         rel="noopener noreferrer"
         target="_blank"
@@ -60,36 +60,36 @@ exports[`renders correctly 1`] = `
         #限界開発鯖
       </a>
     </p>
-  </section>
-  <section
-    className="aboutUs"
+  </div>
+  <div
+    className="chakra-container css-0"
   >
     <p
-      className="sentence"
+      className="chakra-text css-0"
     >
       <span
-        className="bigLetter"
+        className="chakra-text css-1p0mlmm"
       >
         Q.
       </span>
       どうやって参加するの？
     </p>
     <p
-      className="sentence"
+      className="chakra-text css-0"
     >
       <span
-        className="bigLetter"
+        className="chakra-text css-1p0mlmm"
       >
         A.
       </span>
       弊サーバーは、
-      <span
-        className="color"
+      <b
+        className="chakra-text css-0"
       >
         完全紹介制
-      </span>
+      </b>
       です。 知り合いのメンバーから招待リンクを受け取ってください。
     </p>
-  </section>
+  </div>
 </div>
 `;

@@ -1,6 +1,8 @@
 @use "color.variable";
 @use "sass:map";
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap&text=A.Q");
+
 html {
   @include color.text();
   @include color.back();

@@ -1,9 +1,9 @@
+import { Box } from "@chakra-ui/react";
 import { Footer } from "./footer";
 import Head from "next/head";
 import { Header } from "./header";
 import { Navigation } from "./navigation";
 import type { ReactNode } from "react";
-import styles from "../scss/components/layout.module.scss";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "";
 const siteImage = `https://${baseUrl}/android-chrome-512x512.png`;
@@ -78,7 +78,7 @@ export const Layout = ({
   description?: string;
   children: ReactNode;
 }): JSX.Element => (
-  <div className={styles.page}>
+  <Box width="100vw" minH="100vh">
     <Head>
       <title>{pageName}</title>
       <SeoMetas pageName={pageName} description={description} />
@@ -90,10 +90,10 @@ export const Layout = ({
       <meta name="theme-color" content="#000000" />
     </Head>
     <Navigation links={headerLinks} />
-    <main className={styles.wrapper}>
-      <Header />
+    <Header />
+    <Box mr={16} mb={16} ml={16}>
       {children}
-    </main>
+    </Box>
     <Footer />
-  </div>
+  </Box>
 );

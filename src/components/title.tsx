@@ -1,10 +1,16 @@
+import { Center, Heading } from "@chakra-ui/react";
 import type { ReactNode } from "react";
-import styles from "../scss/components/title.module.scss";
 
 export const Title = ({ children }: { children?: ReactNode }): JSX.Element => (
-  <h1 className={styles.title}>{children}</h1>
+  <Center p={8}>
+    <Heading as="h1" fontSize="2xl">
+      {children}
+    </Heading>
+  </Center>
 );
 
 export const Subtitle = ({ children }: { children?: ReactNode }): JSX.Element => (
-  <h2 className={styles.subtitle}>{children}</h2>
+  <Heading fontSize="xl" lineHeight="xl">
+    {children}
+  </Heading>
 );

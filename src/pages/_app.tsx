@@ -1,10 +1,27 @@
-import "../scss/global.scss";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { GOOGLE_ANALYTICS_ID, notifyShowingPage } from "../lib/google-analytics";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import Script from "next/script";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+
+const theme = extendTheme({
+  font: {
+    body: `YakuHanJP,
+    Roboto,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif`,
+  },
+});
 
 const Page = ({ Component, pageProps }: AppProps): JSX.Element => {
   const router = useRouter();
@@ -35,7 +52,9 @@ const Page = ({ Component, pageProps }: AppProps): JSX.Element => {
           });
         `}
       </Script>
-      <Component {...pageProps} />
+      <ChakraProvider theme={theme}>
+        <Component {...pageProps} />
+      </ChakraProvider>
     </>
   );
 };

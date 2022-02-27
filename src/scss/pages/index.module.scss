@@ -1,41 +1,13 @@
+@use "../color.variable";
 @use "../details.variable";
 @use "../media.variable";
-@use "../components/triangle.module";
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap&text=A.Q");
+@mixin triangle($thickness: 15vh) {
+  border: details.border($thickness);
 
-.splash {
-  position: relative;
-  padding-top: 8rem;
-  padding-bottom: 0.5rem;
-  text-align: center;
-
-  @include details.with-font-size(title, 1rem);
-
-  @media #{media.query(middle)} {
-    @include details.with-font-size(title, -0.3rem);
-  }
-
-  @media #{media.query(min)} {
-    @include details.with-font-size(title, -0.5rem);
-  }
-}
-
-.subtitle {
-  padding-bottom: details.$min-padding;
-  font-style: italic;
-
-  @include details.with-font-size(big);
-
-  @media #{media.query(middle)} {
-    padding-bottom: details.$padding;
-
-    @include details.with-font-size(big, -0.3rem);
-  }
-
-  @media #{media.query(min)} {
-    @include details.with-font-size(big, -0.5rem);
-  }
+  @include color.clear(border);
+  @include color.main(light, border-top);
+  @include color.main(light, border-left);
 }
 
 .splash::after {
@@ -44,10 +16,7 @@
   z-index: -1;
   content: "";
 
-  @include details.transform(-4rem, -30deg);
-  @include triangle.triangle();
+  @include triangle();
 
-  @media #{media.query(phone)} {
-    @include triangle.triangle(10vh);
-  }
+  transform: skew(-30deg, 0deg) translateX(-300px) translateY(-320px);
 }
