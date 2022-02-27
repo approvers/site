@@ -1,4 +1,4 @@
-import { Avatar, Box, Center, HStack, Heading, SimpleGrid, Text, VStack } from "@chakra-ui/react";
+import { Avatar, HStack, Heading, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 import type { GetStaticProps, NextPage } from "next";
 import { Member, getMembers } from "../lib/member-fetch";
 import { Layout } from "../components/layout";

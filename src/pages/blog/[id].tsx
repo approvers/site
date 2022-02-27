@@ -1,5 +1,5 @@
 import { Blog, BlogInfo, getAllBlogInfos, getBlogFromId } from "../../lib/blog-fetch";
-import { Box, Center, Container, Heading, Text, VStack } from "@chakra-ui/react";
+import { Box, Heading, Text, VStack } from "@chakra-ui/react";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { DateString } from "../../components/date";
 import { Layout } from "../../components/layout";
