@@ -78,7 +78,7 @@ export const Layout = ({
   description?: string;
   children: ReactNode;
 }): JSX.Element => (
-  <Box width="100vw" minH="100vh">
+  <Box pos="absolute" top={0} right={0} bottom={0} left={0}>
     <Head>
       <title>{pageName}</title>
       <SeoMetas pageName={pageName} description={description} />
