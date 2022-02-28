@@ -3,44 +3,47 @@
   text-align: left;
 
   h1 {
-    padding-top: 2rem;
+    margin-top: var(--chakra-space-8);
+    font-family: var(--chakra-fonts-heading);
+    font-size: var(--chakra-fontSizes-3xl);
+    font-weight: var(--chakra-fontWeights-bold);
   }
 
   h2 {
-    padding-top: 1.5rem;
+    margin-top: var(--chakra-space-6);
   }
 
   h3 {
-    padding-top: 1rem;
+    margin-top: var(--chakra-space-4);
   }
 
   h4 {
-    padding-top: 0.5rem;
+    margin-top: var(--chakra-space-2);
   }
 
   h5 {
-    padding-top: 0.25rem;
+    margin-top: var(--chakra-space-1);
   }
 
   p {
-    padding-top: 0.5rem;
+    margin-top: var(--chakra-space-2);
   }
 
   ul,
   ol {
-    padding: 0.25rem 2rem;
+    padding: var(--chakra-space-1) var(--chakra-space-8);
   }
 
   details {
-    padding-left: 1rem;
+    padding-left: var(--chakra-space-4);
   }
 
   pre {
-    padding: 0.25rem;
-    margin: 0.25rem 0;
+    padding: var(--chakra-space-1);
+    margin: var(--chakra-space-1) 0;
     overflow-x: scroll;
     background-color: var(--chakra-colors-shadowed);
-    border-radius: 0.25rem;
+    border-radius: var(--chakra-space-1);
   }
 
   img {
@@ -49,7 +52,7 @@
   }
 
   table {
-    margin: 0.25rem 0;
+    margin: var(--chakra-space-1) 0;
   }
 
   th {
@@ -58,6 +61,6 @@
 
   th,
   td {
-    padding: 0.25rem;
+    padding: var(--chakra-space-1);
   }
 }
