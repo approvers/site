@@ -28,17 +28,12 @@ export const theme = extendTheme({
         default: "green.200",
         _dark: "green.700",
       },
-      boldUnderline: "linear(transparent 70%, shadowed 0%)",
     },
   },
   styles: {
     global: (props: StyleFunctionProps) => ({
-      body: {
-        color: mode("gray.900", "gray.50")(props),
-        bg: mode("gray.200", "gray.900")(props),
-      },
       "::selection": {
-        bg: "green.600",
+        bg: mode("green.300", "green.600")(props),
       },
     }),
   },
