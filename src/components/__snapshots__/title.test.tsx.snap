@@ -10,7 +10,7 @@ exports[`renders subtitle correctly 1`] = `
 
 exports[`renders title correctly 1`] = `
 <div
-  className="css-3d48oz"
+  className="css-x8fcf4"
 >
   <h1
     className="chakra-heading css-1n49pl7"
