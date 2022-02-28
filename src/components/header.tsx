@@ -12,6 +12,7 @@ export const Header = (): JSX.Element => (
             width={8}
             height={8}
             borderRadius="37%"
+            name="Approversロゴ"
           />
           <Heading as="span">Approvers</Heading>
         </Flex>
