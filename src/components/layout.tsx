@@ -91,7 +91,7 @@ export const Layout = ({
     </Head>
     <Navigation links={headerLinks} />
     <Header />
-    <Box mr={16} mb={16} ml={16}>
+    <Box mr={[8, 16]} mb={16} ml={[8, 16]}>
       {children}
     </Box>
     <Footer />
