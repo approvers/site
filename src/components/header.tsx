@@ -2,9 +2,9 @@ import { Avatar, Center, Flex, Heading, Link } from "@chakra-ui/react";
 import NextLink from "next/link";
 
 export const Header = (): JSX.Element => (
-  <Center w="100%" p={4} borderBottom="2px" borderColor="green.600">
+  <Center w="100%" p={4} borderBottom="2px" borderColor="shadowed">
     <NextLink href="/" passHref>
-      <Link>
+      <Link fontStyle="normal" textDecoration="none">
         <Flex alignItems="center">
           <Avatar
             src="/android-chrome-192x192.png"

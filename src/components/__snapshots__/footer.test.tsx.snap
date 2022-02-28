@@ -2,17 +2,16 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="css-1mthtuo"
+  className="css-imm75w"
 >
   <a
-    className="chakra-link css-1xggnf3"
+    className="chakra-link css-wppl45"
     href="/policy"
     onClick={[Function]}
     onMouseEnter={[Function]}
   >
     プライバシーポリシー
   </a>
-   
   - (c) 2021 Approvers
 </div>
 `;

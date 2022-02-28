@@ -18,7 +18,7 @@ import NextLink from "next/link";
 import { Title } from "../components/title";
 
 const BlogCard = ({ id, title, date, author }: Metadata): JSX.Element => (
-  <HStack borderBottom="2px" borderRight="1px" borderColor="green.600">
+  <HStack borderBottom="2px" borderRight="1px" borderColor="shadowed">
     <Avatar name={title} />
     <VStack width="100%" margin={2} padding={2} spacing="0.5" alignItems="self-start">
       <Heading as="h3" fontSize="lg">

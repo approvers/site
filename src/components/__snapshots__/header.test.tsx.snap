@@ -2,10 +2,10 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="css-19ly435"
+  className="css-b3ad4t"
 >
   <a
-    className="chakra-link css-0"
+    className="chakra-link css-omjuwl"
     href="/"
     onClick={[Function]}
     onMouseEnter={[Function]}

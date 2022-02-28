@@ -1,5 +1,7 @@
-import Link from "next/link";
-import styles from "../scss/components/prev-next-link.module.scss";
+import { Button, Flex, Spacer } from "@chakra-ui/react";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import NextLink from "next/link";
 
 export type PrevNextLinkProps = {
   prevLinkHref: string | null;
@@ -7,16 +9,17 @@ export type PrevNextLinkProps = {
 };
 
 export const PrevNextLink = ({ prevLinkHref, nextLinkHref }: PrevNextLinkProps): JSX.Element => (
-  <nav className={styles.nav}>
+  <Flex as="nav" color="highlighted" pb={8}>
     {prevLinkHref !== null && (
-      <Link href={prevLinkHref}>
-        <a className={styles.left}>〈 前</a>
-      </Link>
+      <NextLink href={prevLinkHref}>
+        <Button leftIcon={<FontAwesomeIcon icon={faArrowLeft} />}>前</Button>
+      </NextLink>
     )}
+    <Spacer />
     {nextLinkHref !== null && (
-      <Link href={nextLinkHref}>
-        <a className={styles.right}>次 〉</a>
-      </Link>
+      <NextLink href={nextLinkHref}>
+        <Button rightIcon={<FontAwesomeIcon icon={faArrowRight} />}>次</Button>
+      </NextLink>
     )}
-  </nav>
+  </Flex>
 );

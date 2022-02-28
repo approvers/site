@@ -1,26 +1,4 @@
-@use "color.variable";
-@use "sass:map";
-
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap&text=A.Q");
-
-html {
-  @include color.text();
-  @include color.back();
-
-  font-family:
-    YakuHanJP,
-    Roboto,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Fira Sans",
-    "Droid Sans",
-    "Helvetica Neue",
-    sans-serif;
-}
 
 * {
   box-sizing: border-box;
@@ -39,8 +17,4 @@ ul {
 
 *:root {
   font-size: 100%;
-}
-
-::selection {
-  @include color.main(light, back);
 }

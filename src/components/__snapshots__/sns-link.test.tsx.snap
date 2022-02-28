@@ -2,14 +2,14 @@
 
 exports[`renders github link correctly 1`] = `
 <a
-  className="chakra-link css-0"
+  className="chakra-link css-6thsf2"
   href="https://github.com/MikurXina"
   rel="noopener noreferrer"
   target="_blank"
 >
   <svg
     aria-hidden="true"
-    className="svg-inline--fa fa-github fa-w-16 icon"
+    className="svg-inline--fa fa-github fa-w-16 "
     data-icon="github"
     data-prefix="fab"
     focusable="false"
@@ -29,14 +29,14 @@ exports[`renders github link correctly 1`] = `
 
 exports[`renders twitter link correctly 1`] = `
 <a
-  className="chakra-link css-0"
+  className="chakra-link css-6thsf2"
   href="https://twitter.com/MikurXina"
   rel="noopener noreferrer"
   target="_blank"
 >
   <svg
     aria-hidden="true"
-    className="svg-inline--fa fa-twitter fa-w-16 icon"
+    className="svg-inline--fa fa-twitter fa-w-16 "
     data-icon="twitter"
     data-prefix="fab"
     focusable="false"

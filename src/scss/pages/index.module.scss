@@ -1,13 +1,8 @@
-@use "../color.variable";
-@use "../details.variable";
-@use "../media.variable";
-
 @mixin triangle($thickness: 15vh) {
-  border: details.border($thickness);
-
-  @include color.clear(border);
-  @include color.main(light, border-top);
-  @include color.main(light, border-left);
+  border: $thickness solid;
+  border-color: transparent;
+  border-top-color: var(--chakra-colors-shadowed);
+  border-left-color: var(--chakra-colors-shadowed);
 }
 
 .splash::after {

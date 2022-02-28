@@ -1,6 +1,3 @@
-@use "../../color.variable";
-@use "../../media.variable";
-
 .markdown {
   min-height: 100%;
   padding: 0 1.5rem 2rem;
@@ -40,11 +37,10 @@
   }
 
   pre {
-    @include color.text(sub, back);
-
     padding: 0.25rem;
     margin: 0.25rem 0;
     overflow-x: scroll;
+    background-color: var(--chakra-colors-shadowed);
     border-radius: 0.25rem;
   }
 
@@ -58,7 +54,7 @@
   }
 
   th {
-    @include color.sub(dark);
+    color: var(--chakra-colors-shadowed);
   }
 
   th,

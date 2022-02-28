@@ -6,7 +6,13 @@ import styles from "../scss/pages/index.module.scss";
 
 const Home: NextPage = () => (
   <Layout pageName="限界開発鯖">
-    <VStack>
+    <VStack
+      sx={{
+        ".splash::after": {
+          borderColor: "highlighted",
+        },
+      }}
+    >
       <Heading as="h1" fontSize="5xl" pt={32} pb={2} textAlign="center" zIndex={10}>
         <em>&dagger;限界開発鯖&dagger;</em> へようこそ！
       </Heading>

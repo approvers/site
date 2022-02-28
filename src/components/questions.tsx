@@ -1,22 +1,24 @@
 import { Container, Link, Text, VStack } from "@chakra-ui/react";
 import type { ReactNode } from "react";
 
-const QA = ({ question, answer }: { question: ReactNode; answer: ReactNode }): JSX.Element => (
-  <Container>
-    <Text>
-      <Text as="span" mr={2} color="green 700" fontSize="2xl">
-        Q.
+const QA = ({ question, answer }: { question: ReactNode; answer: ReactNode }): JSX.Element => {
+  return (
+    <Container>
+      <Text>
+        <Text as="span" mr={2} color="highlighted" fontSize="2xl">
+          Q.
+        </Text>
+        {question}
       </Text>
-      {question}
-    </Text>
-    <Text>
-      <Text as="span" mr={2} color="green 700" fontSize="2xl">
-        A.
+      <Text>
+        <Text as="span" mr={2} color="highlighted" fontSize="2xl">
+          A.
+        </Text>
+        {answer}
       </Text>
-      {answer}
-    </Text>
-  </Container>
-);
+    </Container>
+  );
+};
 
 const questionAnswers = [
   {
@@ -28,12 +30,7 @@ const questionAnswers = [
     answer: (
       <>
         こちらへどうぞ &rarr;{" "}
-        <Link
-          href="https://twitter.com/search?q=%23限界開発鯖&src=typed_query"
-          isExternal
-          fontStyle="italic"
-          textDecoration="underline"
-        >
+        <Link href="https://twitter.com/search?q=%23限界開発鯖&src=typed_query" isExternal>
           #限界開発鯖
         </Link>
       </>

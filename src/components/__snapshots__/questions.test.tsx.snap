@@ -11,7 +11,7 @@ exports[`renders correctly 1`] = `
       className="chakra-text css-0"
     >
       <span
-        className="chakra-text css-1p0mlmm"
+        className="chakra-text css-yt8kv5"
       >
         Q.
       </span>
@@ -21,7 +21,7 @@ exports[`renders correctly 1`] = `
       className="chakra-text css-0"
     >
       <span
-        className="chakra-text css-1p0mlmm"
+        className="chakra-text css-yt8kv5"
       >
         A.
       </span>
@@ -35,7 +35,7 @@ exports[`renders correctly 1`] = `
       className="chakra-text css-0"
     >
       <span
-        className="chakra-text css-1p0mlmm"
+        className="chakra-text css-yt8kv5"
       >
         Q.
       </span>
@@ -45,14 +45,14 @@ exports[`renders correctly 1`] = `
       className="chakra-text css-0"
     >
       <span
-        className="chakra-text css-1p0mlmm"
+        className="chakra-text css-yt8kv5"
       >
         A.
       </span>
       こちらへどうぞ →
        
       <a
-        className="chakra-link css-sjclu7"
+        className="chakra-link css-0"
         href="https://twitter.com/search?q=%23限界開発鯖&src=typed_query"
         rel="noopener noreferrer"
         target="_blank"
@@ -68,7 +68,7 @@ exports[`renders correctly 1`] = `
       className="chakra-text css-0"
     >
       <span
-        className="chakra-text css-1p0mlmm"
+        className="chakra-text css-yt8kv5"
       >
         Q.
       </span>
@@ -78,7 +78,7 @@ exports[`renders correctly 1`] = `
       className="chakra-text css-0"
     >
       <span
-        className="chakra-text css-1p0mlmm"
+        className="chakra-text css-yt8kv5"
       >
         A.
       </span>
