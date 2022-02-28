@@ -2,27 +2,40 @@
   min-height: 100%;
   text-align: left;
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: var(--chakra-fonts-heading);
+  }
+
   h1 {
     margin-top: var(--chakra-space-8);
-    font-family: var(--chakra-fonts-heading);
     font-size: var(--chakra-fontSizes-3xl);
     font-weight: var(--chakra-fontWeights-bold);
   }
 
   h2 {
     margin-top: var(--chakra-space-6);
+    font-size: var(--chakra-fontSizes-2xl);
+    font-weight: var(--chakra-fontWeights-bold);
   }
 
   h3 {
     margin-top: var(--chakra-space-4);
+    font-size: var(--chakra-fontSizes-xl);
+    font-weight: var(--chakra-fontWeights-bold);
   }
 
   h4 {
     margin-top: var(--chakra-space-2);
+    font-size: var(--chakra-fontSizes-lg);
   }
 
   h5 {
     margin-top: var(--chakra-space-1);
+    font-size: var(--chakra-fontSizes-md);
   }
 
   p {
