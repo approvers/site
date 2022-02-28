@@ -32,8 +32,8 @@ const BlogCard = ({ id, title, date, author }: Metadata): JSX.Element => (
           </Heading>
         </Link>
       </NextLink>
-      <Flex alignItems="self-end" flexWrap="wrap">
-        <Text pr={2}>{author}</Text>
+      <Flex alignItems="self-end" flexWrap="wrap" width="100%" gap={2}>
+        <Text>{author}</Text>
         <DateString dateString={date} />
         <Spacer />
         <NextLink href={`/blog/${id}`} passHref>
