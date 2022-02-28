@@ -7,7 +7,6 @@ import {
   DrawerContent,
   DrawerHeader,
   DrawerOverlay,
-  Link,
   VStack,
   useColorMode,
   useDisclosure,

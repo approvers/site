@@ -1,4 +1,4 @@
-import { Avatar, Center, Flex, Heading, Link } from "@chakra-ui/react";
+import { Avatar, Center, Flex, Heading } from "@chakra-ui/react";
 import NextLink from "next/link";
 
 export const Header = (): JSX.Element => (

@@ -4,7 +4,6 @@ import {
   Flex,
   HStack,
   Heading,
-  Link,
   SimpleGrid,
   Spacer,
   Text,
