@@ -20,26 +20,26 @@ import { Title } from "../components/title";
 const BlogCard = ({ id, title, date, author }: Metadata): JSX.Element => (
   <HStack borderBottom="2px" borderRight="1px" borderColor="shadowed">
     <NextLink href={`/blog/${id}`} passHref>
-      <Link fontStyle="normal" textDecoration="none">
+      <a>
         <Avatar name={title} flex="0 0 sm" />
-      </Link>
+      </a>
     </NextLink>
     <VStack flex="1 1" margin={2} padding={2} spacing="0.5" alignItems="self-start">
       <NextLink href={`/blog/${id}`} passHref>
-        <Link fontStyle="normal" textDecoration="none">
+        <a>
           <Heading as="h3" fontSize="lg">
             {title}
           </Heading>
-        </Link>
+        </a>
       </NextLink>
       <Flex alignItems="self-end" flexWrap="wrap" width="100%" gap={2}>
         <Text>{author}</Text>
         <DateString dateString={date} />
         <Spacer />
         <NextLink href={`/blog/${id}`} passHref>
-          <Link>
+          <a>
             <Button size="sm">記事を読む &rarr;</Button>
-          </Link>
+          </a>
         </NextLink>
       </Flex>
     </VStack>

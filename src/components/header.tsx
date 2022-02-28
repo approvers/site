@@ -3,8 +3,8 @@ import NextLink from "next/link";
 
 export const Header = (): JSX.Element => (
   <Center w="100%" p={4} borderBottom="2px" borderColor="shadowed">
-    <NextLink href="/" passHref>
-      <Link fontStyle="normal" textDecoration="none">
+    <NextLink href="/">
+      <a>
         <Flex alignItems="center">
           <Avatar
             src="/android-chrome-192x192.png"
@@ -16,7 +16,7 @@ export const Header = (): JSX.Element => (
           />
           <Heading as="span">Approvers</Heading>
         </Flex>
-      </Link>
+      </a>
     </NextLink>
   </Center>
 );

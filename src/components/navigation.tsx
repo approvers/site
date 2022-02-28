@@ -29,10 +29,10 @@ const Links = ({ links }: LinksProps): JSX.Element => (
   <VStack>
     {links.map(({ name, url }) => (
       <Container key={name}>
-        <NextLink href={url} passHref>
-          <Link>
+        <NextLink href={url}>
+          <a>
             <Button minW="100%">{name}</Button>
-          </Link>
+          </a>
         </NextLink>
       </Container>
     ))}
