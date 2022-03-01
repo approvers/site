@@ -9,13 +9,9 @@ exports[`renders subtitle correctly 1`] = `
 `;
 
 exports[`renders title correctly 1`] = `
-<div
-  className="css-x8fcf4"
+<h1
+  className="chakra-heading css-19mc9xn"
 >
-  <h1
-    className="chakra-heading css-1n49pl7"
-  >
-    Epic Title
-  </h1>
-</div>
+  Epic Title
+</h1>
 `;
