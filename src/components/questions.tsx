@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 
 const QA = ({ question, answer }: { question: ReactNode; answer: ReactNode }): JSX.Element => {
   return (
-    <Container>
+    <Container as="section">
       <Text>
         <Text as="span" mr={2} color="highlighted" fontSize="2xl">
           Q.

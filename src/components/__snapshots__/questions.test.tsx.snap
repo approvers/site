@@ -4,7 +4,7 @@ exports[`renders correctly 1`] = `
 <div
   className="chakra-stack css-t7gyxs"
 >
-  <div
+  <section
     className="chakra-container css-0"
   >
     <p
@@ -27,8 +27,8 @@ exports[`renders correctly 1`] = `
       </span>
       限界開発鯖は高専生を中心に限界になった人々が限界状態で開発を行う Discord 鯖です。
     </p>
-  </div>
-  <div
+  </section>
+  <section
     className="chakra-container css-0"
   >
     <p
@@ -60,8 +60,8 @@ exports[`renders correctly 1`] = `
         #限界開発鯖
       </a>
     </p>
-  </div>
-  <div
+  </section>
+  <section
     className="chakra-container css-0"
   >
     <p
@@ -90,6 +90,6 @@ exports[`renders correctly 1`] = `
       </b>
       です。 知り合いのメンバーから招待リンクを受け取ってください。
     </p>
-  </div>
+  </section>
 </div>
 `;
