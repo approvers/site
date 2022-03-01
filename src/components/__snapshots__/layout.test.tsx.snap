@@ -32,7 +32,7 @@ exports[`renders correctly 1`] = `
     </span>
     メニュー
   </button>
-  <div
+  <header
     className="css-b3ad4t"
   >
     <a
@@ -61,13 +61,13 @@ exports[`renders correctly 1`] = `
         </span>
       </div>
     </a>
-  </div>
+  </header>
   <div
     className="css-oogwee"
   >
     Hello, world!
   </div>
-  <div
+  <footer
     className="css-1n9yuqd"
   >
     <a
@@ -79,6 +79,6 @@ exports[`renders correctly 1`] = `
       プライバシーポリシー
     </a>
     - (c) 2021 Approvers
-  </div>
+  </footer>
 </div>
 `;
