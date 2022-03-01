@@ -2,7 +2,7 @@ import { Avatar, Center, Flex, Heading } from "@chakra-ui/react";
 import NextLink from "next/link";
 
 export const Header = (): JSX.Element => (
-  <Center w="100%" p={4} borderBottom="2px" borderColor="shadowed">
+  <Center as="header" w="100%" p={4} borderBottom="2px" borderColor="shadowed">
     <NextLink href="/">
       <a>
         <Flex alignItems="center">
