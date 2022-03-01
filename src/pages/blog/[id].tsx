@@ -1,5 +1,5 @@
 import { Blog, BlogInfo, getAllBlogInfos, getBlogFromId } from "../../lib/blog-fetch";
-import { Box, Heading, Text, VStack } from "@chakra-ui/react";
+import { Container, Heading, Text, VStack } from "@chakra-ui/react";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { DateString } from "../../components/date";
 import { Layout } from "../../components/layout";
@@ -42,9 +42,9 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
         </Text>
       </VStack>
       {prevNext}
-      <Box as="article" className={styles.markdown}>
+      <Container as="article" className={styles.markdown}>
         <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />
-      </Box>
+      </Container>
       {prevNext}
     </Layout>
   );
