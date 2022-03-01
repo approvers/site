@@ -23,7 +23,7 @@ const BlogCard = ({ id, title, date, author }: Metadata): JSX.Element => (
         <Avatar name={title} flex="0 0 sm" />
       </a>
     </NextLink>
-    <VStack flex="1 1" margin={2} padding={2} spacing="0.5" alignItems="self-start">
+    <VStack flex="1 1" padding={2} spacing="0.5" alignItems="self-start">
       <NextLink href={`/blog/${id}`} passHref>
         <a>
           <Heading as="h3" fontSize="lg">
