@@ -39,7 +39,7 @@ type MembersPageProps = {
 };
 
 const MembersPage: NextPage<MembersPageProps> = ({ members }) => {
-  const cardBg = useColorModeValue("gray.200", "gray.700");
+  const cardBg = useColorModeValue("gray.100", "gray.700");
 
   return (
     <Layout pageName="限界開発鯖 - メンバー紹介">
