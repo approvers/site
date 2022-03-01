@@ -2,7 +2,7 @@
 
 exports[`renders both prev and next correctly 1`] = `
 <nav
-  className="css-19taj5d"
+  className="css-frpbpk"
 >
   <button
     className="chakra-button css-5c2176"
@@ -70,7 +70,7 @@ exports[`renders both prev and next correctly 1`] = `
 
 exports[`renders only next correctly 1`] = `
 <nav
-  className="css-19taj5d"
+  className="css-frpbpk"
 >
   <div
     className="css-17xejub"
@@ -109,7 +109,7 @@ exports[`renders only next correctly 1`] = `
 
 exports[`renders only prev correctly 1`] = `
 <nav
-  className="css-19taj5d"
+  className="css-frpbpk"
 >
   <button
     className="chakra-button css-5c2176"
