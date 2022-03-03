@@ -2,9 +2,9 @@ import { Box, Link } from "@chakra-ui/react";
 import NextLink from "next/link";
 
 export const Footer = (): JSX.Element => (
-  <Box as="footer" textAlign="center" p={4} borderTop="2px" borderColor="shadowed">
+  <Box as="footer" p={4} textAlign="center" borderColor="shadowed" borderTop="2px">
     <NextLink href="/policy" passHref>
-      <Link mr={2} fontStyle="normal" color="highlighted">
+      <Link mr={2} color="highlighted" fontStyle="normal">
         プライバシーポリシー
       </Link>
     </NextLink>

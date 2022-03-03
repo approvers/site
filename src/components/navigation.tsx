@@ -46,7 +46,7 @@ const ThemeChangeButton = (): JSX.Element => {
   const oppositeTheme = <FontAwesomeIcon icon={useColorModeValue(faMoon, faSun)} />;
 
   return (
-    <Button onClick={toggleColorMode} leftIcon={currentTheme} rightIcon={oppositeTheme}>
+    <Button leftIcon={currentTheme} onClick={toggleColorMode} rightIcon={oppositeTheme}>
       →
     </Button>
   );
@@ -60,16 +60,16 @@ export const Navigation = (props: LinksProps): JSX.Element => {
     <>
       <Button
         ref={btnRef}
+        pos="fixed"
+        zIndex={100}
+        bottom={0}
+        m={8}
         leftIcon={<FontAwesomeIcon icon={faBars} />}
         onClick={onOpen}
-        pos="fixed"
-        m={8}
-        bottom={0}
-        zIndex={100}
       >
         メニュー
       </Button>
-      <Drawer isOpen={isOpen} placement="left" onClose={onClose} finalFocusRef={btnRef}>
+      <Drawer finalFocusRef={btnRef} isOpen={isOpen} onClose={onClose} placement="left">
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />

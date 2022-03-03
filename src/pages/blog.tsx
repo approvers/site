@@ -17,13 +17,13 @@ import NextLink from "next/link";
 import { Title } from "../components/title";
 
 const BlogCard = ({ id, title, date, author }: Metadata): JSX.Element => (
-  <HStack borderBottom="2px" borderRight="1px" borderColor="shadowed">
+  <HStack borderColor="shadowed" borderRight="1px" borderBottom="2px">
     <NextLink href={`/blog/${id}`} passHref>
       <a>
-        <Avatar name={title} flex="0 0 sm" />
+        <Avatar flex="0 0 sm" name={title} />
       </a>
     </NextLink>
-    <VStack flex="1 1" padding={2} spacing="0.5" alignItems="self-start">
+    <VStack alignItems="self-start" flex="1 1" p={2} spacing="0.5">
       <NextLink href={`/blog/${id}`} passHref>
         <a>
           <Heading as="h3" fontSize="lg">
@@ -31,7 +31,7 @@ const BlogCard = ({ id, title, date, author }: Metadata): JSX.Element => (
           </Heading>
         </a>
       </NextLink>
-      <Flex alignItems="self-end" flexWrap="wrap" width="100%" gap={2}>
+      <Flex align="self-end" wrap="wrap" gap={2} w="100%">
         <Text>{author}</Text>
         <DateString dateString={date} />
         <Spacer />
@@ -48,7 +48,7 @@ const BlogCard = ({ id, title, date, author }: Metadata): JSX.Element => (
 const BlogPage: NextPage<{ blogs: Metadata[] }> = ({ blogs }) => (
   <Layout pageName="限界開発鯖 - ブログ">
     <Title>ブログ</Title>
-    <SimpleGrid columns={1} gap={4}>
+    <SimpleGrid gap={4} columns={1}>
       {blogs.map((blog) => (
         <BlogCard key={blog.id} {...blog} />
       ))}

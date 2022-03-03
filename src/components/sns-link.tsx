@@ -17,7 +17,7 @@ const icons: Record<SNSLinkInfo["type"], Icon> = {
 export const SNSLink = ({ type, url }: SNSLinkInfo): JSX.Element => {
   const { icon } = icons[type];
   return (
-    <Link href={url} isExternal color="highlighted" w={["1rem", "1.2rem"]} h={["1rem", "1.2rem"]}>
+    <Link w={["1rem", "1.2rem"]} h={["1rem", "1.2rem"]} color="highlighted" href={url} isExternal>
       <FontAwesomeIcon icon={icon} />
     </Link>
   );

@@ -12,11 +12,11 @@ const LinkPage: NextPage<{ links: readonly LinkData[] }> = ({ links }) => (
       {links.map(({ name, url }, index) => (
         <Link
           key={index}
-          href={url}
-          isExternal
           fontSize="2xl"
           fontWeight="bold"
           bgGradient={boldUnderline}
+          href={url}
+          isExternal
         >
           {name}
         </Link>

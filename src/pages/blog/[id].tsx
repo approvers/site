@@ -42,7 +42,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
         </Text>
       </VStack>
       {prevNext}
-      <Container as="article" className={styles.markdown}>
+      <Container className={styles.markdown} as="article">
         <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />
       </Container>
       {prevNext}

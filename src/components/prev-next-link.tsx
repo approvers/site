@@ -9,7 +9,7 @@ export type PrevNextLinkProps = {
 };
 
 export const PrevNextLink = ({ prevLinkHref, nextLinkHref }: PrevNextLinkProps): JSX.Element => (
-  <Flex as="nav" color="highlighted" mt={4} mb={4}>
+  <Flex as="nav" mt={4} mb={4} color="highlighted">
     {prevLinkHref !== null && (
       <NextLink href={prevLinkHref}>
         <Button leftIcon={<FontAwesomeIcon icon={faArrowLeft} />}>前</Button>

@@ -18,9 +18,9 @@ import { Title } from "../components/title";
 const alternative = "/alternative.png";
 
 const MemberCard = ({ name, role, links, avatar }: Member): JSX.Element => (
-  <Flex p={4} gap={4} h="100%" alignItems="center">
-    <Avatar flex="0 0 auto" src={avatar == "" ? alternative : avatar} name={name} />
-    <VStack flex="1 1" spacing={0.5} alignItems="self-start" wordBreak="break-all">
+  <Flex align="center" gap={4} h="100%" p={4}>
+    <Avatar flex="0 0 auto" name={name} src={avatar == "" ? alternative : avatar} />
+    <VStack alignItems="self-start" flex="1 1" wordBreak="break-all" spacing={0.5}>
       <Heading as="b" fontSize="2xl">
         {name}
       </Heading>
@@ -44,9 +44,9 @@ const MembersPage: NextPage<MembersPageProps> = ({ members }) => {
   return (
     <Layout pageName="限界開発鯖 - メンバー紹介">
       <Title>メンバー紹介</Title>
-      <Grid templateColumns="repeat(auto-fill, minmax(15em, 1fr))" gap={2}>
+      <Grid gap={2} templateColumns="repeat(auto-fill, minmax(15em, 1fr))">
         {members.map((member) => (
-          <GridItem key={member.name} bgColor={cardBg} borderRadius="3xl">
+          <GridItem key={member.name} borderRadius="3xl" bgColor={cardBg}>
             <MemberCard {...member} />
           </GridItem>
         ))}
