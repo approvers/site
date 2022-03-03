@@ -2,10 +2,10 @@
 
 exports[`renders correctly 1`] = `
 <footer
-  className="css-1n9yuqd"
+  className="css-114d7fc"
 >
   <a
-    className="chakra-link css-wppl45"
+    className="chakra-link css-i6sr0x"
     href="/policy"
     onClick={[Function]}
     onMouseEnter={[Function]}

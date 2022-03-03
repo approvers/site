@@ -5,7 +5,7 @@ exports[`renders correctly 1`] = `
   className="css-dvi6oq"
 >
   <button
-    className="chakra-button css-zmq7l3"
+    className="chakra-button css-18n82wg"
     onClick={[Function]}
     type="button"
   >
@@ -33,7 +33,7 @@ exports[`renders correctly 1`] = `
     メニュー
   </button>
   <header
-    className="css-b3ad4t"
+    className="css-plc0gq"
   >
     <a
       href="/"
@@ -44,7 +44,7 @@ exports[`renders correctly 1`] = `
         className="css-70qvj9"
       >
         <span
-          className="chakra-avatar css-179x39t"
+          className="chakra-avatar css-11wutbi"
         >
           <div
             aria-label="Approversロゴ"
@@ -68,10 +68,10 @@ exports[`renders correctly 1`] = `
     Hello, world!
   </div>
   <footer
-    className="css-1n9yuqd"
+    className="css-114d7fc"
   >
     <a
-      className="chakra-link css-wppl45"
+      className="chakra-link css-i6sr0x"
       href="/policy"
       onClick={[Function]}
       onMouseEnter={[Function]}

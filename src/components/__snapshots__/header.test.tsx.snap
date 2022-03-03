@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <header
-  className="css-b3ad4t"
+  className="css-plc0gq"
 >
   <a
     href="/"
@@ -13,7 +13,7 @@ exports[`renders correctly 1`] = `
       className="css-70qvj9"
     >
       <span
-        className="chakra-avatar css-179x39t"
+        className="chakra-avatar css-11wutbi"
       >
         <div
           aria-label="Approversロゴ"
