@@ -17,7 +17,7 @@ import NextLink from "next/link";
 import { Title } from "../components/title";
 
 const BlogCard = ({ id, title, date, author }: Metadata): JSX.Element => (
-  <HStack borderColor="shadowed" borderRight="1px" borderBottom="2px">
+  <HStack borderColor="shadowed" borderRightWidth="1px" borderBottomWidth="2px">
     <NextLink href={`/blog/${id}`} passHref>
       <a>
         <Avatar flex="0 0 sm" name={title} />
