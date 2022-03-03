@@ -1,17 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-Array [
-  <button
-    className="navButton"
-    onClick={[Function]}
+<button
+  className="chakra-button css-zmq7l3"
+  onClick={[Function]}
+  type="button"
+>
+  <span
+    className="chakra-button__icon css-1wh2kri"
   >
     <svg
-      aria-hidden="true"
+      aria-hidden={true}
       className="svg-inline--fa fa-bars fa-w-14 "
       data-icon="bars"
       data-prefix="fas"
-      focusable="false"
+      focusable={false}
       role="img"
       style={Object {}}
       viewBox="0 0 448 512"
@@ -23,65 +26,7 @@ Array [
         style={Object {}}
       />
     </svg>
-  </button>,
-  <div
-    className="navWrapper"
-    data-showing={false}
-  >
-    <nav
-      className="buttonWrapper"
-    >
-      <div
-        className="button"
-      >
-        <a
-          href="/"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          root
-        </a>
-      </div>
-      <div
-        className="button"
-      >
-        <a
-          href="/blog"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          blog
-        </a>
-      </div>
-      <div
-        className="button"
-      >
-        <a
-          href="/contacts"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          contacts
-        </a>
-      </div>
-      <div
-        className="button"
-      >
-        <a
-          href="/links"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          links
-        </a>
-      </div>
-    </nav>
-    <div
-      className="canceler"
-      data-showing={false}
-      onClick={[Function]}
-      onTouchStart={[Function]}
-    />
-  </div>,
-]
+  </span>
+  メニュー
+</button>
 `;

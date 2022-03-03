@@ -1,7 +1,11 @@
 {
   "extends": "next/core-web-vitals",
+  "plugins": ["chakra-ui"],
   "rules": {
     "sort-imports": "error",
-    "@next/next/no-img-element": "off"
+    "@next/next/no-img-element": "off",
+    "chakra-ui/props-order": "error",
+    "chakra-ui/props-shorthand": "error",
+    "chakra-ui/require-specific-component": "error"
   }
 }

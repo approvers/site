@@ -2,17 +2,16 @@
 
 exports[`renders correctly 1`] = `
 <footer
-  className="footerCard"
+  className="css-1n9yuqd"
 >
   <a
-    className="footerLink"
+    className="chakra-link css-wppl45"
     href="/policy"
     onClick={[Function]}
     onMouseEnter={[Function]}
   >
     プライバシーポリシー
   </a>
-   
   - (c) 2021 Approvers
 </footer>
 `;

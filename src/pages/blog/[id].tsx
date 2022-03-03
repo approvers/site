@@ -1,4 +1,5 @@
 import { Blog, BlogInfo, getAllBlogInfos, getBlogFromId } from "../../lib/blog-fetch";
+import { Container, Heading, Text, VStack } from "@chakra-ui/react";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { DateString } from "../../components/date";
 import { Layout } from "../../components/layout";
@@ -30,19 +31,21 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
   const bodyHtml = md.render(emojify`${post.content}`);
   return (
     <Layout pageName={`限界開発鯖 - ブログ - ${post.title}`}>
-      <header className={styles.title}>
-        <h1>{post.title}</h1>
-        <div>
+      <VStack>
+        <Heading m={8} textAlign="center">
+          {post.title}
+        </Heading>
+        <Text>
           {post.author}
           {" - "}
           <DateString dateString={post.date} />
-          {prevNext}
-        </div>
-      </header>
-      <article className={styles.markdown}>
+        </Text>
+      </VStack>
+      {prevNext}
+      <Container className={styles.markdown} as="article">
         <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />
-      </article>
-      <footer className={styles.title}>{prevNext}</footer>
+      </Container>
+      {prevNext}
     </Layout>
   );
 };

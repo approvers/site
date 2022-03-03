@@ -1,9 +1,22 @@
-import { useCallback, useRef, useState } from "react";
-import { Button } from "./button";
+import {
+  Button,
+  Container,
+  Drawer,
+  DrawerBody,
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerHeader,
+  DrawerOverlay,
+  VStack,
+  useColorMode,
+  useColorModeValue,
+  useDisclosure,
+} from "@chakra-ui/react";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
+import NextLink from "next/link";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import styles from "../scss/components/navigation.module.scss";
+import { useRef } from "react";
 
 export interface LinksProps {
   links: readonly Readonly<{
@@ -13,44 +26,60 @@ export interface LinksProps {
 }
 
 const Links = ({ links }: LinksProps): JSX.Element => (
-  <nav className={styles.buttonWrapper}>
+  <VStack>
     {links.map(({ name, url }) => (
-      <Button key={name}>
-        <Link href={url}>
-          <a>{name}</a>
-        </Link>
-      </Button>
+      <Container key={name}>
+        <NextLink href={url}>
+          <a>
+            <Button minW="100%">{name}</Button>
+          </a>
+        </NextLink>
+      </Container>
     ))}
-  </nav>
+  </VStack>
 );
 
-const NavButton = ({ onClick }: { onClick: () => void }): JSX.Element => (
-  <button className={styles.navButton} onClick={onClick} aria-label="メニューの開閉">
-    <FontAwesomeIcon icon={faBars} />
-  </button>
-);
+const ThemeChangeButton = (): JSX.Element => {
+  const { toggleColorMode } = useColorMode();
+
+  const currentTheme = <FontAwesomeIcon icon={useColorModeValue(faSun, faMoon)} />;
+  const oppositeTheme = <FontAwesomeIcon icon={useColorModeValue(faMoon, faSun)} />;
+
+  return (
+    <Button leftIcon={currentTheme} onClick={toggleColorMode} rightIcon={oppositeTheme}>
+      →
+    </Button>
+  );
+};
 
 export const Navigation = (props: LinksProps): JSX.Element => {
-  const [showingLinks, setShowingLinks] = useState(false);
-  const canceler = useRef<HTMLDivElement | null>(null);
-  const onCancel = useCallback(
-    (e: { target: EventTarget }) => e.target == canceler.current && setShowingLinks(() => false),
-    [canceler],
-  );
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = useRef(null);
 
   return (
     <>
-      <NavButton onClick={() => setShowingLinks((v) => !v)} />
-      <div className={styles.navWrapper} data-showing={showingLinks}>
-        <Links {...props} />
-        <div
-          onTouchStart={onCancel}
-          onClick={onCancel}
-          className={styles.canceler}
-          ref={canceler}
-          data-showing={showingLinks}
-        />
-      </div>
+      <Button
+        ref={btnRef}
+        pos="fixed"
+        zIndex={100}
+        bottom={0}
+        m={8}
+        leftIcon={<FontAwesomeIcon icon={faBars} />}
+        onClick={onOpen}
+      >
+        メニュー
+      </Button>
+      <Drawer finalFocusRef={btnRef} isOpen={isOpen} onClose={onClose} placement="left">
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader borderBottomWidth="1px">Approvers</DrawerHeader>
+          <DrawerBody>
+            <Links {...props} />
+          </DrawerBody>
+          <ThemeChangeButton />
+        </DrawerContent>
+      </Drawer>
     </>
   );
 };

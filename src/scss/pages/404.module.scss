@@ -1,7 +1,0 @@
-@use "../color.variable";
-@use "../details.variable";
-
-.topLink {
-  @include color.main();
-  @include details.with-font-size(little);
-}

@@ -1,11 +1,13 @@
-import Link from "next/link";
-import styles from "../scss/components/footer.module.scss";
+import { Box, Link } from "@chakra-ui/react";
+import NextLink from "next/link";
 
 export const Footer = (): JSX.Element => (
-  <footer className={styles.footerCard}>
-    <Link href="/policy">
-      <a className={styles.footerLink}>プライバシーポリシー</a>
-    </Link>{" "}
+  <Box as="footer" p={4} textAlign="center" borderColor="shadowed" borderTop="2px">
+    <NextLink href="/policy" passHref>
+      <Link mr={2} color="highlighted" fontStyle="normal">
+        プライバシーポリシー
+      </Link>
+    </NextLink>
     - (c) 2021 Approvers
-  </footer>
+  </Box>
 );

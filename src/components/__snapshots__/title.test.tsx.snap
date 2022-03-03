@@ -2,7 +2,7 @@
 
 exports[`renders subtitle correctly 1`] = `
 <h2
-  className="subtitle"
+  className="chakra-heading css-a29miu"
 >
   Epic Subtitle
 </h2>
@@ -10,7 +10,7 @@ exports[`renders subtitle correctly 1`] = `
 
 exports[`renders title correctly 1`] = `
 <h1
-  className="title"
+  className="chakra-heading css-19mc9xn"
 >
   Epic Title
 </h1>

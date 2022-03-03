@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <time
-  className="date"
+  className="chakra-text css-g5hezf"
   dateTime="2021-01-01"
 >
   January 1, 2021

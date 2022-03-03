@@ -1,34 +1,43 @@
-import { ExternalLink } from "../components/external-link";
+import { Container, Link, Text } from "@chakra-ui/react";
 import { Layout } from "../components/layout";
 import type { NextPage } from "next";
 import { Title } from "../components/title";
-import styles from "../scss/pages/policy.module.scss";
+import { boldUnderline } from "../lib/theme";
 
 const PolicyPage: NextPage = () => (
   <Layout pageName="限界開発鯖 - プライバシーポリシー">
     <Title>プライバシーポリシー</Title>
-    <section className={styles.policyText}>
-      <p>当サイトは Google アナリティクスを使用しております。</p>
+    <Container
+      as="section"
+      sx={{
+        p: {
+          margin: "0.6em",
+          lineHeight: 1.7,
+          textIndent: "1em",
+        },
+      }}
+    >
+      <Text>当サイトは Google アナリティクスを使用しております。</Text>
 
-      <p>
+      <Text>
         取得するデータは当サイトの改善に役立てる事のみに使用するとし、
-        <span className={styles.color}>
+        <Text as="span" bgGradient={boldUnderline}>
           個人の特定やその他個人の不利益に関わることは致しません。
-        </span>
-      </p>
+        </Text>
+      </Text>
 
-      <p>
+      <Text>
         規約の詳細に関しましては、
-        <ExternalLink href="https://marketingplatform.google.com/about/analytics/terms/jp/">
+        <Link href="https://marketingplatform.google.com/about/analytics/terms/jp/" isExternal>
           Google アナリティクス利用規約
-        </ExternalLink>
+        </Link>
         や
-        <ExternalLink href="https://policies.google.com/technologies/ads?hl=ja">
+        <Link href="https://policies.google.com/technologies/ads?hl=ja" isExternal>
           Google ポリシーと規約
-        </ExternalLink>
+        </Link>
         のページをご覧ください。
-      </p>
-    </section>
+      </Text>
+    </Container>
   </Layout>
 );
 

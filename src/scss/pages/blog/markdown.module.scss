@@ -1,72 +1,62 @@
-@use "../../color.variable";
-@use "../../media.variable";
-
-@mixin centered-body {
-  width: 60%;
-
-  @media #{media.query(middle)} {
-    width: 70%;
-  }
-
-  @media #{media.query(phone)} {
-    width: 90%;
-  }
-}
-
-.title {
-  @include centered-body();
-
-  padding: 0 1.5rem;
-  text-align: center;
-}
-
 .markdown {
-  @include centered-body();
-
   min-height: 100%;
-  padding: 0 1.5rem 2rem;
   text-align: left;
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: var(--chakra-fonts-heading);
+  }
+
   h1 {
-    padding-top: 2rem;
+    margin-top: var(--chakra-space-8);
+    font-size: var(--chakra-fontSizes-3xl);
+    font-weight: var(--chakra-fontWeights-bold);
   }
 
   h2 {
-    padding-top: 1.5rem;
+    margin-top: var(--chakra-space-6);
+    font-size: var(--chakra-fontSizes-2xl);
+    font-weight: var(--chakra-fontWeights-bold);
   }
 
   h3 {
-    padding-top: 1rem;
+    margin-top: var(--chakra-space-4);
+    font-size: var(--chakra-fontSizes-xl);
+    font-weight: var(--chakra-fontWeights-bold);
   }
 
   h4 {
-    padding-top: 0.5rem;
+    margin-top: var(--chakra-space-2);
+    font-size: var(--chakra-fontSizes-lg);
   }
 
   h5 {
-    padding-top: 0.25rem;
+    margin-top: var(--chakra-space-1);
+    font-size: var(--chakra-fontSizes-md);
   }
 
   p {
-    padding-top: 0.5rem;
+    margin-top: var(--chakra-space-2);
   }
 
   ul,
   ol {
-    padding: 0.25rem 2rem;
+    padding: var(--chakra-space-1) var(--chakra-space-8);
   }
 
   details {
-    padding-left: 1rem;
+    padding-left: var(--chakra-space-4);
   }
 
   pre {
-    @include color.text(sub, back);
-
-    padding: 0.25rem;
-    margin: 0.25rem 0;
+    padding: var(--chakra-space-1);
+    margin: var(--chakra-space-1) 0;
     overflow-x: scroll;
-    border-radius: 0.25rem;
+    background-color: var(--chakra-colors-shadowed);
+    border-radius: var(--chakra-space-1);
   }
 
   img {
@@ -75,15 +65,15 @@
   }
 
   table {
-    margin: 0.25rem 0;
+    margin: var(--chakra-space-1) 0;
   }
 
   th {
-    @include color.sub(dark);
+    color: var(--chakra-colors-shadowed);
   }
 
   th,
   td {
-    padding: 0.25rem;
+    padding: var(--chakra-space-1);
   }
 }

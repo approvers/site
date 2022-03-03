@@ -1,11 +1,11 @@
 import { format, parseISO } from "date-fns";
-import styles from "../scss/components/date.module.scss";
+import { Text } from "@chakra-ui/react";
 
 export const DateString = ({ dateString }: { dateString: string }): JSX.Element => {
   const date = parseISO(dateString);
   return (
-    <time className={styles.date} dateTime={dateString}>
+    <Text as="time" fontSize="sm" dateTime={dateString}>
       {format(date, "LLLL d, yyyy")}
-    </time>
+    </Text>
   );
 };

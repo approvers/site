@@ -2,18 +2,33 @@
 
 exports[`renders correctly 1`] = `
 <header
-  className="headerLayout"
+  className="css-b3ad4t"
 >
   <a
-    className="hero"
     href="/"
     onClick={[Function]}
     onMouseEnter={[Function]}
   >
-    <img
-      src="/android-chrome-512x512.png"
-    />
-    Approvers
+    <div
+      className="css-70qvj9"
+    >
+      <span
+        className="chakra-avatar css-179x39t"
+      >
+        <div
+          aria-label="Approversロゴ"
+          className="chakra-avatar__initials css-0"
+          role="img"
+        >
+          A
+        </div>
+      </span>
+      <span
+        className="chakra-heading css-0"
+      >
+        Approvers
+      </span>
+    </div>
   </a>
 </header>
 `;

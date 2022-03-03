@@ -1,24 +1,4 @@
-@use "color.variable";
-@use "sass:map";
-
-html {
-  @include color.text();
-  @include color.back();
-
-  font-family:
-    YakuHanJP,
-    Roboto,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Fira Sans",
-    "Droid Sans",
-    "Helvetica Neue",
-    sans-serif;
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap&text=A.Q");
 
 * {
   box-sizing: border-box;
@@ -27,18 +7,10 @@ html {
   border: 0;
 }
 
-a {
-  text-decoration: none;
-}
-
 ul {
-  padding-left: 1.5rem;
+  padding-left: var(--chakra-space-5);
 }
 
 *:root {
   font-size: 100%;
-}
-
-::selection {
-  @include color.main(light, back);
 }

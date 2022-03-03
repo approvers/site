@@ -1,8 +1,9 @@
-import "../scss/global.scss";
 import { GOOGLE_ANALYTICS_ID, notifyShowingPage } from "../lib/google-analytics";
 import type { AppProps } from "next/app";
+import { ChakraProvider } from "@chakra-ui/react";
 import Head from "next/head";
 import Script from "next/script";
+import { theme } from "../lib/theme";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
@@ -35,7 +36,9 @@ const Page = ({ Component, pageProps }: AppProps): JSX.Element => {
           });
         `}
       </Script>
-      <Component {...pageProps} />
+      <ChakraProvider theme={theme}>
+        <Component {...pageProps} />
+      </ChakraProvider>
     </>
   );
 };
