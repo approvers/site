@@ -19,9 +19,7 @@ import { Title } from "../components/title";
 const BlogCard = ({ id, title, date, author }: Metadata): JSX.Element => (
   <HStack borderColor="shadowed" borderRightWidth="1px" borderBottomWidth="2px">
     <NextLink href={`/blog/${id}`} passHref>
-      <a>
-        <Avatar flex="0 0 sm" name={title} />
-      </a>
+      <Avatar as="a" flex="0 0 sm" name={title} />
     </NextLink>
     <VStack alignItems="self-start" flex="1 1" p={2} spacing="0.5">
       <NextLink href={`/blog/${id}`} passHref>
@@ -36,9 +34,9 @@ const BlogCard = ({ id, title, date, author }: Metadata): JSX.Element => (
         <DateString dateString={date} />
         <Spacer />
         <NextLink href={`/blog/${id}`} passHref>
-          <a>
-            <Button size="sm">記事を読む &rarr;</Button>
-          </a>
+          <Button as="a" size="sm">
+            記事を読む &rarr;
+          </Button>
         </NextLink>
       </Flex>
     </VStack>

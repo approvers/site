@@ -36,30 +36,27 @@ exports[`renders correctly 1`] = `
     className="css-plc0gq"
   >
     <a
+      className="css-70qvj9"
       href="/"
       onClick={[Function]}
       onMouseEnter={[Function]}
     >
-      <div
-        className="css-70qvj9"
+      <span
+        className="chakra-avatar css-11wutbi"
       >
-        <span
-          className="chakra-avatar css-11wutbi"
+        <div
+          aria-label="Approversロゴ"
+          className="chakra-avatar__initials css-0"
+          role="img"
         >
-          <div
-            aria-label="Approversロゴ"
-            className="chakra-avatar__initials css-0"
-            role="img"
-          >
-            A
-          </div>
-        </span>
-        <span
-          className="chakra-heading css-0"
-        >
-          Approvers
-        </span>
-      </div>
+          A
+        </div>
+      </span>
+      <span
+        className="chakra-heading css-0"
+      >
+        Approvers
+      </span>
     </a>
   </header>
   <div
