@@ -4,11 +4,11 @@ exports[`renders both prev and next correctly 1`] = `
 <nav
   className="css-10z1pgu"
 >
-  <button
+  <a
     className="chakra-button css-5c2176"
+    href="https://example.com/prev"
     onClick={[Function]}
     onMouseEnter={[Function]}
-    type="button"
   >
     <span
       className="chakra-button__icon css-1wh2kri"
@@ -32,15 +32,15 @@ exports[`renders both prev and next correctly 1`] = `
       </svg>
     </span>
     前
-  </button>
+  </a>
   <div
     className="css-17xejub"
   />
-  <button
+  <a
     className="chakra-button css-5c2176"
+    href="https://example.com/next"
     onClick={[Function]}
     onMouseEnter={[Function]}
-    type="button"
   >
     次
     <span
@@ -64,7 +64,7 @@ exports[`renders both prev and next correctly 1`] = `
         />
       </svg>
     </span>
-  </button>
+  </a>
 </nav>
 `;
 
@@ -75,11 +75,11 @@ exports[`renders only next correctly 1`] = `
   <div
     className="css-17xejub"
   />
-  <button
+  <a
     className="chakra-button css-5c2176"
+    href="https://example.com/next"
     onClick={[Function]}
     onMouseEnter={[Function]}
-    type="button"
   >
     次
     <span
@@ -103,7 +103,7 @@ exports[`renders only next correctly 1`] = `
         />
       </svg>
     </span>
-  </button>
+  </a>
 </nav>
 `;
 
@@ -111,11 +111,11 @@ exports[`renders only prev correctly 1`] = `
 <nav
   className="css-10z1pgu"
 >
-  <button
+  <a
     className="chakra-button css-5c2176"
+    href="https://example.com/prev"
     onClick={[Function]}
     onMouseEnter={[Function]}
-    type="button"
   >
     <span
       className="chakra-button__icon css-1wh2kri"
@@ -139,7 +139,7 @@ exports[`renders only prev correctly 1`] = `
       </svg>
     </span>
     前
-  </button>
+  </a>
   <div
     className="css-17xejub"
   />
