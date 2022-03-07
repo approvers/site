@@ -13,13 +13,13 @@ const Home: NextPage = () => (
         },
       }}
     >
-      <Heading as="h1" zIndex={10} pt={32} pb={2} fontSize="5xl" textAlign="center">
+      <Heading as="h1" pt={32} pb={2} fontSize="5xl" textAlign="center">
         <em>&dagger;限界開発鯖&dagger;</em> へようこそ！
       </Heading>
-      <Heading as="i" zIndex={10} pb={32} fontSize="xl">
+      <Heading as="i" pb={32} fontSize="xl">
         Over Limit Development
       </Heading>
-      <Box className={styles.splash} zIndex={5} />
+      <Box className={styles.splash} zIndex={-10} />
     </VStack>
     <Questions />
   </Layout>
