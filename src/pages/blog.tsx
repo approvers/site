@@ -4,9 +4,9 @@ import {
   Flex,
   HStack,
   Heading,
+  Link,
   SimpleGrid,
   Spacer,
-  Text,
   VStack,
 } from "@chakra-ui/react";
 import type { GetStaticProps, NextPage } from "next";
@@ -16,7 +16,7 @@ import { Layout } from "../components/layout";
 import NextLink from "next/link";
 import { Title } from "../components/title";
 
-const BlogCard = ({ id, title, date, author }: Metadata): JSX.Element => (
+const BlogCard = ({ id, title, date, author, authorId }: Metadata): JSX.Element => (
   <HStack borderColor="shadowed" borderRightWidth="1px" borderBottomWidth="2px">
     <NextLink href={`/blog/${id}`} passHref>
       <Avatar as="a" flex="0 0 sm" name={title} />
@@ -30,7 +30,7 @@ const BlogCard = ({ id, title, date, author }: Metadata): JSX.Element => (
         </a>
       </NextLink>
       <Flex align="self-end" wrap="wrap" gap={2} w="100%">
-        <Text>{author}</Text>
+        <Link href={`https://github.com/${authorId}`}>{author}</Link>
         <DateString dateString={date} />
         <Spacer />
         <NextLink href={`/blog/${id}`} passHref>

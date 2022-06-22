@@ -1,5 +1,5 @@
 import { Blog, BlogInfo, getAllBlogInfos, getBlogFromId } from "../../lib/blog-fetch";
-import { Container, Heading, Text, VStack } from "@chakra-ui/react";
+import { Container, Heading, Link, Text, VStack } from "@chakra-ui/react";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { DateString } from "../../components/date";
 import { Layout } from "../../components/layout";
@@ -36,7 +36,9 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
           {post.title}
         </Heading>
         <Text>
-          {post.author}
+          <Link href={`https://github.com/${post.authorId}`} isExternal>
+            {post.author}
+          </Link>
           {" - "}
           <DateString dateString={post.date} />
         </Text>
