@@ -12,6 +12,7 @@ export type Metadata = {
   date: string;
   title: string;
   author: string;
+  authorId: string;
 };
 
 export type Blog = {
@@ -50,6 +51,10 @@ const validateMetadata = (value: unknown): value is Metadata => {
   }
   if (typeof (value as Metadata).author !== "string") {
     console.error("`author` is not in `value`");
+    return false;
+  }
+  if (typeof (value as Metadata).authorId !== "string") {
+    console.error("`authorId` is not in `value`");
     return false;
   }
   return true;
