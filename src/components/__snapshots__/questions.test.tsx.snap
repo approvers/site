@@ -54,7 +54,7 @@ exports[`renders correctly 1`] = `
       <a
         className="chakra-link css-0"
         href="https://twitter.com/search?q=%23限界開発鯖&src=typed_query"
-        rel="noopener noreferrer"
+        rel="noopener"
         target="_blank"
       >
         #限界開発鯖
