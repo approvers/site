@@ -1,16 +1,13 @@
+import { expect, it } from "vitest";
 import { SNSLink } from "./sns-link";
-import renderer from "react-test-renderer";
+import { render } from "../utils/react-test";
 
 it("renders twitter link correctly", () => {
-  const tree = renderer
-    .create(<SNSLink type="twitter" url="https://twitter.com/MikurXina" />)
-    .toJSON();
+  const tree = render(<SNSLink type="twitter" url="https://twitter.com/MikurXina" />);
   expect(tree).toMatchSnapshot();
 });
 
 it("renders github link correctly", () => {
-  const tree = renderer
-    .create(<SNSLink type="github" url="https://github.com/MikurXina" />)
-    .toJSON();
+  const tree = render(<SNSLink type="github" url="https://github.com/MikurXina" />);
   expect(tree).toMatchSnapshot();
 });

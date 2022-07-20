@@ -1,147 +1,432 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
 exports[`renders both prev and next correctly 1`] = `
-<nav
-  className="css-10z1pgu"
->
-  <a
-    className="chakra-button css-4xx2wk"
-    href="https://example.com/prev"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-  >
-    <span
-      className="chakra-button__icon css-1wh2kri"
-    >
-      <svg
-        aria-hidden={true}
-        className="svg-inline--fa fa-arrow-left "
-        data-icon="arrow-left"
-        data-prefix="fas"
-        focusable={false}
-        role="img"
-        style={Object {}}
-        viewBox="0 0 448 512"
-        xmlns="http://www.w3.org/2000/svg"
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <nav
+        class="css-10z1pgu"
       >
-        <path
-          d="M447.1 256C447.1 273.7 433.7 288 416 288H109.3l105.4 105.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224H416C433.7 224 447.1 238.3 447.1 256z"
-          fill="currentColor"
-          style={Object {}}
+        <a
+          class="chakra-button css-4xx2wk"
+          href="https://example.com/prev"
+        >
+          <span
+            class="chakra-button__icon css-1wh2kri"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-arrow-left "
+              data-icon="arrow-left"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M447.1 256C447.1 273.7 433.7 288 416 288H109.3l105.4 105.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224H416C433.7 224 447.1 238.3 447.1 256z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+          前
+        </a>
+        <div
+          class="css-17xejub"
         />
-      </svg>
-    </span>
-    前
-  </a>
-  <div
-    className="css-17xejub"
-  />
-  <a
-    className="chakra-button css-4xx2wk"
-    href="https://example.com/next"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-  >
-    次
-    <span
-      className="chakra-button__icon css-1hzyiq5"
+        <a
+          class="chakra-button css-4xx2wk"
+          href="https://example.com/next"
+        >
+          次
+          <span
+            class="chakra-button__icon css-1hzyiq5"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-arrow-right "
+              data-icon="arrow-right"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+        </a>
+      </nav>
+    </div>
+  </body>,
+  "container": <div>
+    <nav
+      class="css-10z1pgu"
     >
-      <svg
-        aria-hidden={true}
-        className="svg-inline--fa fa-arrow-right "
-        data-icon="arrow-right"
-        data-prefix="fas"
-        focusable={false}
-        role="img"
-        style={Object {}}
-        viewBox="0 0 448 512"
-        xmlns="http://www.w3.org/2000/svg"
+      <a
+        class="chakra-button css-4xx2wk"
+        href="https://example.com/prev"
       >
-        <path
-          d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"
-          fill="currentColor"
-          style={Object {}}
-        />
-      </svg>
-    </span>
-  </a>
-</nav>
+        <span
+          class="chakra-button__icon css-1wh2kri"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-arrow-left "
+            data-icon="arrow-left"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 448 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M447.1 256C447.1 273.7 433.7 288 416 288H109.3l105.4 105.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224H416C433.7 224 447.1 238.3 447.1 256z"
+              fill="currentColor"
+            />
+          </svg>
+        </span>
+        前
+      </a>
+      <div
+        class="css-17xejub"
+      />
+      <a
+        class="chakra-button css-4xx2wk"
+        href="https://example.com/next"
+      >
+        次
+        <span
+          class="chakra-button__icon css-1hzyiq5"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-arrow-right "
+            data-icon="arrow-right"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 448 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"
+              fill="currentColor"
+            />
+          </svg>
+        </span>
+      </a>
+    </nav>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
 
 exports[`renders only next correctly 1`] = `
-<nav
-  className="css-10z1pgu"
->
-  <div
-    className="css-17xejub"
-  />
-  <a
-    className="chakra-button css-4xx2wk"
-    href="https://example.com/next"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-  >
-    次
-    <span
-      className="chakra-button__icon css-1hzyiq5"
-    >
-      <svg
-        aria-hidden={true}
-        className="svg-inline--fa fa-arrow-right "
-        data-icon="arrow-right"
-        data-prefix="fas"
-        focusable={false}
-        role="img"
-        style={Object {}}
-        viewBox="0 0 448 512"
-        xmlns="http://www.w3.org/2000/svg"
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <nav
+        class="css-10z1pgu"
       >
-        <path
-          d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"
-          fill="currentColor"
-          style={Object {}}
+        <div
+          class="css-17xejub"
         />
-      </svg>
-    </span>
-  </a>
-</nav>
+        <a
+          class="chakra-button css-4xx2wk"
+          href="https://example.com/next"
+        >
+          次
+          <span
+            class="chakra-button__icon css-1hzyiq5"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-arrow-right "
+              data-icon="arrow-right"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+        </a>
+      </nav>
+    </div>
+  </body>,
+  "container": <div>
+    <nav
+      class="css-10z1pgu"
+    >
+      <div
+        class="css-17xejub"
+      />
+      <a
+        class="chakra-button css-4xx2wk"
+        href="https://example.com/next"
+      >
+        次
+        <span
+          class="chakra-button__icon css-1hzyiq5"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-arrow-right "
+            data-icon="arrow-right"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 448 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"
+              fill="currentColor"
+            />
+          </svg>
+        </span>
+      </a>
+    </nav>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
 
 exports[`renders only prev correctly 1`] = `
-<nav
-  className="css-10z1pgu"
->
-  <a
-    className="chakra-button css-4xx2wk"
-    href="https://example.com/prev"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-  >
-    <span
-      className="chakra-button__icon css-1wh2kri"
-    >
-      <svg
-        aria-hidden={true}
-        className="svg-inline--fa fa-arrow-left "
-        data-icon="arrow-left"
-        data-prefix="fas"
-        focusable={false}
-        role="img"
-        style={Object {}}
-        viewBox="0 0 448 512"
-        xmlns="http://www.w3.org/2000/svg"
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <nav
+        class="css-10z1pgu"
       >
-        <path
-          d="M447.1 256C447.1 273.7 433.7 288 416 288H109.3l105.4 105.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224H416C433.7 224 447.1 238.3 447.1 256z"
-          fill="currentColor"
-          style={Object {}}
+        <a
+          class="chakra-button css-4xx2wk"
+          href="https://example.com/prev"
+        >
+          <span
+            class="chakra-button__icon css-1wh2kri"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-arrow-left "
+              data-icon="arrow-left"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M447.1 256C447.1 273.7 433.7 288 416 288H109.3l105.4 105.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224H416C433.7 224 447.1 238.3 447.1 256z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+          前
+        </a>
+        <div
+          class="css-17xejub"
         />
-      </svg>
-    </span>
-    前
-  </a>
-  <div
-    className="css-17xejub"
-  />
-</nav>
+      </nav>
+    </div>
+  </body>,
+  "container": <div>
+    <nav
+      class="css-10z1pgu"
+    >
+      <a
+        class="chakra-button css-4xx2wk"
+        href="https://example.com/prev"
+      >
+        <span
+          class="chakra-button__icon css-1wh2kri"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-arrow-left "
+            data-icon="arrow-left"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 448 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M447.1 256C447.1 273.7 433.7 288 416 288H109.3l105.4 105.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224H416C433.7 224 447.1 238.3 447.1 256z"
+              fill="currentColor"
+            />
+          </svg>
+        </span>
+        前
+      </a>
+      <div
+        class="css-17xejub"
+      />
+    </nav>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;

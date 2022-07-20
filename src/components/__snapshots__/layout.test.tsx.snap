@@ -1,81 +1,204 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
 exports[`renders correctly 1`] = `
-<div
-  className="css-dvi6oq"
->
-  <button
-    className="chakra-button css-1h3syp1"
-    onClick={[Function]}
-    type="button"
-  >
-    <span
-      className="chakra-button__icon css-1wh2kri"
-    >
-      <svg
-        aria-hidden={true}
-        className="svg-inline--fa fa-bars "
-        data-icon="bars"
-        data-prefix="fas"
-        focusable={false}
-        role="img"
-        style={Object {}}
-        viewBox="0 0 448 512"
-        xmlns="http://www.w3.org/2000/svg"
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="css-dvi6oq"
       >
-        <path
-          d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"
-          fill="currentColor"
-          style={Object {}}
-        />
-      </svg>
-    </span>
-    メニュー
-  </button>
-  <header
-    className="css-plc0gq"
-  >
-    <a
-      className="css-70qvj9"
-      href="/"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      <span
-        className="chakra-avatar css-11wutbi"
-      >
-        <div
-          aria-label="Approversロゴ"
-          className="chakra-avatar__initials css-0"
-          role="img"
+        <button
+          class="chakra-button css-1h3syp1"
+          type="button"
         >
-          A
+          <span
+            class="chakra-button__icon css-1wh2kri"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-bars "
+              data-icon="bars"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+          メニュー
+        </button>
+        <header
+          class="css-plc0gq"
+        >
+          <a
+            class="css-70qvj9"
+            href="/"
+          >
+            <span
+              class="chakra-avatar css-11wutbi"
+            >
+              <div
+                aria-label="Approversロゴ"
+                class="chakra-avatar__initials css-0"
+                role="img"
+              >
+                A
+              </div>
+            </span>
+            <span
+              class="chakra-heading css-0"
+            >
+              Approvers
+            </span>
+          </a>
+        </header>
+        <div
+          class="css-oogwee"
+        >
+          Hello, world!
         </div>
-      </span>
-      <span
-        className="chakra-heading css-0"
-      >
-        Approvers
-      </span>
-    </a>
-  </header>
-  <div
-    className="css-oogwee"
-  >
-    Hello, world!
-  </div>
-  <footer
-    className="css-114d7fc"
-  >
-    <a
-      className="chakra-link css-i6sr0x"
-      href="/policy"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
+        <footer
+          class="css-114d7fc"
+        >
+          <a
+            class="chakra-link css-i6sr0x"
+            href="/policy"
+          >
+            プライバシーポリシー
+          </a>
+          - (c) 2021 Approvers
+        </footer>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="css-dvi6oq"
     >
-      プライバシーポリシー
-    </a>
-    - (c) 2021 Approvers
-  </footer>
-</div>
+      <button
+        class="chakra-button css-1h3syp1"
+        type="button"
+      >
+        <span
+          class="chakra-button__icon css-1wh2kri"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-bars "
+            data-icon="bars"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 448 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"
+              fill="currentColor"
+            />
+          </svg>
+        </span>
+        メニュー
+      </button>
+      <header
+        class="css-plc0gq"
+      >
+        <a
+          class="css-70qvj9"
+          href="/"
+        >
+          <span
+            class="chakra-avatar css-11wutbi"
+          >
+            <div
+              aria-label="Approversロゴ"
+              class="chakra-avatar__initials css-0"
+              role="img"
+            >
+              A
+            </div>
+          </span>
+          <span
+            class="chakra-heading css-0"
+          >
+            Approvers
+          </span>
+        </a>
+      </header>
+      <div
+        class="css-oogwee"
+      >
+        Hello, world!
+      </div>
+      <footer
+        class="css-114d7fc"
+      >
+        <a
+          class="chakra-link css-i6sr0x"
+          href="/policy"
+        >
+          プライバシーポリシー
+        </a>
+        - (c) 2021 Approvers
+      </footer>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
