@@ -5,7 +5,7 @@ exports[`renders both prev and next correctly 1`] = `
   className="css-10z1pgu"
 >
   <a
-    className="chakra-button css-5c2176"
+    className="chakra-button css-4xx2wk"
     href="https://example.com/prev"
     onClick={[Function]}
     onMouseEnter={[Function]}
@@ -15,7 +15,7 @@ exports[`renders both prev and next correctly 1`] = `
     >
       <svg
         aria-hidden={true}
-        className="svg-inline--fa fa-arrow-left fa-w-14 "
+        className="svg-inline--fa fa-arrow-left "
         data-icon="arrow-left"
         data-prefix="fas"
         focusable={false}
@@ -25,7 +25,7 @@ exports[`renders both prev and next correctly 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"
+          d="M447.1 256C447.1 273.7 433.7 288 416 288H109.3l105.4 105.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224H416C433.7 224 447.1 238.3 447.1 256z"
           fill="currentColor"
           style={Object {}}
         />
@@ -37,7 +37,7 @@ exports[`renders both prev and next correctly 1`] = `
     className="css-17xejub"
   />
   <a
-    className="chakra-button css-5c2176"
+    className="chakra-button css-4xx2wk"
     href="https://example.com/next"
     onClick={[Function]}
     onMouseEnter={[Function]}
@@ -48,7 +48,7 @@ exports[`renders both prev and next correctly 1`] = `
     >
       <svg
         aria-hidden={true}
-        className="svg-inline--fa fa-arrow-right fa-w-14 "
+        className="svg-inline--fa fa-arrow-right "
         data-icon="arrow-right"
         data-prefix="fas"
         focusable={false}
@@ -58,7 +58,7 @@ exports[`renders both prev and next correctly 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+          d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"
           fill="currentColor"
           style={Object {}}
         />
@@ -76,7 +76,7 @@ exports[`renders only next correctly 1`] = `
     className="css-17xejub"
   />
   <a
-    className="chakra-button css-5c2176"
+    className="chakra-button css-4xx2wk"
     href="https://example.com/next"
     onClick={[Function]}
     onMouseEnter={[Function]}
@@ -87,7 +87,7 @@ exports[`renders only next correctly 1`] = `
     >
       <svg
         aria-hidden={true}
-        className="svg-inline--fa fa-arrow-right fa-w-14 "
+        className="svg-inline--fa fa-arrow-right "
         data-icon="arrow-right"
         data-prefix="fas"
         focusable={false}
@@ -97,7 +97,7 @@ exports[`renders only next correctly 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+          d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"
           fill="currentColor"
           style={Object {}}
         />
@@ -112,7 +112,7 @@ exports[`renders only prev correctly 1`] = `
   className="css-10z1pgu"
 >
   <a
-    className="chakra-button css-5c2176"
+    className="chakra-button css-4xx2wk"
     href="https://example.com/prev"
     onClick={[Function]}
     onMouseEnter={[Function]}
@@ -122,7 +122,7 @@ exports[`renders only prev correctly 1`] = `
     >
       <svg
         aria-hidden={true}
-        className="svg-inline--fa fa-arrow-left fa-w-14 "
+        className="svg-inline--fa fa-arrow-left "
         data-icon="arrow-left"
         data-prefix="fas"
         focusable={false}
@@ -132,7 +132,7 @@ exports[`renders only prev correctly 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"
+          d="M447.1 256C447.1 273.7 433.7 288 416 288H109.3l105.4 105.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224H416C433.7 224 447.1 238.3 447.1 256z"
           fill="currentColor"
           style={Object {}}
         />
