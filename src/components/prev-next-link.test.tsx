@@ -9,15 +9,15 @@ it("renders both prev and next correctly", () => {
       nextLinkHref="https://example.com/next"
     />,
   );
-  expect(tree).toMatchSnapshot();
+  expect(tree.toJSON()).toMatchSnapshot();
 });
 
 it("renders only prev correctly", () => {
   const tree = render(<PrevNextLink prevLinkHref="https://example.com/prev" nextLinkHref={null} />);
-  expect(tree).toMatchSnapshot();
+  expect(tree.toJSON()).toMatchSnapshot();
 });
 
 it("renders only next correctly", () => {
   const tree = render(<PrevNextLink prevLinkHref={null} nextLinkHref="https://example.com/next" />);
-  expect(tree).toMatchSnapshot();
+  expect(tree.toJSON()).toMatchSnapshot();
 });

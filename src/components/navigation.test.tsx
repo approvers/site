@@ -26,5 +26,5 @@ it("renders correctly", () => {
       ]}
     />,
   );
-  expect(tree).toMatchSnapshot();
+  expect(tree.toJSON()).toMatchSnapshot();
 });

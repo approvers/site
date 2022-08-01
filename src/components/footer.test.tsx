@@ -4,5 +4,5 @@ import { render } from "../utils/react-test";
 
 it("renders correctly", () => {
   const tree = render(<Footer />);
-  expect(tree).toMatchSnapshot();
+  expect(tree.toJSON()).toMatchSnapshot();
 });

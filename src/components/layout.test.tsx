@@ -8,5 +8,5 @@ it("renders correctly", () => {
       Hello, world!
     </Layout>,
   );
-  expect(tree).toMatchSnapshot();
+  expect(tree.toJSON()).toMatchSnapshot();
 });
