@@ -19,4 +19,4 @@ updates:
       - "MikuroXina"
     target-branch: main
     commit-message:
-      prefix: chore(ci)
+      prefix: ci
