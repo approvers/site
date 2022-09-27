@@ -10,7 +10,7 @@ updates:
       - "shun-shobon"
     target-branch: main
     commit-message:
-      prefix: chore(npm)
+      prefix: build(deps)
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
