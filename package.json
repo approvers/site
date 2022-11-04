@@ -41,7 +41,7 @@
     "yaml": "^2.1.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.9",
+    "@babel/core": "^7.19.6",
     "@next/eslint-plugin-next": "^12.2.2",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
