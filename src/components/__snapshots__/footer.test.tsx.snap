@@ -9,6 +9,7 @@ exports[`renders correctly 1`] = `
     href="/policy"
     onClick={[Function]}
     onMouseEnter={[Function]}
+    onTouchStart={[Function]}
   >
     プライバシーポリシー
   </a>
