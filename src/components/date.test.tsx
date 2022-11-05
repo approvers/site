@@ -1,7 +1,8 @@
+import { expect, it } from "vitest";
 import { DateString } from "./date";
-import renderer from "react-test-renderer";
+import { render } from "../utils/react-test";
 
 it("renders correctly", () => {
-  const tree = renderer.create(<DateString dateString="2021-01-01" />).toJSON();
-  expect(tree).toMatchSnapshot();
+  const tree = render(<DateString dateString="2021-01-01" />);
+  expect(tree.toJSON()).toMatchSnapshot();
 });

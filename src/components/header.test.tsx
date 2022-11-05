@@ -1,7 +1,8 @@
+import { expect, it } from "vitest";
 import { Header } from "./header";
-import renderer from "react-test-renderer";
+import { render } from "../utils/react-test";
 
 it("renders correctly", () => {
-  const tree = renderer.create(<Header />).toJSON();
-  expect(tree).toMatchSnapshot();
+  const tree = render(<Header />);
+  expect(tree.toJSON()).toMatchSnapshot();
 });

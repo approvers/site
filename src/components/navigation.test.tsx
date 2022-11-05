@@ -1,31 +1,30 @@
+import { expect, it } from "vitest";
 import { Navigation } from "./navigation";
-import renderer from "react-test-renderer";
+import { render } from "../utils/react-test";
 
 it("renders correctly", () => {
-  const tree = renderer
-    .create(
-      <Navigation
-        links={[
-          {
-            name: "root",
-            url: "/",
-          },
-          {
-            name: "blog",
-            url: "/blog",
-          },
+  const tree = render(
+    <Navigation
+      links={[
+        {
+          name: "root",
+          url: "/",
+        },
+        {
+          name: "blog",
+          url: "/blog",
+        },
 
-          {
-            name: "contacts",
-            url: "/contacts",
-          },
-          {
-            name: "links",
-            url: "/links",
-          },
-        ]}
-      />,
-    )
-    .toJSON();
-  expect(tree).toMatchSnapshot();
+        {
+          name: "contacts",
+          url: "/contacts",
+        },
+        {
+          name: "links",
+          url: "/links",
+        },
+      ]}
+    />,
+  );
+  expect(tree.toJSON()).toMatchSnapshot();
 });

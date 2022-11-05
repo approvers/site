@@ -1,7 +1,8 @@
+import { expect, it } from "vitest";
 import { Footer } from "./footer";
-import renderer from "react-test-renderer";
+import { render } from "../utils/react-test";
 
 it("renders correctly", () => {
-  const tree = renderer.create(<Footer />).toJSON();
-  expect(tree).toMatchSnapshot();
+  const tree = render(<Footer />);
+  expect(tree.toJSON()).toMatchSnapshot();
 });

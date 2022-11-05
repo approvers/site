@@ -1,13 +1,12 @@
+import { expect, it } from "vitest";
 import { Layout } from "./layout";
-import renderer from "react-test-renderer";
+import { render } from "../utils/react-test";
 
 it("renders correctly", () => {
-  const tree = renderer
-    .create(
-      <Layout pageName="Template Layout" description="the template page for this website">
-        Hello, world!
-      </Layout>,
-    )
-    .toJSON();
-  expect(tree).toMatchSnapshot();
+  const tree = render(
+    <Layout pageName="Template Layout" description="the template page for this website">
+      Hello, world!
+    </Layout>,
+  );
+  expect(tree.toJSON()).toMatchSnapshot();
 });

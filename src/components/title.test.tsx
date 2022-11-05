@@ -1,12 +1,13 @@
 import { Subtitle, Title } from "./title";
-import renderer from "react-test-renderer";
+import { expect, it } from "vitest";
+import { render } from "../utils/react-test";
 
 it("renders title correctly", () => {
-  const tree = renderer.create(<Title>Epic Title</Title>).toJSON();
-  expect(tree).toMatchSnapshot();
+  const tree = render(<Title>Epic Title</Title>);
+  expect(tree.toJSON()).toMatchSnapshot();
 });
 
 it("renders subtitle correctly", () => {
-  const tree = renderer.create(<Subtitle>Epic Subtitle</Subtitle>).toJSON();
-  expect(tree).toMatchSnapshot();
+  const tree = render(<Subtitle>Epic Subtitle</Subtitle>);
+  expect(tree.toJSON()).toMatchSnapshot();
 });

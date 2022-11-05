@@ -1,7 +1,8 @@
+import { expect, it } from "vitest";
 import { Questions } from "./questions";
-import renderer from "react-test-renderer";
+import { render } from "../utils/react-test";
 
 it("renders correctly", () => {
-  const tree = renderer.create(<Questions />).toJSON();
-  expect(tree).toMatchSnapshot();
+  const tree = render(<Questions />);
+  expect(tree.toJSON()).toMatchSnapshot();
 });
