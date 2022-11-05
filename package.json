@@ -41,7 +41,6 @@
     "yaml": "^2.1.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.9",
     "@next/eslint-plugin-next": "^12.2.2",
     "@types/markdown-it": "^12.2.3",
     "@types/node": "^18.0.6",
