@@ -9,6 +9,7 @@ exports[`renders correctly 1`] = `
     href="/"
     onClick={[Function]}
     onMouseEnter={[Function]}
+    onTouchStart={[Function]}
   >
     <span
       className="chakra-avatar css-11wutbi"
