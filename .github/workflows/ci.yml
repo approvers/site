@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: lts/*
           cache: yarn
-      - run: yarn install --frozen-lockfile
+      - run: yarn install --immutable
 
       - name: Run ${{ matrix.lint }}
         run: yarn ${{ matrix.lint }}
@@ -34,7 +34,7 @@ jobs:
         with:
           node-version: lts/*
           cache: yarn
-      - run: yarn install --frozen-lockfile
+      - run: yarn install --immutable
 
       - name: Run build
         run: |
