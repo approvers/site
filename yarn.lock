@@ -6278,7 +6278,6 @@ __metadata:
     prettier: ^2.7.1
     react: ^18.2.0
     react-dom: ^18.2.0
-    react-image: ^4.0.3
     react-test-renderer: ^18.2.0
     sass: ^1.53.0
     stylelint: ^14.9.1
@@ -7024,17 +7023,6 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 4dbc2166ac397d9e9340bd0722c6165c23f21629515f13e9cb96eaff82aa1543a2f7f3cccf15689821f19166e3a3ce59f380c43643099eb119b5f9c529b23181
-  languageName: node
-  linkType: hard
-
-"react-image@npm:^4.0.3":
-  version: 4.0.3
-  resolution: "react-image@npm:4.0.3"
-  peerDependencies:
-    "@babel/runtime": ">=7"
-    react: ">=16.8"
-    react-dom: ">=16.8"
-  checksum: 80f22af0b625a43344bc26421128a6204dce098098f14b2e3b0570cef88f94452fbd093ef50aa6e1e786b6009666b11a11a652431cd87fb6cace2d00ff305d19
   languageName: node
   linkType: hard
 
