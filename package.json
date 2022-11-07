@@ -13,7 +13,8 @@
     "lint:style:fix": "stylelint 'src/**/*.{css,ss}' --fix",
     "format": "prettier --check 'src/**/*.{js,ts,jsx,tsx,css,scss}'",
     "format:fix": "prettier --write 'src/**/*.{js,ts,jsx,tsx,css,scss}'",
-    "test": "vitest run"
+    "test": "vitest run",
+    "postinstall": "husky install"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --fix",
