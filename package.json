@@ -16,10 +16,6 @@
     "test": "vitest run",
     "postinstall": "husky install"
   },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint --fix",
-    "*.{css,scss}": "stylelint --fix"
-  },
   "dependencies": {
     "@chakra-ui/react": "^2.2.4",
     "@chakra-ui/styled-system": "^2.3.3",
