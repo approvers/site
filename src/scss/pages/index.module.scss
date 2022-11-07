@@ -6,12 +6,10 @@
 }
 
 .splash::after {
+  @include triangle();
   position: absolute;
   left: 50%;
   z-index: -1;
   content: "";
-
-  @include triangle();
-
   transform: skew(-30deg, 0deg) translateX(-300px) translateY(-320px);
 }
