@@ -8,6 +8,6 @@ export const Footer = (): JSX.Element => (
         プライバシーポリシー
       </Link>
     </NextLink>
-    - (c) 2021 Approvers
+    - (c) {new Date().getFullYear()} Approvers
   </Box>
 );
