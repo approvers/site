@@ -2055,12 +2055,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/eslint-plugin-next@npm:^12.2.2":
-  version: 12.3.2
-  resolution: "@next/eslint-plugin-next@npm:12.3.2"
+"@next/eslint-plugin-next@npm:^13.0.5":
+  version: 13.0.5
+  resolution: "@next/eslint-plugin-next@npm:13.0.5"
   dependencies:
     glob: 7.1.7
-  checksum: 465e039f846d2fa0fb572401a7aab5803afc1982f7237ce688c77fc56071a39769e187e8ee2325cc6ade8269986a09ee3b635c689e19fe1a88abd29ca841df60
+  checksum: 94d60dd108325db191fc3a2cf53a07984f18c98f92e62c7383e75eade72b0696d1abe27d12d20cc4b1bab365243f279c2cf0faa5009043c5890bb57b0cb5275f
   languageName: node
   linkType: hard
 
@@ -6177,7 +6177,7 @@ __metadata:
     "@fortawesome/free-brands-svg-icons": ^6.1.1
     "@fortawesome/free-solid-svg-icons": ^6.1.1
     "@fortawesome/react-fontawesome": ^0.2.0
-    "@next/eslint-plugin-next": ^12.2.2
+    "@next/eslint-plugin-next": ^13.0.5
     "@types/markdown-it": ^12.2.3
     "@types/node": ^18.0.6
     "@types/react": ^18.0.15
