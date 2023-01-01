@@ -19,7 +19,7 @@
   "dependencies": {
     "@chakra-ui/react": "^2.2.4",
     "@chakra-ui/styled-system": "^2.3.3",
-    "@chakra-ui/theme-tools": "^2.0.12",
+    "@chakra-ui/theme-tools": "^2.0.16",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
