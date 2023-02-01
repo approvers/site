@@ -1207,6 +1207,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@chakra-ui/shared-utils@npm:2.0.5":
+  version: 2.0.5
+  resolution: "@chakra-ui/shared-utils@npm:2.0.5"
+  checksum: 7274b168bf188d1dc098d1f73a60676c6702454bd4dd9919f9b8447205bc1053b4faab6e38702f33cc25694f18bb598c39777f70b44dba221c078c839f42f2bd
+  languageName: node
+  linkType: hard
+
 "@chakra-ui/skeleton@npm:2.0.17":
   version: 2.0.17
   resolution: "@chakra-ui/skeleton@npm:2.0.17"
@@ -1264,13 +1271,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chakra-ui/styled-system@npm:2.3.4, @chakra-ui/styled-system@npm:^2.3.3":
+"@chakra-ui/styled-system@npm:2.3.4":
   version: 2.3.4
   resolution: "@chakra-ui/styled-system@npm:2.3.4"
   dependencies:
     csstype: ^3.0.11
     lodash.mergewith: 4.6.2
   checksum: bb41448b5c60fcd98d5392952c9deaff95ccf62a21c1b355cf4ad669cb7c7666a291953e7597fad994e98a1290859ec5a17ed8c97fa1f18184340aac5fbcfada
+  languageName: node
+  linkType: hard
+
+"@chakra-ui/styled-system@npm:^2.5.1":
+  version: 2.5.2
+  resolution: "@chakra-ui/styled-system@npm:2.5.2"
+  dependencies:
+    "@chakra-ui/shared-utils": 2.0.5
+    csstype: ^3.0.11
+    lodash.mergewith: 4.6.2
+  checksum: 4036fa8b44e7d69deca2fe025d5ecdeac1fb2384c248a4ed42a6343cd5c71378da99c258d9288550d8f6459659470d75791a27632d271a4994ba36f59100f6c8
   languageName: node
   linkType: hard
 
@@ -6240,7 +6258,7 @@ __metadata:
   resolution: "over-limit-dev-site@workspace:."
   dependencies:
     "@chakra-ui/react": ^2.2.4
-    "@chakra-ui/styled-system": ^2.3.3
+    "@chakra-ui/styled-system": ^2.5.1
     "@chakra-ui/theme-tools": ^2.0.16
     "@emotion/react": ^11.9.3
     "@emotion/styled": ^11.9.3
