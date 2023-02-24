@@ -24,7 +24,7 @@ const MemberCard = ({ name, role, links, avatar }: Member): JSX.Element => (
       <Heading as="b" fontSize="2xl">
         {name}
       </Heading>
-      <Text>{role}</Text>
+      <Text>{role.name}</Text>
       <HStack spacing={4}>
         {links.map((link, i) => (
           <SNSLink key={i} {...link} />

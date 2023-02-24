@@ -1,80 +1,104 @@
-import YAML from "yaml";
-
 export type SNSLinkInfo = { type: "twitter"; url: string } | { type: "github"; url: string };
 
-function validateSNSLink(obj: unknown): obj is SNSLinkInfo {
-  if (typeof obj !== "object" || obj == null) {
-    console.error("not object: ", obj);
-    return false;
-  }
-
-  if (!("type" in obj && ["twitter", "github"].includes((obj as SNSLinkInfo).type))) {
-    console.error("unknown type from: ", obj);
-    return false;
-  }
-  if (!("url" in obj && typeof (obj as SNSLinkInfo).url === "string")) {
-    console.error("`url` not in: ", obj);
-    return false;
-  }
-  return true;
-}
-
-function validateSNSLinks(links: unknown): links is readonly SNSLinkInfo[] {
-  return (
-    typeof links === "object" &&
-    links !== null &&
-    (Object.values(links) as unknown[]).every(validateSNSLink)
-  );
-}
-
-export type Member = {
+export interface Member {
   avatar: string;
   name: string;
-  role: string;
+  role: {
+    name: string;
+    color: string;
+  };
   links: readonly SNSLinkInfo[];
+}
+
+const membersUrl = "https://members.approvers.dev/api/v1/members";
+
+interface MembersDbScheme {
+  discord_user_id: string;
+  display_name: string;
+  twitter: string[];
+  github: string[];
+  role: {
+    name: string;
+    color: string;
+  };
+}
+
+const isDict = (value: unknown): value is Record<string, unknown> =>
+  typeof value === "object" && value !== null;
+
+const existsKeys = <K extends string>(
+  obj: Record<string, unknown>,
+  keys: readonly K[],
+): obj is Record<K, unknown> => {
+  for (const key of keys) {
+    if (!Object.hasOwn(obj, key)) {
+      console.error(`\`${key}\` not in: `, obj);
+      return false;
+    }
+  }
+  return true;
 };
 
-function validateMember(obj: unknown): obj is Member {
-  if (typeof obj !== "object" || obj == null) {
-    console.error("not object: ", obj);
+const validate = (obj: unknown): obj is MembersDbScheme[] => {
+  if (!Array.isArray(obj)) {
     return false;
   }
 
-  if (typeof (obj as Member).avatar !== "string") {
-    console.error("`avatar` not in: ", obj);
-    return false;
+  const keys: (keyof MembersDbScheme)[] = [
+    "discord_user_id",
+    "display_name",
+    "twitter",
+    "github",
+    "role",
+  ];
+  const roleKeys: (keyof MembersDbScheme["role"])[] = ["name", "color"];
+  for (const entry of obj) {
+    if (!isDict(entry)) {
+      return false;
+    }
+    if (!existsKeys(entry, keys)) {
+      return false;
+    }
+    if (!isDict(entry.role)) {
+      return false;
+    }
+    if (!existsKeys(entry.role, roleKeys)) {
+      return false;
+    }
   }
-  if (typeof (obj as Member).name !== "string") {
-    console.error("`name` not in: ", obj);
-    return false;
-  }
-  if (typeof (obj as Member).role !== "string") {
-    console.error("`role` not in: ", obj);
-    return false;
-  }
-  if (!validateSNSLinks((obj as Member).links)) {
-    console.error("`links` not in: ", obj);
-    return false;
-  }
-
   return true;
-}
+};
 
-function validateMembers(obj: unknown): obj is readonly Member[] {
-  return (
-    typeof obj === "object" &&
-    obj != null &&
-    (Object.values(obj) as unknown[]).every(validateMember)
-  );
-}
-
-const membersUrl = "https://github.com/approvers/site-data/raw/master/data/members/list.yaml";
-
-export async function getMembers(): Promise<readonly Member[]> {
+export async function getMembers(): Promise<Member[]> {
   const res = await fetch(membersUrl);
-  const parsed = YAML.parse(await res.text());
-  if (!validateMembers(parsed)) {
+  const parsed = await res.json();
+  if (!validate(parsed)) {
     throw "invalid list format";
   }
-  return parsed;
+  const members: Member[] = [];
+  for (const { display_name, role, twitter, github } of parsed) {
+    const links: SNSLinkInfo[] = [];
+    for (const githubId of github) {
+      const githubUserRes = await fetch(`https://api.github.com/user/${githubId}`);
+      const githubLogin = (await githubUserRes.json()).login as string;
+      links.push({
+        type: "github",
+        url: `https://github.com/${githubLogin}`,
+      });
+    }
+    const primaryGhUrl = links.at(0)?.url;
+    for (const twitterId of twitter) {
+      links.push({
+        type: "twitter",
+        url: `https://twitter.com/intent/user?user_id=${twitterId}`,
+      });
+    }
+    members.push({
+      avatar: primaryGhUrl ? `${primaryGhUrl}.png` : "",
+      name: display_name,
+      role,
+      links,
+    });
+  }
+  return members;
 }
