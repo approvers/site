@@ -55,7 +55,7 @@
     "postcss": "^8.4.21",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^8.3.0",
-    "postcss-scss": "^4.0.4",
+    "postcss-scss": "^4.0.6",
     "prettier": "^2.7.1",
     "react-test-renderer": "^18.2.0",
     "sass": "^1.58.0",
