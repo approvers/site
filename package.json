@@ -54,7 +54,7 @@
     "lint-staged": "^13.1.0",
     "postcss": "^8.4.21",
     "postcss-flexbugs-fixes": "^5.0.2",
-    "postcss-preset-env": "^7.7.2",
+    "postcss-preset-env": "^8.3.0",
     "postcss-scss": "^4.0.4",
     "prettier": "^2.7.1",
     "react-test-renderer": "^18.2.0",
