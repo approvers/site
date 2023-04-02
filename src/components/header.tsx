@@ -3,7 +3,7 @@ import NextLink from "next/link";
 
 export const Header = (): JSX.Element => (
   <Center as="header" w="100%" p={4} borderColor="shadowed" borderBottomWidth="2px">
-    <NextLink href="/" passHref>
+    <NextLink href="/" passHref legacyBehavior>
       <Flex as="a" align="center">
         <Avatar
           w={8}
