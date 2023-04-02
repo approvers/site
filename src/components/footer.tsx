@@ -8,7 +8,7 @@ export const Footer = (): JSX.Element => {
   const year = useContext(yearContext);
   return (
     <Box as="footer" p={4} textAlign="center" borderColor="shadowed" borderTopWidth="2px">
-      <NextLink href="/policy" passHref>
+      <NextLink href="/policy" passHref legacyBehavior>
         <Link mr={2} color="highlighted" fontStyle="normal">
           プライバシーポリシー
         </Link>
