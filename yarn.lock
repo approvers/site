@@ -2893,13 +2893,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/scope-manager@npm:5.54.0":
-  version: 5.54.0
-  resolution: "@typescript-eslint/scope-manager@npm:5.54.0"
+"@typescript-eslint/scope-manager@npm:5.59.2":
+  version: 5.59.2
+  resolution: "@typescript-eslint/scope-manager@npm:5.59.2"
   dependencies:
-    "@typescript-eslint/types": 5.54.0
-    "@typescript-eslint/visitor-keys": 5.54.0
-  checksum: e50f12396de0ddb94aab119bdd5f4769b80dd2c273e137fd25e5811e25114d7a3d3668cdb3c454aca9537e940744881d62a1fed2ec86f07f60533dc7382ae15c
+    "@typescript-eslint/types": 5.59.2
+    "@typescript-eslint/visitor-keys": 5.59.2
+  checksum: e7adce27890ebaadd0fb36a35639c9a97d2965973643aef4b4b0dcfabb03181c82235d7171e718b002dd398e52fefd67816eb34912ddbc2bb738b47755bd502a
   languageName: node
   linkType: hard
 
@@ -2910,10 +2910,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/types@npm:5.54.0":
-  version: 5.54.0
-  resolution: "@typescript-eslint/types@npm:5.54.0"
-  checksum: 0f66b1b93078f3afea6dfcd3d4e2f0abea4f60cd0c613c2cf13f85098e5bf786185484c9846ed80b6c4272de2c31a70c5a8aacb91314cf1b6da7dcb8855cb7ac
+"@typescript-eslint/types@npm:5.59.2":
+  version: 5.59.2
+  resolution: "@typescript-eslint/types@npm:5.59.2"
+  checksum: 5a91cfbcaa8c7e92ad91f67abd0ce43ae562fdbdd8c32aa968731bf7c200d13a0415e87fc032bd48f7e5b7d3ed1447cb14449ef2592c269ca311974b15ce0af2
   languageName: node
   linkType: hard
 
@@ -2935,12 +2935,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/typescript-estree@npm:5.54.0":
-  version: 5.54.0
-  resolution: "@typescript-eslint/typescript-estree@npm:5.54.0"
+"@typescript-eslint/typescript-estree@npm:5.59.2":
+  version: 5.59.2
+  resolution: "@typescript-eslint/typescript-estree@npm:5.59.2"
   dependencies:
-    "@typescript-eslint/types": 5.54.0
-    "@typescript-eslint/visitor-keys": 5.54.0
+    "@typescript-eslint/types": 5.59.2
+    "@typescript-eslint/visitor-keys": 5.59.2
     debug: ^4.3.4
     globby: ^11.1.0
     is-glob: ^4.0.3
@@ -2949,25 +2949,25 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 377c75c34c4f95b7ab6218c1d96a6db3ea6ed6727711b6a09354582fe0157861dc1b6fb9e3f7113cd09741f713735d59d5ab5845457f5733a4ebad7470bf600a
+  checksum: e8bb8817fe53f826f54e4ca584e48a6700dae25e0cc20ab7db38e7e5308987c5759408b39a4e494d4d6dcd7b4bca9f9c507fae987213380dc1c98607cb0a60b1
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:^5.44.0":
-  version: 5.54.0
-  resolution: "@typescript-eslint/utils@npm:5.54.0"
+"@typescript-eslint/utils@npm:^5.58.0":
+  version: 5.59.2
+  resolution: "@typescript-eslint/utils@npm:5.59.2"
   dependencies:
+    "@eslint-community/eslint-utils": ^4.2.0
     "@types/json-schema": ^7.0.9
     "@types/semver": ^7.3.12
-    "@typescript-eslint/scope-manager": 5.54.0
-    "@typescript-eslint/types": 5.54.0
-    "@typescript-eslint/typescript-estree": 5.54.0
+    "@typescript-eslint/scope-manager": 5.59.2
+    "@typescript-eslint/types": 5.59.2
+    "@typescript-eslint/typescript-estree": 5.59.2
     eslint-scope: ^5.1.1
-    eslint-utils: ^3.0.0
     semver: ^7.3.7
   peerDependencies:
     eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
-  checksum: b8f344fc2961c7af530b93e53d5a17b5084cdf550b381082e3fb7f349ef16e718d9eebde1b9fc2d8fc4ecf8d60d334b004359977247554265c1afc87323bed37
+  checksum: 483c35a592a36a5973204ce4cd11d52935c097b414d7edac2ecd15dba460b8c540b793ffc232c0f8580fef0624eb7704156ce33c66bd09a76769ed019bddd1d1
   languageName: node
   linkType: hard
 
@@ -2981,13 +2981,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/visitor-keys@npm:5.54.0":
-  version: 5.54.0
-  resolution: "@typescript-eslint/visitor-keys@npm:5.54.0"
+"@typescript-eslint/visitor-keys@npm:5.59.2":
+  version: 5.59.2
+  resolution: "@typescript-eslint/visitor-keys@npm:5.59.2"
   dependencies:
-    "@typescript-eslint/types": 5.54.0
+    "@typescript-eslint/types": 5.59.2
     eslint-visitor-keys: ^3.3.0
-  checksum: 17fc323c09e6272b603cdaec30a99916600fbbb737e1fbc8c1727a487753b4363cea112277fa43e0562bff34bdd1de9ad73ff9433118b1fd469b112fad0313ca
+  checksum: 3057a017bca03b4ec3bee442044f2bc2f77a4af0d83ea9bf7c6cb2a12811126d93d9d300d89ef8078d981e478c6cc38693c51a2ae4b10a717796bba880eff924
   languageName: node
   linkType: hard
 
@@ -4489,14 +4489,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-chakra-ui@npm:^0.7.6":
-  version: 0.7.6
-  resolution: "eslint-plugin-chakra-ui@npm:0.7.6"
+"eslint-plugin-chakra-ui@npm:^0.8.0":
+  version: 0.8.0
+  resolution: "eslint-plugin-chakra-ui@npm:0.8.0"
   dependencies:
-    "@typescript-eslint/utils": ^5.44.0
+    "@typescript-eslint/utils": ^5.58.0
   peerDependencies:
     eslint: ">=6"
-  checksum: 8f089dc17d06b92780db5393bee196ef5a1021c0a0f191d24173290b59ce00107ee8da97fb416f94b3752d8cded5e4996cefbe06a7053076edef84569278b9ec
+  checksum: b8643816a59c9a8dfb73b43fa861d252d6b91cda1cbbc67aaf2b30b6c6116a78ea111811d54cfc9c7a7c3bbdddc4dbc5bffed08a5ee95275aa14544c7cf3134e
   languageName: node
   linkType: hard
 
@@ -4596,24 +4596,6 @@ __metadata:
     esrecurse: ^4.3.0
     estraverse: ^5.2.0
   checksum: 9f6e974ab2db641ca8ab13508c405b7b859e72afe9f254e8131ff154d2f40c99ad4545ce326fd9fde3212ff29707102562a4834f1c48617b35d98c71a97fbf3e
-  languageName: node
-  linkType: hard
-
-"eslint-utils@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "eslint-utils@npm:3.0.0"
-  dependencies:
-    eslint-visitor-keys: ^2.0.0
-  peerDependencies:
-    eslint: ">=5"
-  checksum: 0668fe02f5adab2e5a367eee5089f4c39033af20499df88fe4e6aba2015c20720404d8c3d6349b6f716b08fdf91b9da4e5d5481f265049278099c4c836ccb619
-  languageName: node
-  linkType: hard
-
-"eslint-visitor-keys@npm:^2.0.0":
-  version: 2.1.0
-  resolution: "eslint-visitor-keys@npm:2.1.0"
-  checksum: e3081d7dd2611a35f0388bbdc2f5da60b3a3c5b8b6e928daffff7391146b434d691577aa95064c8b7faad0b8a680266bcda0a42439c18c717b80e6718d7e267d
   languageName: node
   linkType: hard
 
@@ -6789,7 +6771,7 @@ __metadata:
     eslint: 8.37.0
     eslint-config-next: 12.2.2
     eslint-config-prettier: ^8.8.0
-    eslint-plugin-chakra-ui: ^0.7.6
+    eslint-plugin-chakra-ui: ^0.8.0
     framer-motion: ^6.5.1
     gray-matter: ^4.0.2
     husky: ^8.0.3
