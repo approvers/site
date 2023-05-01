@@ -51,7 +51,7 @@
     "eslint-plugin-chakra-ui": "^0.7.6",
     "husky": "^8.0.3",
     "jsdom": "^20.0.0",
-    "lint-staged": "^13.1.0",
+    "lint-staged": "^13.2.2",
     "postcss": "^8.4.21",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^8.3.0",
