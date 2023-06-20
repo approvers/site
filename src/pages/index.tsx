@@ -8,9 +8,9 @@ const Splash = () => (
   <Box className={styles.splash}>
     <svg width="300" height="150" viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <linearGradient id="rainbow" y2="100%">
+        <linearGradient id="rainbow" x1="35%" y1="35%" x2="95%" y2="95%">
           <stop offset="0%" stopColor="orange" />
-          <stop offset="20%" stopColor="yellow" />
+          <stop offset="20%" stopColor="#eded00" />
           <stop offset="40%" stopColor="green" />
           <stop offset="60%" stopColor="cyan" />
           <stop offset="80%" stopColor="blue" />
