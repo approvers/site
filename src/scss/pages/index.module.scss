@@ -1,15 +1,35 @@
-@mixin triangle($thickness: 15vh) {
-  border: $thickness solid;
-  border-color: transparent;
-  border-top-color: var(--chakra-colors-shadowed);
-  border-left-color: var(--chakra-colors-shadowed);
+.splash {
+  position: absolute;
+  z-index: -200;
+  user-select: none;
+  opacity: 0.7;
+  transform: translateY(5rem);
 }
 
-.splash::after {
-  @include triangle();
-  position: absolute;
-  left: 50%;
+.splash > svg {
+  position: relative;
   z-index: -1;
-  content: "";
-  transform: skew(-30deg, 0deg) translateX(-300px) translateY(-320px);
+}
+
+.splash > svg > text {
+  text-align: center;
+  fill: transparent;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+  stroke-width: 2px;
+  animation-name: hero-stroke;
+  animation-duration: 2.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes hero-stroke {
+  from {
+    stroke-dashoffset: 800;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
 }
