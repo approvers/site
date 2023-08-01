@@ -28,7 +28,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "date-fns": "^2.30.0",
     "emojify-tag": "^1.0.0",
-    "framer-motion": "^10.12.16",
+    "framer-motion": "^10.15.0",
     "gray-matter": "^4.0.2",
     "markdown-it": "^13.0.1",
     "markdown-it-footnote": "^3.0.3",
