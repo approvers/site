@@ -39,7 +39,7 @@
     "yaml": "^2.2.2"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^13.4.7",
+    "@next/eslint-plugin-next": "^13.4.12",
     "@types/markdown-it": "^12.2.3",
     "@types/node": "^18.11.10",
     "@types/react": "^18.0.15",
