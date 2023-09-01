@@ -52,7 +52,7 @@
     "husky": "^8.0.3",
     "jsdom": "^20.0.0",
     "lint-staged": "^13.2.3",
-    "postcss": "^8.4.21",
+    "postcss": "^8.4.29",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^8.3.0",
     "postcss-scss": "^4.0.6",
