@@ -50,7 +50,7 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-chakra-ui": "^0.8.0",
     "husky": "^8.0.3",
-    "jsdom": "^20.0.0",
+    "jsdom": "^22.1.0",
     "lint-staged": "^13.2.3",
     "postcss": "^8.4.29",
     "postcss-flexbugs-fixes": "^5.0.2",
