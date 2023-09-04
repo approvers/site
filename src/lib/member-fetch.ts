@@ -1,5 +1,3 @@
-import YAML from "yaml";
-
 export type SNSLinkInfo = { type: "twitter"; name: string } | { type: "github"; name: string };
 
 function validateSNSLink(obj: unknown): obj is SNSLinkInfo {
@@ -12,8 +10,8 @@ function validateSNSLink(obj: unknown): obj is SNSLinkInfo {
     console.error("unknown type from: ", obj);
     return false;
   }
-  if (!("url" in obj && typeof (obj as SNSLinkInfo).name === "string")) {
-    console.error("`url` not in: ", obj);
+  if (!("name" in obj && typeof (obj as SNSLinkInfo).name === "string")) {
+    console.error("`name` not in: ", obj);
     return false;
   }
   return true;
@@ -43,7 +41,7 @@ function validateMember(obj: unknown): obj is Member {
     return false;
   }
   if (!validateSNSLinks((obj as Member).associatedLinks)) {
-    console.error("`links` not in: ", obj);
+    console.error("`associatedLinks` not in: ", obj);
     return false;
   }
 
