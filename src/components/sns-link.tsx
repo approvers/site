@@ -14,10 +14,16 @@ const icons: Record<SNSLinkInfo["type"], Icon> = {
   },
 };
 
-export const SNSLink = ({ type, url }: SNSLinkInfo): JSX.Element => {
+export const SNSLink = ({ type, name }: SNSLinkInfo): JSX.Element => {
   const { icon } = icons[type];
   return (
-    <Link w={["1rem", "1.2rem"]} h={["1rem", "1.2rem"]} color="highlighted" href={url} isExternal>
+    <Link
+      w={["1rem", "1.2rem"]}
+      h={["1rem", "1.2rem"]}
+      color="highlighted"
+      href={`https://${type}.com/${name}`}
+      isExternal
+    >
       <FontAwesomeIcon icon={icon} />
     </Link>
   );
