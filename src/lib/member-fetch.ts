@@ -1,6 +1,6 @@
 import YAML from "yaml";
 
-export type SNSLinkInfo = { type: "twitter"; url: string } | { type: "github"; url: string };
+export type SNSLinkInfo = { type: "twitter"; name: string } | { type: "github"; name: string };
 
 function validateSNSLink(obj: unknown): obj is SNSLinkInfo {
   if (typeof obj !== "object" || obj == null) {
@@ -12,7 +12,7 @@ function validateSNSLink(obj: unknown): obj is SNSLinkInfo {
     console.error("unknown type from: ", obj);
     return false;
   }
-  if (!("url" in obj && typeof (obj as SNSLinkInfo).url === "string")) {
+  if (!("url" in obj && typeof (obj as SNSLinkInfo).name === "string")) {
     console.error("`url` not in: ", obj);
     return false;
   }
@@ -28,10 +28,8 @@ function validateSNSLinks(links: unknown): links is readonly SNSLinkInfo[] {
 }
 
 export type Member = {
-  avatar: string;
-  name: string;
-  role: string;
-  links: readonly SNSLinkInfo[];
+  username: string;
+  associatedLinks: readonly SNSLinkInfo[];
 };
 
 function validateMember(obj: unknown): obj is Member {
@@ -40,19 +38,11 @@ function validateMember(obj: unknown): obj is Member {
     return false;
   }
 
-  if (typeof (obj as Member).avatar !== "string") {
+  if (typeof (obj as Member).username !== "string") {
     console.error("`avatar` not in: ", obj);
     return false;
   }
-  if (typeof (obj as Member).name !== "string") {
-    console.error("`name` not in: ", obj);
-    return false;
-  }
-  if (typeof (obj as Member).role !== "string") {
-    console.error("`role` not in: ", obj);
-    return false;
-  }
-  if (!validateSNSLinks((obj as Member).links)) {
+  if (!validateSNSLinks((obj as Member).associatedLinks)) {
     console.error("`links` not in: ", obj);
     return false;
   }
@@ -68,13 +58,16 @@ function validateMembers(obj: unknown): obj is readonly Member[] {
   );
 }
 
-const membersUrl = "https://github.com/approvers/site-data/raw/master/data/members/list.yaml";
+const membersUrl = "https://members.approvers.dev/members";
 
 export async function getMembers(): Promise<readonly Member[]> {
   const res = await fetch(membersUrl);
-  const parsed = YAML.parse(await res.text());
+  if (!res.ok) {
+    throw new Error("members-assoc unavailable");
+  }
+  const parsed = await res.json();
   if (!validateMembers(parsed)) {
-    throw "invalid list format";
+    throw new Error("invalid list format");
   }
   return parsed;
 }
