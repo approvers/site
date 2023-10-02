@@ -23,11 +23,9 @@ const BlogCard = ({ id, title, date, author, authorId }: Metadata): JSX.Element 
     </NextLink>
     <VStack alignItems="self-start" flex="1 1" p={2} spacing="0.5">
       <NextLink href={`/blog/${id}`} passHref>
-        <a>
-          <Heading as="h3" fontSize="lg">
-            {title}
-          </Heading>
-        </a>
+        <Heading as="h3" fontSize="lg">
+          {title}
+        </Heading>
       </NextLink>
       <Flex align="self-end" wrap="wrap" gap={2} w="100%">
         <Link href={`https://github.com/${authorId}`}>{author}</Link>
