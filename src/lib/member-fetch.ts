@@ -27,6 +27,7 @@ function validateSNSLinks(links: unknown): links is readonly SNSLinkInfo[] {
 
 export type Member = {
   username: string;
+  discordId: string;
   associatedLinks: readonly SNSLinkInfo[];
 };
 
@@ -37,7 +38,11 @@ function validateMember(obj: unknown): obj is Member {
   }
 
   if (typeof (obj as Member).username !== "string") {
-    console.error("`avatar` not in: ", obj);
+    console.error("`username` not in: ", obj);
+    return false;
+  }
+  if (typeof (obj as Member).discordId !== "string") {
+    console.error("`discordId` not in: ", obj);
     return false;
   }
   if (!validateSNSLinks((obj as Member).associatedLinks)) {

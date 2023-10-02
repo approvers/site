@@ -55,7 +55,7 @@ const MembersPage: NextPage<MembersPageProps> = ({ members }) => {
       <Title>メンバー紹介</Title>
       <Grid gap={2} templateColumns="repeat(auto-fill, minmax(15em, 1fr))">
         {members.map((member) => (
-          <GridItem key={member.username} borderRadius="3xl" bgColor={cardBg}>
+          <GridItem key={member.discordId} borderRadius="3xl" bgColor={cardBg}>
             <MemberCard {...member} />
           </GridItem>
         ))}
