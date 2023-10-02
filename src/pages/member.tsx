@@ -18,11 +18,13 @@ import { Title } from "../components/title";
 const alternative = "/alternative.png";
 
 const MemberCard = ({ username, associatedLinks }: Member): JSX.Element => {
-  const githubIndex = associatedLinks.findIndex(({ type }) => type === "github");
+  const sortedAssociatedLinks = [...associatedLinks];
+  sortedAssociatedLinks.sort((a, b) => a.type.localeCompare(b.type));
+  const githubIndex = sortedAssociatedLinks.findIndex(({ type }) => type === "github");
   const avatar =
     githubIndex === -1
       ? alternative
-      : `https://github.com/${associatedLinks[githubIndex].name}.png`;
+      : `https://github.com/${sortedAssociatedLinks[githubIndex].name}.png`;
 
   return (
     <Flex align="center" gap={4} h="100%" p={4}>
@@ -32,7 +34,7 @@ const MemberCard = ({ username, associatedLinks }: Member): JSX.Element => {
           {username}
         </Heading>
         <HStack spacing={4}>
-          {associatedLinks.map((link, i) => (
+          {sortedAssociatedLinks.map((link, i) => (
             <SNSLink key={i} {...link} />
           ))}
         </HStack>
