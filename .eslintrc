@@ -1,6 +1,9 @@
 {
   "extends": ["next/core-web-vitals", "prettier"],
   "plugins": ["chakra-ui"],
+  "parserOptions": {
+    "project": true
+  },
   "rules": {
     "sort-imports": "error",
     "@next/next/no-img-element": "off",
