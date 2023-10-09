@@ -14,29 +14,6 @@ const notifyShowingPage = (url: string): void => {
   });
 };
 
-type Event = {
-  action: string;
-  category: string;
-  label: string;
-  value?: string;
-};
-
-const event = ({ action, category, label, value }: Event): void => {
-  (
-    window as unknown as {
-      gtag(
-        event: "event",
-        id: string,
-        options: { event_category: string; event_label: string; value?: string },
-      ): void;
-    }
-  ).gtag("event", action, {
-    event_category: category,
-    event_label: label,
-    value: value,
-  });
-};
-
 export const GoogleAnalytics = () => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
