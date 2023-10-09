@@ -6,7 +6,6 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export",
     "lint:code": "next lint",
     "lint:code:fix": "next lint --fix",
     "lint:style": "stylelint 'src/**/*.{css,scss}'",
