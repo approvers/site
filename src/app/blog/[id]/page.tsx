@@ -7,10 +7,6 @@ export async function generateMetadata({ params }: { params: BlogInfo }): Promis
   return { title };
 }
 
-export async function generateStaticParams(): Promise<BlogInfos> {
-  return getAllBlogInfos();
-}
-
 export default async function Page({ params }: { params?: BlogInfo }) {
   if (params == null) {
     throw new Error("invalid params");
