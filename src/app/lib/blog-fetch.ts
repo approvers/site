@@ -86,7 +86,7 @@ export type BlogInfo = {
   id: string;
 };
 
-export type BlogInfos = { params: BlogInfo }[];
+export type BlogInfos = BlogInfo[];
 
 const markdownPattern = /\.md$/;
 
@@ -100,11 +100,7 @@ export async function getAllBlogInfos(): Promise<BlogInfos> {
   console.log(`Reading all blog infos from ${postsDirectory}`);
   const fileNames = await readdir(postsDirectory);
 
-  return Promise.all(
-    fileNames.map(async (fileName: string) => ({
-      params: await blogInfoFromFileName(fileName),
-    })),
-  );
+  return Promise.all(fileNames.map((fileName: string) => blogInfoFromFileName(fileName)));
 }
 
 export async function getBlogFromId(id: string): Promise<Blog> {
@@ -120,12 +116,12 @@ export async function getBlogFromId(id: string): Promise<Blog> {
   }
 
   const blogInfos = await getAllBlogInfos();
-  const idx = blogInfos.findIndex((e) => e.params.id === id);
+  const idx = blogInfos.findIndex((e) => e.id === id);
 
   return {
     content,
     ...data,
-    prevId: blogInfos[idx - 1]?.params.id ?? "",
-    nextId: blogInfos[idx + 1]?.params.id ?? "",
+    prevId: blogInfos[idx - 1]?.id ?? "",
+    nextId: blogInfos[idx + 1]?.id ?? "",
   };
 }
