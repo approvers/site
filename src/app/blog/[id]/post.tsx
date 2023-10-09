@@ -1,8 +1,8 @@
-import { Blog, BlogInfo, getAllBlogInfos, getBlogFromId } from "../../lib/blog-fetch";
+"use client";
+
 import { Container, Heading, Link, Text, VStack } from "@chakra-ui/react";
-import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import { Blog } from "../../lib/blog-fetch";
 import { DateString } from "../../components/date";
-import { Layout } from "../../components/layout";
 import MarkdownIt from "markdown-it";
 import MarkdownItFootnote from "markdown-it-footnote";
 import MarkdownItFrontMatter from "markdown-it-front-matter";
@@ -17,11 +17,11 @@ const md = MarkdownIt({
   .use(MarkdownItFrontMatter)
   .use(MarkdownItFootnote);
 
-type BlogPostPageProps = {
+export type BlogPostPageProps = {
   post: Blog;
 };
 
-const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
+export const Post = ({ post }: BlogPostPageProps) => {
   const prevNext = (
     <PrevNextLink
       prevLinkHref={post.prevId !== "" ? post.prevId : null}
@@ -30,7 +30,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
   );
   const bodyHtml = md.render(emojify`${post.content}`);
   return (
-    <Layout pageName={`限界開発鯖 - ブログ - ${post.title}`}>
+    <>
       <VStack>
         <Heading m={8} textAlign="center">
           {post.title}
@@ -48,26 +48,6 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
         <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />
       </Container>
       {prevNext}
-    </Layout>
+    </>
   );
 };
-
-export const getStaticProps: GetStaticProps<BlogPostPageProps, BlogInfo> = async ({ params }) => {
-  if (params == null) {
-    throw new Error("invalid params");
-  }
-  console.dir(params);
-  const post = await getBlogFromId(params.id);
-  return {
-    props: {
-      post,
-    },
-  };
-};
-
-export const getStaticPaths: GetStaticPaths<BlogInfo> = async () => {
-  const paths = await getAllBlogInfos();
-  return { paths, fallback: false };
-};
-
-export default BlogPostPage;

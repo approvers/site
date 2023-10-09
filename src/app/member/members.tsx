@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Avatar,
   Flex,
@@ -9,11 +11,8 @@ import {
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react";
-import type { GetStaticProps, NextPage } from "next";
-import { Member, getMembers } from "../lib/member-fetch";
-import { Layout } from "../components/layout";
+import { Member } from "../lib/member-fetch";
 import { SNSLink } from "../components/sns-link";
-import { Title } from "../components/title";
 
 const alternative = "/alternative.png";
 
@@ -38,28 +37,16 @@ type MembersPageProps = {
   members: readonly Member[];
 };
 
-const MembersPage: NextPage<MembersPageProps> = ({ members }) => {
+export const Members = ({ members }: MembersPageProps) => {
   const cardBg = useColorModeValue("gray.100", "gray.700");
 
   return (
-    <Layout pageName="限界開発鯖 - メンバー紹介">
-      <Title>メンバー紹介</Title>
-      <Grid gap={2} templateColumns="repeat(auto-fill, minmax(15em, 1fr))">
-        {members.map((member) => (
-          <GridItem key={member.name} borderRadius="3xl" bgColor={cardBg}>
-            <MemberCard {...member} />
-          </GridItem>
-        ))}
-      </Grid>
-    </Layout>
+    <Grid gap={2} templateColumns="repeat(auto-fill, minmax(15em, 1fr))">
+      {members.map((member) => (
+        <GridItem key={member.name} borderRadius="3xl" bgColor={cardBg}>
+          <MemberCard {...member} />
+        </GridItem>
+      ))}
+    </Grid>
   );
 };
-
-export const getStaticProps: GetStaticProps<MembersPageProps> = async () => {
-  const members = await getMembers();
-  return {
-    props: { members },
-  };
-};
-
-export default MembersPage;

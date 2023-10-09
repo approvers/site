@@ -1,3 +1,4 @@
+"use client";
 import {
   Avatar,
   Button,
@@ -9,17 +10,20 @@ import {
   Spacer,
   VStack,
 } from "@chakra-ui/react";
-import type { GetStaticProps, NextPage } from "next";
-import { Metadata, getSortedBlogMetadata } from "../lib/blog-fetch";
 import { DateString } from "../components/date";
-import { Layout } from "../components/layout";
+import { Metadata } from "../lib/blog-fetch";
 import NextLink from "next/link";
-import { Title } from "../components/title";
+import { Metadata as NextMetadata } from "next";
+import type { NextPage } from "next";
+
+export const metadata: NextMetadata = {
+  title: "限界開発鯖 - ブログ",
+};
 
 const BlogCard = ({ id, title, date, author, authorId }: Metadata): JSX.Element => (
   <HStack borderColor="shadowed" borderRightWidth="1px" borderBottomWidth="2px">
     <NextLink href={`/blog/${id}`} passHref>
-      <Avatar as="a" flex="0 0 sm" name={title} />
+      <Avatar flex="0 0 sm" name={title} />
     </NextLink>
     <VStack alignItems="self-start" flex="1 1" p={2} spacing="0.5">
       <NextLink href={`/blog/${id}`} passHref>
@@ -32,29 +36,17 @@ const BlogCard = ({ id, title, date, author, authorId }: Metadata): JSX.Element 
         <DateString dateString={date} />
         <Spacer />
         <NextLink href={`/blog/${id}`} passHref>
-          <Button as="a" size="sm">
-            記事を読む &rarr;
-          </Button>
+          <Button size="sm">記事を読む &rarr;</Button>
         </NextLink>
       </Flex>
     </VStack>
   </HStack>
 );
 
-const BlogPage: NextPage<{ blogs: Metadata[] }> = ({ blogs }) => (
-  <Layout pageName="限界開発鯖 - ブログ">
-    <Title>ブログ</Title>
-    <SimpleGrid gap={4} columns={1}>
-      {blogs.map((blog) => (
-        <BlogCard key={blog.id} {...blog} />
-      ))}
-    </SimpleGrid>
-  </Layout>
+export const Blog: NextPage<{ blogs: Metadata[] }> = ({ blogs }) => (
+  <SimpleGrid gap={4} columns={1}>
+    {blogs.map((blog) => (
+      <BlogCard key={blog.id} {...blog} />
+    ))}
+  </SimpleGrid>
 );
-
-export const getStaticProps: GetStaticProps = async () => {
-  const blogs = await getSortedBlogMetadata();
-  return { props: { blogs } };
-};
-
-export default BlogPage;
