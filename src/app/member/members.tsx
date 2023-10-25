@@ -52,7 +52,7 @@ export const Members = ({ members }: MembersPageProps) => {
   return (
     <Grid gap={2} templateColumns="repeat(auto-fill, minmax(15em, 1fr))">
       {members.map((member) => (
-        <GridItem key={member.name} borderRadius="3xl" bgColor={cardBg}>
+        <GridItem key={member.discordId} borderRadius="3xl" bgColor={cardBg}>
           <MemberCard {...member} />
         </GridItem>
       ))}
