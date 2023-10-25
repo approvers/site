@@ -22,11 +22,9 @@ export const metadata: NextMetadata = {
 
 const BlogCard = ({ id, title, date, author, authorId }: Metadata): JSX.Element => (
   <HStack borderColor="shadowed" borderRightWidth="1px" borderBottomWidth="2px">
-    <NextLink href={`/blog/${id}`} passHref>
-      <Avatar flex="0 0 sm" name={title} />
-    </NextLink>
+    <Avatar as={NextLink} flex="0 0 sm" href={`/blog/${id}`} name={title} />
     <VStack alignItems="self-start" flex="1 1" p={2} spacing="0.5">
-      <NextLink href={`/blog/${id}`} passHref>
+      <NextLink href={`/blog/${id}`}>
         <Heading as="h3" fontSize="lg">
           {title}
         </Heading>
@@ -35,9 +33,9 @@ const BlogCard = ({ id, title, date, author, authorId }: Metadata): JSX.Element 
         <Link href={`https://github.com/${authorId}`}>{author}</Link>
         <DateString dateString={date} />
         <Spacer />
-        <NextLink href={`/blog/${id}`} passHref>
-          <Button size="sm">記事を読む &rarr;</Button>
-        </NextLink>
+        <Button as={NextLink} href={`/blog/${id}`} size="sm">
+          記事を読む &rarr;
+        </Button>
       </Flex>
     </VStack>
   </HStack>
