@@ -5,6 +5,7 @@ import { Header } from "./components/header";
 import { Metadata } from "next";
 import { Navigation } from "./components/navigation";
 import { Providers } from "./providers";
+import { Suspense } from "react";
 import { roboto } from "./fonts";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "";
@@ -75,7 +76,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="manifest" href={"/site.webmanifest"} />
       </head>
       <body>
-        <GoogleAnalytics />
+        <Suspense>
+          <GoogleAnalytics />
+        </Suspense>
         <Providers>
           <Navigation links={headerLinks} />
           <Header />
