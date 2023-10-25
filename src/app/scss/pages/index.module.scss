@@ -14,8 +14,7 @@
 .splash > svg > text {
   text-align: center;
   fill: transparent;
-  stroke-dasharray: 800;
-  stroke-dashoffset: 800;
+  stroke-dasharray: 1400px 9999999px;
   stroke-width: 2px;
   animation-name: hero-stroke;
   animation-duration: 2.5s;
@@ -26,10 +25,10 @@
 
 @keyframes hero-stroke {
   from {
-    stroke-dashoffset: 800;
+    stroke-dasharray: 0 9999999px;
   }
 
   to {
-    stroke-dashoffset: 0;
+    stroke-dasharray: 1400px 9999999px;
   }
 }
