@@ -4,7 +4,7 @@ import { Post } from "./post";
 
 export async function generateMetadata({ params }: { params: BlogInfo }): Promise<Metadata> {
   const { title } = await getBlogFromId(params.id);
-  return { title };
+  return { title: `ブログ - ${title}` };
 }
 
 export async function generateStaticParams(): Promise<BlogInfos> {
