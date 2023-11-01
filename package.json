@@ -35,7 +35,7 @@
     "next": "^13.5.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "yaml": "^2.2.2"
+    "yaml": "^2.3.3"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.4.12",
