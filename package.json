@@ -32,7 +32,7 @@
     "markdown-it": "^13.0.1",
     "markdown-it-footnote": "^3.0.3",
     "markdown-it-front-matter": "^0.2.3",
-    "next": "^13.5.3",
+    "next": "^14.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "yaml": "^2.3.3"
