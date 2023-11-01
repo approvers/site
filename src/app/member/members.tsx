@@ -7,7 +7,6 @@ import {
   GridItem,
   HStack,
   Heading,
-  Text,
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react";
