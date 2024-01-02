@@ -1,7 +1,8 @@
 import { Button, Flex, Spacer } from "@chakra-ui/react";
-import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NextLink from "next/link";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons/faArrowLeft";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons/faArrowRight";
 
 export type PrevNextLinkProps = {
   prevLinkHref: string | null;
