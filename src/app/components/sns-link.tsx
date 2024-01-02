@@ -1,7 +1,9 @@
-import { IconDefinition, faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { IconDefinition } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "@chakra-ui/react";
 import type { SNSLinkInfo } from "../lib/member-fetch";
+import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons/faTwitter";
 
 type Icon = { icon: IconDefinition };
 

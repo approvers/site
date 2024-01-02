@@ -14,10 +14,11 @@ import {
   useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react";
-import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NextLink from "next/link";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
+import { faMoon } from "@fortawesome/free-solid-svg-icons/faMoon";
+import { faSun } from "@fortawesome/free-solid-svg-icons/faSun";
 import { useRef } from "react";
 
 export interface LinksProps {
