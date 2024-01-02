@@ -17,28 +17,22 @@ jobs:
           - stylelint
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
-          cache: yarn
-      - run: yarn install --immutable
+      - uses: oven-sh/setup-bun@v1
+      - run: bun install
 
       - name: Run ${{ matrix.lint }}
-        run: yarn ${{ matrix.lint }}
+        run: bun run ${{ matrix.lint }}
 
   build-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
-          cache: yarn
-      - run: yarn install --immutable
+      - uses: oven-sh/setup-bun@v1
+      - run: bun install
 
       - name: Run build
         run: |
-          yarn build
+          bun run build
         env:
           NEXT_PUBLIC_BASE_URL: ${{ secrets.BASE_URL }}
           NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
