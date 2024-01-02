@@ -1,8 +1,8 @@
+import { Metadata, Viewport } from "next";
 import { Box } from "@chakra-ui/react";
 import { Footer } from "./components/footer";
 import { GoogleAnalytics } from "./components/google-analytics";
 import { Header } from "./components/header";
-import { Metadata } from "next";
 import { Navigation } from "./components/navigation";
 import { Providers } from "./providers";
 import { Suspense } from "react";
@@ -14,8 +14,11 @@ const siteName = "限界開発鯖";
 
 console.log(baseUrl);
 
-export const metadata: Metadata = {
+export const viewport: Viewport = {
   themeColor: "#000000",
+};
+
+export const metadata: Metadata = {
   icons: [siteImage],
   title: {
     default: siteName,
