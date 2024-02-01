@@ -4,10 +4,10 @@ import { Container, Heading, Link, Text, VStack } from "@chakra-ui/react";
 import { Blog } from "../../lib/blog-fetch";
 import { DateString } from "../../components/date";
 import MarkdownIt from "markdown-it";
+import { full as MarkdownItEmoji } from "markdown-it-emoji";
 import MarkdownItFootnote from "markdown-it-footnote";
 import MarkdownItFrontMatter from "markdown-it-front-matter";
 import { PrevNextLink } from "../../components/prev-next-link";
-import emojify from "emojify-tag";
 import styles from "../../scss/pages/blog/markdown.module.scss";
 
 const md = MarkdownIt({
@@ -15,7 +15,8 @@ const md = MarkdownIt({
   linkify: true,
 })
   .use(MarkdownItFrontMatter)
-  .use(MarkdownItFootnote);
+  .use(MarkdownItFootnote)
+  .use(MarkdownItEmoji);
 
 export type BlogPostPageProps = {
   post: Blog;
@@ -28,7 +29,7 @@ export const Post = ({ post }: BlogPostPageProps) => {
       nextLinkHref={post.nextId !== "" ? post.nextId : null}
     />
   );
-  const bodyHtml = md.render(emojify`${post.content}`);
+  const bodyHtml = md.render(post.content);
   return (
     <>
       <VStack>
