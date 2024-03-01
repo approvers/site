@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.1.0",
-    "@types/markdown-it": "^12.2.3",
+    "@types/markdown-it": "^13.0.7",
     "@types/node": "^20.10.1",
     "@types/react": "^18.2.21",
     "@types/react-test-renderer": "^18.0.7",
