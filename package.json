@@ -13,7 +13,7 @@
     "format": "prettier --check 'src/**/*.{js,ts,jsx,tsx,css,scss}'",
     "format:fix": "prettier --write 'src/**/*.{js,ts,jsx,tsx,css,scss}'",
     "test": "vitest run",
-    "postinstall": "husky install"
+    "prepare": "husky"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.0",
