@@ -1,0 +1,25 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base", ":timezone(Asia/Tokyo)"],
+  "reviewers": ["MikuroXina", "shun-shobon"],
+  "ignoreTests": false,
+  "automerge": true,
+  "major": {
+    "automerge": false
+  },
+  "platformAutomerge": true,
+  "prConcurrentLimit": 5,
+  "dependencyDashboard": true,
+  "semanticCommits": "enabled",
+  "fetchReleaseNotes": "pr",
+  "enabledManagers": ["npm", "github-actions"],
+  "npm": {
+    "stabilityDays": 3
+  },
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "automerge": true,
+    "assignees": ["MikuroXina", "shun-shobon"]
+  },
+  "schedule": ["on the first day of the week"]
+}
