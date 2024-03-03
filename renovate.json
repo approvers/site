@@ -12,7 +12,7 @@
   "dependencyDashboard": true,
   "semanticCommits": "enabled",
   "fetchReleaseNotes": "pr",
-  "enabledManagers": ["npm", "github-actions"],
+  "enabledManagers": ["npm", "bun", "github-actions"],
   "npm": {
     "stabilityDays": 3
   },
