@@ -26,7 +26,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@next/bundle-analyzer": "^14.0.4",
-    "date-fns": "^2.30.0",
+    "date-fns": "^3.0.0",
     "framer-motion": "^11.0.0",
     "gray-matter": "^4.0.2",
     "markdown-it": "^13.0.1",
