@@ -67,5 +67,5 @@
     "typescript": "5.4.2",
     "vitest": "^1.1.1"
   },
-  "packageManager": "bun@1.0.20"
+  "packageManager": "bun@1.0.35"
 }
