@@ -1,9 +1,7 @@
+import { env } from "process";
+import { fileBlogRepo } from "./blog/file";
+import { githubBlogRepo } from "./blog/github";
 import matter from "gray-matter";
-import path from "path";
-import { promises } from "fs";
-const { readFile, readdir } = promises;
-
-const postsDirectory = path.join(process.cwd(), "data", "blogs");
 
 export type BlogPostId = string;
 
@@ -20,6 +18,13 @@ export type Blog = {
   prevId: BlogPostId;
   nextId: BlogPostId;
 } & Metadata;
+
+export interface BlogRepository {
+  fetchContent: (fileName: string) => Promise<string>;
+  fileNames: () => Promise<string[]>;
+}
+
+const repo: BlogRepository = env.NODE_ENV === "development" ? fileBlogRepo : githubBlogRepo;
 
 function sanitizeMetadata(id: BlogPostId, value: { [key: string]: unknown }) {
   value.id = id;
@@ -60,11 +65,8 @@ const validateMetadata = (value: unknown): value is Metadata => {
   return true;
 };
 
-const metadataFromFile = async (fileName: string): Promise<Metadata> => {
-  const fullPath = path.join(postsDirectory, fileName);
-  const fileContents = await readFile(fullPath, "utf8");
-  const matterResult = matter(fileContents);
-  const data = matterResult.data;
+const metadataFromFile = async (repo: BlogRepository, fileName: string): Promise<Metadata> => {
+  const { data } = matter(await repo.fetchContent(fileName));
   const id = fileName.replace(/\.md$/, "");
   sanitizeMetadata(id, data);
   if (!validateMetadata(data)) {
@@ -74,10 +76,11 @@ const metadataFromFile = async (fileName: string): Promise<Metadata> => {
 };
 
 export async function getSortedBlogMetadata(): Promise<Metadata[]> {
-  console.log(`Reading all sorted blog metadata from ${postsDirectory}`);
-  const fileNames = await readdir(postsDirectory);
+  const fileNames = await repo.fileNames();
   console.log(`Files in posts directory are: ${fileNames}`);
-  const allPostsData = await Promise.all(fileNames.map(metadataFromFile));
+  const allPostsData = await Promise.all(
+    fileNames.map((fileName) => metadataFromFile(repo, fileName)),
+  );
 
   return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
@@ -97,18 +100,13 @@ const blogInfoFromFileName = async (fileName: string): Promise<BlogInfo> => {
 };
 
 export async function getAllBlogInfos(): Promise<BlogInfos> {
-  console.log(`Reading all blog infos from ${postsDirectory}`);
-  const fileNames = await readdir(postsDirectory);
-
-  return Promise.all(fileNames.map((fileName: string) => blogInfoFromFileName(fileName)));
+  return Promise.all(
+    (await repo.fileNames()).map((fileName: string) => blogInfoFromFileName(fileName)),
+  );
 }
 
 export async function getBlogFromId(id: string): Promise<Blog> {
-  const fullPath = path.join(postsDirectory, `${id}.md`);
-  console.log(`Reading a blog from ${fullPath}`);
-  const fileContents = await readFile(fullPath, "utf8");
-
-  const matterResult = matter(fileContents);
+  const matterResult = matter(await repo.fetchContent(`${id}.md`));
   const { data, content } = matterResult;
   sanitizeMetadata(id, data);
   if (!validateMetadata(data)) {
