@@ -1,7 +1,6 @@
 import React, { Suspense } from "react";
 import { Box } from "@chakra-ui/react";
 import { Footer } from "./footer";
-import { GoogleAnalytics } from "./google-analytics";
 import { Header } from "./header";
 import { Navigation } from "./navigation";
 import { Providers } from "./providers";
@@ -73,9 +72,6 @@ export function Layout({ title, children }: { title: string; children: React.Rea
       />
       <IconMetas />
       <link rel="manifest" href={"/site.webmanifest"} />
-      <Suspense>
-        <GoogleAnalytics />
-      </Suspense>
       <Providers>
         <Navigation links={headerLinks} />
         <Header />
