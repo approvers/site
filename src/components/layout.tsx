@@ -1,9 +1,9 @@
-import React, { Suspense } from "react";
 import { Box } from "@chakra-ui/react";
 import { Footer } from "./footer";
 import { Header } from "./header";
 import { Navigation } from "./navigation";
 import { Providers } from "./providers";
+import React from "react";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "";
 const siteImage = "/android-chrome-512x512.png";
