@@ -15,15 +15,16 @@ import { Layout } from "../components/layout";
 import React from "react";
 
 function BlogCard({
-  id,
   frontmatter,
+  parent,
 }: Queries.BlogEntriesQuery["allMarkdownRemark"]["nodes"][number]): JSX.Element {
   const title = frontmatter?.title ?? "無題";
+  const slug = (parent as { name?: string })?.name!;
   return (
     <HStack borderColor="shadowed" borderRightWidth="1px" borderBottomWidth="2px">
-      <Avatar as={GatsbyLink} flex="0 0 sm" name={title} to={`/blog/${id}`} />
+      <Avatar as={GatsbyLink} flex="0 0 sm" name={title} to={`/blog/${slug}`} />
       <VStack alignItems="self-start" flex="1 1" p={2} spacing="0.5">
-        <GatsbyLink to={`/blog/${id}`}>
+        <GatsbyLink to={`/blog/${slug}`}>
           <Heading as="h3" fontSize="lg">
             {title}
           </Heading>
@@ -34,7 +35,7 @@ function BlogCard({
           )}
           <DateString dateString={frontmatter?.date ?? ""} />
           <Spacer />
-          <Button as={GatsbyLink} size="sm" to={`/blog/${id}`}>
+          <Button as={GatsbyLink} size="sm" to={`/blog/${slug}`}>
             記事を読む &rarr;
           </Button>
         </Flex>
@@ -53,6 +54,11 @@ export const query = graphql`
           date
           author
           authorId
+        }
+        parent {
+          ... on File {
+            name
+          }
         }
       }
     }

@@ -2314,7 +2314,7 @@ type StringQueryOperatorInput = {
 type BlogEntriesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type BlogEntriesQuery = { readonly allMarkdownRemark: { readonly nodes: ReadonlyArray<{ readonly id: string, readonly frontmatter: { readonly title: string | null, readonly date: string | null, readonly author: string | null, readonly authorId: string | null } | null }> } };
+type BlogEntriesQuery = { readonly allMarkdownRemark: { readonly nodes: ReadonlyArray<{ readonly id: string, readonly frontmatter: { readonly title: string | null, readonly date: string | null, readonly author: string | null, readonly authorId: string | null } | null, readonly parent: { readonly name: string } | {} | null }> } };
 
 type MembersQueryVariables = Exact<{ [key: string]: never; }>;
 
