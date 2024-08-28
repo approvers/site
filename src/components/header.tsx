@@ -1,9 +1,10 @@
 import { Avatar, Center, Flex, Heading } from "@chakra-ui/react";
-import NextLink from "next/link";
+import { Link } from "gatsby";
+import React from "react";
 
 export const Header = (): JSX.Element => (
   <Center as="header" w="100%" p={4} borderColor="shadowed" borderBottomWidth="2px">
-    <Flex as={NextLink} align="center" href="/">
+    <Flex as={Link} align="center" to="/">
       <Avatar
         w={8}
         h={8}

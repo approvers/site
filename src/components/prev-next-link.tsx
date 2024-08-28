@@ -1,6 +1,6 @@
 import { Button, Flex, Spacer } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import NextLink from "next/link";
+import { Link } from "gatsby";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons/faArrowLeft";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons/faArrowRight";
 
@@ -12,13 +12,13 @@ export type PrevNextLinkProps = {
 export const PrevNextLink = ({ prevLinkHref, nextLinkHref }: PrevNextLinkProps): JSX.Element => (
   <Flex as="nav" mt={4} mb={4} color="highlighted">
     {prevLinkHref !== null && (
-      <Button as={NextLink} href={prevLinkHref} leftIcon={<FontAwesomeIcon icon={faArrowLeft} />}>
+      <Button as={Link} leftIcon={<FontAwesomeIcon icon={faArrowLeft} />} to={prevLinkHref}>
         前
       </Button>
     )}
     <Spacer />
     {nextLinkHref !== null && (
-      <Button as={NextLink} href={nextLinkHref} rightIcon={<FontAwesomeIcon icon={faArrowRight} />}>
+      <Button as={Link} rightIcon={<FontAwesomeIcon icon={faArrowRight} />} to={nextLinkHref}>
         次
       </Button>
     )}

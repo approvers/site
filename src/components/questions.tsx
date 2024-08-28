@@ -1,4 +1,5 @@
 import { Container, Link, Text, VStack } from "@chakra-ui/react";
+import React from "react";
 import type { ReactNode } from "react";
 
 const QA = ({ question, answer }: { question: ReactNode; answer: ReactNode }): JSX.Element => {
