@@ -59,7 +59,6 @@ export const query = graphql`
 
 export default function Page(props: PageProps<Queries.MembersQuery>) {
   const members = props.data.allMember.nodes;
-  console.error(members);
   const cardBg = useColorModeValue("gray.100", "gray.700");
   return (
     <Layout title="メンバー紹介">
