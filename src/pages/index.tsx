@@ -1,7 +1,8 @@
+import * as styles from "../scss/pages/index.module.scss";
 import { Box, Heading, VStack } from "@chakra-ui/react";
-import type { Metadata, NextPage } from "next";
-import { Questions } from "./components/questions";
-import styles from "./scss/pages/index.module.scss";
+import { Layout } from "../components/layout";
+import { Questions } from "../components/questions";
+import React from "react";
 
 const Splash = () => (
   <Box className={styles.splash}>
@@ -31,12 +32,8 @@ const Splash = () => (
   </Box>
 );
 
-export const metadata: Metadata = {
-  title: "限界開発鯖",
-};
-
-const Home: NextPage = () => (
-  <>
+const Home = () => (
+  <Layout title="">
     <VStack
       sx={{
         ".splash::after": {
@@ -53,7 +50,7 @@ const Home: NextPage = () => (
       </Heading>
     </VStack>
     <Questions />
-  </>
+  </Layout>
 );
 
 export default Home;
