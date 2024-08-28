@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Avatar,
   Flex,
@@ -10,7 +8,10 @@ import {
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { PageProps, graphql } from "gatsby";
+import { Layout } from "../components/layout";
 import { Member } from "../lib/member-fetch";
+import React from "react";
 import { SNSLink } from "../components/sns-link";
 
 const alternative = "/alternative.png";
@@ -41,20 +42,34 @@ const MemberCard = ({ username, associatedLinks }: Member): JSX.Element => {
   );
 };
 
-type MembersPageProps = {
-  members: readonly Member[];
-};
+export const query = graphql`
+  query Members {
+    allMember {
+      nodes {
+        discordId
+        username
+        associatedLinks {
+          type
+          name
+        }
+      }
+    }
+  }
+`;
 
-export const Members = ({ members }: MembersPageProps) => {
+export default function Page(props: PageProps<Queries.MembersQuery>) {
+  const members = props.data.allMember.nodes;
+  console.error(members);
   const cardBg = useColorModeValue("gray.100", "gray.700");
-
   return (
-    <Grid gap={2} templateColumns="repeat(auto-fill, minmax(15em, 1fr))">
-      {members.map((member) => (
-        <GridItem key={member.discordId} borderRadius="3xl" bgColor={cardBg}>
-          <MemberCard {...member} />
-        </GridItem>
-      ))}
-    </Grid>
+    <Layout title="メンバー紹介">
+      <Grid gap={2} templateColumns="repeat(auto-fill, minmax(15em, 1fr))">
+        {members.map((member) => (
+          <GridItem key={member.discordId} borderRadius="3xl" bgColor={cardBg}>
+            <MemberCard {...member} />
+          </GridItem>
+        ))}
+      </Grid>
+    </Layout>
   );
-};
+}
