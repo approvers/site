@@ -1,4 +1,5 @@
 import { expect, it } from "vitest";
+import React from "react";
 import { SNSLink } from "./sns-link";
 import { render } from "../../utils/react-test";
 

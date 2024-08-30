@@ -1,5 +1,6 @@
 import { Subtitle, Title } from "./title";
 import { expect, it } from "vitest";
+import React from "react";
 import { render } from "../../utils/react-test";
 
 it("renders title correctly", () => {
