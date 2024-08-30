@@ -1,4 +1,5 @@
 import { type GatsbyNode, type NodeInput } from "gatsby";
+import { getAllBlogs } from "./src/lib/blog-fetch";
 import { getMembers } from "./src/lib/member-fetch";
 import path from "path";
 
@@ -15,6 +16,23 @@ export const sourceNodes: GatsbyNode["sourceNodes"] = async (api) => {
       internal: {
         type: "Member",
         contentDigest: api.createContentDigest(member),
+      },
+    } satisfies NodeInput;
+    api.actions.createNode(node);
+  }
+
+  const blogs = await getAllBlogs();
+  for (const blog of blogs) {
+    const id = api.createNodeId(blog.slug);
+    const node = {
+      ...blog,
+      id,
+      _id: blog.slug,
+      parent: null,
+      children: [],
+      internal: {
+        type: "Blog",
+        contentDigest: api.createContentDigest(blog),
       },
     } satisfies NodeInput;
     api.actions.createNode(node);
@@ -40,58 +58,20 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
 };
 
 export const createPages: GatsbyNode["createPages"] = async (api) => {
-  const res = await api.graphql<{
-    allMarkdownRemark: {
-      nodes: {
-        rawMarkdownBody: string;
-        frontmatter: {
-          title: string;
-          author: string;
-          authorId: string;
-          date: string;
-        };
-        parent: {
-          name: string;
-        };
-      }[];
-    };
-  }>(`
-    {
-      allMarkdownRemark(sort: { frontmatter: { date: ASC } }) {
-        nodes {
-          rawMarkdownBody
-          frontmatter {
-            title
-            author
-            authorId
-            date
-          }
-          parent {
-            ... on File {
-              name
-            }
-          }
-        }
-      }
-    }
-  `);
-  if (res.errors) {
-    api.reporter.error("querying markdown pages failed");
-    return;
-  }
+  const pages = await getAllBlogs();
 
-  const pages = res.data?.allMarkdownRemark.nodes!;
   const component = path.resolve("src/templates/blog-post.tsx");
+  api.reporter.info(`generating ${pages.length} pages`);
   for (let i = 0; i < pages.length; ++i) {
-    const slug = path.basename(pages[i].parent.name);
-    const prevSlug = i > 0 ? path.basename(pages[i - 1].parent.name) : null;
-    const nextSlug = i < pages.length - 1 ? path.basename(pages[i + 1].parent.name) : null;
+    const slug = pages[i].slug;
+    const prevSlug = i > 0 ? path.basename(pages[i - 1].slug) : null;
+    const nextSlug = i < pages.length - 1 ? path.basename(pages[i + 1].slug) : null;
     api.actions.createPage({
       path: `/blog/${slug}`,
       component,
       context: {
         slug,
-        content: pages[i].rawMarkdownBody,
+        content: pages[i].markdownBody,
         frontmatter: pages[i].frontmatter,
         prevSlug,
         nextSlug,

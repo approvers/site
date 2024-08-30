@@ -29,6 +29,172 @@ type Scalars = {
   JSON: Record<string, unknown>;
 };
 
+type Blog = Node & {
+  readonly _id: Maybe<Scalars['String']>;
+  readonly children: ReadonlyArray<Node>;
+  readonly frontmatter: Maybe<BlogFrontmatter>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly markdownBody: Maybe<Scalars['String']>;
+  readonly parent: Maybe<Node>;
+  readonly slug: Maybe<Scalars['String']>;
+};
+
+type BlogConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<BlogEdge>;
+  readonly group: ReadonlyArray<BlogGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<Blog>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type BlogConnection_distinctArgs = {
+  field: BlogFieldSelector;
+};
+
+
+type BlogConnection_groupArgs = {
+  field: BlogFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type BlogConnection_maxArgs = {
+  field: BlogFieldSelector;
+};
+
+
+type BlogConnection_minArgs = {
+  field: BlogFieldSelector;
+};
+
+
+type BlogConnection_sumArgs = {
+  field: BlogFieldSelector;
+};
+
+type BlogEdge = {
+  readonly next: Maybe<Blog>;
+  readonly node: Blog;
+  readonly previous: Maybe<Blog>;
+};
+
+type BlogFieldSelector = {
+  readonly _id: InputMaybe<FieldSelectorEnum>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly frontmatter: InputMaybe<BlogFrontmatterFieldSelector>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly markdownBody: InputMaybe<FieldSelectorEnum>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly slug: InputMaybe<FieldSelectorEnum>;
+};
+
+type BlogFilterInput = {
+  readonly _id: InputMaybe<StringQueryOperatorInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly frontmatter: InputMaybe<BlogFrontmatterFilterInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly markdownBody: InputMaybe<StringQueryOperatorInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly slug: InputMaybe<StringQueryOperatorInput>;
+};
+
+type BlogFrontmatter = {
+  readonly author: Maybe<Scalars['String']>;
+  readonly authorId: Maybe<Scalars['String']>;
+  readonly date: Maybe<Scalars['Date']>;
+  readonly title: Maybe<Scalars['String']>;
+};
+
+
+type BlogFrontmatter_dateArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+type BlogFrontmatterFieldSelector = {
+  readonly author: InputMaybe<FieldSelectorEnum>;
+  readonly authorId: InputMaybe<FieldSelectorEnum>;
+  readonly date: InputMaybe<FieldSelectorEnum>;
+  readonly title: InputMaybe<FieldSelectorEnum>;
+};
+
+type BlogFrontmatterFilterInput = {
+  readonly author: InputMaybe<StringQueryOperatorInput>;
+  readonly authorId: InputMaybe<StringQueryOperatorInput>;
+  readonly date: InputMaybe<DateQueryOperatorInput>;
+  readonly title: InputMaybe<StringQueryOperatorInput>;
+};
+
+type BlogFrontmatterSortInput = {
+  readonly author: InputMaybe<SortOrderEnum>;
+  readonly authorId: InputMaybe<SortOrderEnum>;
+  readonly date: InputMaybe<SortOrderEnum>;
+  readonly title: InputMaybe<SortOrderEnum>;
+};
+
+type BlogGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<BlogEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<BlogGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<Blog>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type BlogGroupConnection_distinctArgs = {
+  field: BlogFieldSelector;
+};
+
+
+type BlogGroupConnection_groupArgs = {
+  field: BlogFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type BlogGroupConnection_maxArgs = {
+  field: BlogFieldSelector;
+};
+
+
+type BlogGroupConnection_minArgs = {
+  field: BlogFieldSelector;
+};
+
+
+type BlogGroupConnection_sumArgs = {
+  field: BlogFieldSelector;
+};
+
+type BlogSortInput = {
+  readonly _id: InputMaybe<SortOrderEnum>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly frontmatter: InputMaybe<BlogFrontmatterSortInput>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly markdownBody: InputMaybe<SortOrderEnum>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly slug: InputMaybe<SortOrderEnum>;
+};
+
 type BooleanQueryOperatorInput = {
   readonly eq: InputMaybe<Scalars['Boolean']>;
   readonly in: InputMaybe<ReadonlyArray<InputMaybe<Scalars['Boolean']>>>;
@@ -1214,6 +1380,7 @@ type PageInfo = {
 };
 
 type Query = {
+  readonly allBlog: BlogConnection;
   readonly allDirectory: DirectoryConnection;
   readonly allFile: FileConnection;
   readonly allMarkdownRemark: MarkdownRemarkConnection;
@@ -1223,6 +1390,7 @@ type Query = {
   readonly allSiteFunction: SiteFunctionConnection;
   readonly allSitePage: SitePageConnection;
   readonly allSitePlugin: SitePluginConnection;
+  readonly blog: Maybe<Blog>;
   readonly directory: Maybe<Directory>;
   readonly file: Maybe<File>;
   readonly markdownRemark: Maybe<MarkdownRemark>;
@@ -1232,6 +1400,14 @@ type Query = {
   readonly siteFunction: Maybe<SiteFunction>;
   readonly sitePage: Maybe<SitePage>;
   readonly sitePlugin: Maybe<SitePlugin>;
+};
+
+
+type Query_allBlogArgs = {
+  filter: InputMaybe<BlogFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<BlogSortInput>>>;
 };
 
 
@@ -1304,6 +1480,18 @@ type Query_allSitePluginArgs = {
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<SitePluginSortInput>>>;
+};
+
+
+type Query_blogArgs = {
+  _id: InputMaybe<StringQueryOperatorInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  frontmatter: InputMaybe<BlogFrontmatterFilterInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  markdownBody: InputMaybe<StringQueryOperatorInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  slug: InputMaybe<StringQueryOperatorInput>;
 };
 
 
@@ -2314,7 +2502,7 @@ type StringQueryOperatorInput = {
 type BlogEntriesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type BlogEntriesQuery = { readonly allMarkdownRemark: { readonly nodes: ReadonlyArray<{ readonly id: string, readonly frontmatter: { readonly title: string | null, readonly date: string | null, readonly author: string | null, readonly authorId: string | null } | null, readonly parent: { readonly name: string } | {} | null }> } };
+type BlogEntriesQuery = { readonly allBlog: { readonly nodes: ReadonlyArray<{ readonly slug: string | null, readonly frontmatter: { readonly title: string | null, readonly date: string | null, readonly author: string | null, readonly authorId: string | null } | null }> } };
 
 type MembersQueryVariables = Exact<{ [key: string]: never; }>;
 
