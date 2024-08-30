@@ -35,3 +35,6 @@ yarn-error.log*
 .env.production.local
 
 .vercel
+.cache
+public/~partytown/
+public/page-data/

@@ -1,0 +1,16 @@
+@import 'https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap&text=A.Q';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+ul {
+  padding-left: var(--chakra-space-5);
+}
+
+*:root {
+  font-size: 100%;
+}

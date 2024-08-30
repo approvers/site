@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ["next/core-web-vitals", "prettier"],
+  extends: ["prettier"],
   plugins: ["chakra-ui"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -8,7 +8,6 @@ module.exports = {
   },
   rules: {
     "sort-imports": "error",
-    "@next/next/no-img-element": "off",
     "chakra-ui/props-order": "error",
     "chakra-ui/props-shorthand": "error",
     "chakra-ui/require-specific-component": "error",
