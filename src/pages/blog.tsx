@@ -15,11 +15,10 @@ import { Layout } from "../components/layout";
 import React from "react";
 
 function BlogCard({
+  slug,
   frontmatter,
-  parent,
-}: Queries.BlogEntriesQuery["allMarkdownRemark"]["nodes"][number]): JSX.Element {
+}: Queries.BlogEntriesQuery["allBlog"]["nodes"][number]): JSX.Element {
   const title = frontmatter?.title ?? "無題";
-  const slug = (parent as { name?: string })?.name!;
   return (
     <HStack borderColor="shadowed" borderRightWidth="1px" borderBottomWidth="2px">
       <Avatar as={GatsbyLink} flex="0 0 sm" name={title} to={`/blog/${slug}`} />
@@ -46,19 +45,14 @@ function BlogCard({
 
 export const query = graphql`
   query BlogEntries {
-    allMarkdownRemark(sort: { frontmatter: { date: ASC } }) {
+    allBlog {
       nodes {
-        id
+        slug
         frontmatter {
           title
           date
           author
           authorId
-        }
-        parent {
-          ... on File {
-            name
-          }
         }
       }
     }
@@ -66,12 +60,12 @@ export const query = graphql`
 `;
 
 export default function Blog({ data }: PageProps<Queries.BlogEntriesQuery>) {
-  const blogs = data.allMarkdownRemark.nodes;
+  const blogs = data.allBlog.nodes;
   return (
     <Layout title="ブログ">
       <SimpleGrid gap={4} columns={1}>
         {blogs.map((blog) => (
-          <BlogCard key={blog.id} {...blog} />
+          <BlogCard key={blog.slug} {...blog} />
         ))}
       </SimpleGrid>
     </Layout>
