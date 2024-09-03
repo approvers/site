@@ -45,16 +45,19 @@
     "yaml": "^2.3.4"
   },
   "devDependencies": {
+    "@eslint/js": "^9.9.1",
     "@types/markdown-it": "^14.0.0",
     "@types/node": "^22.0.0",
     "@types/react": "^18.2.21",
     "@types/react-test-renderer": "^18.0.7",
     "@typescript-eslint/parser": "^8.0.0",
     "@vitejs/plugin-react": "^4.2.1",
-    "eslint": "8.57.0",
     "eslint-config-next": "14.2.7",
+    "eslint": "^9.9.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-chakra-ui": "^0.11.0",
+    "eslint-plugin-react": "^7.35.0",
+    "globals": "^15.9.0",
     "husky": "^9.0.11",
     "jsdom": "^25.0.0",
     "lint-staged": "^15.0.0",
@@ -70,6 +73,7 @@
     "stylelint-config-sass-guidelines": "^12.0.0",
     "ts-node": "^10.9.2",
     "typescript": "5.5.4",
+    "typescript-eslint": "^8.3.0",
     "vitest": "^2.0.0"
   },
   "packageManager": "bun@1.0.35"
