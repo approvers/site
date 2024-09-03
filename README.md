@@ -6,4 +6,4 @@
 
 メンバー紹介やブログなどを掲載しています。
 
-[Next.js](https://nextjs.org/)や[Sass](https://sass-lang.com/)といった技術を使用しています。
+[Gatsby.js](https://www.gatsbyjs.com/)や[Sass](https://sass-lang.com/)といった技術を使用しています。
