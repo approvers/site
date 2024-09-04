@@ -1,6 +1,5 @@
 import { expect, it } from "vitest";
 import { PrevNextLink } from "./prev-next-link";
-import React from "react";
 import { render } from "../../utils/react-test";
 
 it("renders both prev and next correctly", () => {
