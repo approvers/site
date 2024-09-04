@@ -16,7 +16,7 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "public/android-chrome-512x512.png",
+        icon: "assets/android-chrome-512x512.png",
       },
     },
     "gatsby-transformer-remark",
