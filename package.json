@@ -26,7 +26,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "date-fns": "^3.0.0",
+    "date-fns": "^4.0.0",
     "framer-motion": "^11.0.0",
     "gatsby": "^5.13.7",
     "gatsby-omni-font-loader": "^2.0.2",
