@@ -35,6 +35,7 @@ yarn-error.log*
 .env.production.local
 
 .vercel
+
+# Gatsby built
 .cache
-public/~partytown/
-public/page-data/
+public/
