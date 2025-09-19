@@ -4,6 +4,3 @@
 # 内部スクリプト
 *.tsx @MikuroXina
 *.ts  @MikuroXina
-
-# CI/CD関係
-.github/ @shun-shobon
