@@ -1,0 +1,13 @@
+ignoredBuiltDependencies:
+  - core-js
+  - core-js-pure
+  - es5-ext
+  - msgpackr-extract
+
+onlyBuiltDependencies:
+  - "@parcel/watcher"
+  - esbuild
+  - gatsby
+  - gatsby-cli
+  - lmdb
+  - sharp

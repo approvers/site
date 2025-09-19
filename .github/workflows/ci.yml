@@ -13,26 +13,26 @@ jobs:
     strategy:
       matrix:
         lint:
-          - eslint
-          - stylelint
+          - lint:code
+          - lint:style
     steps:
       - uses: actions/checkout@v5
-      - uses: oven-sh/setup-bun@v2
-      - run: bun install --frozen-lockfile
+      - uses: pnpm/action-setup@v4
+      - run: pnpm install --frozen-lockfile
 
       - name: Run ${{ matrix.lint }}
-        run: bun run ${{ matrix.lint }}
+        run: pnpm run ${{ matrix.lint }}
 
   build-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - uses: oven-sh/setup-bun@v2
-      - run: bun install --frozen-lockfile
+      - uses: pnpm/action-setup@v4
+      - run: pnpm install --frozen-lockfile
 
       - name: Run build
         run: |
-          bun run build
+          pnpm run build
         env:
           NEXT_PUBLIC_BASE_URL: ${{ secrets.BASE_URL }}
           NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
