@@ -1,4 +1,5 @@
-import { Container, Link, Text } from "@chakra-ui/react";
+import { Container, Text } from "@chakra-ui/react";
+import { ExternalLink } from "../components/link";
 import { Layout } from "../components/layout";
 import React from "react";
 
@@ -26,13 +27,13 @@ export default function PolicyPage() {
 
         <Text>
           規約の詳細に関しましては、
-          <Link href="https://marketingplatform.google.com/about/analytics/terms/jp/" isExternal>
+          <ExternalLink href="https://marketingplatform.google.com/about/analytics/terms/jp/">
             Google アナリティクス利用規約
-          </Link>
+          </ExternalLink>
           や
-          <Link href="https://policies.google.com/technologies/ads?hl=ja" isExternal>
+          <ExternalLink href="https://policies.google.com/technologies/ads?hl=ja">
             Google ポリシーと規約
-          </Link>
+          </ExternalLink>
           のページをご覧ください。
         </Text>
       </Container>

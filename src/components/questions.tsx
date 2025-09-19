@@ -1,4 +1,5 @@
-import { Container, Link, Text, VStack } from "@chakra-ui/react";
+import { Container, Text, VStack } from "@chakra-ui/react";
+import { ExternalLink } from "./link";
 import React from "react";
 import type { ReactNode } from "react";
 
@@ -31,9 +32,9 @@ const questionAnswers = [
     answer: (
       <>
         こちらへどうぞ &rarr;{" "}
-        <Link href="https://twitter.com/search?q=%23限界開発鯖&src=typed_query" isExternal>
+        <ExternalLink href="https://twitter.com/search?q=%23限界開発鯖&src=typed_query">
           #限界開発鯖
-        </Link>
+        </ExternalLink>
       </>
     ),
   },

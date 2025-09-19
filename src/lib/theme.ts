@@ -18,7 +18,7 @@ export const system = createSystem(defaultConfig, {
           sans-serif`,
       },
       gradients: {
-        boldUnderline: { value: "linear(transparent 70%, {shadowed} 0%)" },
+        boldUnderline: { value: "linear-gradient(transparent 70%, {colors.shadowed} 0%)" },
       },
     },
     semanticTokens: {
@@ -35,14 +35,6 @@ export const system = createSystem(defaultConfig, {
   globalCss: {
     "::selection": {
       bg: { base: "green.300", _dark: "green.600" },
-    },
-  },
-  components: {
-    Link: {
-      baseStyle: {
-        fontStyle: "italic",
-        textDecoration: "underline",
-      },
     },
   },
   config: {

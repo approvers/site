@@ -1,6 +1,7 @@
 import * as styles from "../scss/pages/blog/markdown.module.scss";
 import { Container, Heading, Link, Text, VStack } from "@chakra-ui/react";
 import { DateString } from "../components/date";
+import { ExternalLink } from "../components/link";
 import { Layout } from "../components/layout";
 import MarkdownIt from "markdown-it";
 import { full as MarkdownItEmoji } from "markdown-it-emoji";
@@ -55,9 +56,7 @@ export default function Page({
           {title}
         </Heading>
         <Text>
-          <Link href={`https://github.com/${authorId}`} isExternal>
-            {author}
-          </Link>
+          <ExternalLink href={`https://github.com/${authorId}`}>{author}</ExternalLink>
           {" - "}
           <DateString dateString={date} />
         </Text>
