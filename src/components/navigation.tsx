@@ -1,11 +1,9 @@
 import { Button, Container, Drawer, VStack } from "@chakra-ui/react";
-import { useColorMode, useColorModeValue } from "../utils/color-mode";
+import { ColorModeIcon, OppositeColorModeIcon, useColorMode } from "../utils/color-mode";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "gatsby";
 import React from "react";
 import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
-import { faMoon } from "@fortawesome/free-solid-svg-icons/faMoon";
-import { faSun } from "@fortawesome/free-solid-svg-icons/faSun";
 
 export interface LinksProps {
   links: readonly Readonly<{
@@ -28,13 +26,11 @@ const Links = ({ links }: LinksProps): JSX.Element => (
 
 const ThemeChangeButton = (): JSX.Element => {
   const { toggleColorMode } = useColorMode();
-
-  const currentTheme = <FontAwesomeIcon icon={useColorModeValue(faSun, faMoon)} />;
-  const oppositeTheme = <FontAwesomeIcon icon={useColorModeValue(faMoon, faSun)} />;
-
   return (
-    <Button leftIcon={currentTheme} onClick={toggleColorMode} rightIcon={oppositeTheme}>
+    <Button onClick={toggleColorMode}>
+      <ColorModeIcon />
       →
+      <OppositeColorModeIcon />
     </Button>
   );
 };
