@@ -50,7 +50,7 @@
     "@types/react": "^18.2.21",
     "@types/react-test-renderer": "^18.0.7",
     "@typescript-eslint/parser": "^8.0.0",
-    "@vitejs/plugin-react": "^4.2.1",
+    "@vitejs/plugin-react": "^5.0.0",
     "eslint": "8.57.0",
     "eslint-config-next": "14.2.7",
     "eslint-config-prettier": "^9.1.0",
