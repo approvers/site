@@ -1,7 +1,6 @@
 import { Link, VStack } from "@chakra-ui/react";
 import { Layout } from "../components/layout";
 import React from "react";
-import { boldUnderline } from "../lib/theme";
 import links from "../../data/links.yaml";
 
 export default function Page() {
@@ -13,7 +12,7 @@ export default function Page() {
             key={index}
             fontSize="2xl"
             fontWeight="bold"
-            bgGradient={boldUnderline}
+            bgGradient="boldUnderline"
             href={url}
             isExternal
           >

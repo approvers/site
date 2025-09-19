@@ -1,20 +1,8 @@
-import {
-  Button,
-  Container,
-  Drawer,
-  DrawerBody,
-  DrawerCloseButton,
-  DrawerContent,
-  DrawerHeader,
-  DrawerOverlay,
-  VStack,
-  useColorMode,
-  useColorModeValue,
-  useDisclosure,
-} from "@chakra-ui/react";
-import React, { useRef } from "react";
+import { Button, Container, Drawer, VStack } from "@chakra-ui/react";
+import { useColorMode, useColorModeValue } from "../utils/color-mode";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "gatsby";
+import React from "react";
 import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
 import { faMoon } from "@fortawesome/free-solid-svg-icons/faMoon";
 import { faSun } from "@fortawesome/free-solid-svg-icons/faSun";
@@ -52,33 +40,30 @@ const ThemeChangeButton = (): JSX.Element => {
 };
 
 export const Navigation = (props: LinksProps): JSX.Element => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = useRef(null);
-
   return (
-    <>
-      <Button
-        ref={btnRef}
-        pos="fixed"
-        zIndex={100}
-        bottom={0}
-        m={8}
-        leftIcon={<FontAwesomeIcon icon={faBars} />}
-        onClick={onOpen}
-      >
-        メニュー
-      </Button>
-      <Drawer finalFocusRef={btnRef} isOpen={isOpen} onClose={onClose} placement="left">
-        <DrawerOverlay />
-        <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerHeader borderBottomWidth="1px">Approvers</DrawerHeader>
-          <DrawerBody>
+    <Drawer.Root placement="left">
+      <Drawer.Backdrop />
+      <Drawer.Trigger asChild>
+        <Button
+          pos="fixed"
+          zIndex={100}
+          bottom={0}
+          m={8}
+          leftIcon={<FontAwesomeIcon icon={faBars} />}
+        >
+          メニュー
+        </Button>
+      </Drawer.Trigger>
+      <Drawer.Positioner>
+        <Drawer.Content>
+          <Drawer.CloseTrigger />
+          <Drawer.Header borderBottomWidth="1px">Approvers</Drawer.Header>
+          <Drawer.Body>
             <Links {...props} />
-          </DrawerBody>
+          </Drawer.Body>
           <ThemeChangeButton />
-        </DrawerContent>
-      </Drawer>
-    </>
+        </Drawer.Content>
+      </Drawer.Positioner>
+    </Drawer.Root>
   );
 };

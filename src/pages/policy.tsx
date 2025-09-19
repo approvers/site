@@ -1,7 +1,6 @@
 import { Container, Link, Text } from "@chakra-ui/react";
 import { Layout } from "../components/layout";
 import React from "react";
-import { boldUnderline } from "../lib/theme";
 
 export default function PolicyPage() {
   return (
@@ -20,7 +19,7 @@ export default function PolicyPage() {
 
         <Text>
           取得するデータは当サイトの改善に役立てる事のみに使用するとし、
-          <Text as="span" bgGradient={boldUnderline}>
+          <Text as="span" bgGradient="boldUnderline">
             個人の特定やその他個人の不利益に関わることは致しません。
           </Text>
         </Text>
