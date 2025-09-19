@@ -48,7 +48,7 @@
     "@types/markdown-it": "^14.0.0",
     "@types/node": "^24.0.0",
     "@types/react": "^18.2.21",
-    "@types/react-test-renderer": "^18.0.7",
+    "@types/react-test-renderer": "^19.0.0",
     "@typescript-eslint/parser": "^8.0.0",
     "@vitejs/plugin-react": "^4.2.1",
     "eslint": "8.57.0",

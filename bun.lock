@@ -36,7 +36,7 @@
         "@types/markdown-it": "^14.0.0",
         "@types/node": "^24.0.0",
         "@types/react": "^18.2.21",
-        "@types/react-test-renderer": "^18.0.7",
+        "@types/react-test-renderer": "^19.0.0",
         "@typescript-eslint/parser": "^8.0.0",
         "@vitejs/plugin-react": "^4.2.1",
         "eslint": "8.57.0",
@@ -870,7 +870,7 @@
 
     "@types/react": ["@types/react@18.3.24", "", { "dependencies": { "@types/prop-types": "*", "csstype": "^3.0.2" } }, "sha512-0dLEBsA1kI3OezMBF8nSsb7Nk19ZnsyE1LLhB8r27KbgU5H4pvuqZLdtE+aUkJVoXgTVuA+iLIwmZ0TuK4tx6A=="],
 
-    "@types/react-test-renderer": ["@types/react-test-renderer@18.3.1", "", { "dependencies": { "@types/react": "^18" } }, "sha512-vAhnk0tG2eGa37lkU9+s5SoroCsRI08xnsWFiAXOuPH2jqzMbcXvKExXViPi1P5fIklDeCvXqyrdmipFaSkZrA=="],
+    "@types/react-test-renderer": ["@types/react-test-renderer@19.1.0", "", { "dependencies": { "@types/react": "*" } }, "sha512-XD0WZrHqjNrxA/MaR9O22w/RNidWR9YZmBdRGI7wcnWGrv/3dA8wKCJ8m63Sn+tLJhcjmuhOi629N66W6kgWzQ=="],
 
     "@types/responselike": ["@types/responselike@1.0.3", "", { "dependencies": { "@types/node": "*" } }, "sha512-H/+L+UkTV33uf49PH5pCAUBVPNj2nDBXTN+qS1dOwyyg24l3CcicicCA7ca+HMvJBZcFgl5r8e+RR6elsb4Lyw=="],
 
