@@ -1,7 +1,7 @@
-import { Container, Link, Text } from "@chakra-ui/react";
+import { Container, Text } from "@chakra-ui/react";
+import { ExternalLink } from "../components/link";
 import { Layout } from "../components/layout";
 import React from "react";
-import { boldUnderline } from "../lib/theme";
 
 export default function PolicyPage() {
   return (
@@ -20,20 +20,20 @@ export default function PolicyPage() {
 
         <Text>
           取得するデータは当サイトの改善に役立てる事のみに使用するとし、
-          <Text as="span" bgGradient={boldUnderline}>
+          <Text as="span" bgGradient="boldUnderline">
             個人の特定やその他個人の不利益に関わることは致しません。
           </Text>
         </Text>
 
         <Text>
           規約の詳細に関しましては、
-          <Link href="https://marketingplatform.google.com/about/analytics/terms/jp/" isExternal>
+          <ExternalLink href="https://marketingplatform.google.com/about/analytics/terms/jp/">
             Google アナリティクス利用規約
-          </Link>
+          </ExternalLink>
           や
-          <Link href="https://policies.google.com/technologies/ads?hl=ja" isExternal>
+          <ExternalLink href="https://policies.google.com/technologies/ads?hl=ja">
             Google ポリシーと規約
-          </Link>
+          </ExternalLink>
           のページをご覧ください。
         </Text>
       </Container>

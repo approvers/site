@@ -20,11 +20,10 @@ const Splash = () => (
       <text
         x="150"
         y="150"
-        fontFamily="serif"
-        fontSize="150"
         textAnchor="middle"
         textLength="270"
         stroke="url(#rainbow)"
+        className="kasu"
       >
         カス
       </text>

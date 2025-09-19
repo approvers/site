@@ -1,13 +1,4 @@
-import {
-  Avatar,
-  Flex,
-  Grid,
-  GridItem,
-  HStack,
-  Heading,
-  VStack,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Avatar, Flex, Grid, GridItem, HStack, Heading, VStack } from "@chakra-ui/react";
 import { PageProps, graphql } from "gatsby";
 import { Layout } from "../components/layout";
 import { Member } from "../lib/member-fetch";
@@ -27,7 +18,10 @@ const MemberCard = ({ username, associatedLinks }: Member): JSX.Element => {
 
   return (
     <Flex align="center" gap={4} h="100%" p={4}>
-      <Avatar flex="0 0 auto" name={username} src={avatar} />
+      <Avatar.Root>
+        <Avatar.Fallback name={username} />
+        <Avatar.Image flex="0 0 auto" src={avatar} />
+      </Avatar.Root>
       <VStack alignItems="self-start" flex="1 1" wordBreak="break-all" spacing={0.5}>
         <Heading as="b" fontSize="2xl">
           {username}
@@ -59,12 +53,16 @@ export const query = graphql`
 
 export default function Page(props: PageProps<Queries.MembersQuery>) {
   const members = props.data.allMember.nodes;
-  const cardBg = useColorModeValue("gray.100", "gray.700");
   return (
     <Layout title="メンバー紹介">
       <Grid gap={2} templateColumns="repeat(auto-fill, minmax(15em, 1fr))">
         {members.map((member) => (
-          <GridItem key={member.discordId} borderRadius="3xl" bgColor={cardBg}>
+          <GridItem
+            key={member.discordId}
+            borderRadius="3xl"
+            _dark={{ bgColor: "gray.700" }}
+            bgColor="gray.100"
+          >
             <MemberCard {...member} />
           </GridItem>
         ))}

@@ -1,6 +1,6 @@
+import { ExternalLink } from "./link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { IconDefinition } from "@fortawesome/free-brands-svg-icons";
-import { Link } from "@chakra-ui/react";
 import React from "react";
 import type { SNSLinkInfo } from "../lib/member-fetch";
 import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
@@ -20,14 +20,13 @@ const icons: Record<SNSLinkInfo["type"], Icon> = {
 export const SNSLink = ({ type, name }: SNSLinkInfo): JSX.Element => {
   const { icon } = icons[type];
   return (
-    <Link
+    <ExternalLink
       w={["1rem", "1.2rem"]}
       h={["1rem", "1.2rem"]}
       color="highlighted"
       href={`https://${type}.com/${name}`}
-      isExternal
     >
       <FontAwesomeIcon icon={icon} />
-    </Link>
+    </ExternalLink>
   );
 };

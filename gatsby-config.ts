@@ -10,7 +10,6 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
-    "@chakra-ui/gatsby-plugin",
     "gatsby-plugin-sass",
     "gatsby-plugin-sitemap",
     {
