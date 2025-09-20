@@ -1,10 +1,11 @@
-import { ExternalLink } from "./link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { IconDefinition } from "@fortawesome/free-brands-svg-icons";
-import React from "react";
-import type { SNSLinkInfo } from "../lib/member-fetch";
 import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons/faTwitter";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
+
+import type { SNSLinkInfo } from "../lib/member-fetch";
+import { ExternalLink } from "./link";
 
 type Icon = { icon: IconDefinition };
 

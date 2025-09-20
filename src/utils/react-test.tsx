@@ -1,5 +1,5 @@
-import reactTestRenderer, { ReactTestRenderer, TestRendererOptions } from "react-test-renderer";
 import { ReactElement } from "react";
+import reactTestRenderer, { ReactTestRenderer, TestRendererOptions } from "react-test-renderer";
 
 export const render = (
   ui: ReactElement,

@@ -1,6 +1,7 @@
 import { expect, it } from "vitest";
+
+import { render } from "../utils/react-test";
 import { PrevNextLink } from "./prev-next-link";
-import { render } from "../../utils/react-test";
 
 it("renders both prev and next correctly", () => {
   const tree = render(

@@ -1,15 +1,16 @@
 import { Container, Text } from "@chakra-ui/react";
-import { ExternalLink } from "../components/link";
-import { Layout } from "../components/layout";
 import React from "react";
+
+import { Layout } from "../components/layout";
+import { ExternalLink } from "../components/link";
 
 export default function PolicyPage() {
   return (
     <Layout title="プライバシーポリシー">
       <Container
         as="section"
-        sx={{
-          p: {
+        css={{
+          "& p": {
             margin: "0.6em",
             lineHeight: 1.7,
             textIndent: "1em",

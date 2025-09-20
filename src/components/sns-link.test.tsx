@@ -1,6 +1,7 @@
 import { expect, it } from "vitest";
+
+import { render } from "../utils/react-test";
 import { SNSLink } from "./sns-link";
-import { render } from "../../utils/react-test";
 
 it("renders twitter link correctly", () => {
   const tree = render(<SNSLink type="twitter" url="https://twitter.com/MikurXina" />);

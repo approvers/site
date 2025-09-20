@@ -1,7 +1,8 @@
 import { Container, Link } from "@chakra-ui/react";
 import { Link as GatsbyLink } from "gatsby";
-import { Layout } from "../components/layout";
 import React from "react";
+
+import { Layout } from "../components/layout";
 import { Subtitle } from "../components/title";
 
 export default function ErrorPage() {
@@ -9,8 +10,8 @@ export default function ErrorPage() {
     <Layout title="404 Not found">
       <Container>
         <Subtitle>ページが見つかりません。</Subtitle>
-        <Link as={GatsbyLink} color="highlighted" to="/">
-          トップページへ戻る
+        <Link color="highlighted" asChild>
+          <GatsbyLink to="/">トップページへ戻る</GatsbyLink>
         </Link>
       </Container>
     </Layout>

@@ -1,9 +1,10 @@
-import { Avatar, Flex, Grid, GridItem, HStack, Heading, VStack } from "@chakra-ui/react";
-import { PageProps, graphql } from "gatsby";
-import { Layout } from "../components/layout";
-import { Member } from "../lib/member-fetch";
+import { Avatar, Flex, Grid, GridItem, Heading, HStack, VStack } from "@chakra-ui/react";
+import { graphql, PageProps } from "gatsby";
 import React from "react";
+
+import { Layout } from "../components/layout";
 import { SNSLink } from "../components/sns-link";
+import { Member } from "../lib/member-fetch";
 
 const alternative = "/alternative.png";
 
@@ -22,11 +23,11 @@ const MemberCard = ({ username, associatedLinks }: Member): JSX.Element => {
         <Avatar.Fallback name={username} />
         <Avatar.Image flex="0 0 auto" src={avatar} />
       </Avatar.Root>
-      <VStack alignItems="self-start" flex="1 1" wordBreak="break-all" spacing={0.5}>
+      <VStack alignItems="self-start" flex="1 1" wordBreak="break-all" spaceY={0.5}>
         <Heading as="b" fontSize="2xl">
           {username}
         </Heading>
-        <HStack spacing={4}>
+        <HStack spaceX={4}>
           {sortedAssociatedLinks.map((link, i) => (
             <SNSLink key={i} {...link} />
           ))}
