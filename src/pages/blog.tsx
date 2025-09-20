@@ -21,9 +21,9 @@ function BlogCard({
   const title = frontmatter?.title ?? "無題";
   return (
     <HStack borderColor="shadowed" borderRightWidth="1px" borderBottomWidth="2px">
-      <Avatar.Root>
+      <Avatar.Root flex="0 0 sm">
         <Avatar.Fallback name={title} />
-        <Avatar.Image as={GatsbyLink} flex="0 0 sm" to={`/blog/${slug}`} />
+        <Avatar.Image as={GatsbyLink} to={`/blog/${slug}`} />
       </Avatar.Root>
       <VStack alignItems="self-start" flex="1 1" p={2} spacing="0.5">
         <GatsbyLink to={`/blog/${slug}`}>
