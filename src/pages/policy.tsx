@@ -8,8 +8,8 @@ export default function PolicyPage() {
     <Layout title="プライバシーポリシー">
       <Container
         as="section"
-        sx={{
-          p: {
+        css={{
+          "& p": {
             margin: "0.6em",
             lineHeight: 1.7,
             textIndent: "1em",

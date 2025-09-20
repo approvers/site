@@ -33,13 +33,7 @@ const Splash = () => (
 
 const Home = () => (
   <Layout title="">
-    <VStack
-      sx={{
-        ".splash::after": {
-          borderColor: "highlighted",
-        },
-      }}
-    >
+    <VStack>
       <Splash />
       <Heading as="h1" pt={32} pb={2} fontSize="5xl" textAlign="center">
         <em>&dagger;限界開発鯖&dagger;</em> へようこそ！

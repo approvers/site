@@ -1,5 +1,5 @@
-import React, { ComponentProps } from "react";
 import { Link as ChakraLink, chakra, defineRecipe } from "@chakra-ui/react";
+import React, { ComponentProps, ReactNode } from "react";
 
 const linkRecipe = defineRecipe({
   base: {
@@ -8,7 +8,7 @@ const linkRecipe = defineRecipe({
   },
 });
 
-export const Link: (props: ComponentProps<ChakraLink>) => React.JSX.Element = chakra(
+export const Link: (props: ComponentProps<typeof ChakraLink>) => ReactNode = chakra(
   ChakraLink,
   linkRecipe,
 );

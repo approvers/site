@@ -18,15 +18,15 @@ const MemberCard = ({ username, associatedLinks }: Member): JSX.Element => {
 
   return (
     <Flex align="center" gap={4} h="100%" p={4}>
-      <Avatar.Root>
+      <Avatar.Root flex="0 0 auto">
         <Avatar.Fallback name={username} />
-        <Avatar.Image flex="0 0 auto" src={avatar} />
+        <Avatar.Image src={avatar} />
       </Avatar.Root>
-      <VStack alignItems="self-start" flex="1 1" wordBreak="break-all" spacing={0.5}>
+      <VStack alignItems="self-start" flex="1 1" wordBreak="break-all" spaceY={0.5}>
         <Heading as="b" fontSize="2xl">
           {username}
         </Heading>
-        <HStack spacing={4}>
+        <HStack spaceX={4}>
           {sortedAssociatedLinks.map((link, i) => (
             <SNSLink key={i} {...link} />
           ))}
