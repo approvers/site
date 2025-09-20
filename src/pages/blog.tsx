@@ -2,17 +2,18 @@ import {
   Avatar,
   Button,
   Flex,
-  HStack,
   Heading,
+  HStack,
   Link,
   SimpleGrid,
   Spacer,
   VStack,
 } from "@chakra-ui/react";
-import { Link as GatsbyLink, PageProps, graphql } from "gatsby";
+import { graphql, Link as GatsbyLink, PageProps } from "gatsby";
+import React from "react";
+
 import { DateString } from "../components/date";
 import { Layout } from "../components/layout";
-import React from "react";
 
 function BlogCard({
   slug,
@@ -23,9 +24,11 @@ function BlogCard({
     <HStack borderColor="shadowed" borderRightWidth="1px" borderBottomWidth="2px">
       <Avatar.Root>
         <Avatar.Fallback name={title} />
-        <Avatar.Image as={GatsbyLink} flex="0 0 sm" to={`/blog/${slug}`} />
+        <Avatar.Image flex="0 0 sm" asChild>
+          <GatsbyLink to={`/blog/${slug}`} />
+        </Avatar.Image>
       </Avatar.Root>
-      <VStack alignItems="self-start" flex="1 1" p={2} spacing="0.5">
+      <VStack alignItems="self-start" flex="1 1" p={2} spaceY="0.5">
         <GatsbyLink to={`/blog/${slug}`}>
           <Heading as="h3" fontSize="lg">
             {title}
@@ -37,8 +40,8 @@ function BlogCard({
           )}
           <DateString dateString={frontmatter?.date ?? ""} />
           <Spacer />
-          <Button as={GatsbyLink} size="sm" to={`/blog/${slug}`}>
-            記事を読む &rarr;
+          <Button size="sm" asChild>
+            <GatsbyLink to={`/blog/${slug}`}>記事を読む &rarr;</GatsbyLink>
           </Button>
         </Flex>
       </VStack>

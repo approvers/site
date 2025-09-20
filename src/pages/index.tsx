@@ -1,8 +1,9 @@
-import * as styles from "../scss/pages/index.module.scss";
 import { Box, Heading, VStack } from "@chakra-ui/react";
+import React from "react";
+
 import { Layout } from "../components/layout";
 import { Questions } from "../components/questions";
-import React from "react";
+import * as styles from "../scss/pages/index.module.scss";
 
 const Splash = () => (
   <Box className={styles.splash}>
@@ -34,8 +35,8 @@ const Splash = () => (
 const Home = () => (
   <Layout title="">
     <VStack
-      sx={{
-        ".splash::after": {
+      css={{
+        "& .splash::after": {
           borderColor: "highlighted",
         },
       }}

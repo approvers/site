@@ -1,8 +1,9 @@
-import { ExternalLink } from "../components/link";
-import { Layout } from "../components/layout";
-import React from "react";
 import { VStack } from "@chakra-ui/react";
+import React from "react";
+
 import links from "../../data/links.yaml";
+import { Layout } from "../components/layout";
+import { ExternalLink } from "../components/link";
 
 export default function Page() {
   return (

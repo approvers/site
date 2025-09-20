@@ -1,6 +1,7 @@
 import { expect, it } from "vitest";
+
+import { render } from "../utils/react-test";
 import { Header } from "./header";
-import { render } from "../../utils/react-test";
 
 it("renders correctly", () => {
   const tree = render(<Header />);

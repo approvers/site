@@ -2,8 +2,8 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `site`,
-    siteUrl: `https://approvers.dev`,
+    title: "site",
+    siteUrl: "https://approvers.dev",
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -31,11 +31,11 @@ const config: GatsbyConfig = {
       resolve: "gatsby-omni-font-loader",
       options: {
         enableListener: true,
-        preconnect: [`https://fonts.googleapis.com`, `https://fonts.gstatic.com`],
+        preconnect: ["https://fonts.googleapis.com", "https://fonts.gstatic.com"],
         web: [
           {
-            name: `Roboto`,
-            file: `https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap`,
+            name: "Roboto",
+            file: "https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap",
           },
         ],
       },

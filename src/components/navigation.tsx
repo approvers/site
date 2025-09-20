@@ -1,9 +1,10 @@
 import { Button, Container, Drawer, VStack } from "@chakra-ui/react";
-import { ColorModeIcon, OppositeColorModeIcon, useColorMode } from "../utils/color-mode";
+import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "gatsby";
 import React from "react";
-import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
+
+import { ColorModeIcon, OppositeColorModeIcon, useColorMode } from "../utils/color-mode";
 
 export interface LinksProps {
   links: readonly Readonly<{
@@ -16,8 +17,8 @@ const Links = ({ links }: LinksProps): JSX.Element => (
   <VStack>
     {links.map(({ name, url }) => (
       <Container key={name}>
-        <Button as={Link} minW="100%" to={url}>
-          {name}
+        <Button minW="100%" asChild>
+          <Link to={url}>{name}</Link>
         </Button>
       </Container>
     ))}
@@ -37,17 +38,11 @@ const ThemeChangeButton = (): JSX.Element => {
 
 export const Navigation = (props: LinksProps): JSX.Element => {
   return (
-    <Drawer.Root placement="left">
+    <Drawer.Root placement="start">
       <Drawer.Backdrop />
       <Drawer.Trigger asChild>
-        <Button
-          pos="fixed"
-          zIndex={100}
-          bottom={0}
-          m={8}
-          leftIcon={<FontAwesomeIcon icon={faBars} />}
-        >
-          メニュー
+        <Button pos="fixed" zIndex={100} bottom={0} m={8}>
+          <FontAwesomeIcon icon={faBars} /> メニュー
         </Button>
       </Drawer.Trigger>
       <Drawer.Positioner>

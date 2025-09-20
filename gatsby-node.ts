@@ -1,7 +1,8 @@
 import { type GatsbyNode, type NodeInput } from "gatsby";
+import path from "path";
+
 import { getAllBlogs } from "./src/lib/blog-fetch";
 import { getMembers } from "./src/lib/member-fetch";
-import path from "path";
 
 export const sourceNodes: GatsbyNode["sourceNodes"] = async (api) => {
   const members = await getMembers();

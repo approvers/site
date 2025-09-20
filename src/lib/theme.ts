@@ -4,18 +4,20 @@ export const system = createSystem(defaultConfig, {
   theme: {
     tokens: {
       fonts: {
-        body: `YakuHanJP,
-          Roboto,
-          -apple-system,
-          BlinkMacSystemFont,
-          "Segoe UI",
-          Oxygen,
-          Ubuntu,
-          Cantarell,
-          "Fira Sans",
-          "Droid Sans",
-          "Helvetica Neue",
-          sans-serif`,
+        body: {
+          value: `YakuHanJP,
+            Roboto,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            Oxygen,
+            Ubuntu,
+            Cantarell,
+            "Fira Sans",
+            "Droid Sans",
+            "Helvetica Neue",
+            sans-serif`,
+        },
       },
       gradients: {
         boldUnderline: { value: "linear-gradient(transparent 70%, {colors.shadowed} 0%)" },
@@ -36,9 +38,5 @@ export const system = createSystem(defaultConfig, {
     "::selection": {
       bg: { base: "green.300", _dark: "green.600" },
     },
-  },
-  config: {
-    initialColorMode: "system",
-    useSystemColorMode: false,
   },
 });
