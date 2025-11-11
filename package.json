@@ -49,11 +49,11 @@
     "@types/react-test-renderer": "^18.3.1",
     "@typescript-eslint/parser": "^8.46.0",
     "@vitejs/plugin-react": "^4.7.0",
+    "@vitest/browser-playwright": "^4.0.8",
     "eslint": "8.57.0",
     "eslint-config-prettier": "^9.1.2",
     "eslint-plugin-chakra-ui": "^0.11.0",
     "husky": "^9.1.7",
-    "jsdom": "^25.0.1",
     "lint-staged": "^15.5.2",
     "postcss": "^8.5.6",
     "postcss-flexbugs-fixes": "^5.0.2",
@@ -68,7 +68,7 @@
     "ts-node": "^10.9.2",
     "typescript": "5.9.2",
     "typescript-eslint": "^8.46.0",
-    "vitest": "^2.1.9"
+    "vitest": "^4.0.8"
   },
   "packageManager": "pnpm@10.17.0"
 }
