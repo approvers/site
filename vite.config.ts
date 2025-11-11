@@ -3,8 +3,19 @@ import { playwright } from "@vitest/browser-playwright";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
+  define: {
+    "process.env": JSON.stringify({}),
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      loader: {
+        ".js": "jsx",
+      },
+    },
+  },
   plugins: [react()],
   test: {
+    include: ["src/components/*.test.tsx"],
     browser: {
       enabled: true,
       provider: playwright(),

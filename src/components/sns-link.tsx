@@ -25,6 +25,7 @@ export const SNSLink = ({ type, name }: SNSLinkInfo): JSX.Element => {
       h={["1rem", "1.2rem"]}
       color="highlighted"
       href={`https://${type}.com/${name}`}
+      data-testid="sns-link"
     >
       <FontAwesomeIcon icon={icon} />
     </ExternalLink>

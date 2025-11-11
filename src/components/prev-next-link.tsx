@@ -11,16 +11,20 @@ export type PrevNextLinkProps = {
 };
 
 export const PrevNextLink = ({ prevLinkHref, nextLinkHref }: PrevNextLinkProps): JSX.Element => (
-  <Flex as="nav" mt={4} mb={4} color="highlighted">
+  <Flex as="nav" mt={4} mb={4} color="highlighted" data-testid="prev-next-link">
     {prevLinkHref !== null && (
-      <Button as={Link} leftIcon={<FontAwesomeIcon icon={faArrowLeft} />} to={prevLinkHref}>
-        前
+      <Button asChild>
+        <Link to={prevLinkHref}>
+          <FontAwesomeIcon icon={faArrowLeft} /> 前
+        </Link>
       </Button>
     )}
     <Spacer />
     {nextLinkHref !== null && (
-      <Button as={Link} rightIcon={<FontAwesomeIcon icon={faArrowRight} />} to={nextLinkHref}>
-        次
+      <Button asChild>
+        <Link to={nextLinkHref}>
+          次 <FontAwesomeIcon icon={faArrowRight} />
+        </Link>
       </Button>
     )}
   </Flex>

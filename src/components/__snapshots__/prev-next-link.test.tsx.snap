@@ -1,5 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`renders both prev and next correctly > prev-next-link 1`] = `"body >> internal:testid=[data-testid="prev-next-link"s]"`;
+
 exports[`renders both prev and next correctly 1`] = `
 <nav
   className="css-10z1pgu"
@@ -70,6 +72,8 @@ exports[`renders both prev and next correctly 1`] = `
 </nav>
 `;
 
+exports[`renders only next correctly > prev-next-link 1`] = `"body >> internal:testid=[data-testid="prev-next-link"s]"`;
+
 exports[`renders only next correctly 1`] = `
 <nav
   className="css-10z1pgu"
@@ -109,6 +113,8 @@ exports[`renders only next correctly 1`] = `
   </a>
 </nav>
 `;
+
+exports[`renders only prev correctly > prev-next-link 1`] = `"body >> internal:testid=[data-testid="prev-next-link"s]"`;
 
 exports[`renders only prev correctly 1`] = `
 <nav

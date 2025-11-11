@@ -135,9 +135,6 @@ importers:
       prettier:
         specifier: ^3.6.2
         version: 3.6.2
-      react-test-renderer:
-        specifier: ^18.3.1
-        version: 18.3.1(react@18.3.1)
       sass:
         specifier: ^1.93.2
         version: 1.93.2
@@ -162,6 +159,9 @@ importers:
       vitest:
         specifier: ^4.0.8
         version: 4.0.8(@types/node@24.7.0)(@vitest/browser-playwright@4.0.8)(jsdom@25.0.1)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)
+      vitest-browser-react:
+        specifier: ^2.0.2
+        version: 2.0.2(@types/react@18.3.26)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vitest@4.0.8)
 
 packages:
 
@@ -6693,9 +6693,6 @@ packages:
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
-  react-is@18.3.1:
-    resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
-
   react-refresh@0.14.2:
     resolution: {integrity: sha512-jCvmsr+1IUSMUyzOkRcvnVbX3ZYC6g9TDrDbFuFmRDq7PD4yaGbLKNQL6k2jnArV8hjYxh7hVhAZB6s9HDGpZA==}
     engines: {node: '>=0.10.0'}
@@ -6711,20 +6708,10 @@ packages:
       react: 0.0.0-experimental-c8b778b7f-20220825
       webpack: ^5.59.0
 
-  react-shallow-renderer@16.15.0:
-    resolution: {integrity: sha512-oScf2FqQ9LFVQgA73vr86xl2NaOIX73rh+YFqcOp68CWj56tSfgtGKrEbyhCj0rSijyG9M1CYprTh39fBi5hzA==}
-    peerDependencies:
-      react: ^16.0.0 || ^17.0.0 || ^18.0.0
-
   react-side-effect@2.1.2:
     resolution: {integrity: sha512-PVjOcvVOyIILrYoyGEpDN3vmYNLdy1CajSFNt4TDsVQC5KpTijDvWVoR+/7Rz2xT978D8/ZtFceXxzsPwZEDvw==}
     peerDependencies:
       react: ^16.3.0 || ^17.0.0 || ^18.0.0
-
-  react-test-renderer@18.3.1:
-    resolution: {integrity: sha512-KkAgygexHUkQqtvvx/otwxtuFu5cVjfzTCtjXLH9boS19/Nbtg84zS7wIQn39G8IlrhThBpQsMKkq5ZHZIYFXA==}
-    peerDependencies:
-      react: ^18.3.1
 
   react@18.3.1:
     resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
@@ -7899,6 +7886,20 @@ packages:
       tsx:
         optional: true
       yaml:
+        optional: true
+
+  vitest-browser-react@2.0.2:
+    resolution: {integrity: sha512-zuSgTe/CKODU3ip+w4ls6Qm4xZ9+A4OHmDf0obt/mwAqavpOtqtq2YcioZt8nfDQE50EWmhdnRfDmpS1jCsbTQ==}
+    peerDependencies:
+      '@types/react': ^18.0.0 || ^19.0.0
+      '@types/react-dom': ^18.0.0 || ^19.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+      vitest: ^4.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
         optional: true
 
   vitest@4.0.8:
@@ -16439,8 +16440,6 @@ snapshots:
 
   react-is@16.13.1: {}
 
-  react-is@18.3.1: {}
-
   react-refresh@0.14.2: {}
 
   react-refresh@0.17.0: {}
@@ -16453,22 +16452,9 @@ snapshots:
       react: 18.3.1
       webpack: 5.98.0
 
-  react-shallow-renderer@16.15.0(react@18.3.1):
-    dependencies:
-      object-assign: 4.1.1
-      react: 18.3.1
-      react-is: 18.3.1
-
   react-side-effect@2.1.2(react@18.3.1):
     dependencies:
       react: 18.3.1
-
-  react-test-renderer@18.3.1(react@18.3.1):
-    dependencies:
-      react: 18.3.1
-      react-is: 18.3.1
-      react-shallow-renderer: 16.15.0(react@18.3.1)
-      scheduler: 0.23.2
 
   react@18.3.1:
     dependencies:
@@ -17850,6 +17836,14 @@ snapshots:
       sass: 1.93.2
       terser: 5.44.0
       yaml: 2.8.1
+
+  vitest-browser-react@2.0.2(@types/react@18.3.26)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vitest@4.0.8):
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      vitest: 4.0.8(@types/node@24.7.0)(@vitest/browser-playwright@4.0.8)(jsdom@25.0.1)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)
+    optionalDependencies:
+      '@types/react': 18.3.26
 
   vitest@4.0.8(@types/node@24.7.0)(@vitest/browser-playwright@4.0.8)(jsdom@25.0.1)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1):
     dependencies:

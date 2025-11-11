@@ -1,5 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`renders correctly > header 1`] = `"body >> internal:testid=[data-testid="header"s]"`;
+
 exports[`renders correctly 1`] = `
 <header
   className="css-plc0gq"

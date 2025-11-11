@@ -50,7 +50,7 @@ const questionAnswers = [
 ] as const;
 
 export const Questions = (): JSX.Element => (
-  <VStack pb={16}>
+  <VStack pb={16} data-testid="questions">
     {questionAnswers.map((props, i) => (
       <QA key={i} {...props} />
     ))}

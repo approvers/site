@@ -1,5 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`renders correctly > date-string 1`] = `"body >> internal:testid=[data-testid="date-string"s]"`;
+
 exports[`renders correctly 1`] = `
 <time
   className="chakra-text css-g5hezf"

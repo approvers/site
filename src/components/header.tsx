@@ -4,7 +4,14 @@ import React from "react";
 import logo from "../../assets/android-chrome-192x192.png";
 
 export const Header = (): JSX.Element => (
-  <Center as="header" w="100%" p={4} borderColor="shadowed" borderBottomWidth="2px">
+  <Center
+    as="header"
+    w="100%"
+    p={4}
+    borderColor="shadowed"
+    borderBottomWidth="2px"
+    data-testid="header"
+  >
     <Flex align="center" asChild>
       <Link to="/">
         <Avatar.Root size="sm" mr={2} borderRadius="37%">

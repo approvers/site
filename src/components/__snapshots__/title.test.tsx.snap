@@ -1,5 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`renders subtitle correctly > subtitle 1`] = `"body >> internal:testid=[data-testid="subtitle"s]"`;
+
 exports[`renders subtitle correctly 1`] = `
 <h2
   className="chakra-heading css-a29miu"
@@ -7,6 +9,8 @@ exports[`renders subtitle correctly 1`] = `
   Epic Subtitle
 </h2>
 `;
+
+exports[`renders title correctly > title 1`] = `"body >> internal:testid=[data-testid="title"s]"`;
 
 exports[`renders title correctly 1`] = `
 <h1

@@ -1,5 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`renders github link correctly > sns-link 1`] = `"body >> internal:testid=[data-testid="sns-link"s]"`;
+
 exports[`renders github link correctly 1`] = `
 <a
   className="chakra-link css-tpddrn"
@@ -26,6 +28,8 @@ exports[`renders github link correctly 1`] = `
   </svg>
 </a>
 `;
+
+exports[`renders twitter link correctly > sns-link 1`] = `"body >> internal:testid=[data-testid="sns-link"s]"`;
 
 exports[`renders twitter link correctly 1`] = `
 <a

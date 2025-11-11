@@ -1,8 +1,8 @@
 import { expect, it } from "vitest";
 import { Header } from "./header";
-import { render } from "../../utils/react-test";
+import { render } from "../utils/react-test";
 
-it("renders correctly", () => {
-  const tree = render(<Header />);
-  expect(tree.toJSON()).toMatchSnapshot();
+it("renders correctly", async () => {
+  const tree = await render(<Header />);
+  expect(tree.getByTestId("header")).toMatchSnapshot("header");
 });

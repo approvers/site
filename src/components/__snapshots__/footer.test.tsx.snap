@@ -1,5 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`renders correctly > footer 1`] = `"body >> internal:testid=[data-testid="footer"s]"`;
+
 exports[`renders correctly 1`] = `
 <footer
   className="css-114d7fc"

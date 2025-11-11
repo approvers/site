@@ -1,9 +1,9 @@
 import { expect, it } from "vitest";
 import { Navigation } from "./navigation";
-import { render } from "../../utils/react-test";
+import { render } from "../utils/react-test";
 
-it("renders correctly", () => {
-  const tree = render(
+it("renders correctly", async () => {
+  const tree = await render(
     <Navigation
       links={[
         {
@@ -26,5 +26,5 @@ it("renders correctly", () => {
       ]}
     />,
   );
-  expect(tree.toJSON()).toMatchSnapshot();
+  expect(tree.getByTestId("navigation")).toMatchSnapshot("navigation");
 });

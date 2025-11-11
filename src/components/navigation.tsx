@@ -16,8 +16,8 @@ const Links = ({ links }: LinksProps): JSX.Element => (
   <VStack>
     {links.map(({ name, url }) => (
       <Container key={name}>
-        <Button as={Link} minW="100%" to={url}>
-          {name}
+        <Button minW="100%" asChild>
+          <Link to={url}>{name}</Link>
         </Button>
       </Container>
     ))}
@@ -37,7 +37,7 @@ const ThemeChangeButton = (): JSX.Element => {
 
 export const Navigation = (props: LinksProps): JSX.Element => {
   return (
-    <Drawer.Root placement="left">
+    <Drawer.Root placement="left" data-testid="navigation">
       <Drawer.Backdrop />
       <Drawer.Trigger asChild>
         <Button
