@@ -1,5 +1,5 @@
 import * as styles from "../scss/pages/blog/markdown.module.scss";
-import { Container, Heading, Link, Text, VStack } from "@chakra-ui/react";
+import { Container, Heading, Text, VStack } from "@chakra-ui/react";
 import { DateString } from "../components/date";
 import { ExternalLink } from "../components/link";
 import { Layout } from "../components/layout";
