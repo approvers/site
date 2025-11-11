@@ -1,5 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`renders correctly > navigation 1`] = `"body >> internal:testid=[data-testid="navigation"s]"`;
+
 exports[`renders correctly 1`] = `
 <button
   className="chakra-button css-1h3syp1"

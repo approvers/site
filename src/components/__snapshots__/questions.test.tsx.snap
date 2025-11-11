@@ -1,5 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`renders correctly > questions 1`] = `"body >> internal:testid=[data-testid="questions"s]"`;
+
 exports[`renders correctly 1`] = `
 <div
   className="chakra-stack css-t7gyxs"

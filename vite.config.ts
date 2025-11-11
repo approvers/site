@@ -1,13 +1,35 @@
 import { defineConfig } from "vitest/config";
+import { playwright } from "@vitest/browser-playwright";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
+  define: {
+    "process.env": JSON.stringify({}),
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      loader: {
+        ".js": "jsx",
+      },
+    },
+  },
   plugins: [react()],
   test: {
-    environment: "jsdom",
-    // NOTE: https://github.com/chakra-ui/chakra-ui/issues/6783#issuecomment-1283788233
-    deps: {
-      fallbackCJS: true,
+    include: ["src/components/*.test.tsx"],
+    browser: {
+      enabled: true,
+      provider: playwright(),
+      instances: [{ browser: "chromium" }],
+      headless: true,
+      expect: {
+        toMatchScreenshot: {
+          comparatorName: "pixelmatch",
+          comparatorOptions: {
+            threshold: 0.2,
+            allowedMismatchedPixelRatio: 0.01,
+          },
+        },
+      },
     },
   },
 });
