@@ -1,25 +1,13 @@
-import { Avatar, Center, Flex, Heading } from "@chakra-ui/react";
-import { Link } from "gatsby";
-import React from "react";
-import logo from "../../assets/android-chrome-192x192.png";
+import logo from "../assets/android-chrome-192x192.png";
+import { Avatar, AvatarImage } from "./ui/avatar";
 
 export const Header = (): JSX.Element => (
-  <Center
-    as="header"
-    w="100%"
-    p={4}
-    borderColor="shadowed"
-    borderBottomWidth="2px"
-    data-testid="header"
-  >
-    <Flex align="center" asChild>
-      <Link to="/">
-        <Avatar.Root size="sm" mr={2} borderRadius="37%">
-          <Avatar.Fallback name="Approversロゴ" />
-          <Avatar.Image src={logo} />
-        </Avatar.Root>
-        <Heading as="span">Approvers</Heading>
-      </Link>
-    </Flex>
-  </Center>
+  <header className="w-full border-b-2 p-4" data-testid="header">
+    <a className="flex justify-center-safe" href="/">
+      <Avatar className="bg-accent mr-2 rounded-[37%]">
+        <AvatarImage src={logo.src} alt="Approversロゴ" />
+      </Avatar>
+      <span>Approvers</span>
+    </a>
+  </header>
 );

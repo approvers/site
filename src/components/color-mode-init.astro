@@ -1,0 +1,17 @@
+---
+import { storageKey } from "../lib/color-mode-store";
+---
+
+<script is:inline data-color-mode-key={storageKey}>
+  let colorMode = localStorage.getItem(document.currentScript.dataset["colorModeKey"]);
+  if (colorMode == null) {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      colorMode = "dark";
+    } else {
+      colorMode = "light";
+    }
+  }
+  if (colorMode === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+</script>

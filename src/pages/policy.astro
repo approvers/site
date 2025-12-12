@@ -1,0 +1,31 @@
+---
+import Layout from "../components/layout.astro";
+import { ExternalLink } from "../components/link";
+
+const legalParagraphClass = "m-2 indent-4 leading-1.7";
+---
+
+<Layout title="プライバシーポリシー">
+  <section>
+    <p class={legalParagraphClass}>当サイトは Google アナリティクスを使用しております。</p>
+
+    <p class={legalParagraphClass}>
+      取得するデータは当サイトの改善に役立てる事のみに使用するとし、
+      <span class="underline decoration-dotted">
+        個人の特定やその他個人の不利益に関わることは致しません。
+      </span>
+    </p>
+
+    <p class={legalParagraphClass}>
+      規約の詳細に関しましては、
+      <ExternalLink href="https://marketingplatform.google.com/about/analytics/terms/jp/" withIcon>
+        Google アナリティクス利用規約
+      </ExternalLink>
+      や
+      <ExternalLink href="https://policies.google.com/technologies/ads?hl=ja" withIcon>
+        Google ポリシーと規約
+      </ExternalLink>
+      のページをご覧ください。
+    </p>
+  </section>
+</Layout>

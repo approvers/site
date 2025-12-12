@@ -36,6 +36,5 @@ yarn-error.log*
 
 .vercel
 
-# Gatsby built
-.cache
-public/
+# Astro built
+.astro/

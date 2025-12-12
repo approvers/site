@@ -1,6 +1,7 @@
-import { readFile, readdir } from "node:fs/promises";
-import { BlogRepository } from "../blog-fetch";
+import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
+
+import type { BlogRepository } from "../blog-fetch";
 
 const POSTS_DIRECTORY = path.join(process.cwd(), "data", "blogs");
 

@@ -1,0 +1,25 @@
+---
+import { getCollection } from "astro:content";
+
+import Layout from "../components/layout.astro";
+import { ExternalLink } from "../components/link";
+
+const links: { data: { name: string; url: string } }[] = await getCollection("links");
+---
+
+<Layout title="リンク">
+  <div class="flex flex-col gap-4 text-center">
+    {
+      links.map(({ data: { name, url } }, index) => (
+        <ExternalLink
+          key={index}
+          className="text-2xl font-bold italic underline decoration-accent-foreground"
+          href={url}
+          withIcon
+        >
+          {name}
+        </ExternalLink>
+      ))
+    }
+  </div>
+</Layout>
