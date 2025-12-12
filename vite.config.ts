@@ -1,5 +1,6 @@
 import react from "@vitejs/plugin-react";
 import { playwright } from "@vitest/browser-playwright";
+import tsconfigPaths from "vite-tsconfig-paths";
 import { defineConfig } from "vitest/config";
 
 export default defineConfig({
@@ -7,13 +8,14 @@ export default defineConfig({
     "process.env": JSON.stringify({}),
   },
   optimizeDeps: {
+    include: ["react", "react-dom", "react/jsx-dev-runtime"],
     esbuildOptions: {
       loader: {
         ".js": "jsx",
       },
     },
   },
-  plugins: [react()],
+  plugins: [react(), tsconfigPaths()],
   test: {
     include: ["src/components/*.test.tsx"],
     browser: {

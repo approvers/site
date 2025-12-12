@@ -1,11 +1,10 @@
 ---
 import { getCollection } from "astro:content";
 
-import { BlogCard } from "../components/blog-card";
+import { BlogCard, type BlogCardProps } from "../components/blog-card";
 import Layout from "../components/layout.astro";
-import type { Blog } from "../lib/blog-fetch";
 
-const blogs: { data: Blog }[] = await getCollection("blogs");
+const blogs = (await getCollection("blogs")) as { data: BlogCardProps }[];
 ---
 
 <Layout title="ブログ">
