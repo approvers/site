@@ -13,8 +13,8 @@ console.log(baseUrl);
 
 const { title } = Astro.props;
 const titleText = title === "" ? siteName : `${siteName} - ${title}`;
-
 ---
+
 <html lang="ja">
   <head>
     <title>{titleText}</title>
@@ -34,12 +34,12 @@ const titleText = title === "" ? siteName : `${siteName} - ${title}`;
     <ColorModeInit client:load />
   </head>
   <body>
-    <div className="m-4 flex flex-col items-center">
+    <div class="m-4 flex flex-col items-center">
       <Nav />
       <slot />
     </div>
     <Footer />
-    <div className="fixed p-8 bottom-0 left-0">
+    <div class="fixed bottom-0 left-0 p-8">
       <ColorModeToggleButton client:idle />
     </div>
   </body>

@@ -3,38 +3,37 @@ import Layout from "../components/layout.astro";
 import { Questions } from "../components/questions";
 import * as styles from "../scss/pages/index.module.scss";
 ---
+
 <Layout title="">
   <div class="flex flex-col items-center">
     <div class={styles.splash}>
       <svg width="300" height="150" viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="rainbow" x1="35%" y1="35%" x2="95%" y2="95%">
-            <stop offset="0%" stopColor="orange" />
-            <stop offset="20%" stopColor="#eded00" />
-            <stop offset="40%" stopColor="green" />
-            <stop offset="60%" stopColor="cyan" />
-            <stop offset="80%" stopColor="blue" />
-            <stop offset="100%" stopColor="violet" />
+            <stop offset="0%" stop-color="orange"></stop>
+            <stop offset="20%" stop-color="#eded00"></stop>
+            <stop offset="40%" stop-color="green"></stop>
+            <stop offset="60%" stop-color="cyan"></stop>
+            <stop offset="80%" stop-color="blue"></stop>
+            <stop offset="100%" stop-color="violet"></stop>
           </linearGradient>
         </defs>
         <text
           x="150"
           y="150"
-          textAnchor="middle"
+          text-anchor="middle"
           textLength="270"
           stroke="url(#rainbow)"
-          className="kasu"
+          class="kasu"
         >
           カス
         </text>
       </svg>
     </div>
-    <h2 className="pt-32 pb-2 text-5xl text-center">
+    <h2 class="pt-32 pb-2 text-center text-5xl">
       <em>&dagger;限界開発鯖&dagger;</em> へようこそ！
     </h2>
-    <i className="pb-32 text-xl">
-      Over Limit Development
-    </i>
+    <i class="pb-32 text-xl"> Over Limit Development </i>
   </div>
   <Questions />
 </Layout>
