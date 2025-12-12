@@ -7,6 +7,7 @@
     "build": "astro build",
     "start": "astro serve",
     "preview": "astro preview",
+    "check": "astro check",
     "lint:code": "eslint .",
     "lint:code:fix": "eslint --fix .",
     "lint:style": "stylelint 'src/**/*.{css,scss}'",
@@ -17,6 +18,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.6",
     "@astrojs/react": "^4.4.2",
     "@astrojs/ts-plugin": "^1.10.6",
     "@emotion/react": "^11.14.0",
