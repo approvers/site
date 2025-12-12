@@ -26,6 +26,8 @@ export type Blog = {
   slug: BlogSlug;
   markdownBody: string;
   frontmatter: Frontmatter;
+  prevSlug?: BlogSlug;
+  nextSlug?: BlogSlug;
 };
 
 const repo: BlogRepository = process.env.NODE_ENV === "development" ? fileBlogRepo : githubBlogRepo;
@@ -87,5 +89,9 @@ export async function getAllBlogs(): Promise<Blog[]> {
     }),
   );
   blogs.sort((a, b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1));
+  for (let i = 1; i < blogs.length; ++i) {
+    blogs[i].nextSlug = blogs[i - 1].slug;
+    blogs[i - 1].prevSlug = blogs[i].slug;
+  }
   return blogs;
 }

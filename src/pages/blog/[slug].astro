@@ -1,0 +1,66 @@
+---
+import { getEntry } from "astro:content";
+import MarkdownIt from "markdown-it";
+import { full as MarkdownItEmoji } from "markdown-it-emoji";
+import MarkdownItFootnote from "markdown-it-footnote";
+import MarkdownItFrontMatter from "markdown-it-front-matter";
+
+import { DateString } from "@/components/date";
+import Layout from "@/components/layout.astro";
+import { ExternalLink } from "@/components/link";
+import { PrevNextLink } from "@/components/prev-next-link";
+import { type Blog, getAllBlogs } from "@/lib/blog-fetch";
+import * as styles from "@/scss/pages/blog/markdown.module.css";
+
+export async function getStaticPaths() {
+  const blogs = await getAllBlogs();
+  return blogs.map(({ slug }) => ({ params: { slug } }));
+}
+
+interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.params as Props;
+
+const md = MarkdownIt({
+  html: true,
+  linkify: true,
+})
+  .use(MarkdownItFrontMatter)
+  .use(MarkdownItFootnote)
+  .use(MarkdownItEmoji);
+
+const entry = await getEntry("blogs", slug);
+const {
+  markdownBody,
+  frontmatter: { author, authorId, date, title },
+  prevSlug,
+  nextSlug,
+} = entry?.data as Blog;
+const bodyHtml = md.render(markdownBody);
+---
+
+<Layout title={title}>
+  <div class="flex flex-col text-center">
+    <h2 class="m-8">
+      {title}
+    </h2>
+    <p>
+      <ExternalLink href={`https://github.com/${authorId}`}>{author}</ExternalLink>
+      {" - "}
+      <DateString dateString={date} />
+    </p>
+  </div>
+  <PrevNextLink
+    prevLinkHref={prevSlug ? `/blog/${prevSlug}` : null}
+    nextLinkHref={nextSlug ? `/blog/${nextSlug}` : null}
+  />
+  <article class="w-full md:max-w-4xl">
+    <div class={styles.markdown} set:html={bodyHtml} />
+  </article>
+  <PrevNextLink
+    prevLinkHref={prevSlug ? `/blog/${prevSlug}` : null}
+    nextLinkHref={nextSlug ? `/blog/${nextSlug}` : null}
+  />
+</Layout>

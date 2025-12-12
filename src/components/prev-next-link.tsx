@@ -10,20 +10,24 @@ export type PrevNextLinkProps = {
 };
 
 export const PrevNextLink = ({ prevLinkHref, nextLinkHref }: PrevNextLinkProps): JSX.Element => (
-  <nav data-testid="prev-next-link">
-    {prevLinkHref !== null && (
-      <Button asChild>
+  <nav className="grid w-full grid-cols-3 gap-8 md:grid-cols-5" data-testid="prev-next-link">
+    {prevLinkHref !== null ? (
+      <Button className="col-1" variant="outline" asChild>
         <a href={prevLinkHref}>
           <FontAwesomeIcon icon={faArrowLeft} /> 前
         </a>
       </Button>
+    ) : (
+      <div className="col-1" />
     )}
-    {nextLinkHref !== null && (
-      <Button asChild>
+    {nextLinkHref !== null ? (
+      <Button className="-col-end-1" variant="outline" asChild>
         <a href={nextLinkHref}>
           次 <FontAwesomeIcon icon={faArrowRight} />
         </a>
       </Button>
+    ) : (
+      <div className="-col-end-1" />
     )}
   </nav>
 );

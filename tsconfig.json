@@ -29,5 +29,5 @@
     }
   },
   "exclude": ["node_modules", "dist"],
-  "include": [".astro/types.d.ts", "**/*.ts", "**/*.tsx"]
+  "include": [".astro/types.d.ts", "**/*.ts", "**/*.tsx", "**/*.astro"]
 }

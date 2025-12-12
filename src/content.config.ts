@@ -50,6 +50,8 @@ const blogs = defineCollection({
       author: z.string(),
       authorId: z.string(),
     }),
+    prevSlug: z.string().optional(),
+    nextSlug: z.string().optional(),
   }),
 });
 
