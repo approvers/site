@@ -1,5 +1,5 @@
 # サイトデザイン・スタイル
-*.scss @MikuroXina
+*.css @MikuroXina
 
 # 内部スクリプト
 *.tsx @MikuroXina
