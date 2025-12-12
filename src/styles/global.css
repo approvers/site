@@ -119,3 +119,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+:root {
+  text-autospace: normal;
+}

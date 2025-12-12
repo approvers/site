@@ -10,7 +10,7 @@ import Layout from "@/components/layout.astro";
 import { ExternalLink } from "@/components/link";
 import { PrevNextLink } from "@/components/prev-next-link";
 import { type Blog, getAllBlogs } from "@/lib/blog-fetch";
-import * as styles from "@/scss/pages/blog/markdown.module.css";
+import * as styles from "@/styles/pages/blog/markdown.module.css";
 
 export async function getStaticPaths() {
   const blogs = await getAllBlogs();
