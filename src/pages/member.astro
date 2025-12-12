@@ -1,0 +1,14 @@
+---
+import { getCollection } from "astro:content";
+
+import Layout from "../components/layout.astro";
+import { MemberCard } from "../components/member-card";
+
+const members = await getCollection("members");
+---
+
+<Layout title="メンバー紹介">
+  <div class="grid w-full grid-cols-[repeat(auto-fill,_minmax(15em,_1fr))] gap-2">
+    {members.map(({ data: member }) => <MemberCard {...member} />)}
+  </div>
+</Layout>

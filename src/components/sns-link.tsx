@@ -21,9 +21,7 @@ export const SNSLink = ({ type, name }: SNSLinkInfo): JSX.Element => {
   const { icon } = icons[type];
   return (
     <ExternalLink
-      w={["1rem", "1.2rem"]}
-      h={["1rem", "1.2rem"]}
-      color="highlighted"
+      className="color-accent-foreground size-4"
       href={`https://${type}.com/${name}`}
       data-testid="sns-link"
     >

@@ -53,7 +53,7 @@ function validateMember(obj: unknown): obj is Member {
   return true;
 }
 
-function validateMembers(obj: unknown): obj is readonly Member[] {
+function validateMembers(obj: unknown): obj is Member[] {
   return (
     typeof obj === "object" &&
     obj != null &&
@@ -63,7 +63,7 @@ function validateMembers(obj: unknown): obj is readonly Member[] {
 
 const membersUrl = "https://members.approvers.dev/members";
 
-export async function getMembers(): Promise<readonly Member[]> {
+export async function getMembers(): Promise<Member[]> {
   const res = await fetch(membersUrl);
   if (!res.ok) {
     throw new Error("members-assoc unavailable");
