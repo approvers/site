@@ -6,4 +6,8 @@
 
 メンバー紹介やブログなどを掲載しています。
 
-[Gatsby.js](https://www.gatsbyjs.com/)や[Sass](https://sass-lang.com/)といった技術を使用しています。
+使用技術:
+
+- [Astro](https://astro.build)
+- [Radix UI](https://www.radix-ui.com)
+- [shadcn/ui](https://ui.shadcn.com)
