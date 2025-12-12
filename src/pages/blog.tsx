@@ -1,18 +1,8 @@
-import {
-  Avatar,
-  Button,
-  Flex,
-  HStack,
-  Heading,
-  Link,
-  SimpleGrid,
-  Spacer,
-  VStack,
-} from "@chakra-ui/react";
-import { Link as GatsbyLink, PageProps, graphql } from "gatsby";
+import { Link } from "@/components/link";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
 import { DateString } from "../components/date";
 import { Layout } from "../components/layout";
-import React from "react";
 
 function BlogCard({
   slug,
@@ -20,31 +10,28 @@ function BlogCard({
 }: Queries.BlogEntriesQuery["allBlog"]["nodes"][number]): JSX.Element {
   const title = frontmatter?.title ?? "無題";
   return (
-    <HStack borderColor="shadowed" borderRightWidth="1px" borderBottomWidth="2px">
-      <Avatar.Root flex="0 0 sm" asChild>
-        <GatsbyLink to={`/blog/${slug}`}>
-          <Avatar.Fallback name={title} />
-          <Avatar.Image />
-        </GatsbyLink>
-      </Avatar.Root>
-      <VStack alignItems="self-start" flex="1 1" p={2} spaceY={0.5}>
-        <GatsbyLink to={`/blog/${slug}`}>
-          <Heading as="h3" fontSize="lg">
-            {title}
-          </Heading>
-        </GatsbyLink>
-        <Flex align="self-end" wrap="wrap" gap={2} w="100%">
+    <div className="flex" borderColor="shadowed" borderRightWidth="1px" borderBottomWidth="2px">
+      <Avatar flex="0 0 sm" asChild>
+        <a href={`/blog/${slug}`}>
+          <AvatarFallback>{title}</AvatarFallback>
+          <AvatarImage />
+        </a>
+      </Avatar>
+      <div className="flex flex-col" alignItems="self-start" flex="1 1" p={2} spaceY={0.5}>
+        <a href={`/blog/${slug}`}>
+          <h3 fontSize="lg">{title}</h3>
+        </a>
+        <div className="flex" align="self-end" wrap="wrap" gap={2} w="100%">
           {frontmatter?.author && frontmatter?.authorId && (
             <Link href={`https://github.com/${frontmatter.authorId}`}>{frontmatter.author}</Link>
           )}
           <DateString dateString={frontmatter?.date ?? ""} />
-          <Spacer />
-          <Button asChild size="sm">
-            <GatsbyLink to={`/blog/${slug}`}>記事を読む &rarr;</GatsbyLink>
-          </Button>
-        </Flex>
-      </VStack>
-    </HStack>
+          <a href={`/blog/${slug}`} size="sm">
+            記事を読む &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
   );
 }
 

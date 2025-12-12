@@ -1,7 +1,7 @@
 import { Container, Text } from "@chakra-ui/react";
-import { ExternalLink } from "../components/link";
+
 import { Layout } from "../components/layout";
-import React from "react";
+import { ExternalLink } from "../components/link";
 
 export default function PolicyPage() {
   return (

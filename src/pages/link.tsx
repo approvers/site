@@ -1,13 +1,11 @@
-import { ExternalLink } from "../components/link";
-import { Layout } from "../components/layout";
-import React from "react";
-import { VStack } from "@chakra-ui/react";
 import links from "../../data/links.yaml";
+import { Layout } from "../components/layout";
+import { ExternalLink } from "../components/link";
 
 export default function Page() {
   return (
     <Layout title="リンク">
-      <VStack>
+      <div className="flex flex-col">
         {(links as unknown as { name: string; url: string }[]).map(({ name, url }, index) => (
           <ExternalLink
             key={index}
@@ -19,7 +17,7 @@ export default function Page() {
             {name}
           </ExternalLink>
         ))}
-      </VStack>
+      </div>
     </Layout>
   );
 }

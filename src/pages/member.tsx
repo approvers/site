@@ -1,9 +1,9 @@
-import { Avatar, Flex, Grid, GridItem, HStack, Heading, VStack } from "@chakra-ui/react";
-import { PageProps, graphql } from "gatsby";
+import { Avatar, Flex, Grid, GridItem, Heading, HStack, VStack } from "@chakra-ui/react";
+import { graphql, PageProps } from "gatsby";
+
 import { Layout } from "../components/layout";
-import { Member } from "../lib/member-fetch";
-import React from "react";
 import { SNSLink } from "../components/sns-link";
+import { Member } from "../lib/member-fetch";
 
 const alternative = "/alternative.png";
 

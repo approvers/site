@@ -1,1 +1,1 @@
-bun x lint-staged
+pnpm dlx lint-staged

@@ -1,6 +1,7 @@
+import matter from "gray-matter";
+
 import { fileBlogRepo } from "./blog/file";
 import { githubBlogRepo } from "./blog/github";
-import matter from "gray-matter";
 
 export type BlogFile = {
   fileName: string;

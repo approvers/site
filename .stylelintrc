@@ -1,6 +1,12 @@
 {
-  "extends": ["stylelint-config-sass-guidelines", "stylelint-config-recess-order"],
+  "extends": [
+    "stylelint-config-sass-guidelines",
+    "stylelint-config-recess-order",
+    "stylelint-prettier/recommended"
+  ],
   "rules": {
-    "order/properties-alphabetical-order": null
+    "order/properties-alphabetical-order": null,
+    "scss/at-rule-no-unknown": null,
+    "@stylistic/string-quotes": null
   }
 }

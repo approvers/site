@@ -1,15 +1,15 @@
-import * as styles from "../scss/pages/blog/markdown.module.scss";
 import { Container, Heading, Text, VStack } from "@chakra-ui/react";
-import { DateString } from "../components/date";
-import { ExternalLink } from "../components/link";
-import { Layout } from "../components/layout";
+import { PageProps } from "gatsby";
 import MarkdownIt from "markdown-it";
 import { full as MarkdownItEmoji } from "markdown-it-emoji";
 import MarkdownItFootnote from "markdown-it-footnote";
 import MarkdownItFrontMatter from "markdown-it-front-matter";
-import { PageProps } from "gatsby";
+
+import { DateString } from "../components/date";
+import { Layout } from "../components/layout";
+import { ExternalLink } from "../components/link";
 import { PrevNextLink } from "../components/prev-next-link";
-import React from "react";
+import * as styles from "../scss/pages/blog/markdown.module.scss";
 
 const md = MarkdownIt({
   html: true,

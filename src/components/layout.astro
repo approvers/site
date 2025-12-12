@@ -1,0 +1,46 @@
+---
+import "@/styles/global.css";
+
+import { ColorModeToggleButton } from "./color-mode-button";
+import ColorModeInit from "./color-mode-init.astro";
+import { Footer } from "./footer";
+import { Nav } from "./nav";
+
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "";
+const siteName = "限界開発鯖";
+
+console.log(baseUrl);
+
+const { title } = Astro.props;
+const titleText = title === "" ? siteName : `${siteName} - ${title}`;
+
+---
+<html lang="ja">
+  <head>
+    <title>{titleText}</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.3.1/dist/css/yakuhanjp.min.css"
+      media="print"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <slot name="head" />
+    <ColorModeInit client:load />
+  </head>
+  <body>
+    <div className="m-4 flex flex-col items-center">
+      <Nav />
+      <slot />
+    </div>
+    <Footer />
+    <div className="fixed p-8 bottom-0 left-0">
+      <ColorModeToggleButton client:idle />
+    </div>
+  </body>
+</html>

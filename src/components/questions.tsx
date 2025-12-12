@@ -1,24 +1,19 @@
-import { Container, Text, VStack } from "@chakra-ui/react";
-import { ExternalLink } from "./link";
-import React from "react";
 import type { ReactNode } from "react";
+
+import { ExternalLink } from "./link";
 
 const QA = ({ question, answer }: { question: ReactNode; answer: ReactNode }): JSX.Element => {
   return (
-    <Container as="section">
-      <Text>
-        <Text as="span" mr={2} color="highlighted" fontSize="2xl">
-          Q.
-        </Text>
+    <section>
+      <p>
+        <span className="text-accent-foreground mr-2 text-2xl">Q.</span>
         {question}
-      </Text>
-      <Text>
-        <Text as="span" mr={2} color="highlighted" fontSize="2xl">
-          A.
-        </Text>
+      </p>
+      <p>
+        <span className="text-accent-foreground mr-2 text-2xl">A.</span>
         {answer}
-      </Text>
-    </Container>
+      </p>
+    </section>
   );
 };
 
@@ -42,17 +37,16 @@ const questionAnswers = [
     question: "どうやって参加するの？",
     answer: (
       <>
-        弊サーバーは、<Text as="b">完全紹介制</Text>です。
-        知り合いのメンバーから招待リンクを受け取ってください。
+        弊サーバーは、<b>完全紹介制</b>です。 知り合いのメンバーから招待リンクを受け取ってください。
       </>
     ),
   },
 ] as const;
 
 export const Questions = (): JSX.Element => (
-  <VStack pb={16} data-testid="questions">
+  <div className="flex flex-col gap-4 pb-16" data-testid="questions">
     {questionAnswers.map((props, i) => (
       <QA key={i} {...props} />
     ))}
-  </VStack>
+  </div>
 );

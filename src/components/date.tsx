@@ -1,6 +1,5 @@
-import { format, parseISO } from "date-fns";
-import React from "react";
 import { Text } from "@chakra-ui/react";
+import { format, parseISO } from "date-fns";
 
 export const DateString = ({ dateString }: { dateString: string }): JSX.Element => {
   const date = parseISO(dateString);
