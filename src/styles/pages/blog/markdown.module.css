@@ -39,6 +39,10 @@
     margin-top: calc(var(--spacing) * 2);
   }
 
+  & a {
+    text-decoration: underline;
+  }
+
   & ul,
   & ol {
     padding: calc(var(--spacing) * 1) calc(var(--spacing) * 8);
@@ -71,7 +75,7 @@
   }
 
   & th {
-    color: var(--accent);
+    color: var(--accent-foreground);
   }
 
   & th,
