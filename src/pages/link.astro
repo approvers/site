@@ -15,6 +15,7 @@ const links: { data: { name: string; url: string } }[] = await getCollection("li
           key={index}
           className="text-2xl font-bold italic underline decoration-accent-foreground"
           href={url}
+          withIcon
         >
           {name}
         </ExternalLink>

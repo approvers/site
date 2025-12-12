@@ -27,7 +27,7 @@ const questionAnswers = [
     answer: (
       <>
         こちらへどうぞ &rarr;{" "}
-        <ExternalLink href="https://twitter.com/search?q=%23限界開発鯖&src=typed_query">
+        <ExternalLink href="https://twitter.com/search?q=%23限界開発鯖&src=typed_query" withIcon>
           #限界開発鯖
         </ExternalLink>
       </>
