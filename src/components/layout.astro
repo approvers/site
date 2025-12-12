@@ -7,11 +7,17 @@ import { Footer } from "./footer";
 import { Nav } from "./nav";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "";
+const siteImage = `https://${baseUrl}/android-chrome-512x512.png`;
 const siteName = "限界開発鯖";
 
 console.log(baseUrl);
 
-const { title } = Astro.props;
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Over Limit Development" } = Astro.props;
 const titleText = title === "" ? siteName : `${siteName} - ${title}`;
 ---
 
@@ -25,11 +31,27 @@ const titleText = title === "" ? siteName : `${siteName} - ${title}`;
       href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.3.1/dist/css/yakuhanjp.min.css"
       media="print"
     />
+    <link rel="manifest" href="/site.webmanifest" />
+    <!-- SEO -->
+    <meta name="description" content={description} />
+    <meta name="name" content={title} />
+    <meta name="image" content={siteImage} />
+    <!-- OGP -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={siteImage} />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:site_name" content={siteName} />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={siteImage} />
+    <!-- Icon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
-    <link rel="manifest" href="/site.webmanifest" />
     <slot name="head" />
     <ColorModeInit />
   </head>
