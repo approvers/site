@@ -1,14 +1,13 @@
-import { Heading } from "@chakra-ui/react";
-import React, { type ReactNode } from "react";
+import type { ReactNode } from "react";
 
 export const Title = ({ children }: { children?: ReactNode }): JSX.Element => (
-  <Heading as="h1" w="100%" mt={8} mb={8} fontSize="2xl" textAlign="center" data-testid="title">
+  <h1 className="mt-8 mb-8 w-full text-center text-2xl" data-testid="title">
     {children}
-  </Heading>
+  </h1>
 );
 
 export const Subtitle = ({ children }: { children?: ReactNode }): JSX.Element => (
-  <Heading fontSize="xl" lineHeight="xl" data-testid="subtitle">
+  <h2 className="text-xl" data-testid="subtitle">
     {children}
-  </Heading>
+  </h2>
 );
