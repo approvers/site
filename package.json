@@ -59,7 +59,7 @@
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^24.7.0",
     "@types/react": "^19.2.7",
-    "@types/react-test-renderer": "^18.3.1",
+    "@types/react-test-renderer": "^19.0.0",
     "@typescript-eslint/parser": "^8.46.0",
     "@vitejs/plugin-react": "^4.7.0",
     "@vitest/browser-playwright": "^4.0.8",
