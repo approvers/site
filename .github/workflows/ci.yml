@@ -39,6 +39,7 @@ jobs:
         env:
           NEXT_PUBLIC_BASE_URL: ${{ secrets.BASE_URL }}
           NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload artifact
         uses: actions/upload-artifact@v6
