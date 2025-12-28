@@ -16,8 +16,8 @@
   font-size: 150px;
   text-align: center;
   fill: transparent;
-  stroke-dasharray: 1400px 9999999px;
   stroke-width: 2px;
+  stroke-dasharray: 1400px 9999999px;
   animation-name: hero-stroke;
   animation-duration: 2.5s;
   animation-timing-function: ease-in-out;
