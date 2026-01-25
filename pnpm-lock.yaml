@@ -185,7 +185,7 @@ importers:
         version: 17.0.0(typescript@5.9.3)
       stylelint-config-recess-order:
         specifier: ^7.0.0
-        version: 7.4.0(stylelint-order@6.0.4(stylelint@17.0.0(typescript@5.9.3)))(stylelint@17.0.0(typescript@5.9.3))
+        version: 7.6.0(stylelint-order@6.0.4(stylelint@17.0.0(typescript@5.9.3)))(stylelint@17.0.0(typescript@5.9.3))
       stylelint-config-sass-guidelines:
         specifier: ^12.1.0
         version: 12.1.0(postcss@8.5.6)(stylelint@17.0.0(typescript@5.9.3))
@@ -4411,11 +4411,11 @@ packages:
   style-search@0.1.0:
     resolution: {integrity: sha512-Dj1Okke1C3uKKwQcetra4jSuk0DqbzbYtXipzFlFMZtowbF1x7BKJwB9AayVMyFARvU8EDrZdcax4At/452cAg==}
 
-  stylelint-config-recess-order@7.4.0:
-    resolution: {integrity: sha512-W3G517cBaMDYRX5Fzhro4fhRkkLafLgVSPfQnhxbiLyMnbLq47RMF/NRaOJ4OQsKWYhsIHOIc2Q3VL0X3Q7oPg==}
+  stylelint-config-recess-order@7.6.0:
+    resolution: {integrity: sha512-c3LXX4a8UEtrMD/KigK4I7LFexbM2p/eSTqnix5dmmvydEqX3dzrRt981h8giSEhA51vxdCEefQc3umH60i2bA==}
     peerDependencies:
-      stylelint: '>=16.18'
-      stylelint-order: '>=7'
+      stylelint: ^16.18.0 || ^17.0.0
+      stylelint-order: ^7.0.0
 
   stylelint-config-sass-guidelines@12.1.0:
     resolution: {integrity: sha512-NTxEtVT6uNSqRvq+A3ScyKhjUrY/Z845TnpWEwnMgIPZ/+/Waa4+51r6OPuQRMu4XZS3D8DK1UaT4TWFBvuuAw==}
@@ -9888,7 +9888,7 @@ snapshots:
 
   style-search@0.1.0: {}
 
-  stylelint-config-recess-order@7.4.0(stylelint-order@6.0.4(stylelint@17.0.0(typescript@5.9.3)))(stylelint@17.0.0(typescript@5.9.3)):
+  stylelint-config-recess-order@7.6.0(stylelint-order@6.0.4(stylelint@17.0.0(typescript@5.9.3)))(stylelint@17.0.0(typescript@5.9.3)):
     dependencies:
       stylelint: 17.0.0(typescript@5.9.3)
       stylelint-order: 6.0.4(stylelint@17.0.0(typescript@5.9.3))
