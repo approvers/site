@@ -52,7 +52,7 @@
     "react-icons": "^5.5.0",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18",
-    "yaml": "^2.8.1"
+    "yaml": "^2.8.3"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.0",
