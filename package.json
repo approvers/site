@@ -66,7 +66,7 @@
     "astro-eslint-parser": "^1.2.2",
     "eslint": "10.5.0",
     "eslint-config-prettier": "^10.0.0",
-    "eslint-plugin-astro": "^1.5.0",
+    "eslint-plugin-astro": "^2.0.0",
     "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-simple-import-sort": "^13.0.0",
