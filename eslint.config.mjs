@@ -1,6 +1,4 @@
 import pluginJs from "@eslint/js";
-import typescriptEslintParser from "@typescript-eslint/parser";
-import astroParser from "astro-eslint-parser";
 import eslintConfigPrettier from "eslint-config-prettier";
 import eslintPluginAstro from "eslint-plugin-astro";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
@@ -22,15 +20,5 @@ export default [
   },
   ...eslintPluginAstro.configs.recommended,
   { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
-  {
-    files: ["*.astro"],
-    languageOptions: {
-      parser: astroParser,
-      parserOptions: {
-        parser: typescriptEslintParser,
-        extraFileExtensions: [".astro"],
-      },
-    },
-  },
   eslintConfigPrettier,
 ];
