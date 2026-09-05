@@ -79,7 +79,7 @@ importers:
         version: 1.34.0(react@19.2.8)
       markdown-it:
         specifier: ^15.0.0
-        version: 15.0.0
+        version: 15.0.1
       markdown-it-emoji:
         specifier: ^3.0.0
         version: 3.1.0
@@ -3396,8 +3396,8 @@ packages:
   markdown-it-front-matter@0.2.4:
     resolution: {integrity: sha512-25GUs0yjS2hLl8zAemVndeEzThB1p42yxuDEKbd4JlL3jiz+jsm6e56Ya8B0VREOkNxLYB4TTwaoPJ3ElMmW+w==}
 
-  markdown-it@15.0.0:
-    resolution: {integrity: sha512-Lf8ajvVNdRpzSNB4VegxNy7gjs8gU35l4b4+ET49LrQC5PKYwLZ72u60LeJ9gv3qiaesuYjJWCyVeQmv/QWKQw==}
+  markdown-it@15.0.1:
+    resolution: {integrity: sha512-9/7gE95FNPkfUWrjJIoHZza2iLmuJlPD0UNMxPi7bxUrbCR525YZY0r+zyfes0dZI5ZZ/uNIXUJca0pJvtw41g==}
     hasBin: true
 
   math-intrinsics@1.1.0:
@@ -8012,7 +8012,7 @@ snapshots:
 
   markdown-it-front-matter@0.2.4: {}
 
-  markdown-it@15.0.0:
+  markdown-it@15.0.1:
     dependencies:
       argparse: 3.0.0
       entities: 8.0.0
