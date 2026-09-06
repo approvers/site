@@ -27,7 +27,7 @@
     "@fortawesome/free-solid-svg-icons": "^7.0.0",
     "@fortawesome/react-fontawesome": "^3.0.0",
     "@nanostores/persistent": "^1.2.0",
-    "@nanostores/react": "^1.0.0",
+    "@nanostores/react": "^2.0.0",
     "@radix-ui/react-avatar": "^1.1.11",
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-navigation-menu": "^1.2.14",
