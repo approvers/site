@@ -62,7 +62,7 @@
     "@types/react-test-renderer": "^19.0.0",
     "@typescript-eslint/parser": "^8.62.1",
     "@vitejs/plugin-react": "^6.0.0",
-    "@vitest/browser-playwright": "^4.0.8",
+    "@vitest/browser-playwright": "^5.0.0",
     "eslint": "10.9.1",
     "eslint-config-prettier": "^10.0.0",
     "eslint-plugin-astro": "^3.0.0",
@@ -85,7 +85,7 @@
     "typescript": "6.0.3",
     "typescript-eslint": "^8.46.0",
     "vite-tsconfig-paths": "^6.0.0",
-    "vitest": "^4.0.8",
+    "vitest": "^5.0.0",
     "vitest-browser-react": "^2.0.2"
   },
   "packageManager": "pnpm@11.25.0"
