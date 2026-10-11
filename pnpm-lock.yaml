@@ -219,7 +219,7 @@ importers:
         version: 4.3.3(vite@8.3.1(@types/node@24.19.1)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.105.1)(yaml@2.9.1))
       astro:
         specifier: ^7.0.0
-        version: 7.3.6(@types/node@24.19.1)(jiti@2.7.0)(sass@1.105.1)(yaml@2.9.1)
+        version: 7.3.7(@types/node@24.19.1)(jiti@2.7.0)(sass@1.105.1)(yaml@2.9.1)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -2356,8 +2356,8 @@ packages:
     resolution: {integrity: sha512-idgbHE8cjEU9f4Ne46RiGgwEviXYarNVoQoTZr+H1j7mbNCKp8EGGov2bR64/cvMpfBsX3XNPu9+muxAhK84eg==}
     engines: {node: ^22.22.3 || ^24.16.0 || >=26.3.0}
 
-  astro@7.3.6:
-    resolution: {integrity: sha512-3q0MKxfE4cpr5IoQ9EWrN0gwxeT5tkCaSVe3SrGlLR5fnTIywHqjVqFokQkQiZexfwpNtB9dtBdUcXV9FuD+4w==}
+  astro@7.3.7:
+    resolution: {integrity: sha512-MyxnNzy+HHkLa8iNVcGTXbmSTlkjqkXJyRcMU3EwprbsF7gh3M03DKLAGVcVTmATF8jV1Fen0rkala1JiEyMSg==}
     engines: {node: '>=22.12.0', npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
     peerDependencies:
@@ -6763,7 +6763,7 @@ snapshots:
       - '@emnapi/runtime'
       - supports-color
 
-  astro@7.3.6(@types/node@24.19.1)(jiti@2.7.0)(sass@1.105.1)(yaml@2.9.1):
+  astro@7.3.7(@types/node@24.19.1)(jiti@2.7.0)(sass@1.105.1)(yaml@2.9.1):
     dependencies:
       '@astrojs/compiler-rs': 0.5.1
       '@astrojs/internal-helpers': 0.12.0
